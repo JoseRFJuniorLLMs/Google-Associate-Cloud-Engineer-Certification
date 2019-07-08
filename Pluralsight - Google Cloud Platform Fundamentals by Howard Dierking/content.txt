@@ -1,0 +1,36 @@
+
+Google Cloud Platform Fundamentals
+by Howard Dierking
+
+Google Cloud Platform gives your applications the same robust foundation behind services like Google search and Gmail. This course will provide an overview of the platform and a framework for diving deeper.
+
+Course Overview1m 45s
+	Course Overview	1m 45s
+Understanding Google Cloud Platform19m 53s
+	Introduction to This Course, This Module, and Cloud Computing	5m 4s
+	How Google Cloud Platform Is Different	6m 30s
+	Demonstrating the Cost Calculator	4m 29s
+	Technology Innovation on Google Cloud Platform	3m 49s
+Core Building Blocks54m 45s
+	Introduction to Core Building Blocks	7m 21s
+	Compute Services	9m 45s
+	Google's Layered Storage Model	2m 39s
+	Storage Services	19m 1s
+	Networking Services	13m 22s
+	Enabling "Cloud 3.0"	2m 35s
+Security and Tools21m 20s
+	Infrastructure Security	6m 21s
+	Security Services	3m 27s
+	Management and Billing Services	5m 58s
+	Developer Tooling	5m 33s
+Building for Cloud 3.030m 0s
+	From Cloud 2.0 to Cloud 3.0	8m 24s
+	Optimizing Computation Using Events and Serverless	6m 40s
+	Introducing and Incorporating Analytics	6m 40s
+	Introducing and Incorporating Machine Learning	5m 8s
+	Module and Course Conclusions	3m 6s
+
+
+Level Beginner
+Duration 2h 7m
+Updated 18 Dec 2018
