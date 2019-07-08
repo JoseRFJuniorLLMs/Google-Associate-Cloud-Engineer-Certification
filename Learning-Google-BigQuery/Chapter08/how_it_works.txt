@@ -1,0 +1,13 @@
+1)install google cloud modules
+
+############################################
+  sudo pip install --upgrade google-cloud
+############################################
+
+2) run send_messages.py and you will get the message message added
+
+3) run receive_message.py and you will receive the message message
+
+4) can run send_messages.py and receive_message.py in different terminal to see the difference
+
+5) big_query.py is a bigquery data managing file  , adds message to specified table

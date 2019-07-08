@@ -1,0 +1,17 @@
+1)install google cloud modules
+
+############################################
+  sudo pip install --upgrade google-cloud
+############################################
+
+2)check the ssl verification in python is updated
+
+if not ---> try installing request's security extra
+
+######################################
+ sudo pip install requests[security]
+######################################
+
+NOTE: On older Python versions, the ssl module can't verify SNI certificates. Did you get an InsecurePlatformWarning at all?
+
+
