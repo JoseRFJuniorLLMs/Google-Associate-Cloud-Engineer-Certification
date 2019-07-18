@@ -1,0 +1,45 @@
+pergunta
+Modelos de instância são usados ​​para criar um grupo de máquinas virtuais idênticas. Os modelos de instância incluem:
+resposta
+A. Tipo de máquina, imagem de disco de inicialização ou imagem, zona e rótulos do contêiner
+jusrificativa
+Tipo de máquina, imagem de disco de inicialização ou imagem de contêiner, 
+zona e rótulos são todos parâmetros de configuração ou atributos de uma máquina virtual e, 
+portanto, seriam incluídos em uma configuração de grupo de instâncias que cria essas máquinas virtuais.
+
+pergunta
+Use as teclas VO para navegar.Use as teclas VO para navegar.O comando da linha de comando para criar um intervalo do Cloud Storage é:
+resposta
+B. gsutil mb
+justificativa
+A gsutil é a linha de comando para acessar e manipular o Cloud Storage a partir 
+da linha de comando. mb é o comando específico para criar ou criar um bloco.
+
+pergunta
+Sua empresa possui uma política de gerenciamento de objetos que exige que os objetos armazenados 
+no Cloud Storage sejam migrados do armazenamento regional para o nearline de armazenamento 90 dias
+após a criação do objeto. A maneira mais eficiente de fazer isso é
+resposta
+D. Crie uma política de configuração de gerenciamento de ciclo de vida especificando uma idade de 90 dias e SetStorageClass como nearline.
+justificativa
+A política de configuração do ciclo de vida permite que os administradores especifiquem critérios para migrar dados para outro sistema de armazenamento 
+sem precisar se preocupar com a execução de tarefas para realmente executar as etapas necessárias. As outras opções são ineficientes ou não existem.
+
+pergunta
+Um cliente de educação mantém um site onde os usuários podem enviar vídeos, e seu cliente precisa garantir a 
+redundância dos arquivos; Portanto, você criou dois intervalos para oCloud Storage. Qual comando você usa para sincronizar o conteúdo dos dois blocos?
+resposta
+A. gsutil rsync
+justificativa
+A gsutil é a ferramenta de linha de comando para trabalhar com o Cloud Storage. O rsync é o comando específico da gsutil para sincronizar os intervalos.
+
+pergunta
+Nuvens privadas virtuais (VPCs) são ________ recursos.
+resposta
+C. Global
+justificativa
+O Google opera uma rede global e as nuvens virtuais privadas (VPCs) são recursos que podem abranger essa rede global.
+
+pergunta
+Um componente remoto em sua rede falhou, o que resulta em um erro de rede transitório. 
+Quando você envia um comando gsutil , ele falha devido a um erro transitório. Por padrão, o comando irá:

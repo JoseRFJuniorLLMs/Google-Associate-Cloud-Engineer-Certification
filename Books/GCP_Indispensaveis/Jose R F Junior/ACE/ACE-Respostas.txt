@@ -1,0 +1,1395 @@
+
+
+Capítulo 1: Visão geral do Google Cloud
+Plataforma 
+1. B. A unidade básica para comprar recursos de computação é a máquina virtual (VM). Um 
+servidor físico é subjacente às VMs, mas os recursos de um servidor físico são alocados para as VMs. 
+Blocos e sub-redes não são relevantes para a unidade fundamental da computação. 
+2. D. Ao usar clusters gerenciados, o provedor de nuvem monitorará a integridade dos nós no 
+cluster, configurará a rede entre nós no cluster e configurará o firewall e outros 
+controles de segurança. 
+3. O B. App Engine é uma plataforma sem servidor para executar aplicativos, enquanto o Cloud Functions é um 
+serviço para executar funções de execução curta em resposta a eventos. O Kubernetes Engine é um
+serviço de cluster gerenciado e o Kubernetes Engine e o Compute Engine exigem que você 
+configure servidores. 
+4. O armazenamento de objetos, como o Cloud Storage, fornece objetos armazenados de forma redundante, sem limitar a quantidade de dados que você pode armazenar, o que torna a opção B correta. Como a 
+funcionalidade do sistema de arquivos não é necessária, a opção D não é uma boa opção. O armazenamento em bloco pode ser usado, 
+mas você teria que gerenciar sua própria replicação para garantir alta disponibilidade. Os caches são 
+transitórios, armazenamento em memória e não são sistemas de armazenamento persistentes e de alta disponibilidade. 
+5. D. Os tamanhos dos blocos em um sistema de armazenamento em bloco podem variar; Portanto, a opção D é a resposta correta. 
+O tamanho do bloco é estabelecido quando um sistema de arquivos é criado. Tamanhos de bloco de 4KB são comumente usados
+no Linux. 
+6. C. Os firewalls no Google Cloud Platform (GCP) são controles de rede definidos por software que 
+limitam o fluxo de tráfego para dentro e para fora de uma rede ou sub-rede, portanto, a opção C é a 
+resposta correta . Os roteadores são usados ​​para mover o tráfego para destinos apropriados na rede. O gerenciamento de acesso à identidade é usado para autenticar e autorizar usuários; não é relevante para 
+os controles de rede entre sub-redes. Tabelas de endereços IP não são um controle de segurança. 
+7. C. A opção C está correta porque os serviços especializados no GCP não têm servidor. O Google gerencia 
+os recursos de computação usados ​​pelos serviços. Não há necessidade de um usuário alocar ou 
+monitorar VMs.
+8. B. A opção B está correta; investir em servidores funciona bem quando uma organização pode 
+prever com precisão o número de servidores e outros equipamentos necessários por um período prolongado e 
+pode utilizar esse equipamento de forma consistente. As startups não são empresas estabelecidas com históricos que podem orientar as necessidades esperadas em três a cinco anos. Não importa se um orçamento é 
+fixo ou variável; investir em servidores deve basear-se na demanda por capacidade de servidor. 
+9. B. As características do servidor, como o número de servidores virtuais, a quantidade de 
+memória e a região onde você executa a VM, influenciam o custo; portanto, a opção B está correta. 
+A hora do dia não é um fator nem o tipo de aplicativo que você executa na VM.
+10. D. Cloud Vision é um dos serviços especializados da GCP. Os usuários do serviço não precisam 
+configurar nenhuma VM para usar o serviço. 
+Capítulo 1: Visão geral do Google Cloud Platform 465 
+11. B. Os contêineres oferecem a maior flexibilidade para usar os recursos de um cluster de maneira eficiente e as 
+plataformas de orquestração reduzem a sobrecarga das operações, o que torna a opção B correta. 
+A execução em um único cluster não é recomendada porque, se o servidor falhar, todos os serviços ficarão 
+inativos. Usando duas VMs com um somente leitura não é útil. Servidores somente leitura às vezes são 
+usados ​​com bancos de dados, mas não houve menção de bancos de dados na questão. Usando um pequeno
+A VM e a atualização, quando não for mais capaz de acompanhar a carga de trabalho, fornecem serviços de baixa qualidade aos usuários e devem ser evitados. 
+12. D. Todas as operações estão disponíveis para um administrador do sistema depois de criar uma VM, 
+portanto , a opção D está correta. 
+13. A. A opção A está correta; O Cloud Filestore é baseado no Network Filesystem (NSF), que é um 
+sistema de gerenciamento de arquivos distribuído. As outras opções são sistemas de arquivos suportados pelo Linux, 
+mas não são a base do Cloud Filestore. 
+14. A. Quando você cria uma rede, ela é tratada como uma nuvem privada virtual, o que torna a opção 
+A correta. Recursos são adicionados ao VPC e não são acessíveis fora do VPC, a menos que
+você explicitamente configurá-los para ser. Um subdomínio está relacionado a domínios da web e não está relacionado 
+à configuração de rede do GPC. Os clusters, como os clusters do Kubernetes, podem estar em sua rede, mas não são uma característica da rede. 
+15. D. Caches usam memória e isso os torna o tipo de armazenamento mais rápido para leitura de dados, então a 
+opção D está correta. Caches são armazenamentos de dados no backend de sistemas distribuídos, não nos clientes. Um cache não teria efeito na execução do JavaScript do lado do cliente. Os caches não armazenam 
+dados em um cache se a energia for perdida; os dados teriam que ser recarregados. Os caches podem sair 
+sync with the system of truth because the system of truth could be updated, but the cache
+may not be updated. Caches have faster read times than SSDs and HDDs.
+16. B. Option B is correct; cloud providers have large capacity and can quickly allocate
+those resources to different customers. With a mix of customers and workloads, they can
+optimize the allocation of resources. Option A is incorrect; cloud providers do not take
+resources from one customer to give them to another, with the exception of preemptible
+instances. Option C is incorrect; cloud providers usually offer discounts for increased use.
+17. C. Specialized services are monitored by Google so users do not have to monitor them;
+, portanto, a opção C está correta. Serviços especializados fornecem uma funcionalidade de computação específica
+mas não requer que o usuário configure nenhum recurso. Eles também fornecem APIs. 
+18. B. Unidades anexadas são dispositivos de armazenamento em bloco. O Cloud Storage é o serviço de armazenamento de objetos 
+e não é anexado diretamente a uma VM. O NoSQL é um tipo de banco de dados, não um sistema de armazenamento. 
+Unidades anexadas podem ser SSDs ou discos rígidos. 
+19. C. Os bancos de dados exigem armazenamento persistente em dispositivos de bloco. O armazenamento de objetos não fornece 
+armazenamento de bloco de dados ou de sistema de arquivos, fazendo da opção C a resposta correta. O armazenamento de dados não é um 
+tipo de sistema de armazenamento. Os caches são frequentemente usados ​​com bancos de dados para melhorar o desempenho de leitura, 
+mas são voláteis e não são adequados para armazenar persistentemente arquivos de dados.
+20. B. Todos os três serviços são sem servidor, portanto, o usuário não precisa configurar VMs; portanto, a 
+opção B está correta. O Cloud Storage é cobrado com base no tempo e no tamanho dos dados armazenados. O App 
+Engine Standard e as Cloud Functions não estão restritos apenas ao idioma Go. 
+466 Apêndice ■ Respostas a perguntas de revisão 
+Serviços do Google Cloud Computing 
+1. C. O Cloud Load Balancing distribui cargas de trabalho dentro e entre regiões, fornece 
+verificações de integridade e implementa o escalonamento automático. O Cloud DNS fornece serviços de nome de domínio, como a 
+tradução de um URL, como www.example.com, para um endereço IP. O Cloud Spanner é um 
+banco de dados relacional distribuído, mas não implementa a distribuição de carga de trabalho. Cloud CDN distribui
+conteúdo entre regiões para reduzir a latência ao entregar conteúdo para usuários em todo o mundo. 
+2. C. Os ambientes flexíveis do App Engine permitem que você execute contêineres na PaaS do App Engine. 
+O Kubernetes Engine é uma plataforma de orquestração para a execução de contêineres. Ambos fornecem serviços de gerenciamento de contêineres. O ambiente padrão do App Engine executa aplicativos em 
+caixas de proteção específicas de idiomas e não é um sistema geral de gerenciamento de contêineres. O Cloud 
+Functions é um serviço sem servidor para executar código em resposta a eventos. Não fornece 
+serviços de contêiner. 
+3. D. As opções A e B são ambas respostas corretas. A plataforma Apigee API fornece serviços de limitação de taxa e roteamento baseados em políticas para ajudar a acomodar picos de tráfego. Isso também
+fornece autenticação OAuth 2.0 e SAML. Não fornece controle de versão; O Cloud 
+Source Repositories é o usuário do serviço para controle de versão. 
+4. A. O Cloud Armor baseia-se nos serviços de balanceamento de carga do GCP para permitir ou 
+restringir o acesso com base no endereço IP, implantar regras para combater ataques de script entre sites e 
+fornecer contramedidas para ataques de injeção de SQL. O Cloud CDN é um 
+serviço de distribuição de conteúdo , não um serviço de segurança. O Identity Access Management é um serviço de segurança, mas é para 
+autenticação e autorização, não para mitigação de negação de serviço. Nuvens privadas virtuais
+são usados ​​para restringir o acesso à rede aos recursos de uma organização, mas não possuem recursos para reduzir os ataques de negação de serviço. Além disso, o Cloud CDN atua como uma primeira linha de defesa no 
+caso de ataques DDoS. 
+5. A. Esse é um bom caso de uso para VMs preemptivas, pois elas poderiam reduzir o custo de execução do segundo aplicativo sem o risco de perder o trabalho. Como as tarefas são excluídas da 
+fila somente depois de concluídas, se uma VM preemptiva for desligada antes de concluir 
+a tarefa, outra VM poderá executar a tarefa. Além disso, não há nenhum problema em executar uma tarefa mais 
+de uma vez, portanto, se duas VMs realizarem a mesma tarefa, isso não afetará negativamente a saída do 
+aplicativo. DataProc e Spanner não são produtos apropriados para esta tarefa.
+6. O B. Cloud Memorystore é o único GCP projetado para armazenar dados em cache na memória. O Cloud SQL é 
+um serviço de banco de dados relacional e pode ser uma boa opção para o banco de dados de back-end. O Cloud 
+Spanner é um banco de dados relacional global e é uma boa opção quando você precisa de um banco de dados globalmente consistente. O Cloud Datastore é um banco de dados de documentos adequado para catálogos de produtos, 
+perfis de usuário e outros dados semiestruturados. 
+7. D. Todos os três serviços listados, Compute Engine, Cloud Storage e firewalls de rede, 
+podem ser gerenciados e configurados usando o Cloud SDK. 
+8. D. Cloud Functions é um produto sem servidor, nenhuma configuração é necessária. 
+Capítulo 2: Serviços do Google Cloud Computing 467
+9. D. O produto Stackdriver Logging é usado para consolidar e gerenciar logs gerados por 
+aplicativos e servidores. 
+10. B. O conjunto de analítica de dados de serviços especializados inclui produtos que ajudam na extração, 
+transformação e carregamento (ETL) e trabalham com dados em lote e streaming. A plataforma Apigee API é usada para gerenciar APIs e não atende às necessidades descritas. O AI e o 
+aprendizado de máquina podem ser úteis para analisar dados no data warehouse, mas os serviços 
+nesse conjunto nem sempre são úteis para operações de ETL. O Cloud SDK é usado para controlar serviços, 
+mas por si só não é capaz de executar diretamente as operações necessárias. 
+11. B. O Bigtable é projetado para aceitar bilhões de linhas de dados. Coletando dados de
+100.000 sensores a cada 5 segundos gerarão 6.000.000 de pontos de dados a cada minuto ou 
+8.640.000.000 pontos de dados por dia. A chave é um banco de dados relacional e suporta transações, mas elas não são necessárias. O Cloud SQL MySQL e o Cloud SQL PostgreSQL seriam 
+difíceis de escalar para esse nível de desempenho de leitura e gravação. 
+12. A. O Cloud Firestore é um serviço de banco de dados móvel que pode sincronizar dados entre dispositivos 
+móveis e armazenamento centralizado. O Spanner é um banco de dados relacional global para 
+aplicativos de grande escala que exigem suporte a transações em bancos de dados altamente dimensionados. O Datastore e o 
+Cloud SQL podem ser usados, mas exigiriam mais desenvolvimento personalizado para sincronizar dados 
+entre dispositivos móveis e o armazenamento de dados centralizado.
+13. B. Uma aplicação computacionalmente intensiva requer, obviamente, CPUs altas, mas o fato de que 
+existem muitos cálculos matemáticos indica que uma GPU deve ser usada. Você pode 
+considerar executar isso em um cluster, mas o trabalho não é distribuído facilmente em vários servidores, portanto, você precisará ter um único servidor capaz de manipular a carga. O acesso imediato 
+a grandes quantidades de dados indica que uma máquina de alta memória deve ser recomendada. 
+14. B. Identidades são abstrações de usuários. Eles também podem representar características de processos 
+que são executados em nome de um usuário humano ou de uma VM no GCP. As identidades não estão relacionadas a 
+IDs de VMs. Funções são coleções de privilégios que podem ser concedidos a identidades. Opção D é 
+sinônimo da opção C.
+15. C. Cloud Natural Language Processing fornece funcionalidade para análise de texto. O Cloud 
+Text Miner não existe. O Cloud ML é um serviço de aprendizado de máquina de propósito geral que 
+poderia ser aplicado à análise de texto, mas exigiria conhecimento do processamento da linguagem, 
+que o cliente não possui. O Cloud Vision é para processamento de imagens. 
+16. B. Ambas as opções B e D atenderiam à necessidade de executar o Spark, o que daria aos 
+cientistas de dados acesso à biblioteca de máquinas que eles precisam. No entanto, a opção D requer que eles 
+gerenciem e monitorem o cluster de servidores, o que exigiria mais DevOps e trabalho de administração do que se eles usassem o serviço Dataproc. A opção C, BigQuery, é escalonável
+banco de dados, não uma plataforma para executar o Spark. O Cloud Spark é um produto fictício e 
+não existe no GCP. 
+17. B. A opção B está correta. Spanner suporta transações SQL e globais padrão ANSI 2011. O Cloud SQL suporta o SQL padrão, mas não possui transação global. Datastore 
+e Bigtable são bancos de dados NoSQL. 
+468 Apêndice ■ Respostas às Questões de Revisão 
+18. A. O Dataproc foi projetado para executar fluxos de trabalho nos modos batch e streaming, o que 
+torna a opção A correta. O BigQuery é um serviço de data warehouse. O armazenamento de dados é um 
+banco de dados de documentos . AutoML é um serviço de aprendizado de máquina. 
+19. C. O ambiente padrão do App Engine fornece uma caixa de proteção Python sem servidor que dimensiona
+automaticamente, então a opção C está correta. O ambiente flexível do App Engine executa contêineres e 
+exige mais configuração. O Cloud Engine e o Kubernetes Engine exigem 
+gerenciamento e monitoramento significativos . 
+20. D. O relatório de erros consolida as informações de falha, o que faz com que o Relatório de erros seja a 
+resposta correta . O monitoramento coleta métricas sobre o desempenho do aplicativo e do servidor. O log é um 
+serviço de gerenciamento de log. O Dataproc não faz parte do Stackdriver; é um serviço gerenciado do Hadoop e do 
+Spark. 
+Capítulo 3: Projetos, contas de serviço 
+e faturamento 
+1. A. A opção A, a resposta correta, separa os dois principais aplicativos em suas próprias pastas e ainda permite separar o seguro privado do pagador do governo, mas usando
+pastas para cada um. Isso satisfaz a necessidade regulatória de manter o software de pagamento do governo 
+isolado de outro software. A opção B não inclui uma organização, que é a raiz 
+da hierarquia de recursos. A opção C não é flexível no que diz respeito às diferenças nas restrições 
+em diferentes aplicações. A opção D é falsa porque a opção A atende aos requisitos. 
+2. C. As hierarquias de recursos possuem uma única organização na raiz, o que torna a opção C correta. Abaixo disso, existem pastas que podem conter outras pastas ou projetos. As pastas podem 
+conter várias pastas e vários projetos. 
+3. B. As contas de serviço são projetadas para permitir que aplicativos ou VMs executem tarefas.
+As contas de faturamento são para associar cobranças a um método de pagamento. As pastas fazem parte das 
+hierarquias de recursos e não têm nada a ver com a ativação de um aplicativo para executar uma tarefa. 
+Contas de mensagens são uma opção fictícia. 
+4. B. As políticas herdadas podem ser substituídas definindo uma política em um nível de pasta ou projeto. 
+Contas de serviço e contas de faturamento não fazem parte da hierarquia de recursos e não estão 
+envolvidas na substituição de políticas. 
+5. E. Todos os tipos de restrições listados são suportados em políticas. 
+6. B. Opção B é a resposta correta porque o Publisher não é um papel primitivo. Proprietário, editor 
+e visualizador são os três privilégios primitivos do GCP.
+7. D. Os papéis primitivos incluem apenas as permissões Proprietário, Editor e Visualização. As funções predefinidas 
+são projetadas para produtos e serviços da GCP, como o App Engine e o BigQuery. Para um 
+aplicativo personalizado , você pode criar conjuntos de privilégios que dão ao usuário essa função com a permissão necessária, mas não mais. 
+Capítulo 3: Projetos, Contas de Serviço e Faturamento 479 
+8. D. Os usuários devem ter apenas os privilégios necessários para realizar suas tarefas. Este é 
+o princípio do menor privilégio. Rotação de funções é outro princípio de segurança relacionado a 
+ter pessoas diferentes realizando uma tarefa em momentos diferentes. A defesa em profundidade é a prática 
+de usar vários controles de segurança para proteger o mesmo ativo. A opção B não é uma segurança real
+diretor. 
+9. A. Uma hierarquia de recursos possui apenas uma organização, o que torna a opção A correta. Você 
+pode, no entanto, criar várias pastas e projetos em uma hierarquia de recursos. 
+10. B. Na opção B, a resposta correta, a conta de faturamento é usada para especificar informações de pagamento e deve ser usada para configurar pagamentos automáticos. As contas de serviço são usadas para 
+conceder privilégios a uma VM e não estão relacionadas a faturamento e pagamentos. Contas de recursos 
+e contas de crédito não existem. 
+11. C. O GCP oferece um nível de serviço gratuito para muitos produtos, o que faz da opção C a 
+resposta correta . Você pode usar esses serviços sem ter que configurar uma conta de faturamento. O Google 
+cobra pelos produtos sem servidor, como o Cloud Functions e o App Engine, quando os clientes
+exceder o valor permitido no nível gratuito. 
+12. D. As áreas de trabalho do Stackdriver estão vinculadas a projetos, não a recursos individuais, como 
+instâncias de VM , clusters ou aplicativos do App Engine, portanto, a opção D está correta. As opções A, B e C 
+indicam incorretamente que os espaços de trabalho estão associados a recursos de computação individuais. 
+13. D. As grandes empresas devem usar o faturamento ao incorrer em grandes encargos, o que torna a 
+opção D a resposta correta. Uma conta de autoatendimento é apropriada apenas para valores que estão 
+dentro dos limites de crédito dos cartões de crédito. Como as subdivisões são gerenciadas independentemente 
+e têm seus próprios orçamentos, cada uma deve ter suas próprias contas de faturamento. 
+14. A. Quando um usuário é concedido iam.serviceAccountUser no nível do projeto, esse usuário pode
+gerenciar todas as contas de serviço no projeto, portanto, a opção A está correta. Se uma nova conta de serviço 
+for criada, eles automaticamente terão privilégios para gerenciar essa conta de serviço. Você 
+pode conceder iam.serviceAccountUser ao administrador no nível da conta de serviço, 
+mas isso exigiria a configuração da função para todas as contas de serviço. Se uma nova conta de serviço for 
+criada, o administrador do aplicativo terá que conceder iam.serviceAccountUser ao 
+outro administrador na nova conta de serviço. iam.serviceProjectAccountUser é 
+uma função fictícia. 
+15. C. Quando uma conta de serviço é criada, o Google gera chaves criptografadas para autenticação, 
+tornando a opção C correta. Nomes de usuários e senhas não são uma opção para contas de serviço.
+A autenticação de dois fatores é uma prática de autenticação que exige duas formas de autenticação, como um par de senhas de nome de usuário e um código de um dispositivo de autenticação. A biometria não pode ser usada por serviços e não é uma opção. 
+16. B. Contas de serviço são recursos que são gerenciados por administradores, mas também funcionam como identidades que podem ser atribuídas a funções, o que torna a opção B a resposta correta. 
+As contas de faturamento não estão relacionadas a identidades. Projetos não são identidades; eles não podem assumir 
+papéis. Funções são recursos, mas não identidades. Eles podem assumir privilégios, mas esses privilégios são usados ​​somente quando estão ligados a uma identidade. 
+470 Apêndice ■ Respostas às perguntas de revisão
+17. B. Funções predefinidas são definidas para um produto específico, como o App Services ou o Compute 
+Engine, portanto, a opção B é a resposta correta. Agrupam privilégios geralmente necessários juntos ao 
+gerenciar ou usar um serviço. Os papéis primitivos são blocos de construção para outros papéis. 
+Funções personalizadas são criadas pelos usuários para atender às suas necessidades específicas; As funções de aplicativos são um papel fictício. 
+18. B. Por padrão, todos os usuários em uma organização podem criar projetos, o que torna a opção B correta. A função resourcemanager.projects.create é a função que permite aos usuários criar 
+projetos. A conta de faturamento não está associada à criação de projetos. 
+19. D. O número máximo de organizações é determinado por cada conta por
+Google, então a opção D é a resposta correta. Se você precisar de outras organizações, 
+entre em contato com o Google e solicite um aumento no seu limite. 
+20. B. Usuários com a função IAM da Organização não são necessariamente responsáveis ​​por determinar 
+quais privilégios devem ser atribuídos aos usuários. Isso é determinado com base no papel da pessoa 
+na organização e nas políticas de segurança estabelecidas dentro da organização, o que 
+torna a opção B correta. 
+Capítulo 4: Introdução à computação no 
+Google Cloud 
+1. B. O ambiente padrão do App Engine pode executar aplicativos Python, que podem ser dimensionados automaticamente 
+para nenhuma instância quando não há carga e, portanto, minimizam os custos. Compute Engine
+e o ambiente flexível do App Engine exige mais gerenciamento de configuração do que 
+o ambiente padrão do App Engine. O Kubernetes Engine é usado quando um cluster de servidores é 
+necessário para suportar aplicativos grandes ou múltiplos usando os mesmos recursos de computação. 
+2. A. Servidores de banco de dados exigem alta disponibilidade para responder a consultas de usuários ou aplicativos. As máquinas preemptivas têm garantia de desligar em no máximo 24 horas. Um 
+trabalho de processamento em lote sem requisitos de tempo fixo pode usar máquinas preemptivas contanto que 
+a VM seja reiniciada. Clusters de computação de alto desempenho podem usar máquinas preemptivas 
+porque o trabalho em uma máquina preemptiva pode ser reprogramada automaticamente para outro nó
+no cluster quando um servidor é preterido. D está incorreto porque há uma resposta correta no 
+conjunto de opções. 
+3. A. As VMs são criadas em projetos, que fazem parte da hierarquia de recursos. Eles também estão 
+localizados em regiões geográficas e centros de dados, portanto, uma zona também é especificada. Nomes de usuário 
+e funções administrativas não são especificados durante a criação. A conta de faturamento está vinculada a um projeto 
+e, portanto, não precisa ser especificada quando a VM é criada. Os intervalos de armazenamento em nuvem são 
+criados independentemente das VMs. Nem todas as VMs farão uso de intervalos de armazenamento. 
+4. C. O Compute Engine pode executar contêineres do Docker se você instalar o Docker na VM. 
+O Kubernetes e o ambiente flexível do App Engine oferecem suporte a contêineres do Docker. A aplicação
+O ambiente padrão do mecanismo fornece ambientes de tempo de execução específicos do idioma e 
+não permite que os clientes especifiquem imagens do Docker personalizadas para uso. 
+Capítulo 4: Introdução à computação no Google Cloud 471 
+5. B. O nome do arquivo usado para criar e configurar um contêiner do Docker é o Dockerfile. 
+6. D. Kubernetes usa 25 por cento de memória de até 4GB e, em seguida, um pouco menos para os próximos 
+4GB, e continua a reduzir a porcentagem de memória adicional para 2 por cento de 
+memória em 128GB. 
+7. O B. Kubernetes fornece balanceamento de carga, escalonamento e atualização automática de software. 
+Não fornece varredura de vulnerabilidade. O GCP tem um Cloud Security Scanner
+produto, mas que é projetado para funcionar com o Google App Engine para identificar 
+vulnerabilidades de aplicativos comuns . 
+8. D. O cenário descrito é um bom ajuste para o Kubernetes. Cada um dos grupos de serviços pode 
+ser estruturado em pods e implantado usando a implantação do Kubernetes. O Kubernetes Engine 
+gerencia a integridade do nó, o balanceamento de carga e o dimensionamento. O App Engine Standard Edition tem 
+sandboxes específicas de idioma e não é adequado para esse caso de uso. O Cloud Functions é 
+projetado para processamento de eventos de curta execução e não é o tipo de processamento contínuo 
+necessário neste cenário. O Compute Engine pode atender aos requisitos deste caso de uso, 
+mas exigiria mais esforço por parte dos administradores de aplicativos e do DevOps
+profissionais para configurar balanceadores de carga, monitorar a integridade e gerenciar 
+implantações de software . 
+9. B. Este é um caso de uso ideal para Funções em nuvem. A função de nuvem é acionada por um 
+evento de upload de arquivo . A função de nuvem chama o serviço de processamento de imagem. Com essa configuração, os 
+dois serviços são independentes. Nenhum servidor adicional é necessário. A opção A viola a 
+exigência de manter os serviços independentes. As opções C e D incorrem em mais 
+sobrecarga de gerenciamento e provavelmente custarão mais para operar do que a opção B. 
+10. D. Cada chamada de uma função de nuvem é executada em um ambiente de tempo de execução seguro e isolado. 
+Não há necessidade de verificar se outras invocações estão em execução. Com as funções de nuvem
+serviço, não há como um desenvolvedor controlar a execução de código no processo ou no 
+nível do encadeamento . 
+11. A. Você criaria uma imagem personalizada depois de instalar o código customizado, neste caso a 
+biblioteca de criptografia. Uma imagem pública não contém código personalizado, mas pode ser usada como 
+a base na qual você adiciona código personalizado. Tanto o CentOS quanto o Ubuntu são distribuições Linux. 
+Você pode usar a imagem base à qual adiciona o código personalizado, mas por conta própria, eles 
+não têm código personalizado. 
+12. B. Projetos são o nível mais baixo da hierarquia de recursos. A organização está no topo da 
+hierarquia e as pastas estão entre a organização e os projetos. As instâncias de VM não fazem 
+parte da hierarquia de recursos.
+13. D. Todas as regiões do Google têm o mesmo nível de acordo de nível de serviço, portanto, a confiabilidade é a 
+mesma. Os custos podem diferir entre regiões. As regulamentações podem exigir que os dados permaneçam dentro de uma 
+área geográfica, como a União Européia. A latência é uma consideração quando você deseja uma 
+região próxima aos usuários finais ou os dados de que você precisa já estão armazenados em uma determinada região. 
+14. B. A função de administração do Compute Engine é a função que fornece aos usuários controle total sobre as instâncias. 
+As opções A e C são funções fictícias. O Administrador de segurança do Compute Engine oferece aos usuários os privilégios para criar, modificar e excluir certificados SSL e regras de firewall. 
+472 Apêndice ■ Respostas às perguntas de revisão
+15. D. VMs preemptivas serão encerradas após 24 horas. O Google não garante que as 
+VMs preemptivas estarão disponíveis. Depois que uma instância é iniciada como uma máquina preemptiva, ela 
+não pode migrar para uma VM comum. Você poderia, no entanto, salvar um instantâneo e usá-lo para criar 
+uma nova instância regular. 
+16. C. As VMs personalizadas podem ter até 64 CPUs e até 6,5 GB de memória por vCPU. 
+17. C. A linguagem de programação C não é suportada no ambiente padrão do App Engine. Se você precisar executar um aplicativo C, ele poderá ser compilado e executado em um contêiner 
+em execução no ambiente flexível do App Engine. 
+18. B. Kubernetes reserva a capacidade da CPU de acordo com o seguinte cronograma: 
+1. 6% do primeiro núcleo
+2. 1% do núcleo seguinte (até dois núcleos) 
+3. 0.5% dos próximos dois núcleos (até quatro núcleos) 
+4. 0.25% de quaisquer núcleos acima de quatro núcleos 
+19. B. Os únicos estados que uma implementação do Kubernetes pode estar em estão progredindo, concluído e 
+falhou. 
+20. A. Cloud Functions é mais adequado para processamento orientado a eventos, como um arquivo sendo 
+enviado para o Cloud Storage ou um evento sendo gravado em uma fila Pub / Sub. Tarefas de longa duração 
+, como o carregamento de dados em um data warehouse, são mais adequadas para o Compute Engine ou o 
+App Engine. 
+Capítulo 5: Computação com 
+máquinas virtuais do Compute Engine 
+1. C. Você deve verificar o projeto selecionado, pois todas as operações executadas serão aplicadas
+aos recursos no projeto selecionado, tornando a opção C a resposta correta. Você não precisa 
+abrir o Cloud Shell, a menos que queira trabalhar com a linha de comando e, se o fez, 
+verifique se o projeto foi selecionado corretamente primeiro. Fazer login em uma VM usando o SSH é uma 
+das tarefas que exige que você trabalhe com o projeto correto, portanto, o login via SSH 
+não deve acontecer antes de verificar o projeto. A lista de VMs na janela Instância de VM é uma lista de VMs no projeto atual. Você deve verificar qual projeto está usando para 
+garantir que esteja visualizando o conjunto de VMs que acha que está usando.
+2. A. Você precisará configurar o faturamento se ele ainda não estiver ativado quando você começar a usar o console, portanto, a opção A é a resposta correta. Você pode criar um projeto, mas será capaz de fazer 
+isso apenas se o faturamento estiver ativado. Você não precisa criar um depósito para trabalhar com o 
+console. A especificação de uma zona padrão não é uma tarefa única; você pode mudar de 
+zona ao longo da vida do seu projeto. 
+Capítulo 5: Computing com Compute Engine máquinas virtuais 473 
+3. B. O nome da VM, a região e zona e o tipo de máquina podem ser especificadas 
+no console juntamente com outros parâmetros, então a opção B está correta. Opção A está faltando 
+parâmetros necessários. Um bloco CIDR é um intervalo de endereços IP associado a um
+sub-rede e não é necessário criar uma VM. Um endereço IP é atribuído automaticamente, portanto, não é 
+necessário. 
+4. B. Zonas diferentes podem ter diferentes tipos de máquinas disponíveis, então você precisará especificar uma 
+região primeiro e depois uma zona para determinar o conjunto de tipos de máquinas disponíveis. Se o 
+tipo de máquina não aparecer na lista, ela não estará disponível nessa zona. Isso faz da opção B a 
+resposta correta. As opções A e C estão incorretas. Sub-redes e endereços IP não estão relacionados 
+aos tipos de máquinas disponíveis. A menos que você esteja especificando um tipo de máquina personalizado, 
+não especifica a quantidade de memória; que é definido pelo tipo de máquina, então a opção D 
+está incorreta.
+5. C. As etiquetas e descrições servem para nos ajudar a rastrear nossos próprios atributos de recursos; O GCP 
+não precisa deles para executar suas tarefas. À medida que o número de servidores aumenta, pode ser 
+difícil controlar quais VMs são usadas para quais aplicativos e serviços, portanto, a opção C é 
+a resposta correta. Os rótulos e uma descrição geral ajudarão os administradores a rastrear os números 
+de VMs e seus custos relacionados. As opções A e B são usadas para segurança e armazenamento, mas 
+não ajudam no gerenciamento de várias VMs. A opção D está apenas parcialmente correta. As descrições são 
+úteis, mas os rótulos também são úteis. 
+6. A. A seção Política de Disponibilidade na guia Gerenciamento é onde você define a preempção, portanto, a opção A está correta. Identity e API Access é usado para controlar o acesso da VM a
+Google Cloud APIs e qual conta de serviço é usada com a VM. A locação exclusiva é usada 
+se você precisar executar suas VMs em servidores físicos que só executam suas VMs. A rede é 
+usada para definir tags de rede e alterar a interface de rede. 
+7. B. Shield VM é um conjunto avançado de controles de segurança que inclui o Monitoramento de Integridade, uma 
+verificação para garantir que as imagens de inicialização não tenham sido adulteradas, o que torna a opção B a 
+resposta correta . Os firewalls são usados ​​para controlar a entrada e a saída do tráfego de rede para um servidor ou 
+sub-rede. As chaves SSH em todo o projeto são usadas para autenticar usuários entre servidores dentro de um projeto. A verificação de integridade do disco de inicialização é um recurso fictício. 
+8. C. O tamanho do bloco não é uma opção na caixa de diálogo Discos Adicionais, portanto, a opção C está correta.
+O gerenciamento de chave de criptografia, o tipo de disco e a opção de especificar uma imagem de origem são todas 
+as opções disponíveis. 
+9. B. Usar scripts controlados por versão é a melhor abordagem das quatro opções. Os scripts podem 
+ser documentados com motivos para as alterações e podem ser executados repetidamente em 
+máquinas diferentes para implementar a mesma alteração. Isso reduz a chance de erro ao 
+inserir manualmente um comando. A opção A não ajuda a melhorar a documentação de porque as alterações foram 
+feitas. A opção C pode ajudar a melhorar a documentação, mas os scripts executáveis ​​são 
+reflexos precisos e precisos do que foi executado. Notas podem perder detalhes. Opção D não é aconselhável. Você pode se tornar um gargalo para fazer alterações, alterações não podem ser feitas quando
+você não está disponível e sua memória pode não ser uma maneira confiável de rastrear todas as 
+alterações de configuração . 
+474 Apêndice ■ Respostas às perguntas de revisão 
+10. A. gcloud compute instances é o início dos comandos para administrar os 
+recursos do Compute Engine, tornando a opção A a resposta correta. A opção B, gcloud instances, não possui 
+a palavra-chave compute que indica que estamos trabalhando com o Compute Engine. A opção 
+C mudou a ordem de computação e instâncias. A opção D é falsa porque a opção A é 
+a resposta correta. 
+11. B. A opção B segue o padrão do comando glcoud, que é hierárquico e começa 
+com o nome glcoud do serviço, neste caso, compute para o Compute Engine, seguido por
+o próximo nível abaixo, que neste caso é instâncias. Finalmente, há a ação ou verbo, 
+nesta lista de casos. A opção A está sem o termo instâncias para indicar que você está trabalhando com 
+instâncias de VM. A opção C está sem a palavra-chave compute para indicar que você está trabalhando com o 
+Compute Engine. A opção D está sem a palavra-chave da instância de computação e mudou 
+a ordem das instâncias e da lista. 
+12. B. O formato correto é usar o parâmetro --labels e especificar a chave seguida por 
+um sinal de igual seguido pelo valor na opção B. As opções A e C têm o caracter errado, 
+separando a chave e o valor. A opção D está incorreta porque é possível especificar rótulos na 
+linha de comando.
+13. C. As duas operações que você pode especificar ao usar a configuração do disco de livro estão adicionando 
+um novo disco e anexando um disco existente, então a opção C está correta. Reformatar um 
+disco existente não é uma opção, portanto, as opções A, B e D não podem ser a resposta correta. 
+14. B. 10 GB de dados são pequenos o suficiente para serem armazenados em um único disco. Ao criar uma imagem de um disco 
+com os dados armazenados, você pode especificar essa imagem de origem ao criar uma VM. 
+A opção A exigiria que o cientista de dados copiasse os dados do Cloud Storage para um disco na 
+VM. A opção C exigiria, da mesma forma, a cópia dos dados. A opção D carregaria dados em um 
+banco de dados, não em um sistema de arquivos, conforme especificado nos requisitos.
+15. B. Na guia Rede do formulário de VM, você pode adicionar outra interface de rede, portanto, a 
+opção B está correta. O GCP define o endereço IP, portanto, a opção A está incorreta. Não há opção 
+para especificar um roteador ou alterar regras de firewall na guia Rede, portanto, as opções C e D estão 
+incorretas. 
+16. A. A opção correta é boot-disk-type, que é a opção A. As outras três opções 
+não são parâmetros para o comando gcloud compute instances. 
+17. A. Opção A é o comando correto. É a única opção que inclui um 
+tipo de máquina correto e especifica corretamente o nome da instância. A opção B usa o parâmetro --cpus, 
+que não existe. A opção C usa o parâmetro instance-name, que não existe.
+O nome da instância é passado como um argumento e não precisa de um nome de parâmetro. A opção 
+D está incorreta porque o tipo de máquina n1-4-cpu não é um tipo de máquina válido. 
+18. C. Opção C é o comando correto, que é gcloud compute instances, para indicar que 
+você está trabalhando com VMs, seguido pelo comando stop e pelo nome da VM. 
+A opção A está incorreta porque a parada não é uma opção. A opção B está incorreta porque 
+–terminate não é um parâmetro. Opção D está faltando a palavra instâncias, o que 
+indica que você está trabalhando com VMs. 
+Capítulo 6: Gerenciamento de máquinas virtuais 475 
+19. B. O SSH é um serviço para conexão a um servidor remoto e login em uma janela de terminal.
+Uma vez logado, você teria acesso a uma linha de comando, então a opção B é a resposta correta. 
+O FTP é um protocolo de transferência de arquivos e não permite efetuar login e executar tarefas de administração do sistema. O RDP é um protocolo usado para acessar remotamente os servidores Windows, não o Ubuntu, 
+que é uma distribuição do Linux. ipconfig é um utilitário de linha de comando para configurar pilhas de IP 
+em um dispositivo e não permite que você faça login em um servidor remoto. 
+20. A. Todas as declarações da opção A são verdadeiras e relevantes para faturamento e custos. A opção B 
+está correta de que as VMs são cobradas em incrementos de 1 segundo, mas as únicas VMs preemptivas são 
+encerradas em até 24 horas após o início. A opção C está incorreta porque os descontos não são
+limitado a algumas regiões. A opção D está incorreta porque as VMs não são cobradas por no mínimo 
+1 hora. 
+Capítulo 6: Gerenciando máquinas virtuais 
+1. A. A página do Compute Engine é onde você tem a opção de criar uma única 
+instância de VM , portanto, a opção A é a resposta correta. O App Engine é usado para contêineres e 
+aplicativos em execução em ambientes de tempo de execução específicos do idioma. O Kubernetes Engine é usado para criar 
+e gerenciar clusters do Kubernetes. Cloud Functions é onde você cria uma função para ser 
+executada no ambiente de função de nuvem sem servidor do Google. 
+2. B. As instâncias podem ser interrompidas e, quando estão, você não pode se conectar a elas via SSH, o 
+que torna a opção B a resposta correta. Iniciar a instância ativará o acesso SSH.
+A opção A não está correta porque você pode fazer login em máquinas preemptivas. A opção C está incorreta porque não há nenhuma opção SSH. A opção D está incorreta porque a opção SSH pode 
+ser desativada. 
+3. B. O comando Reset pode ser usado para reiniciar uma VM; assim, a opção B está correta. As propriedades da VM não serão alteradas, mas os dados na memória serão perdidos. Não há opção Reiniciar, 
+Reiniciar, Desligar ou Inicializar no console. 
+4. Os rótulos, os membros de um grupo de instâncias gerenciadas e o status estão todos disponíveis para filtragem, 
+portanto , a opção C é a resposta correta. Você também pode filtrar por IP interno, IP externo, zona, rede, proteção de exclusão e membro de um grupo de instâncias gerenciado ou não gerenciado.
+5. A. Para funcionar corretamente, o sistema operacional deve ter bibliotecas de GPU instaladas, portanto, a opção 
+A está correta. O sistema operacional não precisa ser baseado no Ubuntu, e não há necessidade 
+de ter pelo menos oito CPUs em uma instância antes que você possa anexar e usar uma GPU. O 
+espaço em disco disponível não determina se uma GPU é usada ou não. 
+6. A. Se você adicionar uma GPU a uma VM, deverá definir a instância para ser finalizada durante a manutenção, o 
+que torna a opção A a resposta correta. Isso é definido na seção Políticas de disponibilidade do 
+formulário de configuração da VM. A instância não precisa ser preemptiva e pode ter 
+discos de inicialização não conectados. A instância não é necessária para executar o Ubuntu 14.02 ou posterior. 
+476 Apêndice ■ Respostas às perguntas de revisão
+7. B. Quando você cria um snapshot pela primeira vez, o GCP fará uma cópia completa dos dados no disco permanente. Na próxima vez que você criar um snapshot a partir desse disco, o GCP copiará somente os dados 
+que foram alterados desde o último snapshot. Opção A está incorreta; O GCP não armazena uma 
+cópia completa do segundo instantâneo. A opção C está incorreta; o primeiro instantâneo não é excluído automaticamente. A opção D está incorreta, os instantâneos subseqüentes não incorrem em sobrecarga de 10%. 
+8. D. Para trabalhar com instantâneos, um usuário deve receber a função Administrador de Armazenamento de Cálculo, o 
+que torna a opção D a resposta correta. As outras opções são funções fictícias. 
+9. C. As imagens podem ser criadas a partir de quatro fontes, ou seja, discos, instantâneos, arquivos de armazenamento em nuvem,
+ou outra imagem, então a opção C é a resposta correta. Arquivos de exportação de banco de dados não são fontes para 
+imagens. 
+10. B. Deprecated marca a imagem como não mais suportada e permite que você especifique uma imagem substituta a ser usada no futuro, tornando a opção B a resposta correta. Imagens obsoletas 
+estão disponíveis para uso, mas não podem ser corrigidas por falhas de segurança ou ter outras atualizações. As 
+outras opções são recursos fictícios de imagens. 
+11. C. O comando base para trabalhar com instâncias é gcloud compute instances, o 
+que faz da opção C a resposta correta. O comando list é usado para mostrar detalhes 
+de todas as instâncias. Por padrão, a saída está em formato legível, e não json. Usando o
+A opção --format json força a saída a estar no formato JSON. --output não é uma 
+opção válida. 
+12. B. - Async faz com que as informações sobre o processo de início sejam exibidas; portanto, a opção B 
+está correta. --verbose é um parâmetro análogo em muitos comandos do Linux. --describe 
+fornece detalhes sobre uma instância, mas não necessariamente o processo de inicialização. --details não é 
+um parâmetro válido. 
+13. C. O comando para excluir uma instância é gcloud compute instances delete seguido 
+pelo nome da instância, portanto, a opção C está correta. A opção A está incorreta porque não há 
+nenhum parâmetro de instância. A opção B está incorreta porque esse comando pára, mas não
+exclua a instância. A opção D está faltando instâncias no comando, que é necessário para 
+indicar que tipo de entidade está sendo excluído. 
+14. A. gcloud compute instances é o comando base seguido por delete, o nome da 
+instância e --keep-disks = boot, assim a opção A está correta. Não há 
+parâmetro --save-disk . A opção C está errada porque o sistema de arquivos não é um valor válido para o 
+parâmetro keep-disk . Opção D está faltando a opção de instâncias que é necessária no comando. 
+15. B. A resposta correta é a opção B, que é usar o comando describe. A opção A 
+mostrará alguns campos, mas não todos. As opções C e D estão incorretas porque não há nenhum 
+parâmetro detalhado .
+16. B. Os grupos de instâncias são conjuntos de VMs que podem ser configurados para escalar e são usados ​​com 
+balanceadores de carga , o que contribui para melhorar a disponibilidade, portanto, a opção B está correta. As 
+instâncias preemptivas não são altamente disponíveis porque podem ser encerradas a qualquer momento pelo GCP. 
+O Cloud Storage não é um componente do Compute Engine. As GPUs podem ajudar a melhorar a taxa de transferência para 
+operações intensivas em matemática, mas não contribuem para a alta disponibilidade. 
+Capítulo 7: Computando com o Kubernetes 477 
+17. B. Um modelo de grupo de instâncias é usado para especificar como o grupo de instâncias deve ser criado, o 
+que torna a opção B a resposta correta. A opção A está incorreta porque as instâncias são criadas automaticamente quando um grupo de instâncias é criado. Imagens de disco de inicialização e instantâneos
+não precisa ser criado antes de criar um grupo de instâncias. 
+18. B. O comando para excluir um grupo de instâncias é gcloud compute instance-template 
+delete, portanto, a opção B está correta. Opção A incorretamente inclui o termo instâncias. Opção 
+C está em ordem incorreta. A opção D está errada porque o modelo de instância está na 
+posição errada e é plural na opção. 
+19. C. Você pode configurar uma política de escalonamento automático para acionar a adição ou remoção de instâncias com base 
+na utilização da CPU, métrica de monitoramento, capacidade de balanceamento de carga ou cargas de trabalho baseadas em filas. 
+O disco, a latência de rede e a memória podem acionar o dimensionamento se as métricas de monitoramento nesses 
+recursos estiverem configuradas. Então, a opção C está correta.
+20. B. Grupos de instâncias não gerenciadas estão disponíveis para casos de uso limitado como este. 
+Grupos de instâncias não gerenciadas não são recomendados em geral. Grupos de instâncias gerenciadas são a maneira recomendada de usar grupos de instâncias, mas as duas configurações diferentes impedem seu uso. 
+Instâncias preemptivas e GPUs não são relevantes para este cenário. 
+Capítulo 7: Computação com o Kubernetes 
+1. O C. Kubernetes cria grupos de instâncias como parte do processo de criação de um cluster, o que 
+torna a opção C a resposta correta. O Stackdriver, e não grupos de instâncias, é usado para monitorar a 
+integridade dos nós e para criar alertas e notificações. O Kubernetes cria pods e implementações; eles não são fornecidos por grupos de instâncias.
+2. A. Um cluster do Kubernetes possui um único cluster mestre e um ou mais nós para executar cargas de trabalho, portanto, a opção A é a resposta correta. O Stackdriver não faz parte do cluster do Kubernetes; 
+é um serviço separado do GCP. O Kubernetes não requer instâncias com pelo menos quatro vCPUs; 
+Na verdade, a configuração do nó padrão usa uma vCPU. 
+3. C. Pods são instâncias únicas de um processo em execução em um cluster, portanto, a opção C está correta. Os pods 
+executam contêineres, mas não são conjuntos de contêineres. O código do aplicativo é executado em contêineres 
+implantados em pods. Os pods não são controladores, portanto, não podem gerenciar a comunicação com 
+clientes e serviços do Kubernetes. 
+4. B. Serviços são aplicativos que fornecem pontos de extremidade da API que permitem que os aplicativos descubram
+pods executando uma aplicação específica, tornando a opção B correta. As opções A e C, se 
+pudessem ser codificadas usando a API projetada para gerenciar clusters, exigiriam mais código do 
+que trabalhar com serviços e estão sujeitas a alterações em um conjunto maior de funções da API. 
+A opção D não é uma opção real. 
+478 APÊNDICE ■ Respostas às questões de revisão 
+5. C. ReplicaSets são controladores que são responsáveis por manter o número correto de 
+vagens, o que torna a opção C a resposta correta. Implantações são versões do 
+código do aplicativo em execução em um cluster. O Stackdriver é um serviço de monitoramento e registro que monitora, mas 
+não controla, os clusters do Kubernetes. Jobs é uma abstração de cargas de trabalho e não está vinculada a
+o número de pods em execução em um cluster. 
+6. B. Os clusters multizonas / multirregionais estão disponíveis no Kubernetes Engine e são usados ​​para fornecer resiliência a um aplicativo, portanto, a opção B está correta. A opção A refere-se a grupos de instâncias 
+que são um recurso do Compute Engine, e não diretamente do Kubernetes Engine. A opção C está incorreta; Implementações regionais é um termo fictício. O balanceamento de carga distribui a carga e faz parte do 
+Kubernetes por padrão. Se a carga não for distribuída entre zonas ou regiões, não ajudará a 
+adicionar resiliência nos datacenters. 
+7. A. A opção A é a melhor resposta. Começar com um modelo existente, preencher parâmetros 
+e gerar o comando gcloud é a maneira mais confiável. A opção D pode funcionar, mas
+vários parâmetros que são necessários para sua configuração podem não estar no script com o qual você 
+começou. Pode haver alguma tentativa e erro com essa opção. As opções B e C podem levar 
+a uma solução, mas podem levar algum tempo para serem concluídas. 
+8. A. O comando correto é a opção A. A opção B tem beta na posição errada. Opção C 
+está faltando beta. A opção D está sem o nome do parâmetro --num-nodes. 
+9. C. Time to Live não é um atributo de implantações, então a opção C é a resposta correta. 
+O nome do aplicativo, a imagem do container e o comando inicial podem ser especificados. 
+10. B. Os arquivos de configuração de implantação criados no Cloud Console são salvos no formato YAML. 
+CSV, TSV e JSON não são usados.
+11. C. O comando kubectl é usado para controlar as cargas de trabalho em um cluster do Kubernetes depois que ele é 
+criado, portanto, a opção C está correta. As opções A e B estão incorretas porque o gcloud não é usado 
+para manipular processos do Kubernetes. A opção D está errada porque o beta não é necessário nos 
+comandos do kubectl. 
+12. C. A opção C é o comando correto. Opção A usa o termo atualização em vez de escala. 
+A opção B usa incorretamente o gcloud. A opção D usa os pods de parâmetro incorretos. 
+13. O D. Stackdriver é um serviço abrangente de monitoramento, registro, alerta e notificação 
+que pode ser usado para monitorar clusters do Kubernetes. 
+14. B. Espaços de trabalho são estruturas lógicas para armazenar informações sobre recursos em um projeto
+que estão sendo monitorados, então a opção B está correta. O Stackdriver funciona com registros, mas 
+não é necessário um registro antes de começar a usar o Stackdriver. Pods e ReplicaSets são parte do Kubernetes, não do Stackdriver. 
+15. C. A página Detalhes da Instância do Stackdriver inclui gráficos de série temporal sobre o uso da CPU, 
+tráfego de rede e E / S de disco. 
+16. B. Ao criar uma política de alerta, você pode especificar condições, notificações e documentação, tornando a opção B a resposta correta. As opções A e D estão incorretas porque não há 
+nenhum atributo Tempo de vida nas políticas. A opção C está errada porque não inclui notificações e documentação. 
+Capítulo 8: Gerenciando o Kubernetes Clusters 479 
+17. A. Alertas podem ter múltiplos canais, então a Opção A está correta. Canais incluem email,
+webhooks e mensagens de texto SMS, bem como ferramentas de terceiros, como PagerDuty, 
+Campfire e Slack. Não há necessidade de vários alertas com notificações individuais. 
+A opção C é ad hoc e exigiria uma sobrecarga de manutenção adicional. A opção D não 
+atende aos requisitos. 
+18. B. Alertas são atribuídos a instâncias ou conjuntos de instâncias; portanto, a opção B está correta. 
+A opção A está incorreta porque não inclui grupos. A opção C está incorreta porque 
+não inclui instâncias. A opção D está errada porque os alertas não são atribuídos a pods. 
+19. A. Todas as interações com o cluster são feitas através do mestre usando a API do Kubernetes. 
+Se uma ação deve ser executada em um nó, o comando é emitido pelo mestre do cluster, portanto, opção
+"A" é a resposta correta As opções B e D estão incorretas porque são controladores no 
+cluster e não afetam o modo como os comandos são recebidos dos dispositivos clientes. A opção C está 
+incorreta porque o kubectl, e não o gcloud, é usado para iniciar as implantações. 
+20. A. Os serviços fornecem um nível de indireção para acessar os pods. Vagens são efêmeras. Os clientes se 
+conectam aos serviços, que podem descobrir os pods. ReplicaSets e StatefulSets fornecem 
+pods gerenciados . Os alertas são para relatar o estado dos recursos. 
+Capítulo 8: Gerenciando 
+clusters do Kubernetes 
+1. B. Quando estiver nas páginas do Cloud Console, você pode clicar no nome do cluster para ver uma página Detalhes, 
+então a opção B é a resposta correta. Digitar o nome do cluster na barra de pesquisa não
+sempre retornar detalhes do cluster; ele pode retornar detalhes do grupo de instâncias. Não existe tal comando como detalhes do cluster do gcloud. 
+2. D. Você pode encontrar o número de vCPUs na listagem de clusters na coluna Total Cores ou na 
+página Detalhes na seção Conjunto de Nós no parâmetro tamanho, tornando a opção D correta. 
+A seção Labels não possui informações de vCPU. 
+3. B. O comando correto inclui o contêiner gcloud para descrever o serviço, clusters para 
+indicar o recurso ao qual você está se referindo e lista para indicar o comando, o que torna a 
+opção B a resposta correta. Opções A e C não são comandos válidos. 
+4. B. É provável que você não tenha privilégios de acesso ao cluster. O contêiner gdcloud
+O comando get-credentials de clusters é o comando correto para configurar o kubectl para 
+usar as credenciais do GCP para o cluster, portanto, a opção B é a opção correta. Opções A, C e D são 
+comandos inválidos. 
+5. C. Clicar no botão Editar permite alterar, adicionar ou remover rótulos, portanto, a opção C é a 
+resposta correta. O botão Conectar está na página de listagem de cluster e o botão Implantar 
+é para criar novas implantações. Não há como inserir rótulos na seção "Marcadores" 
+ao exibir detalhes. 
+480 APÊNDICE ■ Respostas às questões de revisão 
+6. D. Ao redimensionar, os clusters recipiente gcloud redimensionar comando requer o nome 
+do cluster e da piscina nó para modificar. O tamanho é necessário para especificar quantos nós
+deve estar em execução. Portanto, a opção D está correta. 
+7. B. Pods são usados ​​para implementar réplicas de uma implementação. É uma prática recomendada modificar 
+as implantações, que são configuradas com uma especificação do número de réplicas que 
+devem sempre ser executadas, portanto, a opção B é a resposta correta. Opção A está incorreta; você não deve 
+modificar os pods diretamente. As opções C e D estão incorretas porque não alteram o número de pods executando um aplicativo. 
+8. C. As implantações são listadas em Cargas de trabalho, fazendo da opção C a resposta correta. A 
+opção Cluster mostra detalhes sobre clusters, mas não possui detalhes sobre implantações. O armazenamento mostra informações sobre volumes persistentes e classes de armazenamento. Implantações não é uma 
+opção.
+9. B. Há quatro ações disponíveis para implantações (Autoscale, Expose, Rolling Update 
+e Scale), portanto, a opção B está correta. Adicionar, Modificar e Excluir não são opções. 
+10. Como as implantações são gerenciadas pelo Kubernetes e não pelo GCP, precisamos usar um 
+comando kubectl e não um comando gcloud, o que torna a opção C correta. A opção D está 
+incorreta porque segue a estrutura do comando gcloud, não a 
+estrutura de comando do kubectl . O comando kubectl tem o verbo, como get, antes do tipo de recurso, como 
+implementações, por exemplo. 
+11. D. Você pode especificar a imagem do container, o nome do cluster e o nome do aplicativo junto com os 
+rótulos, o comando inicial e o namespace; Portanto, a opção D é a resposta correta.
+12. A. A página Detalhes da Implantação inclui serviços, portanto, a opção A é a resposta correta. Contêineres são usados ​​para implementar serviços; detalhes do serviço não estão disponíveis lá. A 
+página Detalhes do Cluster não contém informações sobre serviços em execução no cluster. 
+13. A. kubectl run é o comando usado para iniciar uma implementação. Leva um nome para a 
+implantação, uma imagem e uma especificação de porta. As outras opções não são 
+comandos válidos do kubectl . 
+14. A. A opção A mostra o comando correto, que é kubectl delete service mlclassifier-3. A opção B está sem o termo de serviço. As opções C e D não podem estar corretas 
+porque os serviços são gerenciados pelo Kubernetes, não pelo GCP. 
+15. C. O Container Registry é o serviço para gerenciar imagens que podem ser usadas em outros
+serviços, incluindo o Kubernetes Engine e o Compute Engine, tornando a opção C correta. O 
+Compute Engine e o Kubernetes Engine usam imagens, mas não os gerenciam. Não há 
+serviço chamado Container Engine. 
+16. A. As imagens são gerenciadas pelo GCP, então o comando correto será um comando gcloud, 
+então a opção A é a resposta correta. A opção B está incorreta porque o verbo é colocado antes 
+do recurso. As opções C e D estão incorretas porque o kubectl é para gerenciar 
+recursos do Kubernetes , não recursos do GCP, como imagens de contêiner. 
+Capítulo 9: Computação com o Google App 481 
+17. B. O comando correto é gcloud container images describe, o que torna a opção
+B a resposta certa. describe é o verbo gcloud ou operação para mostrar os detalhes de um 
+objeto. Todas as outras opções são comandos inválidos. 
+18. B. O comando kubectl expor deployment torna um serviço acessível, então a opção B é 
+a resposta correta. Endereços IP são atribuídos a VMs, não a serviços. O comando gcloud 
+não gerencia os serviços do Kubernetes, portanto, a opção C está incorreta. A opção D está incorreta 
+porque tornar um serviço acessível não é uma tarefa no nível do cluster. 
+19. B. O escalonamento automático é a maneira mais econômica e menos onerosa de responder às mudanças 
+na demanda por um serviço, portanto, a opção B é a resposta correta. A opção A pode executar nós mesmo 
+quando não são necessários. A opção C é manualmente intensiva e requer intervenção humana.
+A opção D reduz a intervenção humana, mas não leva em conta picos inesperados ou quedas 
+na demanda. 
+20. B. Os engenheiros de nuvem que trabalham com o Kubernetes precisarão estar familiarizados com o trabalho com 
+clusters, nós, pods e imagens de contêiner. Eles também precisam estar familiarizados com a implantação. A opção B é a resposta correta, porque faltam às outras opções um 
+componente importante do Kubernetes que os engenheiros da nuvem terão que gerenciar. 
+Capítulo 9: Computação com o App Engine 
+1. B. As versões suportam a migração. Um aplicativo pode ter várias versões e, ao implantar com 
+o parâmetro --migrate, você pode migrar o tráfego para a nova versão, portanto, a opção B é a 
+resposta correta. Os serviços são uma abstração de nível superior e representam a funcionalidade
+de um microserviço. Um aplicativo pode ter vários serviços, mas eles têm finalidades diferentes. 
+Instâncias executam código em uma versão. Instâncias podem ser adicionadas e removidas conforme necessário, mas 
+elas executarão apenas uma versão de um serviço. Os grupos de instâncias fazem parte do Compute Engine e 
+não são um componente do Google App Engine. 
+2. A. O escalonamento automático permite definir um número máximo e mínimo de instâncias, o que 
+torna a opção A correta. O dimensionamento básico não suporta instâncias máxima e mínima. 
+A opção C não é recomendada porque é difícil prever quando a carga atingirá o pico e, mesmo 
+que a programação seja previsível hoje, ela pode mudar com o tempo. A opção D está errada; não há nenhuma 
+opção de detecção de instância.
+3. B. A aplicação é o componente de nível superior, portanto, a opção B é a resposta correta. Aplicativos 
+têm um ou mais serviços. Os serviços têm uma ou mais versões. As versões são executadas em uma 
+ou mais instâncias quando o aplicativo está em execução. 
+4. B. O comando correto é gcloud app deploy, que é a opção B. As opções A e C estão 
+incorretas porque os comandos de componentes gcloud são usados ​​para instalar comandos gcloud para 
+trabalhar com partes do App Engine, como o ambiente de tempo de execução Python. Opção D está 
+incorreta; você não precisa especificar a instância no comando. 
+5. B. O arquivo app.yaml é usado para configurar um aplicativo do App Engine, o que torna a opção 
+B correta. As outras opções não são arquivos usados ​​para configurar o App Engine.
+482 Apêndice ■ Respostas às perguntas de revisão 
+6. A. Um projeto pode suportar apenas um aplicativo do App Engine, portanto, a opção A é a resposta correta. Se você 
+quiser executar outros aplicativos, eles precisarão ser colocados em seus próprios projetos. 
+7. C. A resposta correta é a opção C porque o parâmetro correto é --no-promote. A opção A 
+usa sem tráfego, o que não é um parâmetro válido para o comando gcloud app deploy. 
+A opção B não obtém o código e pode liberar o código muito cedo se houver um atraso na 
+divulgação do comunicado à imprensa. A opção D não atende aos requisitos de obter o código 
+o mais rápido possível.
+8. B. Os aplicativos do App Engine são acessíveis a partir de URLs que consistem no nome do projeto seguido por appspot.com, portanto, a opção B está correta. A opção A está incorreta porque o domínio 
+não é appengine.com. As opções C e D estão incorretas porque os nomes dos serviços não são 
+usados ​​para referenciar o aplicativo como um todo. 
+9. A. max_concurrent_requests permite especificar o número máximo de 
+solicitações simultâneas antes que outra instância seja iniciada, o que torna a opção A correta. target_ 
+throughput_utilization funciona de maneira semelhante, mas usa uma escala de 0,05 a 0,95 para especificar a utilização máxima de taxa de transferência. max_instances especifica o número máximo de instâncias, 
+mas não os critérios para adicionar instâncias. max_pending_latency é baseado no tempo que um
+pedido aguarda, não o número de pedidos. 
+10. C. O escalonamento básico permite apenas tempo ocioso e instâncias máximas, portanto, a opção C é a 
+resposta correta . min_instances não é suportado. target_throughput_utilization é um parâmetro de escalonamento automático, não um parâmetro básico de escalonamento. 
+11. C. O parâmetro runtime especifica o ambiente de linguagem para executar, o que torna a 
+opção C correta. O script a ser executado é especificado pelo parâmetro de script. O URL para 
+acessar o aplicativo é baseado no nome do projeto e no domínio appspot.com. Não 
+há parâmetro para especificar o tempo máximo que um aplicativo pode ser executado. 
+12. A. As instâncias residentes são usadas com o dimensionamento manual, enquanto as instâncias dinâmicas são usadas com
+escalonamento automático e escalonamento básico, então a opção A é a resposta correta. Não há 
+tipos persistentes, estáveis ​​ou não residentes de instâncias do App Engine. 
+13. A. O uso de instâncias dinâmicas especificando escalonamento automático ou escalonamento básico 
+ajustará automaticamente o número de instâncias em uso com base na carga, portanto, a opção A está correta. A opção B está 
+incorreta porque o escalonamento automático e o escalonamento básico apenas criam instâncias dinâmicas. As opções C 
+e D estão incorretas porque o dimensionamento manual não ajusta as instâncias automaticamente, portanto, você 
+pode continuar a executar mais instâncias do que o necessário em alguns pontos. 
+14. A. A resposta correta é gcloud app services set-traffic. A opção B está incorreta
+porque o termo instâncias não é necessário. A opção C está incorreta porque não especifica 
+o termo serviços. A opção D está incorreta porque isso exigiria alterações na 
+parte do cliente. 
+15. A. --split-traffic é o parâmetro usado para especificar o método de divisão do tráfego, o 
+que torna a opção A correta. Opções válidas são cookie, ip e aleatórias. Todas as outras opções 
+não são válidas para o comando gcloud app services set-traffic. 
+Capítulo 10: Calculando com Nuvem Funções 483 
+16. B. --split é o parâmetro para especificar uma lista de instâncias e o percentual de tráfego que 
+deve receber, por isso a opção B é a resposta certa. As outras opções não são parâmetros válidos 
+para o comando set-traffic do gcloud app services.
+17. C. - migrar é o parâmetro para especificar que o tráfego deve ser movido ou migrado para 
+a instância mais recente, o que torna a opção C a resposta correta. As outras opções não são 
+parâmetros válidos para o comando set-traffic do gcloud app services. 
+18. D. No console do App Engine, você pode visualizar a lista de serviços e versões, bem como 
+informações sobre a utilização de cada instância. 
+19. D. Todos os três métodos listados, endereço IP, cookie HTTP e divisão aleatória, são 
+métodos permitidos para dividir o tráfego. 
+20. B. O cookie usado para dividir no Google App Engine é chamado de GOOGAPPUID, o que torna a 
+opção B a resposta correta. Opções A, C e D não são nomes válidos. 
+Capítulo 10: Computação com 
+funções de nuvem
+1. O C. App Engine é projetado para suportar múltiplos serviços fortemente acoplados que compreendem um 
+aplicativo, fazendo da opção C a resposta correta. Diferentemente do Cloud Functions, que é 
+projetado para suportar funções de finalidade única que operam de forma independente e em resposta a 
+eventos isolados no Google Cloud e concluídos em um período de tempo especificado. O Compute Engine não é uma opção sem servidor. O Cloud Storage não é um produto de computação. 
+2. C. Um período de tempo limite muito baixo explicaria porque os arquivos menores são processados ​​no 
+tempo, mas os maiores não, o que faz da opção C a resposta correta. Se apenas 10 por cento dos 
+arquivos estão falhando, então não é um erro de sintaxe ou o tempo de execução incorreto selecionado, como nas opções
+A e B. Esses erros afetariam todos os arquivos, não apenas os maiores. Da mesma forma, se houvesse 
+um problema de permissão com o intervalo do Cloud Storage, isso afetaria todos os arquivos. 
+3. B. Essas ações são conhecidas como eventos na terminologia do Google Cloud; Assim, a opção B é a 
+resposta correta. Um incidente pode ser uma ocorrência relacionada à segurança ou ao desempenho, mas esses 
+não estão relacionados às ações esperadas e padronizadas que constituem eventos. Um gatilho é 
+uma declaração de que uma determinada função deve ser executada quando um evento ocorre. Uma entrada de registro está 
+relacionada a aplicativos que registram dados sobre eventos significativos. As entradas de log são úteis para 
+monitoramento e conformidade, mas em si não são ações relacionadas a eventos.
+4. C. A resposta correta é a opção C porque o SSL é um protocolo seguro para acessar remotamente os 
+servidores. Ele é usado, por exemplo, para acessar instâncias no Compute Engine. Não tem 
+eventos que podem ser acionados usando o Cloud Functions. Os três produtos GCP listados 
+geram eventos que podem ter gatilhos associados a eles. 
+5. C. Cloud Functions suporta três tempos de execução: Node.js 6, Node.js 8 e Python. Go e 
+Node.js 5 não são suportados por tempos de execução. 
+484 APÊNDICE ■ Respostas às questões de revisão 
+6. solicitações HTTP D. usando GET, POST, DELETE, PUT, e as opções podem invocar um HTTP 
+gatilho em Funções nuvem, então a opção C é a resposta certa. 
+7. D. A resposta correta, opção D, mostra os quatro eventos suportados no Cloud Storage.
+google.storage.object.finalize 
+google.storage.object.delete 
+google.storage.object.archive 
+google.storage.object.metadataUpdate 
+8. C. Não há nenhuma opção para especificar o tipo de arquivo para aplicar a função, então a opção C está correto. Você pode, no entanto, especificar o bucket ao qual a função é aplicada. Você só pode 
+salvar arquivos ou os tipos que deseja processar nesse intervalo, ou pode ter o 
+tipo de arquivo de verificação de função e executar o restante da função, com base no tipo. Todas as outras 
+opções listadas são parâmetros para uma função do Cloud Storage. 
+9. D. Cloud Functions pode ter entre 128MB e 2GB de memória alocada, o que torna a 
+opção D a resposta correta. O padrão é 256MB.
+10. B. Por padrão, o Cloud Functions pode ser executado por até 1 minuto antes do tempo limite, então a opção B está 
+correta. Você pode, no entanto, definir o parâmetro de tempo limite para uma função de nuvem por períodos de até 
+9 minutos antes do tempo limite. 
+11. B. O Python Cloud Functions está atualmente em beta. O conjunto padrão de comandos do gcloud 
+não inclui comandos para recursos de versão alfa ou beta por padrão. Você precisará 
+instalar explicitamente os recursos beta usando o comando gcloud components install beta, por isso, a 
+opção B é a resposta correta. A opção A instalará os comandos padrão do gcloud. As opções C 
+e D não são comandos gcloud válidos. 
+12. A. O gatilho correto na opção A é google.storage.object.finalize, que ocorre
+depois que um arquivo é carregado. A opção B não é um nome de disparo válido. A opção C é acionada quando um arquivo 
+é arquivado, não é carregado. A opção D é acionada quando algum atributo de metadados é alterado, mas 
+não necessariamente somente após o upload de um arquivo. 
+13. C. Os três parâmetros são runtime, trigger-trigger e trigger-event, conforme listado 
+na opção C. Tudo deve ser definido, portanto as opções A e B estão incorretas. O tipo de arquivo não é um parâmetro para criar uma função de nuvem no Cloud Storage, portanto, a opção D está incorreta. 
+14. A. A resposta correta é a opção A, gcloud exclui as funções. A opção B faz referência a 
+componentes, o que é incorreto. Você precisa fazer referência a componentes ao instalar ou 
+atualizar comandos do gcloud, mas não ao excluir uma função de nuvem, portanto, as opções B e C
+estão incorretos. A opção D está incorreta porque o tipo de entidade do GCP, neste caso, funciona 
+antes do nome da operação, neste caso, excluir, em um comando gcloud. 
+15. B. As mensagens são armazenadas em um formato de texto, base64, para que os dados binários possam ser armazenados na 
+mensagem em formato de texto, portanto, a opção B está correta. Opção A está incorreta; é necessário mapear 
+de uma codificação binária para uma codificação de texto padrão. A opção C está incorreta porque a 
+função não é preenchida com caracteres extras para torná-los do mesmo tamanho. Opção D está 
+incorreta; Ele não altera os tipos de dados do dicionário em tipos de dados de lista. 
+Capítulo 11: Planejando o armazenamento na nuvem 485
+16. C. A opção C está correta porque inclui o nome da função, o ambiente de tempo de execução e o nome do tópico Pub / Sub. A opção A está incorreta porque falta 
+o tempo de execução e o tópico. A opção B está incorreta porque está faltando o tópico. A opção D está 
+incorreta porque a especificação de tempo de execução está incorreta; você tem que especificar python37 e 
+não python como o tempo de execução. 
+17. B. Existe apenas um tipo de evento que é acionado no Cloud Pub / Sub, e é quando uma 
+mensagem é publicada, que é a opção B. A opção A está incorreta; O Cloud Pub / Sub tem um 
+tipo de evento que pode ter um acionador. A opção C está incorreta; O Cloud Pub / Sub não analisa 
+o código para determinar quando deve ser executado. Opção D está incorreta; você não tem que
+especifique um tipo de evento com as funções do Cloud Pub / Sub. 
+18. B. A resposta correta é a opção B porque ela usa um evento finalizado do Cloud Storage para acionar a 
+conversão, se necessário. Há um atraso mínimo entre o momento em que o arquivo é carregado e 
+quando é convertido. A opção A é uma possibilidade, mas exigiria mais codificação do que a opção 
+B. A opção C não é uma boa opção porque os arquivos não são convertidos até que o trabalho em lote seja executado. 
+A opção D está incorreta porque você não pode criar uma função de nuvem para o Cloud Pub / Sub usando 
+um evento finalizado. Esse evento é para o Cloud Storage, não para o Cloud Pub / Sub. 
+19. D. Todas as opções estão disponíveis junto com o zip do Cloud Storage. 
+20. A. O gatilho HTTP permite o uso de chamadas POST, GET e PUT, então a opção A é a
+resposta correta. O Webhook e o Cloud HTTP não são tipos de acionador válidos. A opção D está incorreta porque a opção A é a resposta correta. 
+Capítulo 11: Planejando o armazenamento na 
+nuvem 
+1. D. Quando um bloco é criado como regional ou multirregional, ele não pode ser alterado para o 
+outro, portanto, a opção D está correta. Nearline para coldline e regional para nearline são ambos permitidos, 
+como é multirregional para coldline. 
+2. C. O objetivo é reduzir o custo, portanto, você desejaria usar a opção de armazenamento menos dispendiosa. 
+O Coldline tem a menor taxa por gigabyte a US $ 0,07 / GB / mês, então a opção C está correta. 
+Nearline é o próximo mais baixo seguido por regional. Multirregional tem o maior por gigabyte
+carregar. Tanto o nearline quanto o coldline possuem taxas de acesso, mas esses não são considerados nesta 
+questão. 
+3. B. O Bigtable é um banco de dados de coluna ampla que pode ingerir grandes volumes de dados de forma consistente, 
+portanto , a opção B está correta. Ele também suporta latência de baixo milissegundo, tornando-o uma boa opção 
+para suportar a consulta. O Cloud Spanner é um banco de dados relacional global que não é adequado 
+para a ingestão em alta velocidade de grandes volumes de dados. O armazenamento de dados é um modelo de dados de objeto e 
+não é um bom ajuste para IoT ou outros dados de séries temporais. O BigQuery é um banco de dados de análise e não foi 
+projetado para ingestão de grandes volumes de dados em curtos períodos de tempo. 
+486 Apêndice ■ Respostas às perguntas de revisão
+4. A. A opção A está correta porque o Memorystore é um cache Redis gerenciado. O cache pode 
+ser usado para armazenar os resultados das consultas. Consultas subseqüentes que fazem referência aos dados armazenados no 
+cache podem lê-las no cache, o que é muito mais rápido do que a leitura de 
+discos permanentes . Os SSDs têm latência significativamente menor do que os discos rígidos e devem ser usados ​​para 
+aplicativos sensíveis ao desempenho, como bancos de dados. As opções B e D estão incorretas porque 
+os discos permanentes do HDD oferecem o melhor desempenho em relação à IOPS. As opções C e 
+D estão incorretas porque o Datastore é um banco de dados NoSQL gerenciado e não teria nenhum 
+impacto no desempenho da consulta SQL. 
+5. B. Os HDDs são a melhor opção para discos permanentes de um banco de dados local quando o desempenho
+não é a principal preocupação e você está tentando manter os custos baixos, então a opção B está correta. 
+A opção A está errada porque os SSDs são mais caros e os usuários não precisam da menor 
+latência disponível. As opções C e D estão erradas; ambos são outros bancos de dados que 
+não seriam usados ​​para armazenar dados em um banco de dados relacional local. 
+6. B. As configurações do ciclo de vida podem mudar a classe de armazenamento de regional para nearline ou coldline. 
+Depois que um bloco é criado como regional ou multirregional, ele não pode ser alterado para o outro, portanto, a 
+opção B é a resposta correta. Opção A é verdadeira; você pode definir períodos de retenção ao criar um 
+intervalo. A opção C é verdadeira; O Cloud Storage não fornece acesso semelhante ao sistema de arquivos para
+blocos de dados. A opção D é verdadeira porque o Cloud Storage é altamente durável. 
+7. A. A versão mais recente de um objeto é chamada de versão ao vivo, portanto, a opção A está correta. 
+As opções B e C estão incorretas; top e active não são termos usados ​​para se referir a versões. 
+A opção D está incorreta porque a opção A está correta. 
+8. B. O Cloud SQL e o Spanner são bancos de dados relacionais e são adequados para aplicativos de processamento de transações, portanto, a opção B está correta. A opção A está incorreta porque o BigQuery é 
+relacional, mas foi projetado para armazenamento e análise de dados, não para processamento de transações. 
+As opções C e D estão incorretas porque o Bigtable é um banco de dados NoSQL de coluna ampla, não um 
+banco de dados relacional.
+9. C. Tanto o MySQL quanto o PostgreSQL são opções do Cloud SQL, então a Opção C está correta. As opções A 
+e B estão incorretas, o SQL Server não é uma opção do Cloud SQL. A opção D está incorreta porque o 
+Oracle não é uma opção do Cloud SQL. Você poderia optar por executar o SQL Server ou o Oracle em suas 
+instâncias, mas teria de gerenciá-las, diferentemente dos bancos de dados gerenciados do Cloud SQL. 
+10. D. A localização multirregional e multi-super-regional de nam-eur-aisa1 é a mais 
+cara, o que faz da opção D a resposta certa. A opção A é uma região que custa menos 
+que o multi-super-regional nam-eur-asia1. A opção C está incorreta; isso é uma zona e a 
+Spanner é configurada para regiões ou super-regiões. A opção B está incorreta; é apenas um único
+Super região, que custa menos do que a implantação em várias super-regiões. 
+11. D. O BigQuery, o Datastore e o Firebase são todos serviços totalmente gerenciados que não exigem que você 
+especifique informações de configuração para VMs, o que torna a opção D correta. O Cloud SQL 
+e o Bigtable exigem que você especifique algumas informações de configuração para as VMs. 
+12. O B. Datastore é um banco de dados de documentos, o que torna a opção B correta. Cloud SQL e Spanner são bancos de dados relacionais. O Bigtable é um banco de dados de coluna ampla. O Google não oferece um 
+banco de dados gráfico gerenciado. 
+Capítulo 12: Implantando o armazenamento no Google Cloud Platform 487 
+13. A. O BigQuery é um serviço gerenciado desenvolvido para data warehouses e analítica. Usa
+SQL padrão para consulta, o que torna a opção A a resposta correta. O Bigtable pode suportar 
+o volume de dados descrito, mas não usa o SQL como uma linguagem de consulta. O Cloud SQL 
+não é a melhor opção para escalar para dezenas de petabytes. O SQL Server é um banco de dados relacional da 
+Microsoft; não é um serviço de banco de dados gerenciado pelo GCP. 
+14. B. O Firestore é um banco de dados de documentos que possui recursos de suporte para dispositivos móveis, como a sincronização de dados, de modo que a opção B é a resposta correta. O BigQuery é para análises, não aplicativos móveis ou transacionais. O Spanner é um banco de dados relacional global, mas não possui 
+recursos específicos para dispositivos móveis . O Bigtable pode ser usado com dispositivos móveis, mas não possui 
+recursos específicos para dispositivos móveis, como sincronização.
+15. D. Além de ler e escrever padrões, custos e consistência, você deve considerar o suporte a transações e a latência, o que torna a opção D correta. 
+16. B. A opção B está correta porque o Memorystore pode ser configurado para usar entre 1 GB e 300 GB 
+de memória. 
+17. D. Uma vez que um bucket esteja configurado para coldline, ele não poderá ser alterado para outra classe de armazenamento; assim, a 
+opção D está correta. Regional e multirregional pode mudar para nearline e coldline. 
+Os baldes de nearline podem mudar para coldline. 
+18. A. Para usar o BigQuery para armazenar dados, você deve ter um conjunto de dados para armazená-los, o que torna a opção 
+A a resposta correta. As caçambas são usadas pelo Cloud Storage, não pelo BigQuery. Você não gerencia
+discos permanentes ao usar o BigQuery. Uma entidade é uma estrutura de dados no Datastore, não no BigQuery. 
+19. D. Com uma instância de segunda geração, você pode configurar a versão do MySQL, conectividade, 
+tipo de máquina, backups automáticos, réplicas de failover, sinalizadores de banco de dados, janelas de manutenção 
+e rótulos, portanto a opção D está correta. 
+20. A. As taxas de acesso são usadas com armazenamento nearline e coldline, o que torna a opção A correta. Não há cobrança de transferência envolvida. As opções C e D não se referem às 
+classes de armazenamento reais . 
+Capítulo 12: Implantando o armazenamento no 
+Google Cloud Platform 
+1. C. Criar bancos de dados é responsabilidade dos administradores do banco de dados ou de outros usuários
+Cloud SQL, então a opção C está correta. O Google aplica patches de segurança e realiza outras 
+manutenções, por isso, a opção A está incorreta. O GCP executa regularmente backups agendados, portanto, a 
+opção B está incorreta. Os administradores de banco de dados precisam agendar backups, mas o GCP garante 
+que eles sejam executados no prazo. Os usuários do Cloud SQL não podem acessar o SSH em um servidor do Cloud SQL, 
+portanto , não podem ajustar o sistema operacional. Isso não é um problema; O Google cuida disso. 
+488 Apêndice ■ Respostas às Questões de Revisão 
+2. A. O Cloud SQL é controlado usando o comando gcloud; a sequência de termos nos 
+comandos gcloud é gcloud, seguida pelo serviço, neste caso, SQL; seguido por um recurso, 
+neste caso, backups, e um comando ou verbo, neste caso, criar. A opção A é a correta
+responda. A opção B está incorreta porque a gsutil é usada para trabalhar com o Cloud Storage, não com o 
+Cloud SQL. A opção C está errada porque a ordem dos termos está incorreta; backups vem 
+antes de criar. A opção D está incorreta porque o comando ou verbo deve ser criado. 
+3. A. A opção A é a resposta correta. O comando base é gcloud sql instances patch, 
+que é seguido pelo nome da instância e uma hora de início passada para o parâmetro –backup-start-time 
+. A opção B está incorreta porque os bancos de dados não são o recurso correto para referência; instâncias é. A opção C usa o comando cbt, que é para uso com o Bigtable, então está 
+incorreto. Da mesma forma, a Opção D está incorreta porque usa o comando bq, que é usado para 
+gerenciar recursos do BigQuery.
+4. O C. Datastore usa uma linguagem de consulta do tipo SQL chamada GQL, então a opção C está correta. Opção 
+A está incorreta; SQL não é usado com este banco de dados. A opção B está incorreta; MDX é uma 
+linguagem de consulta para sistemas de processamento analítico online (OLAP). A opção D está incorreta porque os 
+DataFrames são uma estrutura de dados usada no Spark. 
+5. C. Opção C é o comando correto. Ele tem o comando base correto, gcloud datastore 
+export, seguido pelo parâmetro --namespaces e o nome de um intervalo do Cloud Storage 
+para manter o arquivo de exportação. A opção A está incorreta porque o nome do parâmetro --namespaces 
+está ausente. Opção B está incorreta porque está faltando um espaço para nome. A opção D está incorreta 
+porque usa o comando ou despejo de verbos em vez de exportar.
+6. C. A opção C está correta; O BigQuery exibe uma estimativa da quantidade de dados verificados. Isso 
+é importante porque o BigQuery cobra pelos dados verificados nas consultas. Opção A está incorreta; 
+Saber quanto tempo você levou para entrar em uma consulta não é útil. A opção B está incorreta; você 
+precisa usar a estimativa de dados digitalizados com a calculadora de preços para obter um custo estimado. 
+Opção D está incorreta; você não cria clusters no BigQuery como faz com o Bigtable e o 
+Dataproc. Os dados de E / S da rede não são exibidos. 
+7. B. A Opção B mostra a estrutura de comando bq correta, que inclui a localização e a 
+opção ––dry_run. Esta opção calcula uma estimativa sem executar a consulta.
+As opções A e C estão incorretas porque usam o comando errado; O gcloud e a gsutil 
+não são usados ​​com o BigQuery. A opção D também está errada. O cbt é uma ferramenta para trabalhar com o Bigtable, não o BigQuery. Tenha cuidado para não confundir os dois porque seus nomes são semelhantes. 
+8. A. A opção A está correta; a opção do menu é Histórico do trabalho. As opções B e C estão incorretas; 
+não há nenhuma opção Trabalhos ativos ou Minhas tarefas. O histórico de trabalhos mostra trabalhos ativos, trabalhos concluídos 
+e trabalhos que geraram erros. Opção D está incorreta; você pode obter o status do trabalho no console. 
+9. C. O BigQuery fornece uma estimativa da quantidade de dados digitalizados e a Calculadora de preços 
+fornece uma estimativa de custo para a varredura desse volume de dados. As opções A, B e C estão incorretas;
+o serviço de faturamento acompanha as cobranças incorridas. Não é usado para estimar 
+cobranças futuras ou potenciais . 
+Capítulo 12: Implantando o armazenamento no Google Cloud Platform 489 
+10. B. A opção B está correta; O próximo passo é criar um banco de dados dentro da instância. Depois que um 
+banco de dados é criado, as tabelas podem ser criadas e os dados podem ser carregados em tabelas. Opção A 
+está incorreta; O Cloud Spanner é um banco de dados gerenciado, portanto, você não precisa aplicar 
+patches de segurança . A opção C está incorreta porque você não pode criar tabelas sem primeiro ter criado um 
+banco de dados. Opção D está incorreta; nenhuma tabela é criada na qual você possa importar dados quando 
+uma instância é criada.
+11. D. A opção D está correta porque não há necessidade de aplicar correções aos 
+recursos de computação subjacentes ao usar o Cloud Spanner. porque o Google gerencia os recursos usados ​​pelo Cloud 
+Spanner. A atualização de pacotes é uma boa prática ao usar VMs, por exemplo, com o 
+Compute Engine, mas não é necessária com um serviço gerenciado. 
+12. C. Este caso de uso é bem adequado ao Pub / Sub, então a opção C está correta. Envolve o envio de 
+mensagens para o tópico e o modelo de assinatura é um bom ajuste. Pub / Sub tem um 
+período de retenção para suportar o período de retenção de três dias. Opção A está incorreta; O Bigtable é projetado 
+para armazenar grandes volumes de dados. O Dataproc é para processar e analisar dados, não
+passando entre sistemas. O Cloud Spanner é um banco de dados relacional global. Você poderia projetar 
+um aplicativo para atender a esse caso de uso, mas isso exigiria um desenvolvimento substancial e seria 
+dispendioso de ser executado. 
+13. C. Pub / Sub trabalha com tópicos, que recebem e retêm mensagens e assinaturas, que 
+disponibilizam mensagens para aplicativos consumidores; portanto, a opção C está correta. Opção 
+A está incorreta; tabelas são estruturas de dados em bancos de dados relacionais, não filas de mensagens. 
+Da mesma forma, a opção B está errada porque existem bancos de dados em instâncias de 
+sistemas de gerenciamento de banco de dados , não em sistemas de mensagens. A opção D está errada porque as tabelas não são um recurso nos 
+sistemas de mensagens.
+14. C. O comando correto é gcloud components install cbt para instalar a 
+ferramenta de linha de comando Bigtable , então a opção C está correta. As opções A e B estão incorretas; O apt-get é usado 
+para instalar pacotes em alguns sistemas Linux, mas não é específico para o GCP. Opção D está incorreta; 
+não existe tal comando como bigtable-tools. 
+15. A. Você precisaria usar um comando cbt, que é a ferramenta de linha de comando para trabalhar 
+com o Bigtable, portanto a opção A está correta. Todas as outras opções fazem referência a gcloud e, portanto, estão 
+incorretas. 
+16. B. O Cloud Dataproc é um serviço gerenciado para o Spark e o Hadoop, portanto, a opção B está correta. 
+O Cassandra é um banco de dados distribuído de big data, mas não é oferecido como um serviço gerenciado
+Google, então as opções A e C estão incorretas. A opção D está incorreta porque o TensorFlow é uma 
+plataforma de aprendizado profundo não incluída no Dataproc. 
+17. B. O comando correto é gcloud dataproc clusters create seguido pelo nome do 
+cluster e pelo parâmetro a -zone. A opção B está correta. A opção A está incorreta porque 
+bq é a ferramenta de linha de comando do BigQuery, não do Dataproc. A opção C é um comando gcloud 
+sem um verbo ou comando, por isso está incorreto. A opção D está errada porque a opção B é a 
+resposta correta. 
+490 Apêndice ■ Respostas às Questões de Revisão 
+18. B. gsutil é o comando correto, então a opção B está correta. A opção A está incorreta porque os 
+comandos do gcloud não são usados ​​para gerenciar o Cloud Storage. Da mesma forma, as opções C e D são
+incorreto porque eles usam comandos para Bigtable e BigQuery, respectivamente. 
+19. B. O comando na opção B renomeia corretamente um objeto de um nome antigo para um novo 
+nome. A opção A está incorreta porque usa um comando cp em vez de mv. A opção C 
+não inclui nomes de intervalos, por isso está incorreto. A opção D usa o gcloud, mas a gsutil é a ferramenta de linha de comando para trabalhar com o Cloud Storage. 
+20. A. O Dataproc com o Spark e sua biblioteca de aprendizado de máquina são ideais para esse caso de uso; portanto, a 
+opção A está correta. A opção B sugere o Hadoop, mas não é uma boa escolha para 
+aplicativos de aprendizado de máquina . A opção C está incorreta porque o Spanner é projetado como um banco de dados relacional global com suporte para sistemas de processamento de transações, não analítico e de máquina
+sistemas de aprendizagem. A opção D está incorreta. O SQL é uma linguagem de consulta poderosa, mas não 
+suporta os tipos de algoritmos de aprendizado de máquina necessários para resolver o problema proposto. 
+Capítulo 13: Carregando dados no armazenamento 
+1. O C. gsutil é o utilitário de linha de comando para trabalhar com o Cloud Storage. É um dos poucos 
+serviços do GCP que não usa o gcloud. (BigQuery e Bigtable são outros.) A opção C é 
+a resposta correta porque mb, abreviação de "make bucket", é o verbo que segue a gsutil para 
+criar um bloco. As opções A e D estão erradas porque usam gcloud em vez de gsutil. 
+A opção B está errada porque usa a gsutil com uma sintaxe de comando usada pelo gcloud.
+2. B. A resposta correta é a opção B; A gsutil é o comando para copiar arquivos para o Cloud Storage. 
+Opção A está incorreta; o verbo é cp, não copiar. As opções C e D estão erradas porque a gsutil, e 
+não o gcloud, é o utilitário de linha de comando para trabalhar com o Cloud Storage. 
+3. C. No console, você pode fazer upload de arquivos e pastas. As opções A e B estão incorretas 
+porque estão faltando uma operação que pode ser executada no console. A opção D está 
+incorreta porque não há operação de diferenciação no Cloud Console. 
+4. D. Ao exportar um banco de dados do Cloud SQL, as opções de formato de arquivo de exportação são CSV 
+e SQL, o que torna a opção D correta. A opção A está incorreta porque o XML não é uma 
+opção. As opções B e C estão incorretas porque o JSON não é uma opção.
+5. A. Opção A, formato SQL, exporta um banco de dados como uma série de comandos de definição de dados SQL. 
+Esses comandos podem ser executados em outro banco de dados relacional sem precisar primeiro criar um esquema. A opção B poderia ser usada, mas isso exigiria o mapeamento de colunas para colunas 
+em um esquema que foi criado antes de carregar o CSV, e o administrador de banco de dados 
+gostaria de evitar isso. As opções C e D estão incorretas porque não são 
+opções de formato de arquivo de exportação . 
+6. C. A Opção C é o comando correto, gcloud sql export sql, indicando que o serviço é 
+Cloud SQL, a operação é exportar e o formato do arquivo de exportação é SQL. O nome do arquivo e o bloco de destino estão formados corretamente. A opção A está incorreta porque faz referência ao armazenamento do gcloud.
+não gcloud sql. A opção B está incorreta porque está faltando um parâmetro de formato de arquivo de exportação. 
+A opção D está incorreta porque o nome do bloco e o nome do arquivo estão na ordem errada. 
+Capítulo 13: Carregamento de dados no armazenamento 491 
+7. A. A opção A usa o comando correto, que é gcloud datastore export seguido por 
+um namespace e um nome de bucket. A opção B está incorreta porque o nome do intervalo está ausente gs: //. As opções C e D estão incorretas porque usam o dump de comando em vez da 
+exportação. O nome do intervalo na opção D está faltando gs: //. 
+8. C. O processo de exportação cria um arquivo de metadados com informações sobre os dados exportados 
+e uma pasta que possui os dados em si, portanto, a opção C está correta. A opção A está incorreta porque
+exportação não produz um único arquivo; produz um arquivo de metadados e uma pasta com os dados. 
+A opção B está incorreta porque não inclui a pasta de dados. A opção D está incorreta 
+porque a resposta correta é a opção C. 
+9. B. A opção B está correta porque o XML não é uma opção no processo de exportação do BigQuery. Todas as 
+outras opções estão disponíveis. 
+10. D. A opção D está correta porque o YAML não é um formato de armazenamento de arquivos; é usado para especificar 
+dados de configuração. Opções A, B e C são todos os tipos de arquivos de importação suportados. 
+11. A. O comando correto é bq load na opção A. Os 
+parâmetros autodetect e source_format e o caminho para a origem são especificados corretamente em todas as opções. A opção B está incorreta
+porque usa o termo import em vez de load. As opções C e D estão incorretas porque 
+usam gcloud em vez de bq. 
+12. B. A resposta correta é B porque o Dataflow é um serviço de pipeline para processamento de dados em fluxo contínuo 
+e em lotes que implementa fluxos de trabalho usados ​​pelo Cloud Spanner. Opção A está incorreta; 
+O Dataproc é um serviço gerenciado do Hadoop e do Spark, que é usado para análise de dados. A opção 
+C está incorreta; O Datastore é um banco de dados NoSQL. A opção D está incorreta porque bq é usado 
+apenas com o BigQuery. 
+13. A. Os dados do Bigtable são exportados usando um programa Java compilado, portanto, a opção A está correta. A opção 
+B está incorreta; não há comando do gcloud Bigtable. A opção C está incorreta; bq não é usado
+com Bigtable. A opção D está incorreta porque não exporta dados do Bigtable. 
+14. C. A exportação do Dataproc exporta dados sobre a configuração do cluster, o que torna a 
+opção C correta. Opção A está incorreta; os dados em DataFrames não são exportados. A opção B está 
+incorreta; O Spark não possui tabelas para armazenamento persistente de dados, como bancos de dados relacionais. 
+Opção D está incorreta; nenhum dado do Hadoop é exportado. 
+15. C. A resposta correta é a opção C; o serviço O Dataproc suporta o Apache Spark, que 
+possui bibliotecas para aprendizado de máquina. As opções A e B estão incorretas, nem um serviço de análise ou de 
+aprendizado de máquina. Opção D, DataAnalyze, não é um serviço real.
+16. A. O comando correto na opção A usa gcloud seguido pelo serviço, neste caso 
+pubsub, seguido pelo recurso, neste caso tópicos; e finalmente o verbo, neste caso, 
+criar. A opção B está incorreta porque os dois últimos termos estão fora de ordem. As opções C e 
+D estão incorretas porque não usam o gcloud. O bq é a ferramenta de linha de comando do BigQuery. 
+cbt é a ferramenta de linha de comando do Bigtable. 
+17. C. A resposta correta, opção C, usa o gcloud pubsub subscriptions create seguido 
+pelo tópico e pelo nome da assinatura. Opção A está incorreta porque está faltando 
+o termo assinaturas. A opção B está incorreta porque está faltando o nome da assinatura. A opção D está incorreta porque usa a gsutil em vez de gcloud.
+492 Apêndice ■ Respostas às Questões de Revisão 
+18. B. O uso de uma fila de mensagens entre os serviços desacopla os serviços, portanto, se um ficar atrasado, ele não 
+causará atraso em outros serviços, o que torna a opção B correta. A opção A está incorreta porque a 
+inclusão de uma fila de mensagens não reduz diretamente quaisquer riscos de segurança que possam existir no 
+sistema distribuído, como permissões excessivamente permissivas. A opção C está incorreta; Adicionar uma 
+fila não está diretamente relacionado às linguagens de programação. Opção D está incorreta; por padrão, as 
+filas de mensagens têm um período de retenção. 
+19. B. A resposta correta é B, gcloud components seguido por install e depois beta. 
+Opção A está incorreta porque beta e instalar estão na ordem errada. Opções C e D
+estão erradas porque os comandos são usados ​​em vez de componentes. 
+20. A. O nome correto do parâmetro é autodetect, que é a opção A. As opções B e C não são 
+parâmetros bq realmente válidos. A opção D é um parâmetro válido, mas retorna o 
+tamanho estimado dos dados verificados para a execução de uma consulta. 
+21. A. Avro suporta a compactação Deflate and Snappy. O CSV suporta o Gzip e nenhuma compactação. 
+XML e Thrift não são opções de tipo de arquivo de exportação. 
+Capítulo 14: Rede na Nuvem: 
+Nuvens Privadas Virtuais e 
+Redes Privadas Virtuais 
+1. D. Nuvens privadas virtuais são globais, portanto a opção D está correta. Por padrão, eles têm sub-redes em 
+todas as regiões. Recursos em qualquer região podem ser acessados ​​através do VPC. Opções A, B e C
+estão todos incorretos. 
+2. B. As faixas de IP são atribuídas a sub-redes, portanto, a opção B está correta. Cada sub-rede é atribuída um 
+intervalo de IP para seu uso exclusivo. Os intervalos de IP são atribuídos a estruturas de rede, não a regiões e regiões. 
+As VPCs podem ter várias sub-redes, mas cada sub-rede possui seu próprio intervalo de endereços. 
+3. B. A opção B está correta; O roteamento dinâmico é o parâmetro que especifica se as rotas são 
+aprendidas regional ou globalmente. Opção A está incorreta; DNS é um serviço de resolução de nomes e 
+não está envolvido no encaminhamento. A opção C está incorreta; não há parâmetro de política de roteamento estático. A opção D está incorreta porque o roteamento global não é uma opção real. 
+4. A. A resposta correta é gcloud compute networks create, que é a opção A. Opção
+B está incorreto; redes vpc não é uma parte correta do comando. A opção C está incorreta 
+porque a gsutil é o comando usado para trabalhar com o Cloud Storage. A opção D está incorreta 
+porque não existe tal coisa. 
+5. A. A opção Flow Log do comando create vpc determina se os logs são enviados 
+ao Stackdriver, portanto, a opção A está correta. A opção B, acesso IP privado, determina se 
+um endereço IP externo é necessário para que uma VM use os serviços do Google. A opção C está incorreta 
+porque o Stackdriver Logging é o serviço, não um parâmetro usado ao criar uma sub-rede. A opção D está incorreta porque o mascaramento de sub-rede de comprimento variável tem a ver com 
+endereços CIDR , não com o log. 
+Capítulo 14: Funcionamento em Rede na Nuvem Nuvens Privadas Virtuais 493
+6. C. As VPCs compartilhadas podem ser criadas no nível de organização ou pasta da hierarquia de recursos, 
+portanto , a opção C está correta. As opções A e B estão incorretas; VPCs compartilhados não são criados nos 
+níveis de recurso ou projeto. Opção D está incorreta; VPCs compartilhadas não são aplicadas em sub-redes, 
+que são recursos na hierarquia de recursos. 
+7. A. A resposta correta é a guia Rede da seção Gerenciamento, Segurança, Discos, Rede, Inquilino único do formulário, que torna a opção A correta. A guia Gerenciamento não é sobre configurações de sub-rede. A opção D está incorreta porque não leva 
+a opções de alocação única.
+8. A. O VPC é usado para comunicações de intérpretes. A opção B está incorreta; não há peering de interprojeto. As opções C e D estão incorretas; eles têm a ver com a vinculação de 
+redes locais com redes no GCP. 
+9. B. O destino pode ser todas as instâncias de uma rede, instâncias com tags de rede específicas 
+ou instâncias usando uma conta de serviço específica, portanto, a opção B está correta. Opção A está incorreta; 
+A ação é permitir ou negar. A opção C está incorreta; prioridade determina qual das 
+regras de correspondência é aplicada. Opção D está incorreta; especifica se a regra é aplicada ao 
+tráfego de entrada ou saída. 
+10. D. Direção especifica se a regra é aplicada ao tráfego de entrada ou saída, que
+faz a opção D a resposta certa. Opção A está incorreta; A ação é permitir ou negar. 
+A opção B está incorreta; target especifica o conjunto de instâncias às quais a regra se aplica. A opção C 
+está incorreta; prioridade determina qual das regras correspondentes é aplicada. 
+11. A. O 0.0.0.0/0 corresponde a todos os endereços IP, portanto a opção A está correta. A opção B representa um 
+bloco de 16.777.214 endereços. A opção C representa um bloco de 1.048.574 endereços. A opção 
+D representa um bloco de 65.534. Você pode experimentar as opções de bloco do CIDR usando uma 
+calculadora CIDR como a que está em www.subnet-calculator.com/cidr.php.
+12. B. O produto com o qual você está trabalhando é computado e o recurso que você está criando é uma regra de firewall, portanto a opção B está correta. As opções A e C fazem referência à rede em vez de computar. 
+A opção D faz referência a regras em vez de regras de firewall. 
+13. B. O parâmetro correto é rede, o que torna a opção B correta. Opção A está incorreta; 
+A sub-rede não é um parâmetro para gcloud criar um firewall. A opção C está incorreta; destino não é um parâmetro válido. Opção D está incorreta; source-ranges é para especificar 
+fontes de tráfego de rede às quais a regra se aplica. 
+14. A. A regra na opção A usa o comando gcloud correto e especifica os 
+parâmetros de permissão e direção. A opção B está incorreta porque faz referência à rede gcloud
+de gcloud compute. A opção C está incorreta porque não especifica o intervalo de portas. A opção D 
+está incorreta porque não especifica o protocolo ou o intervalo de portas. 
+15. D. A opção D está correta porque é o maior número permitido no intervalo de valores para 
+prioridades. Quanto maior o número, menor a prioridade. Ter a prioridade mais baixa 
+garantirá que outras regras correspondentes sejam aplicadas. 
+16. C. A opção de criação de VPC está disponível na seção Conectividade Híbrida, então a opção C está correta. O Compute Engine, o App Engine e o IAM e o Admin não possuem recursos relacionados a VPNs. 
+494 Apêndice ■ Respostas às perguntas de revisão 
+17. C. A VPN do Google Compute Engine é onde você especifica informações sobre o Google.
+Cloud final da conexão VPN, então a opção C está correta. Você especifica nome, descrição, rede, região e endereço IP. A opção A está incorreta porque os túneis são sobre as 
+conexões entre a nuvem e a rede remota. A opção B está incorreta; 
+Opções de roteamento é sobre como configurar roteadores. Opção D está incorreta; IKE Version é sobre 
+troca de chaves secretas. 
+18. A. A opção A está correta porque o roteamento dinâmico global é usado para aprender todas as rotas em uma rede. A opção B está incorreta; o roteamento regional aprenderia apenas rotas em uma região. As opções 
+C e D estão incorretas porque não são usadas para configurar as opções de roteamento. 
+19. B. O número do sistema autônomo (ASN) é um número usado para identificar um roteador de nuvem em um
+rede, a opção B está correta. Endereços IP não são identificadores exclusivos para o protocolo BGP. 
+A opção C está incorreta; não há ID de roteamento de carga dinâmica. A opção D está incorreta porque a 
+opção B está correta. 
+20. D. Ao usar o gcloud para criar uma VPN, você precisa criar regras de encaminhamento, túneis e 
+gateways, para que todos os comandos gcloud listados sejam usados. 
+Capítulo 15: Funcionamento em rede na nuvem: 
+DNS, balanceamento de carga e endereçamento IP 
+1. B. O registro A é usado para mapear um nome de domínio para um endereço IPv4, portanto, a opção B está correta. 
+A opção A está incorreta porque o registro AAAA é usado para endereços IPv6. A opção C está 
+incorreta; NS é um registro do servidor de nomes. Opção D está incorreta; SOA é um começo de 
+registro de autoridade .
+2. A. O DNSSEC é um protocolo seguro projetado para evitar spoofing e envenenamento de cache, portanto, a 
+opção A está correta. As opções B e C estão incorretas porque os registros SOA e CNAME contêm dados sobre o registro DNS; eles não são uma medida de segurança adicional. A opção D está 
+incorreta porque a exclusão de um registro CNAME não melhora a segurança. 
+3. A. Os parâmetros TTL especificam a hora em que um registro pode estar em um cache antes que os dados 
+sejam consultados novamente, portanto a opção A está correta. A opção B está incorreta; este período de tempo não está 
+relacionado a tempos limite. A opção C está incorreta; os TTLs não estão relacionados à restrição de tempo nas 
+operações de alteração de dados. A opção D não está correta; não há revisão manual necessária.
+4. B. A resposta correta, Opção B, é gcloud beta dns managed-zones create. A opção A está 
+incorreta. Ela usa o comando gsutil, usado para trabalhar com o Cloud Storage. Opção C está 
+incorreta, está faltando o termo dns. A opção D está incorreta, a ordenação dos termos está incorreta. 
+5. B. O parâmetro de visibilidade é o parâmetro que pode ser definido como privado, portanto a opção B está 
+correta. A opção A não é um parâmetro válido. A opção C está incorreta; private não é um parâmetro. 
+Da mesma forma, a opção D está incorreta; status não é um parâmetro válido para tornar uma zona DNS 
+privada. 
+Capítulo 15: Rede na nuvem: DNS, balanceamento de carga e endereçamento IP 495 
+6. C. Os três balanceadores de carga globais são HTTP (S), Proxy SSL e Proxy TCP, então a opção C
+está correto. Opções A e B estão faltando pelo menos um balanceador de carga global. A opção D está incorreta porque o TCP / UD interno é um balanceador de carga regional. 
+7. D. Rede TCP / UDP permite o balanceamento baseado no protocolo IP, endereço e porta, então a 
+opção D está correta. As opções A, B e C são todas balanceadores de carga globais, não regionais. 
+8. A. No console, há uma opção para selecionar entre De Internet para Minhas VMs e Somente 
+Entre Minhas VMs. Esta é a opção para indicar privado ou público, então a opção A está correta. 
+As opções B, C e D são todos os parâmetros fictícios. 
+9. B. Os balanceadores de carga TCP Proxy exigem que você configure tanto o frontend quanto o backend,
+então a opção B está correta. As opções A e D estão incorretas porque estão faltando um componente. A opção C está incorreta; as regras de encaminhamento são o único componente especificado com 
+balanceamento de carga de rede . Não há nenhum componente conhecido como uma regra de tráfego. 
+10. B. As verificações de integridade monitoram a integridade das VMs usadas com balanceadores de carga, portanto, a opção B está correta. 
+A opção A está incorreta, o armazenamento nearline é um tipo de armazenamento em nuvem. Opção C e D estão 
+incorretas; dispositivos de armazenamento ou buckets não são verificados. 
+11. B. Você especifica portas para encaminhar ao configurar o frontend, então a opção B está correta. O 
+back-end é onde você configura como o tráfego é roteado para as VMs. A opção C está incorreta; Serviços de rede é uma área de alto nível do console. Opção D está incorreta; VPCs não estão onde
+você especifica configurações do balanceador de carga. 
+12. A. A resposta correta, opção A, é gcloud compute forwarding-rules create. 
+A opção B está incorreta; o serviço deve ser computado, não em rede. A opção C está incorreta; 
+create vem depois das regras de encaminhamento. A opção D está incorreta porque tem o 
+serviço errado e o verbo está na posição errada. 
+13. C. Os endereços estáticos são atribuídos até que sejam liberados, portanto, a opção C está correta. As opções A 
+e B estão incorretas porque os endereços internos e externos determinam se o tráfego é 
+roteado para dentro e para fora da sub-rede. Endereços externos podem ter tráfego para acessá-los da 
+Internet; endereços internos não podem. Opção D está incorreta; endereços efêmeros são liberados
+quando uma VM é encerrada ou é excluída. 
+14. A. Um endereço efêmero é suficiente, uma vez que os recursos fora da sub-rede não precisarão 
+alcançar a VM e você poderá acessar o SSH na VM a partir do console, portanto, a opção A está correta. 
+A opção B está incorreta porque não há necessidade de atribuir um endereço permanente, o qual teria 
+que ser liberado. A opção C está incorreta; não existe um tipo permanente. Opção D está 
+incorreta; não há endereço IPv8. 
+15. D. Você não pode reduzir o número de endereços usando nenhum dos comandos, então a opção D está 
+correta. A opção A está incorreta porque o comprimento do prefixo especificado no 
+comando expand-ip-range deve ser um número menor que o comprimento atual. Se houver 65.534 endereços,
+então o tamanho do prefixo é 16. A opção B está incorreta pelo mesmo motivo, e o tamanho do prefixo 
+não pode ser um número negativo. A opção C está incorreta; não há parâmetro ––size. 
+496 Apêndice ■ Respostas às Questões de Revisão 
+16. B. O tamanho do prefixo especifica o comprimento em bits da máscara de sub-rede. Os bits restantes do 
+endereço IP são usados ​​para endereços de dispositivos. Como há 32 bits em um endereço IP, você 
+subtrai o comprimento da máscara para obter o número de bits usado para representar o endereço. 16 é 
+igual a 24, então você precisa de 4 bits para representar 14 endereços. 32-4 é 28, então a opção B é a resposta correta. A opção A deixaria 1 endereço, a opção C forneceria 4.094 endereços e a 
+opção D forneceria 65.534.
+17. C. Premium é o nível de serviço de rede que roteia todo o tráfego pela rede do Google, 
+portanto , a opção C está correta. Opção A está incorreta; o nível Padrão pode usar a Internet pública ao rotear o tráfego. As opções B e D estão incorretas; não há níveis de serviço chamados 
+somente Google ou não-Internet. 
+18. B. Parar e iniciar uma VM libera endereços IP efêmeros, portanto a opção B está correta. 
+Use um endereço IP estático para ter o mesmo endereço IP nas reinicializações. Opção A está incorreta; 
+reinicializar uma VM não altera um registro DNS. A opção C está incorreta porque, se você tinha 
+endereços suficientes para obter um endereço quando iniciou a VM e liberou 
+esse endereço IP, deveria haver pelo menos um endereço IP, presumindo que nenhum outro dispositivo fosse adicionado
+para a sub-rede. A opção D está incorreta porque nenhuma outra alteração, incluindo alterações na 
+sub - rede, foi feita. 
+19. A. O TCP / UDP interno é uma boa opção. É um balanceador de carga regional que suporta UDP, portanto, a 
+opção A está correta. As opções B, C e D são todas balanceadoras de carga globais. Opção B suporta 
+TCP, não UDP. A opção D suporta HTTP e HTTPS, não UDP. 
+20. B. Serviços de Rede é a seção do Cloud Console que possui o console do Cloud DNS, portanto, a 
+opção B está correta. Opção A está incorreta; O Compute Engine não possui formulários de gerenciamento de DNS. Nem a opção C, Kubernetes Engine. A opção D está relacionada à rede, 
+mas os serviços da Conectividade Híbrida são para serviços como VPNs. 
+Capítulo 16: Implantando Aplicativos
+com o Cloud Launcher e o Deployment 
+Manager 
+1. D. Categorias de soluções incluem todas as categorias mencionadas, então a opção D está correta. 
+Outros incluem Kubernetes Apps, API e Serviços e Bancos de Dados. 
+2. B. O Cloud Launcher também é conhecido como Marketplace, então a opção B está correta. A opção A está 
+incorreta porque o Cloud Deployment Manager é usado para criar modelos de implantação. 
+As opções C e D são nomes fictícios de serviços. 
+3. A. Você inicia uma solução clicando no link Iniciar no Compute Engine na 
+página de visão geral , portanto, a opção A está correta. A opção B está incorreta; a página principal contém informações resumidas sobre os produtos. A opção C está incorreta; Serviços de rede não está relacionado a este tópico.
+A opção D está incorreta porque a opção A é a resposta correta. 
+Capítulo 16: Implantando aplicativos com o Cloud Launcher e o Deployment Manager 497 
+4. B. O Cloud Launcher possui um conjunto de filtros predefinidos, incluindo a filtragem por sistema operacional, portanto, a 
+opção B está correta. Opção A pode eventualmente levar à informação correta, mas não é 
+eficiente. A opção D está incorreta porque é impraticável para uma tarefa tão simples. 
+5. B. Vários fornecedores podem oferecer configurações para os mesmos aplicativos, então a opção B está correta. Isso dá aos usuários a oportunidade de escolher o mais adequado às suas necessidades. 
+Opções A e C estão incorretas; esse é um recurso do Cloud Launcher. A opção D está incorreta 
+porque a opção B é a resposta correta.
+6. C. O Cloud Launcher exibirá as opções de configuração apropriadas para o aplicativo que você 
+está implementando, portanto, a opção C está correta. Por exemplo, ao implantar o WordPress, você terá 
+a opção de implantar uma ferramenta de administração para o PHP. Opção A está incorreta; esse é 
+um recurso do Cloud Launcher. A opção B está incorreta; você não está necessariamente na 
+forma errada . Opção D está incorreta; esse é um recurso do Cloud Launcher. 
+7. D. Você pode alterar a configuração de qualquer um dos itens listados, então a opção D está correta. Você 
+também pode especificar regras de firewall para permitir o tráfego HTTP e HTTPS ou alterar a zona 
+em que a VM é executada. 
+8. B. Deployment Manager é o nome do serviço para criar recursos de aplicativo
+usando um arquivo de configuração YAML, então a opção B está correta. A opção A está incorreta, embora 
+você possa usar scripts com comandos gcloud para implantar recursos no Compute Engine. 
+As opções C e D estão incorretas porque são nomes fictícios de produtos. 
+9. D. Os arquivos de configuração são definidos na sintaxe YAML, portanto, a opção D está correta. As opções A, B 
+e C estão todas incorretas; os arquivos de configuração são definidos em YAML. 
+10. B. Os arquivos de configuração definem recursos e iniciam com o termo recursos, portanto, a opção B está correta. As opções A, B e C estão todas incorretas. Esses termos não iniciam o arquivo de configuração. 
+11. D. Todos os três tipos, propriedades e nome são usados ​​ao definir recursos em um 
+arquivo de configuração do Cloud Deployment Manager, portanto, a opção D está correta.
+12. D. Todos os três podem ser definidos; Especificamente, as chaves são deviceName, boot e autodelete. 
+A opção D está correta. 
+13. A. A opção A é o comando correto. A opção B está incorreta; está faltando o termo compute. 
+A opção C está incorreta; A gsutil é o comando para trabalhar com o Cloud Storage. A opção D 
+está incorreta porque a lista de termos e as imagens estão na ordem errada. 
+14. D. O Google recomenda o uso do Python para modelos complicados, portanto a opção D está correta. 
+A opção A está incorreta porque o Jinja2 é recomendado apenas para modelos simples. As opções B 
+e C estão incorretas; Nenhum idioma é suportado por modelos. 
+15. A. A resposta correta é que as implantações do gcloud deployment-manager criam, então opção
+A está correto. As opções B e D estão incorretas; o serviço não é chamado de lançador de nuvem no 
+comando. A opção C está incorreta; o lançamento não é um verbo válido para este comando. 
+498 Apêndice ■ Respostas às perguntas de revisão 
+16. C. A resposta correta é que as implantações do gcloud deployment-manager descrevem, portanto, a 
+opção C está correta. As opções A e D estão incorretas; O Cloud Launcher não é o nome do 
+serviço. A opção B está incorreta; lista exibe um breve resumo de cada implantação. 
+describe exibe uma descrição detalhada. 
+17. A. Você poderá configurar endereços IP, portanto a opção A está correta. Você não pode configurar os 
+controles de faturamento ou acesso no Gerenciador de Implantação, portanto, as opções B e C estão incorretas. Você
+pode configurar o tipo de máquina, mas essa não é a seção Mais de Rede. 
+18. D. A resposta correta é a opção D porque o gratuito, pago e a BYOL são todas as opções de licença 
+usadas no Cloud Launcher. 
+19. B. Os tipos de licença paga incluem o pagamento da licença em suas cobranças do GCP, portanto, a opção B 
+está correta. O tipo de licença livre não incorre em encargos. O tipo de licença BYOL exige que você 
+trabalhe com o fornecedor do software para obter e pagar uma licença. Não existe tal tipo de licença 
+como chargeback, portanto, a opção D está incorreta. 
+20. D. LAMP é a abreviação de Linux, Apache, MySQL e PHP. Todos estão incluídos na instalação de 
+soluções LAMP, portanto, a opção D está correta. 
+Capítulo 17: Configurando o acesso 
+e a segurança
+1. B. IAM significa Identity and Access Management, portanto, a opção B está correta. Opção A está 
+incorreta; o A não significa autorização, embora isso esteja relacionado. A opção C está 
+incorreta; o A não significa auditoria, embora isso esteja relacionado. A opção D está incorreta. 
+O IAM também trabalha com grupos, não apenas indivíduos. 
+2. A. Os membros e suas funções são listados, portanto, a opção A está correta. As opções B e C estão incorretas 
+porque estão faltando a outra informação principal fornecida na listagem. Opção D 
+está incorreta; as permissões não são exibidas nessa página. 
+3. B. Os papéis primitivos foram criados antes do IAM e forneceram controles de acesso de granulação grossa,
+então a opção B está correta. Opção A está incorreta; eles são usados ​​para controle de acesso. A opção C está 
+incorreta; O IAM é a forma mais nova de controle de acesso. Opção D está incorreta; eles fornecem 
+funcionalidade de controle de acesso. 
+4. B. Funções são usadas para agrupar permissões que podem ser atribuídas a identidades, portanto, a opção B 
+está correta. Opção A está incorreta; os papéis não têm identidades, mas as identidades podem receber 
+papéis. A opção C está incorreta; as funções não usam listas de controle de acesso. Opção D está incorreta; 
+funções não incluem logs de auditoria. Os registros são coletados e gerenciados pelo Stackdriver Logging. 
+5. C. A resposta correta é gcloud projetos get-iam-policy ace-exame-projeto, então
+a opção C está correta. Opção A está incorreta porque o recurso deve ser projetos e não 
+iam. A opção B está incorreta; lista não fornece descrições detalhadas. Opção D está incorreta porque iam e lista são referenciados incorretamente. 
+Capítulo 17: Configurando o acesso e a segurança 499 
+6. B. Novos membros podem ser usuários, indicados por seus endereços de e-mail ou grupos, portanto, a opção B 
+está correta. Opção A está incorreta; não inclui grupos. As opções C e D estão incorretas 
+porque as funções não são adicionadas lá. 
+7. D. Os implementadores podem ler configurações e configurações de aplicativos e gravar novas 
+versões de aplicativos , portanto, a opção D está correta. A opção A está incorreta porque está faltando a capacidade de
+leia configurações e configurações. A opção B está incorreta porque falta escrever novas 
+versões. A opção C está incorreta porque faz referência à gravação de novas configurações. 
+8. B. As etapas corretas estão navegando para IAM e Admin, selecionando Funções e, em seguida, marcando 
+a caixa ao lado de uma função, portanto, a opção B está correta. Opção A está incorreta; todas as funções não são exibidas automaticamente. A opção C está incorreta; logs de auditoria não exibem permissões. Opção 
+D está incorreta; não há opção de funções em contas de serviço. 
+9. D. As funções predefinidas ajudam a implementar o menor privilégio e a separação de tarefas, portanto, a opção 
+D está correta. As funções predefinidas não implementam a defesa em profundidade por si mesmas, mas podem ser
+usado com outros controles de segurança para implementar a defesa em profundidade. 
+10. D. Os quatro estágios de lançamento disponíveis são alfa, beta, disponibilidade geral e desativado, então a 
+opção D está correta. 
+11. B. A resposta correta, opção B, é gcloud iam roles create. Opção A está incorreta 
+porque faz referência ao projeto em vez de iam. A opção C está incorreta porque faz referência ao 
+projeto em vez de iam, e os termos create e roles estão fora de ordem. A opção D está 
+incorreta porque os termos criar e funções estão fora de ordem.
+12. B. Escopos são permissões concedidas a instâncias de VM, portanto, a opção B está correta. Escopos em combinação com funções do IAM atribuídas a contas de serviço atribuídas à instância da VM determinam quais operações a instância da VM pode executar. Opções A e C estão incorretas; escopos 
+não se aplicam a recursos de armazenamento. Opção D está incorreta; escopos não se aplicam a sub-redes. 
+13. C. Os identificadores de escopo começam com https://www.googleapis.com/auth/ e são seguidos por 
+um nome específico do escopo, como devstorage.read_only ou logging.write, portanto, a opção C está 
+correta. Opção A está incorreta; IDs de escopo não são gerados aleatoriamente. A opção B está incorreta; 
+o nome do domínio não é googleserviceaccounts. Opção D está incorreta; escopos não estão 
+ligados diretamente aos projetos.
+14. C. Tanto os escopos como as funções do IAM atribuídas às contas de serviço devem permitir que uma operação 
+seja bem-sucedida, portanto, a opção C está correta. Opção A está incorreta; controles de acesso não afetam 
+o fluxo de controle em aplicativos, a menos que explicitamente codificados para isso. A opção B está incorreta; 
+a permissão mais permissiva não é usada. Opção D está incorreta; a operação não terá 
+sucesso. 
+15. B. As opções para definir escopos são: Permitir acesso padrão, Permitir acesso total e Definir 
+acesso para cada API, portanto, a opção B está correta. Opção A está incorreta; está faltando Definir acesso 
+para cada API. A opção C está incorreta; está faltando Permitir acesso padrão. Opção D está incorreta; está em falta Permitir acesso total.
+16. B. O comando correto é gcloud compute instances set-service-account, então a 
+opção B está correta. Opção A está incorreta; não há verbos de comando set-scopes. A opção C 
+está incorreta; o verbo de comando não é set-scopes. Opção D está incorreta; não há nenhum 
+escopo de definição de verbos de comando . 
+Apêndice ■ Respostas às perguntas de revisão 
+17. A. Você pode atribuir uma conta de serviço ao criar uma VM usando o comando create. 
+A opção B está incorreta; não há verbo de comando create-service-account. A opção C está 
+incorreta; não há verbos de comando define-service-account. Opção D está incorreta; 
+não há comando instances-service-account; Além disso, criar deve vir no final do 
+comando.
+18. C. O Stackdriver Logging coleta, armazena e exibe mensagens de log, portanto, a opção C está correta. 
+Opção A está incorreta; O Compute Engine não gerencia logs. A opção B está incorreta; O Cloud 
+Storage não é usado para exibir logs, embora arquivos de log possam ser armazenados lá. Opção D está incorreta; soluções de log personalizadas não são serviços GCP. 
+19. B. Os registros podem ser filtrados por recurso, tipo de registros, nível de registro e período de tempo apenas, portanto, a 
+opção B está correta. As opções A, C e D estão incorretas porque estão faltando pelo menos 
+uma opção. 
+20. B. Este é um exemplo de atribuição do menor privilégio necessário para executar uma tarefa, portanto, a opção 
+B está correta. Opção A está incorreta; A defesa em profundidade combina vários controles de segurança.
+A opção C está incorreta porque está tendo pessoas diferentes executando tarefas confidenciais. Opção D 
+está incorreta; A varredura de vulnerabilidades é uma medida de segurança aplicada a aplicativos que ajuda a 
+revelar possíveis vulnerabilidades em um aplicativo que um invasor poderia explorar. 
+Capítulo 18: Monitoramento, Registro em Log e 
+Estimativa de Custos 
+1. B. O serviço Monitoramento é usado para definir um limite em métricas e gerar alertas quando uma 
+métrica exceder o limite por um período de tempo especificado, portanto, a opção B está correta. Opção A 
+está incorreta; O registro é para coletar eventos registrados. A opção C está incorreta; O Cloud Trace é 
+para rastreamento de aplicativos. Opção D está incorreta; A depuração é usada para depurar aplicativos.
+2. B. Você deve instalar o agente de monitoramento na VM. O agente coletará dados e os enviará 
+ao Stackdriver, portanto a opção B estará correta. A opção A está incorreta porque um espaço de trabalho não está 
+instalado em uma VM; é criado no Stackdriver. A opção C está incorreta; não há 
+caixa de seleção Monitorar com o Stackdriver no formulário de configuração da VM. A opção D está incorreta porque 
+você definiu canais de notificação no Stackdriver, não em uma VM. 
+3. O D. Stackdriver pode monitorar recursos no GCP, na AWS e nos data centers locais, portanto, a 
+opção D está correta. As opções de A a C estão incorretas porque não incluem duas 
+outras opções corretas. 
+4. B. Alinhamento é o processo de separar pontos de dados em intervalos regulares, portanto, a opção B é
+corrigir. Opção A está incorreta; A agregação é usada para combinar pontos de dados usando uma estatística, 
+como média. As opções C e D estão incorretas; eles não são processos relacionados ao processamento de 
+fluxos de dados métricos. 
+5. D. Todas as três opções são canais de notificação válidos no Stackdriver Monitoring, por isso, a opção D 
+está correta. PagerDuty e HipChat são ferramentas populares de DevOps. 
+Capítulo 18: monitoramento, registro e cálculo do custo 501 
+6. D. A documentação é útil para documentar a propósito da política e por fornecer orientação para resolver o problema, por isso, a opção D é correta. Opção A está incorreta; onde 
+uma política é armazenada é irrelevante para sua utilidade. As opções B e C sozinhas estão parcialmente corretas, 
+mas a opção D é uma resposta melhor.
+7. A. Fadiga de alerta é um estado causado pelo envio de muitas notificações de alerta para eventos que 
+não requerem intervenção humana, portanto, a opção A está correta. Isso cria o risco de que, eventualmente, os engenheiros de DevOps comecem a prestar menos atenção às notificações. A opção B está incorreta, embora seja concebível que muitos alertas possam afetar adversamente o desempenho, 
+mas isso não é provável. A opção C também é um problema em potencial, mas isso não é uma fadiga de alerta. 
+A opção D está incorreta porque muitos alertas verdadeiros contribuem para a fadiga de alerta. 
+8. C. O Stackdriver Logging armazena as entradas de registro por 30 dias, então a opção C está correta. 
+9. B. A melhor opção é usar a funcionalidade de exportação do Stackdriver Logging para gravar dados de log
+para um coletor de log, a opção B está correta. Opção A está incorreta; Existe uma maneira de exportar dados. 
+As opções C e D estão incorretas porque escrever um script personalizado levaria mais tempo para 
+desenvolver e manter do que usar a funcionalidade de exportação do Log. 
+10. D. Todos os três, intervalos do Cloud Storage, conjuntos de dados do BigQuery e tópicos do Cloud Pub / Sub estão 
+disponíveis como repositórios para registro de exportações, portanto, a opção D está correta. 
+11. D. Todas as opções listadas podem ser usadas para filtrar, então a opção D está correta. O nível de log também é outra 
+opção. 
+12. B. A resposta correta, opção B, é interrompida. Não há esse status de nível de log padrão. Os status incluem Critical, Error, Warning, Info e Debug.
+13. B. A maneira mais rápida de ver os detalhes é expandir todos os níveis de dados estruturados na entrada, 
+portanto , a opção B está correta. A opção A mostraria os detalhes, mas não é o caminho mais rápido. A opção 
+C consome mais tempo do que usar a funcionalidade incorporada no Stackdriver Logging. 
+Opção D está incorreta; não existe tal link. 
+14. C. O Cloud Trace é um aplicativo de rastreamento distribuído que fornece detalhes sobre quanto tempo as diferentes partes do código são executadas, portanto, a opção C está correta. Opção A está incorreta; O monitoramento é usado 
+para notificar os engenheiros de DevOps quando os recursos não estão funcionando conforme o esperado. A opção B está 
+incorreta; O registro é para coletar, armazenar e exibir dados de log e, embora entradas de log
+pode ajudar a diagnosticar gargalos, não é especificamente projetado para isso. Opção D está incorreta; A depuração é usada para gerar instantâneos e injetar pontos de log. 
+15. D. Debug é usado para gerar snapshots que fornecem uma visão do status de um aplicativo 
+em um determinado ponto em sua execução, então a opção D está correta. Opção A está incorreta; O monitoramento é usado para notificar os engenheiros de DevOps quando os recursos não estão funcionando conforme o esperado. 
+A opção B está incorreta; O registro é para coletar, armazenar e exibir dados de registro. A opção C está 
+incorreta porque o Cloud Trace é um aplicativo de rastreamento distribuído que fornece detalhes sobre 
+quanto tempo as diferentes partes do código são executadas. 
+502 Apêndice ■ Respostas às perguntas de revisão
+16. B. O Painel de status do Google Cloud em https://status.cloud.google.com/ tem 
+informações sobre o status dos serviços do GCP, por isso, a opção B está correta. As opções A e B podem 
+levar à informação, mas demorariam mais. A opção C não é um link para uma fonte de informações no BigQuery. 
+17. B. O Compute Engine e o Kubernetes Engine exigirão detalhes sobre as configurações das VMs, portanto, a opção B está correta. As outras opções estão incorretas porque o BigQuery e o 
+Cloud Pub / Sub são serviços sem servidor. 
+18. C. O sistema de preços de consulta no BigQuery baseia-se na quantidade de dados verificados, portanto, a opção C está correta. Opção A está incorreta; a quantidade de armazenamento de dados é especificada no Preço de armazenamento
+seção. A opção B está incorreta; O preço de consulta não se baseia no volume de dados retornados. 
+A opção D está incorreta porque isso não está relacionado ao Cloud Storage. A opção D está incorreta 
+porque a opção C está correta. 
+19. B. Alguns sistemas operacionais, como o Microsoft Windows Server, exigem uma licença, portanto, a opção B 
+está correta. O Google às vezes tem acordos com fornecedores para cobrar taxas pelo uso de software proprietário. Opção A está incorreta; não há cobrança de taxa fixa para sistemas operacionais. 
+A opção C está incorreta; Às vezes, as informações são necessárias para computar as cobranças. A opção D 
+está incorreta porque, se você trouxer sua própria licença, não haverá cobrança de licença adicional.
+20. B. O OpenCensus é uma biblioteca para o desenvolvimento de métricas personalizadas que podem ser usadas com o Stackdriver 
+Logging, portanto, a opção B está correta. Opção A está incorreta; O Prometheus é uma ferramenta de monitoramento de código aberto, mas não é usado para definir métricas personalizadas no Stackdriver Monitoring. A opção C 
+está incorreta; Grafana é uma ferramenta de visualização para Prometheus. Opção D está incorreta; O Nagios 
+é um serviço de monitoramento e alerta de código aberto, mas não é usado para definir 
+métricas personalizadas no Stackdriver Logging.
+

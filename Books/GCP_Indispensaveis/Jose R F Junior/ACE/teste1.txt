@@ -1,0 +1,4268 @@
+GPC - CERTIFICACAO
+
+Questão 1 
+002
+O comando de linha de comando para criar um balde Cloud Storage é:
+
+
+A. gcloud mb
+
+
+B. gsutil mb
+
+
+C. gcloud mkbucket
+
+
+D. gsutil mkbucket
+ .
+A gsutil é a linha de comando para acessar e manipular o Cloud Storage a partir da linha de comando. mb é o comando específico para criar ou criar um bloco.
+Questão 2 
+006
+Um componente remoto em sua rede falhou, o que resulta em um erro de rede temporário. Quando você envia um gsutil comando, ele falha devido a um erro transitório. Por padrão, o comando irá:
+
+
+A. Finalizar e registrar uma mensagem no Stackdriver
+
+
+B. Repetir usando uma estratégia de recuo exponencial binário truncado
+
+
+C. Solicitar que o usuário decida tentar ou encerrar
+
+
+D. Finalize e registre uma mensagem no Cloud Shell
+ .
+O gcloud, por padrão, tentará novamente uma operação de rede com falha e esperará um longo período de tempo antes de cada nova tentativa. O tempo de espera é calculado usando uma estratégia de recuo exponencial binário truncado.
+Questão 3 
+007itens
+Todos osa seguir são componentes de regras de firewall, exceto qual deles?
+
+
+A. Direção do tráfego
+
+
+B. Ação no jogo
+
+
+C. Tempo para viver (TTL)
+
+
+D. Protocolo
+
+As regras de firewall não têm parâmetros de tempo de vida. Direção de tráfego, ação na correspondência e protocolo são todos componentes das regras de firewall.
+Questão 4 
+008 A
+adição de máquinas virtuais a um grupo de instâncias pode ser acionada em uma política de escalonamento automático por todos os itens a seguir, exceto por qual deles?
+
+
+A. Utilização da CPU
+
+
+B. Métricas do Stackdriver
+
+
+C. Violação de políticas do IAM
+
+
+D. Capacidade de atendimento do balanceamento de carga
+ 
+As violações de políticas do IAM não acionam alterações no tamanho dos clusters. Todas as outras opções podem ser usadas para acionar uma alteração no tamanho do cluster.
+Questão 5 
+010
+O departamento de marketing de sua empresa deseja implementar um aplicativo da Web, mas não deseja gerenciar servidores ou clusters. Uma boa opção para eles é:
+
+
+A. Mecanismo de Compute
+
+
+B. Mecanismo do Kubernetes
+
+
+C. App Engine
+
+
+D. Funções de Nuvem
+ 
+O App Engine é uma plataforma como um serviço que permite aos desenvolvedores implantar aplicativos completos sem ter que gerenciar servidores ou clusters. O Compute Engine e o Kubernetes Engine exigem gerenciamento de servidores. O Cloud Functions é adequado para execução curta do Node.js ou funções Python, mas não para aplicativos completos.
+Questão 6 
+011
+Sua empresa está construindo um data warehouse corporativo e quer recursos de consulta SQL sobre petabytes de dados, mas não deseja gerenciar servidores ou clusters. Uma boa opção para eles é:
+
+
+A. Armazenamento em nuvem
+
+
+B. BigQuery
+
+
+C. Bigtable
+
+
+D. Datastore
+ .
+O BigQuery foi desenvolvido para análises em escala de petabytes e fornece uma interface SQL.
+Questão 7 
+012
+Você foi contratado como consultor para uma startup no espaço Internet of Things (IoT). A inicialização gerará grandes volumes de dados no Google Cloud Platform. Os dados precisam ser filtrados, transformados e analisados ​​antes de serem armazenados no repositório de dados do GCP. Uma boa opção para o componente de processamento de fluxo é:
+
+
+A. DataProc
+
+
+B. Cloud Dataflow
+
+
+C. Cloud Endpoints
+
+
+D. Interconexão de nuvem
+ 
+O Cloud DataFlow permite o fluxo e o processamento em lote de dados e é bem adequado para esse tipo de trabalho de ETL. O DataProc é um serviço Hadoop e Spark gerenciado usado para análise de big data. O Cloud Endpoints é um serviço de API e o Cloud Interconnect é um serviço de rede.
+Questão 8 
+013 As
+máquinas virtuais preemptivas podem ser encerradas a qualquer momento, mas sempre serão encerradas após a execução:
+
+
+A. 6 horas
+
+
+B. 12 horas
+
+
+C. 24 horas
+
+
+D. 48 horas
+ 
+Se uma máquina preemptiva não for desligada dentro de 24 horas, o Google interromperá a instância.
+Questão 9 
+015
+Durante um incidente que causou a falha de um aplicativo, você suspeita que algum recurso pode não ter as funções apropriadas concedidas. O comando para listar funções concedidas a um recurso é:
+
+
+A. gutil iam lista-atribuível-funções
+
+
+B. gcloud-ia-lista-atribuível-papéis
+
+
+C. gcloud lista-atribuível-papéis
+
+
+D. gcloud recursos concedáveis-papéis
+ .
+O gcloud é a ferramenta de linha de comando para trabalhar com o IAM, e as funções com permissão de lista são o comando correto.
+Questão 10 
+017
+Para criar uma função personalizada, um usuário deve possuir qual função?
+
+
+A. iam.create
+
+
+B. compute.roles.create
+
+
+C. iam.roles.create
+
+
+D. Compute.roles.add
+ Respondeu Incorretamente.
+iam.roles.create está correto; os outros papéis não existem.
+Questão 11 
+018
+Você foi solicitado a criar uma rede com 1.000 endereços IP. No interesse de minimizar endereços IP não utilizados, qual sufixo do CIDR você usaria para criar uma rede com pelo menos 1.000 endereços, mas não mais do que o necessário?
+
+
+A. / 20
+
+
+B. / 22
+
+
+C. / 28
+
+
+D. / 32
+ .
+O sufixo / 22 produz 1.022 endereços IP utilizáveis.
+Questão 12 
+020
+Você criou um aplicativo da web que permite aos usuários fazer upload de arquivos para o Cloud Storage. Quando os arquivos são carregados, você deseja verificar o tamanho do arquivo e atualizar o armazenamento total do usuário usado em sua conta. Uma opção sem servidor para executar essa ação no carregamento é:
+
+
+A. Cloud Dataflow
+
+
+B. Cloud DataProc
+
+
+C. Cloud Storage
+
+
+D. Funções de nuvem
+ 
+O Cloud Functions responde a eventos no Cloud Storage, tornando-os uma boa opção para executar uma ação depois que um arquivo é carregado.
+Questão 13 
+021
+Sua empresa acaba de começar a usar o Google Cloud Platform e os executivos querem ter uma conexão dedicada do seu data center com o GCP para permitir grandes transferências de dados. Qual serviço de rede você recomendaria?
+
+
+A. Peering para um portador do Google Cloud da Internet
+
+
+B. Interconexão da nuvem do Google - Dedicado
+
+
+C. Google Cloud Internet Peering
+
+
+D. DNS da Google Cloud
+ respondido incorretamente.
+Google Cloud Interconnect - Dedicated é a única opção para uma conexão dedicada entre o data center de um cliente e um data center do Google.
+Questão 14 
+023
+No Kubernetes Engine, um pool de nós é:
+
+
+A. Um subconjunto de nós em clusters
+
+
+B. Um conjunto de máquinas virtuais gerenciadas fora do Kubernetes Engine
+
+
+C. Um conjunto de máquinas virtuais preemptivas
+
+
+D. Um subconjunto de nós instâncias dentro de um cluster que todos têm a mesma configuração que
+ .
+Um pool de nós é um subconjunto de instâncias do nó dentro de um cluster que possuem a mesma configuração.
+Questão 15 
+024
+O serviço GCP para armazenar e gerenciar contêineres do Docker é:
+
+
+A. Repositórios de origem da
+
+
+nuvem B. Compilação da nuvem
+
+
+C. Registro do contêiner
+
+
+D. Repositório do Docker
+ respondido incorretamente.
+O serviço GCP para armazenar e gerenciar contêineres do Docker é o Container Registry. Cloud Build é para criar imagens. Os outros não são serviços do GCP.
+Questão 16 
+001
+Qual é a unidade fundamental de computação na computação em nuvem?
+
+
+A. servidor físico
+
+
+B. máquina virtual
+
+
+C. Bloco
+
+
+D. Sub-rede
+ 
+A unidade básica para a compra de recursos de computação é a máquina virtual. Um servidor físico subjaz máquinas virtuais, mas os recursos de um servidor físico são alocados para máquinas virtuais. Blocos e sub-redes não são relevantes para a unidade fundamental da computação.
+Questão 17 
+002
+Se você usa um cluster gerenciado por um provedor de nuvem, qual deles será gerenciado para você pelo provedor de nuvem?
+
+
+A. Monitoramento
+
+
+B. discurso
+
+
+C. Algumas tarefas de gerenciamento de segurança
+
+
+D. Todas asacima
+ opções.
+Ao usar clusters gerenciados, o provedor de nuvem monitorará a integridade dos nós no cluster, configurará a rede entre nós no cluster e configurará o firewall e outros controles de segurança.
+Questão 18 
+003
+Você precisa de computação sem servidor para processar arquivos e executar o back-end de um website, que dois produtos você pode escolher no Google Cloud Platform?
+
+
+A. Mecanismo do Kubernetes e Compute Engine
+
+
+B. Funções do App Engine e da nuvem
+
+
+C. Funções da nuvem e Compute Engine
+
+
+D. Funções da nuvem e mecanismo do Kubernetes
+ .
+O App Engine é uma plataforma sem servidor para executar aplicativos, enquanto o Cloud Functions é um serviço para executar funções de execução curta em resposta a eventos. O Kubernetes Engine é um serviço de cluster gerenciado e o Kubernetes Engine e o Compute Engine exigem que você configure servidores.
+Questão 19 
+004
+Você foi solicitado a projetar um sistema de armazenamento para um aplicativo da Web que permite que os usuários carreguem arquivos de dados grandes para serem analisados ​​por um fluxo de trabalho de business intelligence. Os arquivos devem ser armazenados em um sistema de armazenamento de alta disponibilidade. A funcionalidade do sistema de arquivos não é necessária. Qual sistema de armazenamento no Google Cloud Platform deve ser usado?
+
+
+A. Bloqueio de armazenamentoArmazenamento de
+
+
+B.objetos
+
+
+C. Cache
+
+
+D. Sistema de arquivos de rede
+ respondido incorretamente.
+O armazenamento de objetos, como o Cloud Storage, fornece objetos armazenados de forma redundante, sem limitar a quantidade de dados que você pode armazenar, o que torna a opção B correta. Como a funcionalidade do sistema de arquivos não é necessária, a opção D não é uma boa opção. O armazenamento em bloco pode ser usado, mas você teria que gerenciar sua própria replicação para garantir alta disponibilidade. Os caches são transitórios, armazenamento em memória e não são sistemas de armazenamento persistentes e de alta disponibilidade.
+Questão 20 
+005
+Todos os sistemas de armazenamento em bloco usam o tamanho do bloco?
+
+
+A. 4 KB
+
+
+B. 8 KB
+
+
+C. 16 KB
+
+
+D. O tamanho do bloco pode variar.
+ .
+Tamanhos de bloco em um sistema de armazenamento em bloco podem variar; Portanto, a opção D é a resposta correta. O tamanho do bloco é estabelecido quando um sistema de arquivos é criado. Tamanhos de bloco de 4 KB são comumente usados ​​no Linux.
+Questão 21 
+006
+Você foi solicitado a configurar a segurança de rede em uma nuvem privada virtual. Sua empresa deseja ter várias sub-redes e limitar o tráfego entre as sub-redes. Qual controle de segurança de rede você usaria para controlar o fluxo de tráfego entre sub-redes?
+
+
+A. Gerenciamento de acesso à identidade
+
+
+B. Roteador
+
+
+C. Firewall
+
+
+D. Tabela de endereços IP
+ 
+Os firewalls no Google Cloud Platform são controles de rede definidos por software que limitam o fluxo de tráfego para dentro e para fora de uma rede ou sub-rede, portanto, a opção C é a resposta correta. Os roteadores são usados ​​para mover o tráfego para destinos apropriados na rede. O gerenciamento de acesso à identidade é usado para autenticar e autorizar usuários; não é relevante para os controles de rede entre sub-redes. Tabelas de endereços IP não são um controle de segurança.
+Questão 22 
+007
+Quando você cria um serviço de aprendizado de máquina para identificar texto em uma imagem, que tipo de servidor você deve escolher para gerenciar recursos de computação?
+
+
+A. Máquinas virtuais
+
+
+B. Clusters de máquinas virtuais
+
+
+C. Sem servidores; serviços especializados são serverless
+
+
+D. Máquinas virtuais executando somente Linux
+ .
+A opção C está correta porque os serviços especializados no Google Cloud Platform não têm servidor. O Google gerencia os recursos de computação usados ​​pelos serviços. Não há necessidade de um usuário alocar ou monitorar máquinas virtuais.
+Questão 23 
+008
+Investir em servidores por longos períodos de tempo, como comprometer-se a usar servidores por três a cinco anos, funciona bem quando?
+
+
+A. Uma empresa está apenas começando
+
+
+B. Uma empresa pode prever com precisão a necessidade do servidor por um longo período de tempo
+
+
+. C. Uma empresa tem um orçamento fixo de TI
+
+
+D. Uma empresa tem um orçamento de TI variável
+ .
+Opção B está correta; investir em servidores funciona bem quando uma organização pode prever com precisão o número de servidores e outros equipamentos necessários por um período prolongado e pode utilizar esse equipamento de forma consistente. As startups não são empresas estabelecidas com históricos que podem orientar as necessidades esperadas em três a cinco anos. Não importa se um orçamento é fixo ou variável; investir em servidores deve basear-se na demanda por capacidade de servidor.
+Questão 24 
+009
+O custo unitário por minuto de um servidor virtual é baseado em quê?
+
+
+A. A hora do dia em que a máquina virtual é executada
+
+
+B. As características do servidor
+
+
+C. O aplicativo que você executa
+
+
+D. Nenhuma dasacima
+ opções.
+As características do servidor, como o número de servidores virtuais, a quantidade de memória e a região em que você executa a máquina virtual, influenciam o custo; portanto, a opção B está correta. A hora do dia não é um fator nem o tipo de aplicativo que você executa na máquina virtual.
+Questão 25 
+010
+Você planeja usar o Cloud Vision para analisar imagens e extrair texto visto na imagem. Você planeja processar entre 1.000 e 2.500 imagens por hora. Quantas máquinas virtuais você deve alocar para atender à demanda de pico?
+
+
+A. 1
+
+
+B. 10
+
+
+C. 25
+
+
+D. Nenhuma; O Cloud Vision é um serviço sem servidor.
+ .
+O Cloud Vision é um dos serviços especializados do Google Cloud Platform. Os usuários do serviço não precisam configurar nenhuma máquina virtual para usar o serviço.
+Questão 26 
+011
+Você precisa executar vários serviços para suportar um aplicativo. Qual das seguintes opções é um bom modelo de implantação?
+
+
+A. Executar em uma grande máquina virtual
+
+
+B. Usar contêineres em um cluster gerenciado
+
+
+C. Usar duas grandes máquinas virtuais, tornando uma delas somente leitura
+
+
+D. Usar uma pequena máquina virtual para todos os serviços e aumentar o tamanho da VM quando A utilização da CPU excede 90% que
+ .
+Os contêineres oferecem a maior flexibilidade para o uso eficiente dos recursos de um cluster e as plataformas de orquestração reduzem a sobrecarga das operações, o que torna a opção B correta. A execução em um único cluster não é recomendada porque, se o servidor falhar, todos os serviços ficarão inativos. Usando duas máquinas virtuais com um somente leitura não é útil. Servidores somente leitura às vezes são usados ​​com bancos de dados, mas não houve menção de bancos de dados na questão. O uso de uma pequena máquina virtual e a atualização quando ela não for mais capaz de acompanhar a carga de trabalho fornecem serviços de baixa qualidade aos usuários e devem ser evitados.
+Questão 27 
+012
+Você criou uma máquina virtual. Qual das seguintes operações de administração do sistema você tem permissão para realizar nele?
+
+
+A. Configure o sistema de arquivos
+
+
+B. Aplique o software do sistema operacional
+
+
+C. Altere as permissões de arquivo e diretório
+
+
+D. Todas asacima foram
+ opções
+Todas as operações estão disponíveis para um administrador do sistema depois de criar uma máquina virtual, portanto, a opção D está correta.
+Questão 28 
+015
+Você foi aconselhado por um colega a usar um cache com seu aplicativo de banco de dados para resolver um dos vários problemas com seu aplicativo. Como isso afetará sua aplicação?
+
+
+A. Um cache melhora a execução do JavaScript do lado do cliente.
+
+
+B. Um cache continuará armazenando dados mesmo se a energia for perdida, melhorando a disponibilidade.
+
+
+C. Caches pode sair de sincronia com o sistema da verdade.
+
+
+D. O uso de um cache reduzirá a latência, pois a recuperação de um cache é mais rápida do que a recuperação de SSDs ou HDDs.
+ .
+Os caches usam memória, e isso os torna o tipo de armazenamento mais rápido para a leitura de dados, então a opção D está correta. Caches são datastores no backend de sistemas distribuídos, não nos clientes. Um cache não teria efeito na execução do JavaScript do lado do cliente. Os caches não armazenam dados em um cache se a energia for perdida; os dados teriam que ser recarregados. Os caches podem ficar fora de sincronia com o sistema de verdade, porque o sistema de verdade pode ser atualizado, mas o cache pode não ser atualizado. Os caches têm tempos de leitura mais rápidos do que SSDs e HDDs.
+Questão 29 
+016
+Por que os provedores de nuvem podem oferecer uma alocação de recursos elástica?
+
+
+Os provedores de nuvem podem obter recursos de clientes de baixa prioridade e oferecê-los a clientes de prioridade mais alta.
+
+
+B. Recursos extensivos e a capacidade de transferir recursos rapidamente entre os clientes permitem que os provedores de nuvem pública ofereçam uma alocação de recursos mais eficiente do que pode ser feita em data centers menores.
+
+
+C. Eles cobram mais os recursos que você usa.
+
+
+D. Eles não.
+ .
+Opção B está correta; Os provedores de nuvem têm grande capacidade e podem alocar rapidamente esses recursos para diferentes clientes. Com uma mistura de clientes e cargas de trabalho, eles podem otimizar a alocação de recursos. Opção A está incorreta; Os provedores de nuvem não aceitam recursos de um cliente para fornecê-los a outro, com exceção de instâncias preemptivas. A opção C está incorreta; provedores de nuvem geralmente oferecem descontos para uso aumentado.
+Questão 30 
+017
+O que não é uma característica dos serviços especializados no Google Cloud Platform?
+
+
+A. Eles são sem servidor; você não precisa configurar servidores ou clusters.
+
+
+B. Eles fornecem uma função específica, como traduzir texto ou analisar imagens.
+
+
+C. Eles exigem monitoramento pelo usuário.
+
+
+D. Eles fornecem uma API para acessar a funcionalidade do serviço.
+ .
+Os serviços especializados são monitorados pelo Google para que os usuários não precisem monitorá-los; portanto, a opção C está correta. Os serviços especializados fornecem uma funcionalidade de computação específica, mas não exigem que o usuário configure recursos. Eles também fornecem APIs.
+Questão 31 
+018
+As transações do seu cliente devem acessar uma unidade conectada a uma máquina virtual que permite acesso aleatório a partes de arquivos. Que tipo de armazenamento a unidade conectada fornece?
+
+
+A. Armazenamento de objetosArmazenamento de
+
+
+B.blocos
+
+
+C. Armazenamento de NoSQL
+
+
+D. Somente armazenamento de SSD
+ .
+Unidades anexadas são dispositivos de armazenamento em bloco. O Cloud Storage é o serviço de armazenamento de objetos e não é anexado diretamente a uma máquina virtual. O NoSQL é um tipo de banco de dados, não um sistema de armazenamento. Unidades anexadas podem ser SSD ou discos rígidos.
+Questão 32 
+019
+Você está implementando um novo banco de dados relacional para suportar um aplicativo da web. Que tipo de sistema de armazenamento você usaria para armazenar arquivos de dados do banco de dados?
+
+
+A. Armazenamento de objetosArmazenamento de
+
+
+B.dados
+
+
+C. Armazenamento de blocos
+
+
+D. Cache
+ respondido incorretamente.
+O banco de dados requer armazenamento persistente em dispositivos de bloco. O armazenamento de objetos não fornece armazenamento de bloco de dados ou de sistema de arquivos, fazendo da opção C a resposta correta. O armazenamento de dados não é um tipo de sistema de armazenamento. Os caches são frequentemente usados ​​com bancos de dados para melhorar o desempenho de leitura, mas são voláteis e não são adequados para armazenar persistentemente arquivos de dados.
+Questão 33 
+020
+Um usuário prefere serviços que exigem configuração mínima; Por que você recomendaria o Cloud Storage, o App Engine e o Cloud Functions?
+
+
+A. Eles são cobrados apenas pelo tempo.
+
+
+B. Eles são sem servidor.
+
+
+C. Eles exigem que um usuário configure máquinas virtuais.
+
+
+D. Eles só podem executar aplicativos escritos em Go.
+ .
+Todos os três serviços são sem servidor, portanto, o usuário não precisa configurar máquinas virtuais; portanto, a opção B está correta. O Cloud Storage é cobrado com base no tempo e no tamanho dos dados armazenados. O App Engine Standard e as Cloud Functions não estão restritos apenas ao idioma Go.
+Questão 34 
+tb.564416.02.001
+Você está planejando implantar um aplicativo SaaS para clientes na América do Norte, Europa e Ásia. Para manter a escalabilidade, você precisará distribuir a carga de trabalho pelos servidores em várias regiões. Qual serviço do GCP você usaria para implementar a distribuição da carga de trabalho?
+
+
+A. Cloud DNS
+
+
+B. Chave Inglesa
+
+
+C. Cloud Load Balancing
+
+
+D. Cloud CDN
+
+O Cloud Load Balancing distribui cargas de trabalho dentro e entre regiões, fornece verificações de integridade e implementa o escalonamento automático. O Cloud DNS fornece serviços de nome de domínio, como a tradução de um URL, como www.example.com, para um endereço IP. O Cloud Spanner é um banco de dados relacional distribuído, mas não implementa a distribuição de carga de trabalho. O Cloud CDN distribui conteúdo entre regiões para reduzir a latência ao fornecer conteúdo para usuários em todo o mundo.
+Questão 35 
+tb.564416.02.002
+Você decidiu implementar um conjunto de microservices usando contêineres. Você pode instalar e gerenciar as instâncias do Docker no Compute Engine, mas prefere que o GCP forneça alguns serviços de gerenciamento de contêineres. Quais dois serviços do GCP permitem que você execute contêineres em um serviço gerenciado?
+
+
+A. Ambiente padrão do App Engine e ambiente flexível do App Engine
+
+
+B. Ambiente padrão do
+
+
+Kubernetes Engine e App Engine C. Ambiente flexível do Kubernetes Engine e do App Engine
+
+
+D. Ambiente padrão do App Engine e funções de nuvem
+ 
+Os ambientes flexíveis do App Engine permitem que você execute contêineres na PaaS do App Engine. O Kubernetes Engine é uma plataforma de orquestração para a execução de contêineres. Ambos fornecem serviços de gerenciamento de contêineres. O ambiente padrão do App Engine executa aplicativos em caixas de proteção específicas de idiomas e não é um sistema geral de gerenciamento de contêineres. O Cloud Functions é um serviço sem servidor para executar código em resposta a eventos. Não fornece serviços de contêiner.
+Questão 36 
+tb.564416.02.003
+Por que um desenvolvedor de API deseja usar a plataforma Apigee API?
+
+
+A. Para obter os benefícios de roteamento e limitação de taxa
+
+
+B. Serviços de autenticação
+
+
+C. Controle de versão do código
+
+
+D. A e B
+
+
+E. Todos osacima
+ itensrespondidos incorretamente.
+As opções A e B são as respostas corretas. A plataforma Apigee API fornece serviços de limitação e roteamento de taxas com base em políticas para ajudar a acomodar picos de tráfego. Ele também fornece autenticação OAuth 2.0 e SAML. Não fornece controle de versão; O Cloud Source Repositories é o usuário do serviço para controle de versão.
+Pergunta 37 
+tb.564416.02.006
+Seu departamento está implementando um aplicativo que possui um back-end de banco de dados. Você está preocupado com a carga de leitura no servidor de banco de dados e deseja ter dados disponíveis na memória para reduzir o tempo de resposta a consultas e reduzir a carga no servidor de banco de dados. Qual serviço do GCP você usaria para manter os dados na memória?
+
+
+A. Cloud SQL
+
+
+B. Cloud Memorystore
+
+
+C. Chave Inglesa
+
+
+D. Cloud Datastore
+ .
+Cloud Memorystore é o único GCP projetado para armazenar dados em cache na memória. O Cloud SQL é um serviço de banco de dados relacional e pode ser uma boa opção para o banco de dados de back-end. O Cloud Spanner é um banco de dados relacional global e é uma boa opção quando você precisa de um banco de dados globalmente consistente. O Cloud Datastore é um banco de dados de documentos adequado para catálogos de produtos, perfis de usuário e outros dados semiestruturados.
+Pergunta 38 
+tb.564416.02.007
+O Cloud SDK pode ser usado para configurar e gerenciar recursos em qual dos seguintes serviços?
+
+
+A. Compute Engine
+
+
+B. Cloud Storage
+
+
+C. Firewalls de rede
+
+
+D. Todos osacima
+ itensrespondidos incorretamente.
+Todos os três serviços listados, Compute Engine, Cloud Storage e firewalls de rede podem ser gerenciados e configurados usando o Cloud SDK.
+Questão 39 
+tb.564416.02.008
+Qual configuração do servidor é necessária para usar o Cloud Functions?
+
+
+A. Configuração de máquina virtualConfiguração de
+
+
+B.clusterConfiguração de
+
+
+C.Pub / Sub
+
+
+D. Nenhuma
+ .
+Cloud Functions é um produto sem servidor, nenhuma configuração é necessária.
+Questão 40 
+tb.564416.02.009
+Você recebeu a tarefa de consolidar dados de log gerados por cada instância de um aplicativo. Qual das ferramentas de gerenciamento do Stackdriver você usaria?
+
+
+A. Monitoramento
+
+
+B. Rastreio
+
+
+C. Depurador
+
+
+D. Registo
+ .
+O produto Stackdriver Logging é usado para consolidar e gerenciar logs gerados por aplicativos e servidores.
+Pergunta 41 
+tb.564416.02.010
+Quais serviços especializados têm maior probabilidade de serem usados ​​para construir uma plataforma de data warehousing que exija operações complexas de extração, transformação e carregamento de dados em lote, bem como o processamento de dados de fluxo contínuo?
+
+
+A. Plataforma Apigee API
+
+
+B. Análise de dados
+
+
+C. AI e aprendizado de máquina
+
+
+D. Cloud SDK
+ respondido incorretamente.
+O conjunto de analítica de dados de serviços especializados inclui produtos que ajudam na extração, transformação e carregamento (ETL) e trabalham com dados em lote e streaming. A plataforma Apigee API é usada para gerenciar APIs e não atende às necessidades descritas. O AI e o aprendizado de máquina podem ser úteis para analisar dados no data warehouse, mas os serviços nesse conjunto nem sempre são úteis para operações de ETL. O Cloud SDK é usado para controlar serviços, mas por si só não é capaz de executar diretamente as operações necessárias.
+Questão 42 
+tb.564416.02.011
+Sua empresa implantou 100.000 sensores da Internet das Coisas (IoT) para coletar dados sobre o estado dos equipamentos em várias fábricas. Cada sensor coletará e enviará dados para um armazenamento de dados a cada 5 segundos. Os sensores funcionarão continuamente. Os relatórios diários produzirão dados sobre o valor máximo, mínimo e médio de cada métrica coletada em cada sensor. Não há necessidade de suportar transações neste aplicativo. Qual produto de banco de dados você recomendaria?
+
+
+A. Chave
+
+
+B. Bigtable
+
+
+C. Nuvem SQL MySQL
+
+
+D. Cloud SQL PostgreSQL
+ .
+O Bigtable foi projetado para aceitar bilhões de linhas de dados. A coleta de dados de 100.000 sensores a cada 5 segundos gerará 6.000.000 pontos de dados a cada minuto ou 8.640.000.000 pontos de dados por dia. A chave é um banco de dados relacional e suporta transações, mas elas não são necessárias. O Cloud SQL MySQL e o Cloud SQL PostgreSQL seriam difíceis de escalar para esse nível de desempenho de leitura e gravação.
+Questão 43 
+tb.564416.02.013
+Um engenheiro de software chega até você para uma recomendação. Ela implementou um algoritmo de aprendizado de máquina para identificar células cancerígenas em imagens médicas. O algoritmo é computacionalmente intensivo, faz muitos cálculos matemáticos, requer acesso imediato a grandes quantidades de dados e não pode ser facilmente distribuído em vários servidores. Que tipo de configuração do Compute Engine você recomendaria?
+
+
+A. Alta memória, alta CPU
+
+
+B. Alta memória, alta CPU, GPU
+
+
+C. Memória de nível intermediário, alta CPU
+
+
+D. alta CPU, GPU
+ 
+Um aplicativo intensivo em computação obviamente requer CPUs altas, mas o fato de haver muitos cálculos matemáticos indica que uma GPU deve ser usada. Você pode considerar executar isso em um cluster, mas o trabalho não é distribuído facilmente em vários servidores, portanto, você precisará ter um único servidor capaz de atender à carga. O acesso imediato a grandes quantidades de dados indica que uma máquina de alta memória deve ser recomendada.
+Questão 44 
+tb.564416.02.014
+Você tem a tarefa de mapear as políticas de autenticação e autorização de seus aplicativos locais para os mecanismos de autenticação e autorização do GCP. Você encontra documentação que declara que uma identidade deve ser autenticada para exercer privilégios concedidos a essa identidade. A documentação do GCP afirma que uma identidade deve ser autenticada para conceder privilégios a essa identidade. O que o termo identidade se refere?
+
+
+A. ID de máquina virtual
+
+
+B. Usuário
+
+
+C. Função
+
+
+D. Conjunto de privilégios
+ respondidos incorretamente.
+Identidades são abstrações de usuários. Eles também podem representar características de processos executados em nome de um usuário humano ou de uma máquina virtual no GCP. Identidades não estão relacionadas a IDs de máquinas virtuais. Funções são coleções de privilégios que podem ser concedidos a identidades. A opção D é sinônimo da opção C.
+Pergunta 45 
+tb.564416.02.015
+Um cliente está desenvolvendo um aplicativo que precisará analisar grandes volumes de informações de texto. O cliente não é especialista em mineração de texto ou em trabalhar com idioma. Qual serviço do GCP você recomendaria usar?
+
+
+A. Visão da nuvem
+
+
+B. Nuvem ML
+
+
+C. Processamento de Linguagem Natural na
+
+
+Nuvem D. Minerador de Texto na Nuvem
+ Respondeu Incorretamente.
+O Cloud Natural Language Processing fornece funcionalidade para análise de texto. O Cloud Text Miner não existe. O Cloud ML é um serviço de aprendizado de máquina de propósito geral que pode ser aplicado à análise de texto, mas que requer conhecimento de processamento de linguagem, que o cliente não possui. O Cloud Vision é para processamento de imagens.
+Questão 46 
+tb.564416.02.016
+Os cientistas de dados em sua empresa desejam usar uma biblioteca de aprendizado de máquina disponível apenas no Apache Spark. Eles querem minimizar a quantidade de administração e o trabalho de DevOps. Como você recomendaria que eles prosseguissem?
+
+
+A. Use o Cloud Spark
+
+
+B. Use o Cloud Dataproc
+
+
+C. Use o Bigquery
+
+
+D. Instale o Apache Spark em um cluster de máquinas virtuais que
+ .
+Ambas as opções B e D atenderiam à necessidade de executar o Spark, o que daria aos cientistas de dados acesso à biblioteca de máquinas que eles precisam. No entanto, a opção D requer que eles gerenciem e monitorem o cluster de servidores, o que seria mais trabalho de administração e DevOps do que se eles usassem o serviço Dataproc. A opção C, Bigquery, é um banco de dados escalonável, não uma plataforma para executar o Spark. O Cloud Spark é um produto fictício e não existe no GCP.
+Questão 47 
+tb.564416.02.017 Os
+criadores de bancos de dados da sua empresa estão debatendo a melhor maneira de mover um banco de dados para o GCP. O banco de dados suporta um aplicativo com uma base de usuários global. Os usuários esperam suporte para transações e a capacidade de consultar dados usando ferramentas de consulta comumente usadas. Os projetistas de banco de dados decidem que qualquer serviço de banco de dados escolhido precisará suportar ANSI 2011 e transações globais. Qual serviço de banco de dados você recomendaria?
+
+
+A. Cloud SQL
+
+
+B. Chave de
+
+
+Dados C. Datastore
+
+
+D. Bigtable
+ .
+A opção B está correta. Spanner suporta transações SQL e globais padrão ANSI 2011. O Cloud SQL suporta o SQL padrão, mas não possui transação global. Datastore e Bigtable são bancos de dados NoSQL.
+Questão 48 
+tb.564416.02.019
+Você tem um aplicativo Python que gostaria de executar em um ambiente escalonável com o mínimo de sobrecarga de gerenciamento. Qual produto do GCP você selecionaria?
+
+
+A. Ambiente flexível do App Engine
+
+
+B. Cloud Engine
+
+
+C. Ambiente padrão do App Engine
+
+
+D. Motor Kubernetes
+ .
+O ambiente padrão do App Engine fornece uma caixa de proteção Python sem servidor que é dimensionada automaticamente, portanto, a opção C está correta. O ambiente flexível do App Engine executa contêineres e exige mais configuração. O Cloud Engine e o Kubernetes Engine exigem gerenciamento e monitoramento significativos.
+Questão 49 
+tb.564416.02.020
+Um gerente de produto da sua empresa relata que os clientes estão reclamando da confiabilidade de um dos seus aplicativos. O aplicativo está travando periodicamente, mas os desenvolvedores não encontraram um padrão comum que aciona as falhas. Eles estão preocupados que eles não tenham uma boa visão do comportamento do aplicativo e queiram realizar uma revisão detalhada de todos os dados de falha. Qual ferramenta do Stackdriver você usaria para visualizar informações consolidadas sobre falhas?
+
+
+A. DataProc
+
+
+B. Monitoramento
+
+
+C. Registo
+
+
+D. Relatório de Erros
+ .
+O relatório de erros consolida as informações de falha, o que torna o Relatório de erros a resposta correta. O monitoramento coleta métricas sobre o desempenho do aplicativo e do servidor. O log é um serviço de gerenciamento de log. O DataProc não faz parte do Stackdriver; é um serviço gerenciado do Hadoop e do Spark.
+Questão 50 
+002
+Quando você cria uma hierarquia, você pode ter mais de uma estrutura?
+
+
+A. Apenas OrganizaçãoApenas
+
+
+B.Pasta
+
+
+C. Pasta e Projeto
+
+
+D. Somente Projeto
+ .
+As hierarquias de recursos possuem uma única organização na raiz, o que torna a opção C correta. Abaixo disso, existem pastas que podem conter outras pastas ou projetos. As pastas podem conter várias pastas e vários projetos.
+Questão 51 
+003
+Você está projetando um aplicativo que usa uma série de serviços para transformar dados de sua forma original em um formato adequado para uso em um data warehouse. Seu aplicativo de transformação gravará na fila de mensagens conforme processa cada arquivo de entrada. Você não quer dar permissão aos usuários para gravar na fila de mensagens. You could allow the application to write to the message queue by using which of the following?
+
+
+A. Conta de faturamento
+
+
+B. conta de serviço
+
+
+C. Conta de mensagens
+
+
+D. Pasta
+ .
+As contas de serviço são projetadas para permitir que aplicativos ou máquinas virtuais executem tarefas. As contas de faturamento são para associar cobranças a um método de pagamento. As pastas fazem parte das hierarquias de recursos e não têm nada a ver com a ativação de um aplicativo para executar uma tarefa. Contas de mensagens são uma opção fictícia.
+Questão 52 
+004
+Sua empresa tem várias políticas que precisam ser aplicadas a todos os projetos. Você decide aplicar políticas à hierarquia de recursos. Não muito tempo depois de aplicar as políticas, um engenheiro descobre que um aplicativo que funcionou antes da implementação de políticas na hierarquia de recursos. O engenheiro gostaria que você criasse uma exceção para o aplicativo. Como você pode substituir uma política herdada de outra entidade na hierarquia de recursos?
+
+
+R. As políticas herdadas podem ser substituídas definindo uma política em uma pasta ou em um nível de projeto.
+
+
+B. As políticas herdadas não podem ser substituídas.
+
+
+C. Políticas podem ser substituídas, ligando-as a contas de serviço.
+
+
+D. Políticas podem ser substituídas vinculando-as a contas de cobrança.
+ .
+As políticas herdadas podem ser substituídas definindo uma política em um nível de pasta ou projeto. As contas de serviço e as contas de faturamento não fazem parte da hierarquia de recursos e não estão envolvidas na substituição de políticas.
+Questão 53 
+005
+Restrições são usadas nas políticas de hierarquia de recursos. Quais das seguintes opções são tipos de restrições permitidas?
+
+
+A. Permitir um conjunto específico de valores
+
+
+B. Negar um conjunto específico de valores
+
+
+C. Negar um valor e todos os seus valores filhos
+
+
+D. Permitir todos os valores permitidos
+
+
+E. Todos os itens acima
+ .
+Todos os tipos de restrições listados são suportados em políticas.
+Questão 54 
+006
+Uma equipe com quatro membros precisa que você configure um projeto que precisa apenas de permissões gerais para todos os recursos. Você está concedendo a cada pessoa um papel primitivo para diferentes níveis de acesso, dependendo de suas responsabilidades no projeto. Quais das seguintes opções não estão incluídas como funções primitivas no Google Cloud Platform?
+
+
+A. Proprietário
+
+
+B. Publisher
+
+
+C. Editor
+
+
+D. Viewer
+ .
+Opção B é a resposta correta porque o Publisher não é uma função primitiva. Proprietário, editor e visualizador são os três privilégios primitivos do Google Cloud Platform.
+Questão 55 
+007
+Você está implantando um novo aplicativo personalizado e deseja delegar algumas tarefas administrativas aos engenheiros de DevOps. Eles não precisam de todos os privilégios de um administrador de aplicativo completo, mas precisam de um subconjunto desses privilégios. Que tipo de papel você deve usar para conceder esses privilégios?
+
+
+A. Primitivo
+
+
+B. Predefinido
+
+
+C. Avançado
+
+
+D. Custom
+ .
+Os papéis primitivos incluem apenas as permissões Proprietário, Editor e Visualização. As funções predefinidas são projetadas para produtos e serviços da GCP, como o App Engine e o Big Query. Para um aplicativo personalizado, você pode criar conjuntos de privilégios que dão ao usuário essa função com a permissão necessária, mas não mais.
+Questão 56 
+008
+Um aplicativo para uma empresa financeira precisa acessar um banco de dados e um intervalo do Cloud Storage. Não há uma função predefinida que conceda todas as permissões necessárias sem conceder algumas permissões desnecessárias. Você decide criar um papel personalizado. Ao definir funções personalizadas, você deve seguir quais dos seguintes princípios?
+
+
+A. Rotação de funções
+
+
+B. Princípio Menos
+
+
+C. Defesa em profundidade
+
+
+D. Menos privilégio
+ .
+Os usuários devem ter apenas os privilégios necessários para realizar suas tarefas. Este é o princípio do menor privilégio. Rotação de funções é outro princípio de segurança relacionado a ter pessoas diferentes realizando uma tarefa em um horário diferente. A defesa em profundidade é uma prática de usar vários controles de segurança para proteger o mesmo ativo. A opção B não é uma entidade de segurança real.
+Questão 57 
+009
+Quantas organizações você pode criar em uma hierarquia de recursos?
+
+
+A. 1
+
+
+B. 2
+
+
+C. 3
+
+
+D. Ilimitado
+
+Uma hierarquia de recursos possui apenas uma organização, o que torna a opção A correta. Você pode, no entanto, criar várias pastas e projetos em uma hierarquia de recursos.
+Questão 58 
+010
+Você é contatado pelo departamento financeiro da sua empresa para obter conselhos sobre como automatizar os pagamentos dos serviços do GCP. Que tipo de conta você recomendaria para configurar?
+
+
+A. Conta de serviço
+
+
+B. Conta de faturamento
+
+
+C. Conta de recurso
+
+
+D. conta de crédito
+ .
+Na opção B, a resposta correta, a conta de faturamento é usada para especificar informações de pagamento e deve ser usada para configurar pagamentos automáticos. As contas de serviço são usadas para conceder privilégios a uma máquina virtual e não estão relacionadas a faturamento e pagamentos. Contas de recursos e contas de crédito não existem.
+Questão 59 
+011
+Você está experimentando o GCP para sua empresa. Você não tem permissão para incorrer em custos. Como você pode experimentar o GCP sem incorrer em cobranças?
+
+
+A. Você não pode; todos os serviços incorrem em cobranças.
+
+
+B. Você pode usar um cartão de crédito pessoal para pagar as taxas.
+
+
+C. Você pode usar somente serviços gratuitos no GCP.
+
+
+D. Você pode usar somente produtos sem servidor, que são livres para usar.
+ .
+O Google Cloud Platform oferece um nível de serviço gratuito para muitos produtos, o que torna a opção C a resposta correta. Você pode usar esses serviços sem ter que configurar uma conta de faturamento. O Google cobra pelos produtos sem servidor, como o Cloud Functions e o App Engine, quando os clientes excedem o valor permitido no nível gratuito.
+Questão 60 
+012
+Sua equipe de DevOps decidiu usar o monitoramento e o registro do Stackdriver. Você foi solicitado a configurar os espaços de trabalho do Stackdriver. Quando você configura um espaço de trabalho do Stackdriver, com que tipo de recurso ele está associado?
+
+
+A. Apenas uma instância do Compute Engine
+
+
+B. Apenas uma instância do Compute Engine ou cluster do Kubernetes Engine
+
+
+C. Uma instância do Compute Engine, um cluster do Kubernetes Engine ou um aplicativo do Google App Engine
+
+
+D. Um projeto
+ .
+Os espaços de trabalho do Stackdriver são vinculados a projetos, não a recursos individuais, como instâncias de VM, clusters ou aplicativos do App Engine, por isso, a opção D está correta. As opções A, B e C indicam incorretamente que os espaços de trabalho estão associados a recursos de computação individuais.
+Pergunta 61 
+013
+Uma grande empresa está planejando usar o GCP em várias subdivisões. Cada subdivisão é gerenciada de forma independente e possui orçamento próprio. A maioria das subdivisões planeja gastar dezenas de milhares de dólares por mês. Como você recomendaria que eles configurassem suas contas de faturamento?
+
+
+A. Use uma única conta de faturamento de autoatendimento
+
+
+B. Use várias contas de faturamento de autoatendimento
+
+
+C. Use uma única conta de faturamento
+
+
+D. Use várias contas de faturamento faturadas
+ .
+As grandes empresas devem usar o faturamento ao incorrer em grandes encargos, o que torna a opção D a resposta correta. Uma conta de autoatendimento é apropriada apenas para valores que estão dentro dos limites de crédito dos cartões de crédito. Como as subdivisões são gerenciadas independentemente e têm seus próprios orçamentos, cada uma deve ter suas próprias contas de faturamento.
+Pergunta 62 
+015
+Você trabalha para um varejista com um grande número de lojas de tijolo e argamassa. Todas as noites, as lojas enviam dados de vendas diárias. Você foi encarregado de criar um serviço que verifica os uploads todas as noites. Você decide usar uma conta de serviço. Seu gerente questiona a segurança de sua solução proposta, principalmente sobre como autenticar a conta de serviço. Você explica o mecanismo de autenticação usado pelas contas de serviço. Qual mecanismo de autenticação é usado?
+
+
+A. Nome de usuário e senha
+
+
+B. Autenticação de dois fatores
+
+
+C. Chaves Criptografadas
+
+
+D. Biometria
+ .
+Quando uma conta de serviço é criada, o Google gera chaves criptografadas para autenticação, tornando a opção C correta. Nomes de usuários e senhas não são uma opção para contas de serviço. A autenticação de dois fatores é uma prática de autenticação que requer duas formas de autenticação, como um par de senhas de nome de usuário e um código de um dispositivo de autenticação. A biometria não pode ser usada por serviços e não é uma opção.
+Pergunta 63 
+016
+Quais objetos do GCP às vezes são tratados como recursos e, às vezes, como identidades?
+
+
+A. Contas de faturamento
+
+
+B. Contas de serviço
+
+
+C. Projetos
+
+
+D. Funções
+ .
+Contas de serviço são recursos que são gerenciados por administradores, mas também funcionam como identidades que podem ser atribuídas a funções, o que torna a opção B a resposta correta. As contas de faturamento não estão relacionadas a identidades. Projetos não são identidades; eles não podem assumir papéis. Funções são recursos, mas não identidades. Eles podem assumir privilégios, mas esses privilégios são usados ​​somente quando estão ligados a uma identidade.
+Questão 64 
+017
+Você planeja desenvolver um aplicativo da Web usando produtos do GCP que já incluam funções estabelecidas para o gerenciamento de permissões, como acesso somente leitura ou a capacidade de excluir versões antigas. Qual das seguintes funções oferece esses recursos?
+
+
+A. Papéis primitivos
+
+
+B. Funções predefinidas
+
+
+C. Funções Personalizadas
+
+
+D. Funções de aplicativo
+ .
+As funções predefinidas são definidas para um produto específico, como o App Services ou o Compute Engine. Portanto, a opção B é a resposta correta. Agrupam privilégios geralmente necessários juntos ao gerenciar ou usar um serviço. Os papéis primitivos são blocos de construção para outros papéis. Funções personalizadas são criadas pelos usuários para atender às suas necessidades específicas; As funções de aplicativos são um papel fictício.
+Pergunta 65 
+018
+Você está revisando uma nova conta do GCP criada para uso pelo departamento financeiro. Um auditor tem dúvidas sobre quem pode criar projetos por padrão. Você explica quem tem privilégios para criar projetos por padrão. Quem está incluído?
+
+
+A. Somente administradores de projetos
+
+
+B. Todos os usuários
+
+
+C. Somente usuários sem o papel resourcemanager.projects.create
+
+
+D. Apenas usuários da conta de faturamento
+ .
+Por padrão, todos os usuários em uma organização podem criar projetos, o que torna a opção B correta. A função resourcemanager.projects.create é a função que permite aos usuários criar projetos. A conta de faturamento não está associada à criação de projetos.
+Pergunta 66 
+020
+Você está planejando como conceder privilégios aos usuários da conta do GCP da sua empresa. Você precisa documentar o que cada usuário poderá fazer. Os auditores estão mais preocupados com uma função chamada Organization IAM roles. Você explica que os usuários com essa função podem realizar várias tarefas, que incluem todas as seguintes, exceto qual delas?
+
+
+A. Definindo a estrutura da hierarquia de recursos
+
+
+B. Determinando quais privilégios um usuário deve ser designado
+
+
+C. Definindo políticas do IAM na hierarquia de recursos
+
+
+D. Delegar outras funções de gerenciamento a outros usuários
+ .
+Os usuários com a função IAM da organização não são necessariamente responsáveis ​​por determinar quais privilégios devem ser atribuídos aos usuários. Isso é determinado com base no papel da pessoa na organização e nas políticas de segurança estabelecidas dentro da organização, o que torna a opção B correta.
+Pergunta 67 
+001
+Você está implantando um aplicativo da web Python no GCP. O aplicativo usa apenas código personalizado e bibliotecas básicas do Python. Você espera ter um uso esporádico do aplicativo no futuro previsível e deseja minimizar o custo de execução do aplicativo e a sobrecarga de DevOps do gerenciamento do aplicativo. Qual serviço de computação é a melhor opção para executar o aplicativo?
+
+
+A. Compute Engine
+
+
+B. Ambiente padrão do App Engine
+
+
+C. Ambiente flexível do App Engine
+
+
+D. Kubernetes Engine
+ .
+O ambiente padrão do Google App Engine pode executar aplicativos Python, que podem ser dimensionados automaticamente para nenhuma instância quando não há carga e, portanto, minimizam os custos. O Compute Engine e o ambiente flexível do App Engine exigem mais gerenciamento de configuração do que o ambiente padrão do App Engine. O Kubernetes Engine é usado quando um cluster de servidores é necessário para suportar aplicativos grandes ou múltiplos usando os mesmos recursos de computação.
+Pergunta 68 
+004
+Sua empresa licenciou um pacote de software de terceiros executado no Linux. Você executará várias instâncias do software em um contêiner do Docker. Qual dos seguintes serviços do GCP você pode usar para implantar esse pacote de software?
+
+
+A. Somente Compute Engine
+
+
+B. Apenas o Kubernetes Engine
+
+
+C. Compute Engine, Kubernetes Engine e o ambiente flexível do App Engine apenas
+
+
+D. Compute Engine, Kubernetes Engine, o ambiente flexível do App Engine ou o ambiente padrão do App Engine
+ .
+O Compute Engine pode executar contêineres do Docker se você instalar o Docker na máquina virtual. O Kubernetes e o ambiente flexível do App Engine oferecem suporte a contêineres do Docker. O ambiente padrão do Google App Engine fornece ambientes de tempo de execução específicos do idioma e não permite que os clientes especifiquem imagens do Docker personalizadas para uso.
+Pergunta 69 
+007
+Seu gerente está fazendo uma apresentação para executivos de sua empresa, defendendo que você comece a usar o Kubernetes Engine. Você pode sugerir ao gerente que destaque todos os recursos que o Kubernetes fornece para reduzir a carga de trabalho dos engenheiros de DevOps. Você descreve vários recursos, incluindo todos os itens a seguir, exceto qual deles?
+
+
+A. Balanceamento de carga nas máquinas virtuais do Compute Engine implantadas em um cluster do Kubernetes
+
+
+B. Varredura de segurança para vulnerabilidades
+
+
+C. Escalonamento automático de nós no cluster
+
+
+D. Atualização automática do software de cluster conforme necessário
+ .
+O Kubernetes fornece balanceamento de carga, escalonamento e atualização automática de software. Não fornece varredura de vulnerabilidade. O GCP tem um produto do Cloud Security Scanner, mas foi desenvolvido para funcionar com o Google App Engine para identificar vulnerabilidades de aplicativos comuns.
+Questão 70 
+008
+Sua empresa está prestes a lançar um novo serviço on-line que se baseia em uma nova experiência de interface do usuário impulsionada por um conjunto de serviços que serão executados em seus servidores. Existe um conjunto separado de serviços que gerenciam autenticação e autorização. Um conjunto de serviços de armazenamento de dados controla as informações da conta. Todos os três conjuntos de serviços devem ser altamente confiáveis ​​e dimensionados para atender à demanda. Qual dos serviços do GCP é a melhor opção para implantar isso?
+
+
+A. Ambiente padrão do App Engine
+
+
+B. Compute Engine
+
+
+C. Funções da nuvem
+
+
+D. Kubernetes Engine
+ .
+O cenário descrito é um bom ajuste para o Kubernetes. Cada um dos grupos de serviços pode ser estruturado em pods e implantado usando a implantação do Kubernetes. O Kubernetes Engine gerencia a integridade do nó, o balanceamento de carga e o dimensionamento. O App Engine Standard Edition tem sandboxes específicas de idioma e não é adequado para esse caso de uso. O Cloud Functions é projetado para processamento de eventos de curta execução e não é o tipo de processamento contínuo necessário neste cenário. O Compute Engine poderia atender aos requisitos deste caso de uso, mas exigiria mais esforço da parte dos administradores de aplicativos e profissionais de DevOps para configurar balanceadores de carga, monitorar a integridade e gerenciar implantações de software.
+Pergunta 71 
+009
+Um aplicativo para dispositivos móveis faz o upload de imagens para análise, incluindo a identificação de objetos na imagem e a extração de texto que pode estar embutido na imagem. Um terceiro criou o aplicativo móvel e você desenvolveu o serviço de análise de imagem. Ambos concordam em usar o Cloud Storage para armazenar imagens. Você deseja manter os dois serviços completamente desacoplados, mas é necessário invocar a análise de imagem assim que uma imagem for carregada. Como isso deve ser feito?
+
+
+A. Altere o aplicativo móvel para iniciar uma máquina virtual executando o serviço de análise de imagem e faça com que a VM copie o arquivo do armazenamento para o armazenamento local na VM. Ter o serviço de imagem executado na VM.
+
+
+B. Escreva uma função em Python que é chamada por Cloud Functions quando um novo arquivo de imagem é gravado no bloco do Cloud Storage que recebe novas imagens. A função deve enviar o URL do arquivo enviado ao serviço de análise de imagem. O serviço de análise de imagens carregará a imagem do Cloud Storage, realizará análises e gerará resultados, que podem ser salvos no Cloud Storage.
+
+
+C. Tenha um cluster do Kubernetes em execução contínua, com um pod dedicado a listar o conteúdo do intervalo de upload e a detectar novos arquivos no Cloud Storage e outro pod dedicado à execução do software de análise de imagem.
+
+
+D. Ter uma máquina virtual do Compute Engine em execução e listar continuamente o conteúdo do intervalo de upload no Cloud Storage para detectar novos arquivos. Outra máquina virtual deve estar continuamente executando o software de análise de imagem.
+ .
+Este é um caso de uso ideal para Cloud Functions. A função de nuvem é acionada por um evento de upload de arquivo. A função de nuvem chama o serviço de processamento de imagem. Com essa configuração, os dois serviços são independentes. Nenhum servidor adicional é necessário. A opção A viola a exigência de manter os serviços independentes. As opções C e D incorrem em mais despesas gerais de gerenciamento e provavelmente custarão mais para operar do que a opção B.
+Pergunta 72 
+010
+Sua equipe está desenvolvendo um novo canal para analisar um fluxo de dados de sensores em dispositivos de fabricação. O pipeline antigo ocasionalmente corrompia dados porque os threads paralelos sobrescreviam dados gravados por outros threads. Você decide usar o Cloud Functions como parte do pipeline. Como desenvolvedor de uma Cloud Function, o que você precisa fazer para impedir que várias invocações da função interfiram umas nas outras?
+
+
+A. Inclua uma verificação no código para garantir que outra chamada não esteja sendo executada ao mesmo tempo.
+
+
+B. Programe cada chamada para ser executada em um processo separado.
+
+
+C. Programe cada chamada para ser executada em um encadeamento separado.
+
+
+D. nada. O GCP garante que as chamadas de função não interfiram entre si.
+ .
+Cada chamada de uma função de nuvem é executada em um ambiente de tempo de execução seguro e isolado. Não há necessidade de verificar se outras invocações estão em execução. Com o serviço Cloud Functions, não há como um desenvolvedor controlar a execução de código no processo ou no nível do encadeamento.
+Pergunta 73 
+012
+Qual é o nível mais baixo da hierarquia de recursos?
+
+
+Uma pasta
+
+
+B. Projeto
+
+
+C. Arquivo
+
+
+D. instância de máquina virtual
+ .
+Projetos são o nível mais baixo da hierarquia de recursos. A organização está no topo da hierarquia e as pastas estão entre a organização e os projetos. Instâncias de máquina virtual não fazem parte da hierarquia de recursos.
+Questão 74 
+013
+Sua empresa está vendo um aumento acentuado na taxa de crescimento de clientes na Europa. A latência está se tornando um problema porque seu aplicativo está sendo executado em us-central1. Você sugere implantar seus serviços em uma região da Europa. Você tem várias opções. Você deve considerar todos os fatores a seguir, exceto qual deles?
+
+
+Um custo
+
+
+B. Latência
+
+
+C. Regulamentos
+
+
+D. Confiabilidade
+ .
+Todas as regiões do Google têm o mesmo nível de contratos de nível de serviço, portanto, a confiabilidade é a mesma. Custos podem entre regiões. As regulamentações podem exigir que os dados fiquem dentro de uma área geográfica, como a União Européia. A latência é uma consideração quando você deseja uma região próxima aos usuários finais ou os dados de que você precisa já estão armazenados em uma determinada região.
+Questão 75 
+014
+Qual função oferece aos usuários controle total sobre as instâncias do Compute Engine?
+
+
+A. Função do Compute Engine Manager
+
+
+B. Função de administrador do Compute Engine
+
+
+C. Função do gerenciador de instâncias de cálculo
+
+
+D. Administrador de Segurança do Compute Engine
+ .
+A função administrativa do Compute Engine é a função que oferece aos usuários controle total sobre as instâncias. As opções A e C são funções fictícias. O Administrador de segurança do Compute Engine oferece aos usuários os privilégios para criar, modificar e excluir certificados SSL e regras de firewall.
+Questão 76 
+015
+Quais das seguintes são limitações de uma máquina virtual preemptiva?
+
+
+R. Será encerrado se eles estiverem funcionando por no máximo 24 horas.
+
+
+B. Pode nem sempre estar disponível. A disponibilidade pode variar entre zonas e regiões.
+
+
+C. Não é possível migrar para uma máquina virtual normal.
+
+
+D. Todos os itens acima.
+ .
+VMs preemptivas serão encerradas após 24 horas. O Google não garante que as VMs preemptivas estarão disponíveis. Quando uma instância é iniciada como uma máquina preemptiva, ela não pode migrar para uma máquina virtual comum. Você poderia, no entanto, salvar um instantâneo e usá-lo para criar uma nova instância regular.
+Questão 77 
+016
+Máquinas virtuais personalizadas podem ter até quantas vCPUs?
+
+
+A. 16
+
+
+B. 32
+
+
+C. 64
+
+
+D. 128
+ .
+As máquinas virtuais personalizadas podem ter até 64 CPUs e até 6,5 GB de memória por vCPU.
+Questão 78 
+017
+Ao usar o ambiente padrão do App Engine, qual dos seguintes tempos de execução do idioma não é suportado?
+
+
+A. Java
+
+
+B. Python
+
+
+C. C
+
+
+D. Go
+ .
+A linguagem de programação C não é suportada no ambiente padrão do App Engine. Se você precisar executar um aplicativo C, ele poderá ser compilado e executado em um contêiner em execução no ambiente flexível do App Engine.
+Questão 79 
+018
+O Kubernetes reserva recursos da CPU em porcentagem de núcleos disponíveis. A porcentagem é qual faixa?
+
+
+A. 1% a 10%
+
+
+B. 0,25% a 6%
+
+
+C. 0,25% a 2%
+
+
+D. 10% a 12%
+ .
+O Kubernetes reserva a capacidade da CPU de acordo com o seguinte cronograma:
+6 por cento do primeiro núcleo
+1 por cento do próximo núcleo (até dois núcleos)
+0,5 por cento dos próximos dois núcleos (até quatro núcleos)
+0,25 por cento de quaisquer núcleos acima de quatro núcleos
+Questão 80 
+019
+As implementações do Kubernetes podem estar em quais estados?
+
+
+A. Progresso, parado, concluído
+
+
+B. Progresso, concluído, falhou
+
+
+C. Progresso, parado, falhado, concluído
+
+
+D. Progredindo, parado, correndo, falhou, completou
+ .
+Os únicos estados em que uma implantação do Kubernetes pode estar estão em andamento, concluídos e com falha.
+Questão 81 
+001
+Você acabou de abrir o console do GCP em console.google.com. Você autenticou com o usuário que você deseja usar. Qual é uma das primeiras coisas que você deve fazer antes de executar tarefas em máquinas virtuais?
+
+
+A. Abra o Cloud Shell.
+
+
+B. Verifique se você pode SSH em uma VM.
+
+
+C. Verifique se o projeto selecionado é o que você deseja trabalhar.
+
+
+D. Revise a lista de máquinas virtuais em execução.
+ .
+Você deve verificar o projeto selecionado porque todas as operações executadas serão aplicadas aos recursos no projeto selecionado, tornando a opção C a resposta correta. Você não precisa abrir o Cloud Shell, a menos que queira trabalhar com a linha de comando e, caso tenha feito isso, verifique se o projeto foi selecionado corretamente primeiro. Fazer login em uma VM usando o SSH é uma das tarefas que exige que você trabalhe com o projeto correto, portanto, o login via SSH não deve acontecer antes de verificar o projeto. A lista de máquinas virtuais na janela Instância de VM é uma lista de máquinas virtuais no projeto atual. Você deve verificar qual projeto está usando para garantir que esteja visualizando o conjunto de máquinas virtuais que você pensa que é.
+Pergunta 82 
+003
+Um colega solicitou sua ajuda para configurar um ambiente de teste no Google Cloud. Eles nunca trabalharam no GCP. Você sugere começar com uma única VM. Qual das seguintes opções é o conjunto mínimo de informações que você precisará?
+
+
+A. Um nome para a VM e um tipo de máquina
+
+
+B. Um nome para a VM, um tipo de máquina, uma região e uma zona
+
+
+C. Um nome para a VM, um tipo de máquina, uma região, uma zona e um bloco CIDR
+
+
+D. Um nome para a VM, um tipo de máquina, uma região, uma zona e um endereço IP
+ .
+O nome da VM, a região e a zona e o tipo de máquina podem ser especificados no console junto com outros parâmetros, portanto, a opção B está correta. Opção A está faltando parâmetros necessários. Um bloco CIDR é um intervalo de endereços IP que está associado a uma sub-rede e não é necessário para criar uma VM. Um endereço IP é atribuído automaticamente, portanto, não é necessário.
+Pergunta 83 
+004
+Um arquiteto sugeriu um tipo de máquina específico para sua carga de trabalho. Você está no console criando uma VM e não vê o tipo de máquina na lista de tipos de máquinas disponíveis. Qual poderia ser a razão disso?
+
+
+A. Você selecionou a sub-rede incorreta
+
+
+B. Esse tipo de máquina não está disponível na zona que você especificou
+
+
+C. Você escolheu um sistema operacional incompatível
+
+
+D. Você não especificou uma configuração de memória correta
+ .
+Diferentes zonas podem ter diferentes tipos de máquinas disponíveis, portanto, você precisará especificar uma região primeiro e, em seguida, uma zona para determinar o conjunto de tipos de máquinas disponíveis. Se o tipo de máquina não aparecer na lista, ela não estará disponível nessa zona. Isso faz da opção B a resposta correta. As opções A e C estão incorretas. Sub-redes e endereços IP não estão relacionados aos tipos de máquinas disponíveis. A menos que você esteja especificando um tipo de máquina personalizado, não especifique a quantidade de memória definida pelo tipo de máquina para que a Opção D esteja incorreta.
+Questão 84 
+005
+Seu gerente pede sua ajuda para entender os custos da computação em nuvem. Sua equipe executa dezenas de VMs para três aplicativos diferentes. Duas das aplicações são para uso do departamento de marketing e uma é usada pelo departamento financeiro. Seu gerente deseja cobrar de cada departamento pelo custo das VMs usadas em seus aplicativos. O que você sugeriria para ajudar a resolver este problema?
+
+
+A. Controles de acesso
+
+
+B. discos persistentes
+
+
+C. Etiquetas e descrições
+
+
+D. Apenas descrições
+ .
+Os rótulos e descrições servem para nos ajudar a rastrear nossos próprios atributos de recursos; O Google Cloud Platform não precisa deles para executar suas tarefas. À medida que o número de servidores aumenta, pode ser difícil controlar quais VMs são usadas para quais aplicativos e serviços, portanto, a opção C é a resposta correta. Os rótulos e uma descrição geral ajudarão os administradores a rastrear os números de máquinas virtuais e seus custos relacionados. As opções A e B são usadas para segurança e armazenamento, mas não ajudam no gerenciamento de várias máquinas virtuais. A opção D está apenas parcialmente correta. As descrições são úteis, mas os rótulos também são úteis.
+Pergunta 85 
+006
+Se você quiser definir a propriedade preferencial usando o Cloud Console, em qual seção da página Criar uma Instância você encontrará a opção?
+
+
+A. Política de disponibilidade
+
+
+B. Identidade e acesso à API
+
+
+C. Inquilino único
+
+
+D. Networking
+
+A seção Política de disponibilidade na guia Gerenciamento é onde você define a preempção, portanto, a opção A está correta. A identidade e o acesso à API são usados ​​para controlar o acesso das VMs às APIs do Google Cloud e qual conta de serviço é usada com a VM. A locação exclusiva é usada se você precisar executar suas máquinas virtuais em servidores físicos que só executam suas máquinas virtuais. A rede é usada para definir tags de rede e alterar a interface de rede.
+Questão 86 
+007
+Você precisa configurar um servidor com um alto nível de segurança. Você quer estar preparado em caso de ataques em seu servidor por alguém tentando injetar um rootkit (um tipo de malware que pode alterar o sistema operacional). Qual opção você deve selecionar ao criar uma VM?
+
+
+A. Firewall
+
+
+B. Shield VM
+
+
+C. Chaves SSH em todo o projeto
+
+
+D. Verificação de integridade do disco de inicialização
+ .
+O Shield VM é um conjunto avançado de controles de segurança que inclui o Monitoramento de Integridade, uma verificação para garantir que as imagens de inicialização não tenham sido adulteradas, o que torna a opção B a resposta correta. Os firewalls são usados ​​para controlar a entrada e a saída do tráfego de rede para um servidor ou sub-rede. As chaves SSH em todo o projeto são usadas para autenticar usuários entre servidores dentro de um projeto. A verificação de integridade do disco de inicialização é um recurso fictício.
+Pergunta 87 
+008
+Todos os parâmetros a seguir podem ser definidos ao adicionar um disco adicional por meio do Google Cloud Console, exceto um. Qual?
+
+
+A. tipo de disco
+
+
+B. Gerenciamento de chave de criptografia
+
+
+C. tamanho do bloco
+
+
+D. Imagem de origem para o disco
+ .
+O tamanho do bloco não é uma opção na caixa de diálogo Discos Adicionais, portanto, a opção C está correta. O gerenciamento de chave de criptografia, o tipo de disco e a opção de especificar uma imagem de origem são todas as opções disponíveis.
+Questão 88 
+009
+Você lidera uma equipe de engenheiros em nuvem que mantém recursos em nuvem para vários departamentos da sua empresa. Você percebeu um problema com o desvio de configuração. Algumas configurações de máquina não estão mais no mesmo estado em que estavam quando foram criadas. Você não pode encontrar notas ou documentação sobre como as alterações foram feitas ou por quê. Qual prática você implementaria para resolver esse problema?
+
+
+A. Todos os engenheiros da nuvem devem usar apenas a interface de linha de comando no Cloud Shell.
+
+
+B. Escreva scripts usando comandos gcloud para alterar a configuração e armazenar esses scripts em um sistema de controle de versão.
+
+
+C. Tome notas ao fazer alterações na configuração e armazene-as no Google Drive.
+
+
+D. Limite os privilégios para que apenas você possa fazer alterações, assim você sempre saberá quando e por que as configurações foram alteradas.
+ .
+Usar scripts controlados por versão é a melhor abordagem das quatro opções. Os scripts podem ser documentados com motivos para as alterações e podem ser executados repetidamente em máquinas diferentes para implementar a mesma alteração. Isso reduz a chance de erro ao inserir manualmente um comando. A opção A não ajuda a melhorar a documentação do motivo pelo qual os trocadores foram feitos. A opção C pode ajudar a melhorar a documentação, mas os scripts executáveis ​​são reflexos precisos e precisos do que foi executado. Notas podem perder detalhes. Opção D não é aconselhável. Você poderia se tornar um bo obstinado a fazer alterações, as alterações não podem ser feitas quando não está disponível e sua memória pode não ser uma maneira confiável de rastrear todas as alterações de configuração.
+Questão 89 
+011
+Um engenheiro de nuvem recém-contratado está tentando entender o que as VMs estão executando em um projeto específico. Como o engenheiro poderia obter informações resumidas sobre cada VM em execução
+em um projeto?
+
+
+A. Execute o comando gcloud compute list
+
+
+B. Execute o comando gcloud compute instances list
+
+
+C. Execute o comando gcloud instances list
+
+
+D. Execute o comando gcloud list instances
+ .
+A opção B segue o padrão do comando glcoud, que é hierárquico e começa com o nome glcoud do serviço, neste caso, compute para o Compute Engine, seguido pelo próximo nível abaixo, que neste caso são instâncias. Finalmente, há a ação ou verbo, nesta lista de casos. A opção A está sem o termo instâncias para indicar que você está trabalhando com instâncias de VM. A opção C está sem a palavra-chave compute para indicar que você está trabalhando com o Compute Engine. A opção D está sem a palavra-chave da instância de computação e mudou a ordem das instâncias e da lista.
+Questão 90 
+012
+Ao criar uma máquina virtual usando a linha de comando, como você deve especificar rótulos para a VM?
+
+
+A. Use a opção --labels com rótulos no formato de KEYS: VALUES.
+
+
+B. Use a opção --labels com rótulos no formato KEYS = VALUES.
+
+
+C. Use a opção --labels com rótulos no formato de KEYS, VALUES.
+
+
+D. Isso não é possível na linha de comando.
+ .
+O formato correto é usar o parâmetro --labels e especificar a chave seguida por um sinal de igual seguido pelo valor na opção B. As opções A e C têm o caractere incorreto que separa a chave e o valor. A opção D está incorreta porque é possível especificar rótulos na linha de comando.
+Questão 91 
+013
+Na configuração avançada do disco de inicialização, quais operações você pode especificar ao criar uma nova máquina virtual?
+
+
+A. Adicionar um novo disco, reformatar um disco existente, anexar um disco existente
+
+
+B. Adicionar um novo disco e reformatar um disco existente
+
+
+C. Adicione um novo disco e anexe um disco existente
+
+
+D. Reformatar um disco existente e anexar um disco existente
+ .
+As duas operações que você pode especificar ao usar a configuração do disco de livro são adicionar um novo disco e anexar um disco existente, portanto, a opção C está correta. Reformatar um disco existente não é uma opção, portanto, as opções A, B e D não podem ser a resposta correta.
+Pergunta 92 
+014
+Você adquiriu um conjunto de dados de 10 GB de uma empresa de pesquisa terceirizada. Um grupo de cientistas de dados gostaria de acessar esses dados de seus programas estatísticos escritos em R. R. funciona bem com sistemas de arquivos Linux e Windows e os cientistas de dados estão familiarizados com operações de arquivos em R. O cientista de dados gostaria de ter seus próprios VM dedicada com os dados disponíveis no sistema de arquivos da VM. O que é uma maneira de disponibilizar esses dados em uma VM e minimizar as etapas que o cientista de dados precisará realizar?
+
+
+A. Armazene os dados no Cloud Storage
+
+
+B. Criar VMs usando uma imagem de origem criada a partir de um disco com os dados nela
+
+
+C. Armazene os dados no Google Drive
+
+
+D. Carregue os dados no BigQuery
+ .
+10 GB de dados são pequenos o suficiente para serem armazenados em um único disco. Ao criar uma imagem de um disco com os dados armazenados, você pode especificar essa imagem de origem ao criar uma VM. A opção A exigiria que o cientista de dados copiasse os dados do Cloud Storage para um disco na VM. A opção C exigiria, da mesma forma, a cópia dos dados. A opção D carregaria dados em um banco de dados, não em um sistema de arquivos, conforme especificado nos requisitos.
+Questão 93 
+015
+A guia Rede do formulário de criação de máquina virtual é onde você executaria qual das seguintes operações?
+
+
+A. Defina o endereço IP da máquina virtual
+
+
+B. Adicione uma interface de rede para a máquina virtual
+
+
+C. Especifique um roteador padrão
+
+
+D. Alterar as regras de configuração do firewall
+ .
+Na guia Rede do formulário de máquina virtual, você pode adicionar outra interface de rede, portanto, a opção B está correta. O GCP define o endereço IP, portanto, a opção A está incorreta. Não há opção para especificar um roteador ou alterar regras de firewall na guia Rede, portanto, as opções C e D estão incorretas.
+Pergunta 94 
+018
+Qual dos seguintes comandos interromperá uma máquina virtual denominada web-server-1?
+
+
+A. instâncias de computação gcloud halt web-server-1
+
+
+B. instâncias de computação gcloud --terminate web-server1
+
+
+C. gcloud compute instances pare o web-server-1
+
+
+D. gcloud compute stop web-server-1
+ .
+A opção C é o comando correto, que é gcloud compute instances, para indicar que você está trabalhando com máquinas virtuais, seguido pelo comando stop e pelo nome da VM. A opção A está incorreta porque a parada não é uma opção. A opção B está incorreta porque –terminate não é um parâmetro. Opção D está faltando a palavra instâncias, o que indica que você está trabalhando com máquinas virtuais.
+Questão 95 
+019
+Você acabou de criar uma máquina virtual Ubuntu e deseja efetuar login na VM para instalar alguns pacotes de software. Qual serviço de rede você usaria para acessar a máquina virtual?
+
+
+A. FTP
+
+
+B. SSH
+
+
+C. RDP
+
+
+D. ipconfig
+ .
+O SSH é um serviço para se conectar a um servidor remoto e efetuar login em uma janela do terminal. Uma vez logado, você teria acesso a uma linha de comando, então a opção B é a resposta correta. O FTP é um protocolo de transferência de arquivos e não permite efetuar login e executar tarefas de administração do sistema. O RDP é um protocolo usado para acessar remotamente os servidores Windows, não o Ubuntu, que é uma distribuição do Linux. ipconfig é um utilitário de linha de comando para configurar pilhas de IP em um dispositivo e não permite que você faça login em um servidor remoto.
+Questão 96 
+tb.564416.06.002
+Você visualiza uma lista de instâncias de máquina virtual do Linux no console. Todos têm endereços IP públicos atribuídos. Você percebe que a opção SSH está desativada para uma das instâncias. Por que esse pode ser o caso?
+
+
+A. A instância é preemptiva e, portanto, não suporta SSH.
+
+
+B. A instância está parada.
+
+
+C. A instância foi configurada com a opção No SSH.
+
+
+D. A opção SSH nunca é desativada.
+ .
+As instâncias podem ser interrompidas e, quando estão, você não pode se conectar a elas via SSH, o que torna a opção B a resposta correta. Iniciar a instância ativará o acesso SSH. A opção A não está correta porque você pode fazer login em máquinas preemptivas. A opção C está incorreta porque não há nenhuma opção SSH. A opção D está incorreta porque a opção SSH pode ser desativada.
+Pergunta 97 
+tb.564416.06.003
+Você percebeu um tempo de resposta excepcionalmente lento ao emitir comandos para um servidor Linux e decidiu reinicializar a máquina. Qual comando você usaria no console para reiniciar?
+
+
+A. Reinicie
+
+
+B. Redefinir
+
+
+C. Reiniciar
+
+
+D. Desligamento seguido por inicialização
+ .
+O comando Reset pode ser usado para reiniciar uma máquina virtual; assim, a opção B está correta. As propriedades da VM não serão alteradas, mas os dados na memória serão perdidos. Não há opções de reinicialização, reinicialização, desligamento ou inicialização no console.
+Questão 98 
+tb.564416.06.004
+No console, você pode filtrar a lista de instâncias de VM pelas seguintes alternativas?
+
+
+A. Apenas etiquetas
+
+
+B. Membro do grupo de instâncias gerenciadas somente
+
+
+C. Etiquetas, status ou membros do grupo de instâncias gerenciadas
+
+
+D. Etiquetas e status apenas
+ .
+Rótulos, membros de um grupo de instâncias gerenciadas e status estão todos disponíveis para filtragem, portanto, a opção C é a resposta correta. Você também pode filtrar por IP interno, IP externo, zona, rede, proteção de exclusão e membro de um grupo de instâncias gerenciado ou não gerenciado.
+Questão 99 
+tb.564416.06.007
+Você está usando instantâneos para salvar cópias de um disco de 100 GB. Você faz um instantâneo e depois adiciona 10 GB de dados. Você cria um segundo instantâneo. Quanto armazenamento é usado no total para as duas capturas instantâneas (não assume nenhuma compactação)?
+
+
+A. 210 GB, com 100 GB para o primeiro e 110 GB para o segundo
+
+
+B. 110 GB, com 100 GB para o primeiro e 10 GB para o segundo
+
+
+C. 110 GB, com 110 para o segundo (o primeiro instantâneo é apagado automaticamente)
+
+
+D. 221 GB, com 100 GB para o primeiro, 110 GB para o segundo, mais 10% do segundo instantâneo (11 GB) para sobrecarga de metadados
+ .
+Quando você cria um snapshot pela primeira vez, o GCP faz uma cópia completa dos dados no disco permanente. Na próxima vez que você criar um snapshot a partir desse disco, o GCP copiará somente os dados que foram alterados desde o último snapshot. Opção A está incorreta; O GCP não armazena uma cópia completa do segundo instantâneo. A opção C está incorreta; o primeiro instantâneo não é excluído automaticamente. A opção D está incorreta, os instantâneos subseqüentes não incorrem em 10% de sobrecarga.
+Questão 100 
+tb.564416.06.008
+Você decidiu delegar a tarefa de criar instantâneos de backup a um membro de sua equipe. Qual papel você precisaria conceder ao membro da sua equipe para criar instantâneos?
+
+
+A. Administrador de Imagem Compute
+
+
+B. Administrador de Armazenamento
+
+
+C. Compute o Admin de Captura Instantânea
+
+
+D. Compute Administrador de Armazenamento
+ .
+Para trabalhar com instantâneos, um usuário deve receber a função Administrador de Armazenamento de Cálculo, o que torna a opção D a resposta correta. As outras opções são funções fictícias.
+Questão 101 
+tb.564416.06.009
+A fonte de uma imagem pode ser:
+
+
+A. Apenas discos
+
+
+B. Snapshots ou discos apenas
+
+
+C. Discos, instantâneos ou outra imagem
+
+
+D. Discos, instantâneos ou qualquer arquivo de exportação de banco de dados
+ .
+As imagens podem ser criadas a partir de quatro fontes, ou seja, discos, instantâneos, arquivos de armazenamento em nuvem ou outra imagem, portanto, a opção C é a resposta correta. Arquivos de exportação de banco de dados não são fontes para imagens.
+Questão 102 
+tb.564416.06.010
+Você construiu imagens usando o Ubuntu 14.04 e agora quer que os usuários comecem a usar o Ubuntu 16.04. Você não quer apenas apagar imagens baseadas no Ubuntu 14.04, mas você quer que os usuários saibam que devem começar a usar o Ubuntu 16.04. Qual recurso de imagens você usaria para realizar isso?
+
+
+A. Redirecionamento
+
+
+B. Depreciado
+
+
+C. Não Suportado
+
+
+D. Migração
+ .
+Deprecated marca a imagem como não sendo mais suportada e permite que você especifique uma imagem de substituição para uso daqui para frente, fazendo da opção B a resposta correta. Imagens obsoletas estão disponíveis para uso, mas não podem ser corrigidas por falhas de segurança ou ter outras atualizações. As outras opções são recursos fictícios de imagens.
+Pergunta 103 
+tb.564416.06.011
+Você deseja gerar uma lista de VMs em seu inventário e ter os resultados no formato JSON. Qual comando você usaria?
+
+
+A. gcloud compute instances list
+
+
+B. instâncias de computação gcloud descrevem
+
+
+C. gcloud compute lista de instâncias –format json
+
+
+D. gcloud compute instances list - saída json
+ .
+O comando base para trabalhar com instâncias é gcloud compute instances, o que torna a opção C a resposta correta. O comando list é usado para mostrar detalhes de todas as instâncias. Por padrão, a saída está em formato legível, e não json. Usar a opção –format json força a saída a estar no formato JSON. –Output não é uma opção válida.
+Questão 104 
+tb.564416.06.012
+Você gostaria de entender detalhes de como o GCP inicia uma instância virtual. Qual parâmetro opcional você usaria ao iniciar uma instância para exibir esses detalhes?
+
+
+A. -verbose
+
+
+B. - assíncrono
+
+
+C. - descreva
+
+
+D. - detalhes
+ .
+–Async faz com que informações sobre o processo de início sejam exibidas; portanto, a opção B está correta. –Verbose é um parâmetro análogo em muitos comandos do Linux. –Describe fornece detalhes sobre uma instância, mas não necessariamente o processo de inicialização. –Details não é um parâmetro válido.
+Questão 105 
+tb.564416.06.013
+Qual comando irá deletar uma instância chamada ch06-instance-3?
+
+
+A. gcloud compute instances delete instance = ch06-instance-3
+
+
+B. instância gcloud compute stop ch06-instance-3
+
+
+C. gcloud compute instances exclui ch06-instance-3
+
+
+D. gcloud compute delete ch06-instance-3
+ .
+O comando para excluir uma instância é gcloud compute instances delete seguido pelo nome da instância, portanto, a opção C está correta. A opção A está incorreta porque não há nenhum parâmetro de instância. A opção B está incorreta porque esse comando pára, mas não exclui a instância. A opção D está faltando instâncias no comando, que é necessário para indicar que tipo de entidade está sendo excluído.
+Questão 106 
+tb.564416.06.015
+Você deseja visualizar uma lista de campos que você pode usar para classificar uma lista de instâncias. Qual comando você usaria para ver os nomes dos campos?
+
+
+A. gcloud compute instances list
+
+
+B. instâncias de computação gcloud descrevem
+
+
+C. gcloud compute instances list –detailed
+
+
+D. gcloud compute instances descreve –detalhada
+ .
+A resposta correta é a opção B, que é usar o comando describe. A opção A mostrará alguns campos, mas não todos. As opções C e D estão incorretas porque não há nenhum parâmetro detalhado.
+Questão 107 
+tb.564416.06.016
+Você está implantando um aplicativo que precisará ser dimensionado e estar altamente disponível. Qual desses componentes do Compute Engine ajudará a obter escalabilidade e alta disponibilidade?
+
+
+A. instâncias preemptivas
+
+
+B. grupos de instâncias
+
+
+C. Cloud Storage
+
+
+D. GPUs
+ .
+Grupos de instâncias são conjuntos de máquinas virtuais que podem ser configurados para escalar e são usados ​​com balanceadores de carga, o que contribui para melhorar a disponibilidade, portanto, a opção B está correta. As instâncias preemptivas não são altamente disponíveis porque podem ser encerradas a qualquer momento pelo GCP. O Cloud Storage não é um componente do Compute Engine. As GPUs podem ajudar a melhorar a taxa de transferência para operações intensivas em matemática, mas não contribuem para a alta disponibilidade.
+Questão 108 
+tb.564416.06.017
+Antes de criar um grupo de instâncias, você precisa criar o que?
+
+
+A. Instâncias no grupo de instâncias
+
+
+B. Modelo de Grupo de Instância
+
+
+C. Imagem de disco de inicialização
+
+
+D. Instantâneo de origem
+ .
+Um modelo de grupo de instâncias é usado para especificar como o grupo de instâncias deve ser criado, o que torna a opção B a resposta correta. A opção A está incorreta porque as instâncias são criadas automaticamente quando um grupo de instâncias é criado. Imagens de disco de inicialização e instantâneos não precisam ser criados antes de criar um grupo de instâncias.
+Questão 109 
+tb.564416.06.018
+Como você excluiria um modelo de grupo de instâncias usando a linha de comando?
+
+
+A. gcloud compute instances exemplo-template delete
+
+
+B. glcoud compute instance-templates delete
+
+
+C. gcloud compute exclui o modelo da instância
+
+
+D. gcloud compute exclui modelos de instância
+ .
+O comando para excluir um grupo de instâncias é gcloud compute instance-template delete, portanto, a opção B está correta. Opção A incorretamente inclui o termo instâncias. Opção C está em ordem incorreta. A opção D está errada porque o modelo de instância está na posição errada e é plural na opção.
+Questão 110 
+tb.564416.06.019
+Qual pode ser a base para aumentar um grupo de instâncias?
+
+
+A. Utilização da CPU e atualizações do sistema operacional
+
+
+B. Uso de disco e utilização de CPU somente
+
+
+C. Latência de rede, capacidade de balanceamento de carga e utilização da CPU
+
+
+D. Uso de disco e atualizações do sistema operacional apenas
+ .
+Você pode configurar uma política de escalonamento automático para acionar a adição ou remoção de instâncias com base na utilização da CPU, métrica de monitoramento, capacidade de balanceamento de carga ou cargas de trabalho baseadas em filas. O disco, a latência de rede e a memória podem acionar o dimensionamento se as métricas de monitoramento nesses recursos estiverem configuradas. Então, a opção C está correta.
+Questão 111 
+tb.564416.06.020
+Um arquiteto está movendo um aplicativo legado para o Google Cloud e quer minimizar as alterações na arquitetura existente enquanto administra o cluster como uma entidade única. O aplicativo legado é executado em um cluster com balanceamento de carga que executa nós com duas configurações diferentes. As duas configurações são necessárias devido a decisões de design feitas há vários anos. A carga no aplicativo é bastante consistente, portanto, raramente há necessidade de aumentar ou diminuir a escala. Qual recurso do Compute Engine do GCP você recomendaria usar?
+
+
+A. instâncias preemptivas
+
+
+B. Grupos de instâncias não gerenciadas
+
+
+C. Grupos de instâncias gerenciadas
+
+
+D. GPUs
+ .
+Grupos de instâncias não gerenciadas estão disponíveis para casos de uso limitado como este. Grupos de instâncias não gerenciadas não são recomendados em geral. Os grupos de instâncias gerenciadas são a maneira recomendada de usar grupos de instâncias, mas as duas configurações diferentes impedem seu uso. Instâncias preemptivas e GPUs não são relevantes para este cenário.
+Pergunta 112 
+tb.564416.07.001
+Um novo engenheiro está pedindo esclarecimentos sobre quando é melhor usar o Kubernetes e quando usar grupos de instâncias. Você indica que o Kubernetes usa grupos de instâncias. Qual é a finalidade das instâncias de grupos em um cluster do Kubernetes?
+
+
+A. Eles monitoram a saúde das instâncias
+
+
+B. Eles criam pods e implantações
+
+
+C. Eles criam conjuntos de VMs que podem ser gerenciados como uma unidade
+
+
+D. Eles criam alertas e canais de notificação
+ .
+O Kubernetes cria grupos de instâncias como parte do processo de criação de um cluster, o que torna a opção C a resposta correta. O Stackdriver, e não grupos de instâncias, é usado para monitorar a integridade dos nós e para criar alertas e notificações. O Kubernetes cria pods e implementações; eles não são fornecidos por grupos de instâncias.
+Pergunta 113 
+tb.564416.07.003
+O que é um pod no Kubernetes?
+
+
+A. Um conjunto de contentores
+
+
+B. Código do aplicativo implantado em um cluster do Kubernetes
+
+
+C. Uma única instância de um processo em execução em um cluster
+
+
+D. Um controlador que gerencia a comunicação entre clientes e serviços do Kubernetes
+ .
+Os pods são instâncias únicas de um processo em execução em um cluster, portanto, a opção C está correta. Os pods executam contêineres, mas não são conjuntos de contêineres. O código do aplicativo é executado em contêineres implantados em pods. Os pods não são controladores, portanto, não podem gerenciar a comunicação com clientes e serviços do Kubernetes.
+Pergunta 114 
+tb.564416.07.004
+Você desenvolveu um aplicativo que chama um serviço em execução em um cluster do Kubernetes. O serviço é executado em pods que podem ser encerrados se não forem íntegros e substituídos por outros pods que possam ter um endereço IP diferente. Como você deve codificar seu aplicativo para garantir que ele funcione corretamente nessa situação?
+
+
+A. Consultar os Kubernetes para obter uma lista de endereços IP dos pods que executam o serviço que você usa
+
+
+B. Comunique-se com os serviços do Kubernetes para que os aplicativos não precisem ser acoplados a pods específicos
+
+
+C. Consultar os Kubernetes para obter uma lista de pods executando o serviço que você usa
+
+
+D. Use um comando gcloud para obter os endereços IP necessários
+ .
+Serviços são aplicativos que fornecem pontos de extremidade da API que permitem que os aplicativos descubram os pods que executam um aplicativo específico, tornando a opção B correta. As opções A e C, se pudessem ser codificadas usando a API projetada para gerenciar clusters, exigiriam mais código do que trabalhar com serviços e estão sujeitas a alterações em um conjunto maior de funções da API. A opção D não é uma opção real.
+Pergunta 115 
+tb.564416.07.005
+Você percebeu que o desempenho de um aplicativo se degradou significativamente. Você fez recentemente algumas alterações de configuração nos recursos do cluster do Kubernetes e suspeita que essas alterações tenham alertado o número de pods em execução no cluster. Onde você procuraria detalhes sobre o número de pods que devem estar em execução?
+
+
+A. Implantações
+
+
+B. Stackdriver
+
+
+C. ReplicaSet
+
+
+D. Jobs
+ .
+Os ReplicaSets são controladores que são responsáveis ​​por manter o número correto de pods, o que torna a opção C a resposta correta. Implantações são versões do código do aplicativo em execução em um cluster. O Stackdriver é um serviço de monitoramento e registro que monitora, mas não controla, os clusters do Kubernetes. Jobs é uma abstração de cargas de trabalho e não está vinculada ao número de pods em execução em um cluster.
+Pergunta 116 
+tb.564416.07.006
+Você está implantando um aplicativo de alta disponibilidade no Kubernetes Engine. Você deseja manter a disponibilidade mesmo se houver uma interrupção de rede importante em um data center. Qual recurso do Kubernetes Engine você usaria?
+
+
+A. Vários grupos de instâncias
+
+
+B. Cluster Multizona / Região
+
+
+C. implantações regionais
+
+
+D. Balanceamento de carga
+ .
+Clusters de múltiplas zonas / regiões estão disponíveis no GKE e são usados ​​para fornecer resiliência a um aplicativo, portanto, a opção B está correta. A opção A refere-se a grupos de instâncias que são um recurso do Compute Engine, e não diretamente do Kubernetes Engine. A opção C está incorreta; Implementações regionais é um termo fictício. O balanceamento de carga distribui a carga e faz parte do Kubernetes por padrão. Se a carga não for distribuída entre zonas ou regiões, não ajudará a adicionar resiliência nos datacenters.
+Pergunta 117 
+tb.564416.07.007
+Você quer escrever um script para implantar um cluster do Kubernetes com GPUs. Você implantou clusters antes, mas não tem certeza sobre todos os parâmetros necessários. Você precisa implantar esse script o mais rápido possível. Qual é uma maneira de desenvolver esse script rapidamente?
+
+
+A. Use o modelo de GPU no console de nuvem do Kubernetes Engine para gerar o comando gcloud para criar o cluster
+
+
+B. Pesquise na Web por um script
+
+
+C. Revise a documentação dos parâmetros do gcloud para adicionar GPUs
+
+
+D. Use um script existente e adicione parâmetros para anexar GPUs
+
+Opção A é a melhor resposta. Começar com um modelo existente, preencher parâmetros e gerar o comando gcloud é a maneira mais confiável. A opção D pode funcionar, mas pode haver vários parâmetros necessários para sua configuração, que não estão no script com o qual você começou. Pode haver alguma tentativa e erro com essa opção. As opções B e C podem levar a uma solução, mas podem levar algum tempo para serem concluídas.
+Questão 118 
+tb.564416.07.008
+Qual comando do gcloud criará um cluster chamado ch07-cluster-1 com quatro nós?
+
+
+Os clusters de contêiner beta do gcloud beta criam ch07-cluster-1 --num-nodes = 4
+
+
+B. clusters beta do contêiner gcloud criam ch07-cluster-1 --num-nodes = 4
+
+
+Os clusters de contêineres gcloud criam ch07-cluster-1 --num-nodes = 4
+
+
+D. clusters de contêiner beta gcloud criam ch07-cluster-1 4
+
+O comando correto é a opção A. A opção B tem beta na posição errada. Opção C está faltando beta. A opção D está sem o nome do parâmetro --num-nodes.
+Questão 119 
+tb.564416.07.009
+Ao usar Criar implantação do Cloud Console, qual das seguintes opções não pode ser especificada para uma implantação?
+
+
+A. Imagem do contêiner
+
+
+B. nome da aplicação
+
+
+C. Tempo para viver (TTL)
+
+
+D. Comando inicial
+ .
+Time to Live não é um atributo de implementações, então a opção C é a resposta correta. O nome do aplicativo, a imagem do container e o comando inicial podem ser especificados.
+Questão 120 
+tb.564416.07.010
+Os arquivos de configuração de implantação criados no Cloud Console usam o tipo de formato de arquivo?
+
+
+A. CSV
+
+
+B. YAML
+
+
+C. TSV
+
+
+D. JSON
+ .
+Os arquivos de configuração de implantação criados no Cloud Console são salvos no formato YAML. CSV, TSV e JSON não são usados.
+Questão 121 
+tb.564416.07.011
+Qual comando é usado para executar uma imagem do Docker em um cluster?
+
+
+A. gcloud container run
+
+
+B. Corrida do contêiner beta gcloud
+
+
+C. corrida kubectl
+
+
+Corrida beta de D. kubectl
+ .
+O comando kubectl é usado para controlar as cargas de trabalho em um cluster do Kubernetes depois que ele é criado, portanto, a opção C está correta. As opções A e B estão incorretas porque o gcloud não é usado para manipular processos do Kubernetes. A opção D está errada porque o beta não é necessário nos comandos do kubectl.
+Pergunta 122 
+tb.564416.07.012
+Qual comando você usaria para ter 10 réplicas de uma implantação denominada ch07-app-deploy?
+
+
+Implementação de upgrade de A. kubectl ch07-app-deploy -replicas = 5
+
+
+B. implantação de contêineres gcloud ch07-app-deploy -replicas = 5
+
+
+Implementação da escala C. kubectl ch07-app-deploy -replicas = 5
+
+
+D. implantação da escala kubectl ch07-app-deploy -pods = 5
+ .
+A opção C é o comando correto. Opção A usa o termo atualização em vez de escala. A opção B usa incorretamente o gcloud. A opção D usa os pods de parâmetro incorretos.
+Questão 123 
+tb.564416.07.013
+O Stackdriver é usado para quais operações em clusters do Kubernetes?
+
+
+A. Notificações apenas
+
+
+B. Monitoramento e notificações apenas
+
+
+C. Registrando apenas
+
+
+D. Notificações, monitoramento e registro
+ .
+O Stackdriver é um serviço abrangente de monitoramento, registro, alerta e notificação que pode ser usado para monitorar clusters do Kubernetes.
+Questão 124 
+tb.564416.07.014
+Antes de monitorar um cluster do Kubernetes, o que você deve criar com o Stackdriver?
+
+
+Um registo
+
+
+B. Área de trabalho
+
+
+C. Pod
+
+
+D. ReplicaSet
+ .
+Espaços de trabalho são estruturas lógicas para armazenar informações sobre recursos em um projeto que está sendo monitorado, portanto, a opção B está correta. O Stackdriver funciona com registros, mas não é necessário um registro antes de começar a usar o Stackdriver. Pods e ReplicaSets são parte do Kubernetes, não do Stackdriver.
+Questão 125 
+tb.564416.07.015
+Que tipo de informação é fornecida na página Detalhes sobre uma instância no Stackdriver?
+
+
+A. Apenas uso da CPU
+
+
+B. Apenas tráfego de rede
+
+
+C. E / S de disco, uso da CPU e tráfego de rede
+
+
+D. Uso da CPU e E / S de disco
+ .
+A página de detalhes da instância do Stackdriver inclui gráficos de séries de tempo sobre o uso da CPU, tráfego de rede e E / S de disco.
+Pergunta 126 
+tb.564416.07.016
+Ao criar uma política de alerta, o que pode ser especificado?
+
+
+A. Condições, notificações e tempo de vida
+
+
+B. Condições, notificações e documentação
+
+
+C. Condições apenas
+
+
+D. Condições, documentação e tempo de vida
+ .
+Ao criar uma política de alerta, você pode especificar condições, notificações e documentação, tornando a opção B a resposta correta. As opções A e D estão incorretas porque não há tempo para viver o atributo nas políticas. A opção C está errada porque não inclui notificações e documentação.
+Questão 127 
+tb.564416.07.017
+Sua equipe de desenvolvimento precisa ser notificada se houver um problema com aplicativos em execução em vários clusters do Kubernetes. Diferentes membros da equipe preferem diferentes métodos de notificação além do alerta do Stackdriver. Qual é a maneira mais eficiente de enviar notificações e atender às solicitações de sua equipe?
+
+
+A. Configurar mensagens de texto SMS, Slack e notificações por email em um alerta
+
+
+B. Criar um alerta separado para cada canal de notificação
+
+
+C. Criar alertas com notificações por email e ter esses emails de notificação encaminhados para outros sistemas de notificação
+
+
+D. Use um único mecanismo de notificação de terceiros
+
+Alertas podem ter vários canais, então a Opção A está correta. Os canais incluem email, webhooks e mensagens de texto SMS, bem como ferramentas de terceiros, como PagerDuty, Campfire e Slack. Não há necessidade de vários alertas com notificações individuais. A opção C é ad hoc e exigiria uma sobrecarga de manutenção adicional. A opção D não atende aos requisitos.
+Questão 128 
+tb.564416.07.018
+Um novo engenheiro está tentando configurar alertas para um cluster do Kubernetes. O engenheiro parece estar criando um grande número de alertas e você está preocupado que essa não seja a maneira mais eficiente e leve a mais trabalho de manutenção do que o necessário. Você explica que uma maneira mais eficiente é criar alertas e aplicá-los a quê?
+
+
+A. Apenas um exemplo
+
+
+B. Uma instância ou grupo inteiro
+
+
+C. Apenas um grupo
+
+
+D. um pod
+ .
+Os alertas são atribuídos a instâncias ou conjuntos de instâncias; portanto, a opção B está correta. A opção A está incorreta porque não inclui grupos. A opção C está incorreta porque não inclui instâncias. A opção D está errada porque os alertas não são atribuídos a pods.
+Questão 129 
+tb.564416.07.019
+Você está tentando executar comandos para iniciar uma implantação em um cluster do Kubernetes. Os comandos não estão tendo nenhum efeito. Você suspeita que o componente Kubernetes não está funcionando corretamente. Qual componente poderia ser o problema?
+
+
+A. A API do Kubernetes
+
+
+B. Um StatefulSet
+
+
+C. Os comandos gcloud do Cloud SDK
+
+
+D. ReplicaSet
+
+Todas as interações com o cluster são feitas através do mestre usando a API do Kubernetes. Se uma ação deve ser executada em um nó, o comando é emitido pelo mestre do cluster, portanto, a opção A é a resposta correta. As opções B e D estão incorretas porque são controladores no cluster e não afetam o modo como os comandos são recebidos dos dispositivos clientes. A opção C está incorreta porque o kubectl, e não o gcloud, é usado para iniciar as implantações.
+Questão 130 
+tb.564416.07.020
+Você implantou um aplicativo em um cluster do Kubernetes. Você notou que vários pods são carentes de recursos por um período de tempo e os pods são encerrados. Quando os recursos estão disponíveis, novas instanciações desses pods são criadas. Os clientes ainda podem se conectar a pods, embora os novos pods tenham endereços IP diferentes dos pods que foram encerrados. Qual componente do Kubernetes torna isso possível?
+
+
+A. Serviços
+
+
+B. ReplicaSet
+
+
+C. Alertas
+
+
+D. StatefulSet
+
+Os serviços fornecem um nível de indireção para acessar os pods. Vagens são efêmeras. Os clientes se conectam a serviços que podem descobrir pods. ReplicaSets e StatefulSets fornecem gerenciar pods. Os alertas são para relatar o estado dos recursos.
+Pergunta 131 
+tb.564416.08.001
+Você está executando vários microservices em um cluster do Kubernetes. Você notou alguma degradação no desempenho. Depois de analisar alguns registros, você começa a pensar que o cluster pode estar configurado incorretamente e abra o Cloud Console para investigar. Como você vê os detalhes de um cluster específico?
+
+
+A. Digite o nome do cluster na barra de pesquisa
+
+
+B. Clique no nome do cluster
+
+
+C. Use o comando gcloud cluster details
+
+
+D. Nenhuma das opções acima
+ .
+Quando nas páginas do Cloud Console, você pode clicar no nome do cluster para ver uma página de detalhes, então a opção B é a resposta correta. Digitar o nome do cluster na barra de pesquisa nem sempre retorna detalhes do cluster; ele pode retornar detalhes do grupo de instâncias. Não existe tal comando como detalhes do cluster do gcloud.
+Pergunta 132 
+tb.564416.08.002
+Você está vendo os detalhes de um cluster no Cloud Console e quer ver quantas vCPUs estão disponíveis no cluster. Onde você procuraria essa informação?
+
+
+A. Seção Pools de Nó da página Detalhes do Cluster
+
+
+B. Seção de rótulos da página Detalhes do cluster
+
+
+C. Linha de resumo da página de listagem de agrupamentos
+
+
+D. A e C
+ .
+Você pode encontrar o número de vCPUs na listagem de clusters na coluna Total Cores ou na página Detalhes na seção Conjunto de Nós no parâmetro size, tornando a opção D correta. A seção Labels não possui informações de vCPU.
+Questão 133 
+tb.564416.08.003
+Você foi designado para ajudar a diagnosticar problemas de desempenho com aplicativos em execução em vários clusters do Kubernetes. A primeira coisa que você quer fazer é entender, em alto nível, as características dos clusters. Qual comando você deve usar?
+
+
+A. gcloud container list
+
+
+B. lista de clusters de contêiner gcloud
+
+
+C. lista de clusters do gcloud
+
+
+D. Nenhuma das opções acima
+ .
+O comando correto inclui o contêiner gcloud para descrever o serviço, clusters para indicar o recurso ao qual você está se referindo e lista para indicar o comando, o que torna a opção B a resposta correta. Opções A e C não são comandos válidos.
+Questão 134 
+tb.564416.08.004
+Quando você tenta usar o comando kubectl pela primeira vez, recebe uma mensagem de erro indicando que o recurso não pode ser encontrado ou que você não pode se conectar ao cluster. Qual comando você usaria para tentar eliminar o erro?
+
+
+Acesso a clusters de contêineres de gcloud
+
+
+B. clusters de contêiner gdcloud get-credentials
+
+
+C. container gcloud auth
+
+
+D. clusters de contêiner do gcloud auth
+ .
+É provável que você não tenha privilégios de acesso ao cluster. O comando get-credentials dos clusters de contêiner gdcloud é o comando correto para configurar o kubectl para usar as credenciais do GCP para o cluster, portanto, a opção B é a opção correta. Opções A, C e D são comandos inválidos.
+Questão 135 
+tb.564416.08.005
+Um engenheiro juntou-se recentemente à sua equipe e não está ciente dos padrões de sua equipe para criar clusters e outros objetos do Kubernetes. Em particular, o engenheiro não rotulou corretamente vários clusters. Você deseja modificar os rótulos no cluster no Cloud Console. Como você faria?
+
+
+A. Clique no botão Conectar.
+
+
+B. Clique na opção de menu Implementar.
+
+
+C. Clique na opção do menu Editar.
+
+
+D. Digite os novos rótulos na seção de rótulos.
+ .
+Clicar no botão Editar permite alterar, adicionar ou remover rótulos, portanto, a opção C é a resposta correta. O botão Conectar está na página de listagem de cluster e o botão Implantar é para criar novas implantações. Não há como inserir o termo do rótulo na seção Rótulo ao exibir detalhes.
+Questão 136 
+tb.564416.08.006
+Você recebe uma página no meio da noite informando que vários serviços em execução em um cluster do Kubernetes têm alta latência ao responder a solicitações da API. Você revisa os dados de monitoramento e determina que não há recursos suficientes no cluster para acompanhar a carga. Você decide adicionar mais seis VMs ao cluster. Quais parâmetros você precisará especificar ao emitir o comando de redimensionamento do cluster?
+
+
+A. tamanho do cluster
+
+
+B. Nome do cluster
+
+
+C. Nome do conjunto de nós
+
+
+D. Todos os itens acima
+ .
+Ao redimensionar, o comando de redimensionamento de clusters de contêiner do gcloud exige que o nome do cluster e o pool de nós sejam modificados. O tamanho é necessário para especificar quantos nós devem estar em execução. Portanto, a opção D está correta.
+Questão 137 
+tb.564416.08.007
+Você deseja modificar o número de pods em um cluster. Qual o melhor jeito pra fazer isso?
+
+
+A. Modifique os pods diretamente
+
+
+B. Modificar implantações
+
+
+C. Modifique os pools de nós diretamente
+
+
+D. Modificar nós
+ .
+Os pods são usados ​​para implementar réplicas de uma implantação. É uma prática recomendada modificar as implantações, que são configuradas com uma especificação do número de réplicas que devem sempre ser executadas, portanto, a opção B é a resposta correta. Opção A está incorreta; você não deve modificar os pods diretamente. As opções C e D estão incorretas porque não alteram o número de pods executando um aplicativo.
+Questão 138 
+tb.564416.08.008
+Você deseja ver uma lista de implantações. Qual opção do menu de navegação do Kubernetes Engine você selecionaria?
+
+
+A. Clusters
+
+
+B. Armazenamento
+
+
+C. Cargas de trabalho
+
+
+D. Implantações
+ .
+As implantações estão listadas em Cargas de trabalho, fazendo da opção C a resposta correta. A opção Cluster mostra detalhes sobre clusters, mas não possui detalhes sobre implantações. O armazenamento mostra informações sobre volumes persistentes e classes de armazenamento. Implantações não é uma opção.
+Questão 139 
+tb.564416.08.009
+Quais ações estão disponíveis no menu Ações ao visualizar detalhes da implantação?
+
+
+A. Apenas Escala e Autoscale
+
+
+B. Atualização Automática, Expor e Rolling
+
+
+C. Adicionar, Modificar e Excluir
+
+
+D. Nenhuma das opções acima
+ .
+Existem quatro ações disponíveis para implantações (Autoscale, Expose, Rolling Update e Scale), portanto, a opção B está correta. Adicionar, Modificar e Excluir não são opções.
+Pergunta 140 
+tb.564416.08.010
+Qual é o comando para listar implantações a partir da linha de comando?
+
+
+A. implantações de lista de clusters de contêiner do gcloud
+
+
+B. lista de clusters de contêiner gcloud
+
+
+C. kubectl obtém implantações
+
+
+Lista de implantações do D. kubectl
+ .
+Como as implantações são gerenciadas pelo Kubernetes e não pelo GCP, precisamos usar um comando kubectl e não um comando gcloud, o que torna a opção C correta. A opção D está incorreta porque segue a estrutura do comando gcloud, não a estrutura de comando do kubectl. O comando kubectl tem o verbo, como get, antes do tipo de recurso, como implementações, por exemplo.
+Questão 141 
+tb.564416.08.011
+Quais parâmetros de uma implantação podem ser definidos na página Criar implantação no Cloud Console?
+
+
+A. Imagem do contêiner
+
+
+B. Nome do cluster
+
+
+C. nome da aplicação
+
+
+D. Todos os itens acima
+ .
+Você pode especificar a imagem do contêiner, o nome do cluster e o nome do aplicativo junto com os rótulos, o comando inicial e o namespace; Portanto, a opção D é a resposta correta.
+Pergunta 142 
+tb.564416.08.012
+Onde você pode visualizar uma lista de serviços ao usar o Cloud Console?
+
+
+A. Na página Detalhes da Implantação
+
+
+B. Na página Detalhes do contêiner
+
+
+C. Na página Detalhes do Cluster
+
+
+D. Nenhuma das opções acima
+
+A página de detalhes da implantação inclui serviços, portanto, a opção A é a resposta correta. Contêineres são usados ​​para implementar serviços; detalhes do serviço não estão disponíveis lá. A página de detalhes dos clusters não contém informações sobre serviços em execução no cluster.
+Pergunta 143 
+tb.564416.08.013
+Qual comando kubectl é usado para adicionar um serviço?
+
+
+Uma corrida
+
+
+B. iniciar
+
+
+C. iniciar
+
+
+D. implantar
+
+O kubectl run é o comando usado para iniciar uma implementação. Leva um nome para a implantação, uma imagem e uma especificação de porta. As outras opções não são comandos kubectl válidos.
+Questão 144 
+tb.564416.08.014
+Você está apoiando engenheiros de aprendizado de máquina que estão testando uma série de classificadores. Eles têm cinco classificadores, chamados ml-classificador-1, ml-classificador-2, etc. Eles descobriram que ml-classificador-3 não está funcionando como esperado e eles gostariam que fosse removido do cluster. O que você usaria para excluir um serviço chamado ml-classifier-3?
+
+
+A. Execute o comando kubectl delete service ml-classifier-3
+
+
+B. Execute o comando kubectl delete ml-classifier-3
+
+
+C. Execute o comando gcloud service delete ml-classifier-3
+
+
+D. Execute o comando gcloud container service delete ml-classifier-3
+
+A opção A mostra o comando correto, que é kubectl delete service ml-classifier-3. A opção B está sem o termo de serviço. As opções C e D não podem estar corretas porque os serviços são gerenciados pelo Kubernetes, não pelo GCP.
+Questão 145 
+tb.564416.08.015
+Qual serviço é responsável pelo gerenciamento de imagens de contêiner?
+
+
+A. Kubernetes Engine
+
+
+B. Compute Engine
+
+
+C. Registro de Contêiner
+
+
+D. Container Engine
+ .
+O Container Registry é o serviço para gerenciar imagens que podem ser usadas em outros serviços, incluindo o Kubernetes Engine e o Compute Engine, tornando a opção C correta. O Compute Engine e o Kubernetes Engine usam imagens, mas não os gerenciam. Não há serviço chamado Container Engine.
+Questão 146 
+tb.564416.08.016
+Qual comando é usado para listar imagens de contêiner na linha de comando?
+
+
+A. gcloud lista de imagens do contêiner
+
+
+B. imagens da lista de contêineres do gcloud
+
+
+C. imagens do contêiner da lista do kubectl
+
+
+D. imagens da lista de contêineres kubectl
+
+As imagens são gerenciadas pelo GCP, então o comando correto será um comando gcloud, então a opção A é a resposta correta. A opção B está incorreta porque o verbo é colocado antes do recurso. As opções C e D estão incorretas porque o kubectl é para gerenciar recursos do Kubernetes, não recursos do GCP, como imagens de contêiner.
+Pergunta 147 
+tb.564416.08.017
+Um projetista de data warehouse deseja implementar um processo de extração, transformação e carregamento no Kubernetes. O designer forneceu uma lista de bibliotecas que devem ser instaladas, incluindo drivers para GPUs. Você tem várias imagens de contêiner que você acha que podem atender aos requisitos. Como você poderia obter uma descrição detalhada de cada um desses contêineres?
+
+
+A. Execute o comando gcloud container image details
+
+
+B. Execute o comando gcloud container images describe
+
+
+C. Execute o comando gcloud image describe
+
+
+D. Execute o comando gcloud container describe
+ .
+O comando correto é gcloud container images describe, o que faz da opção B a resposta correta. describe é o verbo gcloud ou operação para mostrar os detalhes de um objeto. Todas as outras opções são comandos inválidos.
+Questão 148 
+tb.564416.08.018
+Você acabou de criar uma implantação e deseja que os aplicativos fora do cluster tenham acesso aos serviços fornecidos pela implantação. O que você precisa fazer para o serviço?
+
+
+A. Dê um endereço IP público
+
+
+B. Emitir um comando de implementação expor kubectl
+
+
+C. Emitir um comando de implementação gcloud exose
+
+
+D. Nada, tornando acessível, deve ser feito no nível do cluster
+
+O comando kubectl expor deployment torna um serviço acessível, então a opção B é a resposta correta. Endereços IP são atribuídos a máquinas virtuais, não a serviços. O comando gcloud não gerencia os serviços do Kubernetes, portanto, a opção C está incorreta. A opção D está incorreta porque tornar um serviço acessível não é uma tarefa no nível do cluster.
+Questão 149 
+tb.564416.08.019
+Você implantou um aplicativo em um cluster Kubernetes que processa dados de sensores de uma frota de veículos de entrega. O volume de dados recebidos depende do número de veículos que fazem entregas. O número de veículos que fazem entregas depende do número de pedidos do cliente. Os pedidos dos clientes são altos durante as horas do dia, feriados e quando as principais campanhas de publicidade são executadas. Você quer ter certeza de ter nós suficientes em execução para lidar com a carga, mas você deseja manter seus custos baixos. Como você deve configurar seu cluster do Kubernetes?
+
+
+A. Implante quantos nós o seu orçamento permitir
+
+
+B. Ativar escalonamento automático
+
+
+C. Monitorar a utilização de CPU, disco e rede e adicionar nós conforme necessário
+
+
+D. Escreva um script para executar comandos gcloud para adicionar e remover nós quando os picos geralmente começam e terminam, respectivamente
+ .
+O escalonamento automático é a maneira mais econômica e menos onerosa de responder às mudanças na demanda por um serviço, portanto, a opção B é a resposta correta. A opção A pode executar nós mesmo quando não são necessários. A opção C é manualmente intensiva e requer intervenção humana. A opção D reduz a intervenção humana, mas não leva em conta picos inesperados ou quedas na demanda.
+Questão 150 
+tb.564416.08.020
+Ao usar o Kubernetes Engine, qual das seguintes opções pode ser configurada por um engenheiro de nuvem?
+
+
+A. Nós, pods, serviços e clusters somente
+
+
+B. Nós, pods, serviços, clusters e imagens de contêiner
+
+
+C. Apenas nós, pods, clusters e imagens de contêiner
+
+
+Apenas imagens de vagens, serviços, clusters e contêiner
+ .
+Os engenheiros de nuvem que trabalham com o Kubernetes precisarão estar familiarizados com o trabalho com clusters, nós, pods e imagens de contêiner. Eles também precisam estar familiarizados com a implantação. A Opção B é a Resposta correta porque as outras opções estão faltando um componente importante do Kubernetes que os engenheiros da nuvem terão que gerenciar.
+Questão 151 
+tb.564416.09.001
+Você projetou um microsserviço que deseja implantar na produção. Antes de poder ser implantado, você precisa revisar como gerenciar o ciclo de vida do serviço. O arquiteto está particularmente preocupado em como você implantará atualizações no serviço com o mínimo de interrupção. Qual aspecto dos componentes do App Engine você usaria para minimizar as interrupções durante as atualizações do serviço?
+
+
+A. Serviços
+
+
+B. Versões
+
+
+C. Grupos de instâncias
+
+
+D. Instâncias
+ .
+Versões suportam migração. Um aplicativo pode ter várias versões e, ao implantar com o parâmetro –migrate, você pode migrar o tráfego para a nova versão, portanto, a opção B é a resposta correta. Os serviços são uma abstração de alto nível e representam a funcionalidade de um microsserviço. Um aplicativo pode ter vários serviços, mas eles têm finalidades diferentes. Instâncias executam código em uma versão. Instâncias podem ser adicionadas e removidas conforme necessário, mas elas executarão apenas uma versão de um serviço. Os grupos de instâncias fazem parte do Compute Engine e não são um componente do Google App Engine.
+Questão 152 
+tb.564416.09.002
+Você acaba de lançar um aplicativo em execução no Google App Engine Standard. Você percebe que há períodos de pico de demanda nos quais você precisa de até 12 instâncias, mas na maioria das vezes 5 instâncias são suficientes. Qual é a melhor maneira de garantir que você tenha instâncias suficientes para atender à demanda sem gastar mais do que o necessário?
+
+
+A. Configure seu aplicativo para escalonamento automático e especifique as instâncias máximas de 12 e min. De 5 instâncias
+
+
+B. Configure seu aplicativo para dimensionamento básico e especifique instâncias máximas de 12 e min. De 5 instâncias
+
+
+C. Crie uma tarefa cron para adicionar instâncias imediatamente antes dos períodos de pico e remova as instâncias após o término do período de pico
+
+
+D. Configure seu aplicativo para detecção de instâncias e não especifique um número máximo ou mínimo de instâncias
+
+O escalonamento automático permite configurar um número máximo e mínimo de instâncias, o que torna a opção A correta. O dimensionamento básico não suporta instâncias máxima e mínima. A opção C não é recomendada porque é difícil prever quando a carga atingirá o pico e, mesmo que a programação seja previsível hoje, ela pode mudar com o tempo. A opção D está errada; não há nenhuma opção de detecção de instância.
+Pergunta 153 
+tb.564416.09.003
+Na hierarquia dos componentes do App Engine, qual é o componente de nível mais baixo?
+
+
+A. Aplicação
+
+
+B. Instância
+
+
+C. Versão
+
+
+D. serviço
+ .
+A aplicação é o componente de nível superior, portanto, a opção B é a resposta correta. Aplicativos têm um ou mais serviços. Os serviços têm uma ou mais versões. As versões são executadas em uma ou mais instâncias quando o aplicativo está em execução.
+Questão 154 
+tb.564416.09.004
+Qual comando você deve usar para implantar um aplicativo do App Engine na linha de comando?
+
+
+A. gcloud components app deploy
+
+
+B. gcloud app deploy
+
+
+C. instâncias de componentes do gcloud
+
+
+D. implante da instância do aplicativo gcloud
+ .
+O comando correto é gcloud app deploy, que é a opção B. As opções A e C estão incorretas porque os comandos de componentes do gcloud são usados ​​para instalar comandos do gcloud para trabalhar com partes do App Engine, como o ambiente de tempo de execução Python. Opção D está incorreta; você não precisa especificar a instância no comando.
+Pergunta 155 
+tb.564416.09.005
+Você implantou um aplicativo Python do Django 1.5 no App Engine. Esta versão do Django requer o Python 3. Por alguma razão, o App Engine está tentando executar o aplicativo usando o Python 2. Que arquivo você verificaria e possivelmente modificaria para garantir que o Python 3 seja usado com este aplicativo?
+
+
+A. app.config
+
+
+B. app.yaml
+
+
+C. services.yaml
+
+
+D. deploy.yaml
+ .
+O arquivo app.yaml é usado para configurar um aplicativo do App Engine, o que torna a opção B correta. As outras opções não são arquivos usados ​​para configurar o App Engine.
+Pergunta 156 
+tb.564416.09.006
+Você tem vários aplicativos do App Engine que planeja implantar em seu projeto. O que você não conseguiu contabilizar neste design?
+
+
+R. O App Engine suporta apenas um aplicativo por projeto
+
+
+B. O App Engine suporta apenas dois aplicativos por projeto
+
+
+C. Os aplicativos do App Engine existem fora dos projetos
+
+
+D. Nada, este é um padrão comum
+
+Um projeto pode suportar apenas um aplicativo do Google App Engine, portanto, a opção A é a resposta correta. Se você quiser executar outros aplicativos, eles precisarão ser colocados em seus próprios projetos.
+Pergunta 157 
+tb.564416.09.007
+A versão mais recente do seu código de microserviço foi aprovada pelo seu gerente, mas o proprietário do produto não quer que os novos recursos sejam liberados até que um comunicado à imprensa seja publicado. Você gostaria de obter o código, mas não expô-lo aos clientes. Qual é a melhor maneira de obter o código o mais rápido possível sem expô-lo aos clientes?
+
+
+A. Implante com o gcloud app deploy --no-traffic.
+
+
+B. escrever um cron job para implantar depois que o comunicado de imprensa for publicado.
+
+
+C. Implante com o gcloud app deploy --no-promote.
+
+
+D. Implante como normal depois que o comunicado de imprensa for publicado.
+ .
+A resposta correta é a opção C porque o parâmetro correto é --no-promote. A opção A usa sem tráfego, o que não é um parâmetro válido para o comando gcloud app deploy. A opção B não obtém o código e pode liberar o código muito cedo se houver um atraso na divulgação do comunicado à imprensa. A opção D não atende aos requisitos de obter o código o mais rápido possível.
+Pergunta 158 
+tb.564416.09.008
+Você acabou de implantar um aplicativo que hospeda serviços que fornecem a hora atual em qualquer fuso horário. O projeto que contém o código é chamado de fuso horário atual, o serviço que fornece a interface de usuário é chamado de time-zone-ui e o serviço que executa o cálculo é chamado de cálculo de fuso horário. Qual é o URL em que um usuário pode encontrar seu serviço?
+
+
+A. current-time-zone.appengine.com
+
+
+B. current-time-zone.appspot.com
+
+
+C. time-zone-ui.appspot.com
+
+
+D. time-zone-calculate.appspot.com
+ .
+Os aplicativos do App Engine podem ser acessados ​​a partir de URLs que consistem no nome do projeto seguido por appspot.com, portanto, a opção B está correta. A opção A está incorreta porque o domínio não é appengine.com. As opções C e D estão incorretas porque os nomes dos serviços não são usados ​​para referenciar o aplicativo como um todo.
+Pergunta 159 
+tb.564416.09.009
+Você está preocupado porque, conforme os usuários fazem conexões com seu aplicativo, o desempenho será degradado. Você quer ter certeza de que mais instâncias serão adicionadas ao seu aplicativo do Google App Engine quando houver mais de 20 solicitações simultâneas. Qual parâmetro você especificaria inapp.yaml?
+
+
+A. max_concurrent_requests
+
+
+B. target_throughput_utilization
+
+
+C. max_instances
+
+
+D. max_pending_latency
+
+max_concurrent_requests permite especificar o número máximo de solicitações simultâneas antes que outra instância seja iniciada, o que torna a opção A correta. target_throughput_utiliztion funciona de maneira semelhante, mas usa uma escala de 0,05 a 0,95 para especificar a utilização máxima de taxa de transferência. max_instances especifica o número máximo de instâncias, mas não os critérios para adicionar instâncias. max_pending_latency é baseado no tempo que uma solicitação aguarda, não no número de solicitações.
+Pergunta 160 
+tb.564416.09.010
+Quais parâmetros podem ser configurados com o dimensionamento básico?
+
+
+A. max_instances e min_instances
+
+
+B. idle_timeout e min_instances
+
+
+C. idle_timeout e max_instances
+
+
+D. idle_timeout e target_throughput_utilization
+ .
+O escalonamento básico permite apenas tempo ocioso e instâncias máximas, portanto, a opção C é a resposta correta. min_instances não é suportado. target_throughput_utilization é um parâmetro de escalonamento automático, não um parâmetro básico de escalonamento.
+Pergunta 161 
+tb.564416.09.011
+O parâmetro de tempo de execução em app.yaml é usado para especificar o que?
+
+
+A. O script para executar
+
+
+B. O URL para acessar o aplicativo
+
+
+C. O ambiente de tempo de execução da linguagem
+
+
+D. O tempo máximo que um aplicativo pode executar
+ .
+O parâmetro runtime especifica o ambiente de linguagem para executar, o que torna a opção C correta. O script a ser executado é especificado pelo parâmetro de script. O URL para acessar o aplicativo é baseado no nome do projeto e no domínio appspot.com. Não há parâmetro para especificar o tempo máximo que um aplicativo pode ser executado.
+Questão 162 
+tb.564416.09.012
+Quais são os dois tipos de instâncias disponíveis no padrão do Google App Engine?
+
+
+A. Residente e dinâmico
+
+
+B. Persistente e dinâmico
+
+
+C. Estável e dinâmico
+
+
+D. Residente e não residente
+
+As instâncias residentes são usadas com dimensionamento manual, enquanto as instâncias dinâmicas são usadas com autoescalonamento e dimensionamento básico, portanto, a opção A é a resposta correta. Não há tipos persistentes, estáveis ​​ou não residentes de instâncias do App Engine.
+Pergunta 163 
+tb.564416.09.013
+Você trabalha para uma startup e os custos são uma grande preocupação. Você está disposto a ter um pequeno desempenho se conseguir poupar dinheiro. Como você deve configurar o dimensionamento dos seus aplicativos em execução no Google App Engine?
+
+
+A. Use instâncias dinâmicas especificando escalonamento automático ou escalonamento básico
+
+
+B. Use instâncias residentes especificando escalonamento automático ou escalonamento básico
+
+
+C. Use instâncias dinâmicas especificando o dimensionamento manual
+
+
+D. Use instâncias residentes especificando a escala manual
+
+O uso de instâncias dinâmicas especificando escalonamento automático ou escalonamento básico ajustará automaticamente o número de instâncias em uso com base na carga, portanto, a opção A está correta. A opção B está incorreta porque o escalonamento automático e o escalonamento básico apenas criam instâncias dinâmicas. As opções C e D estão incorretas porque o dimensionamento manual não ajusta as instâncias automaticamente, portanto, você pode continuar a executar mais instâncias do que o necessário em alguns pontos no tempo.
+Pergunta 164 
+tb.564416.09.014
+Uma equipe de desenvolvedores criou uma versão otimizada de um serviço. Isso deve ser 30% mais rápido na maioria dos casos. Eles querem implementá-lo para todos os usuários imediatamente, mas você está preocupado que as alterações substanciais precisem ser liberadas lentamente, caso haja erros significativos. O que você pode fazer para alocar alguns usuários à nova versão sem expor todos os usuários a ela?
+
+
+A. Emita o comando gcloud app services set-traffic
+
+
+B. Emita o comando gcloud instances services set-traffic
+
+
+C. Emita o comando gcloud app set-traffic
+
+
+D. Alterar o endereço IP de destino do serviço para alguns clientes
+
+A resposta correta é gcloud app services set-traffic. A opção B está incorreta porque o termo instâncias não é necessário. A opção C está incorreta porque não especifica o termo serviços. A opção D está incorreta porque isso exigiria alterações na parte do cliente.
+Questão 165 
+tb.564416.09.015
+Qual parâmetro do gcloud app services set-traffic é usado para especificar o método a ser usado ao dividir o tráfego?
+
+
+A. - tráfego de tráfego
+
+
+B. - split-by
+
+
+C. - divisão de tráfego
+
+
+D. - método -plit
+
+--split-traffic é o parâmetro usado para especificar o método de divisão do tráfego, o que torna a opção A correta. Opções válidas são cookie, ip e aleatórias. Todas as outras opções não são válidas para o comando gcloud app services set-traffic.
+Pergunta 166 
+tb.564416.09.016
+Qual parâmetro do gcloud app services set-traffic é usado para especificar a porcentagem de tráfego que deve ir para cada instância?
+
+
+A. - split-by
+
+
+B. --plip
+
+
+C. - porcento-por cento
+
+
+D. --percent-split
+ .
+--split é o parâmetro para especificar uma lista de instâncias e a porcentagem de tráfego que elas devem receber, então a opção B é a resposta correta. As outras opções não são parâmetros válidos para o comando set-traffic do gcloud app services.
+Pergunta 167 
+tb.564416.09.017
+Você liberou uma nova versão de um serviço. Você está aguardando a aprovação do gerente de produtos para começar a enviar tráfego para a nova versão. Você obtém aprovação para encaminhar o tráfego para a nova versão. Qual parâmetro do gcloud app services set-traffic é usado para especificar que o tráfego deve ser movido para uma versão mais recente do aplicativo?
+
+
+A. - mudar para novo
+
+
+B. - migrar para novo
+
+
+C. - migrar
+
+
+D. --move
+ .
+--migrate é o parâmetro para especificar que o tráfego deve ser movido ou migrado para a instância mais recente, o que torna a opção C a resposta correta. As outras opções não são parâmetros válidos para o comando set-traffic do gcloud app services.
+Pergunta 168 
+tb.564416.09.018
+O status de quais componentes podem ser visualizados no console do App Engine?
+
+
+A. Somente serviços
+
+
+B. Apenas versões
+
+
+C. Instâncias e Versões
+
+
+D. Serviços, versões e instâncias
+ .
+No console do App Engine, você pode visualizar a lista de serviços e versões, além de informações sobre a utilização de cada instância.
+Pergunta 169 
+tb.564416.09.019
+Quais são os métodos válidos para dividir o tráfego?
+
+
+A. Apenas por endereço IP
+
+
+B. Apenas por cookie HTTP
+
+
+C. Aleatoriamente e apenas por endereço IP
+
+
+D. Por endereço IP, cookies HTTP e aleatoriamente
+ .
+Todos os três métodos listados, endereço IP, cookie HTTP e divisão aleatória, são métodos permitidos para dividir o tráfego.
+Pergunta 170 
+tb.564416.09.020
+Qual é o nome do cookie usado pelo App Engine quando a divisão baseada em cookie é usada?
+
+
+A. GOOGID
+
+
+B. GOOGAPPUID
+
+
+C. APPUID
+
+
+D. UIDAPP
+ .
+O cookie usado para dividir no Google App Engine é chamado de GOOGAPPUID, o que torna a opção B a resposta correta. Opções A, C e D não são nomes válidos.
+Pergunta 171 
+tb.564416.10.001
+Um gerente de produto está propondo um novo aplicativo que exigirá vários serviços de back-end, três serviços de lógica de negócios e acesso a bancos de dados relacionais. Cada serviço fornecerá uma única função e exigirá vários desses serviços para concluir uma tarefa de negócios. O tempo de execução do serviço depende do tamanho da entrada e espera-se que demore até 30 minutos em alguns casos. Qual produto do Google Cloud Computing é uma boa opção sem servidor para executar esse serviço relacionado?
+
+
+A. Funções da nuvem
+
+
+B. Compute Engine
+
+
+C. App Engine
+
+
+D. Cloud Storage
+ .
+O App Engine é projetado para oferecer suporte a vários serviços fortemente acoplados que compreendem um aplicativo, tornando a opção C a resposta correta. Isso é diferente do Cloud Functions, que é projetado para suportar funções de finalidade única que operam de forma independente e em resposta a eventos isolados na nuvem do Google e são concluídos em um período de tempo especificado. O Compute Engine não é uma opção sem servidor. O Cloud Storage não é um produto de computação.
+Questão 172 
+tb.564416.10.002
+Você foi solicitado a implantar uma função de nuvem para reformatar arquivos de imagem assim que eles são enviados para o Cloud Storage. Você percebe após algumas horas que cerca de 10% dos arquivos não são processados ​​corretamente. Depois de analisar os arquivos que falharam, você percebe que eles são todos substancialmente maiores que a média. Qual poderia ser a causa dos fracassos?
+
+
+A. Há um erro de sintaxe no código de função.
+
+
+B. O tempo de execução incorreto foi selecionado.
+
+
+C. O tempo limite é muito baixo para permitir tempo suficiente para processar arquivos grandes.
+
+
+D. Há um erro de permissão no intervalo do Cloud Storage que contém os arquivos.
+ .
+Um período de tempo limite muito baixo explicaria por que os arquivos menores são processados ​​no tempo, mas os maiores não, o que faz da opção C a resposta correta. Se apenas 10 por cento dos arquivos estiverem falhando, então não é um erro de sintaxe ou o tempo de execução incorreto selecionado como nas opções A e B. Esses erros afetariam todos os arquivos, não apenas os maiores. Da mesma forma, se houvesse um problema de permissão com o intervalo do Cloud Storage, isso afetaria todos os arquivos.
+Pergunta 173 
+tb.564416.10.003
+Quando uma ação ocorre no GCP, como um arquivo sendo gravado no Cloud Storage ou uma mensagem sendo adicionada a um tópico do Cloud Pub / Sub, essa ação é chamada de o quê?
+
+
+A. Um incidente
+
+
+B. Um evento
+
+
+C. um gatilho
+
+
+D. Uma entrada de log
+ .
+Essas ações são conhecidas como eventos na terminologia do Google Cloud; Assim, a opção B é a resposta correta. Um incidente pode ser uma ocorrência relacionada à segurança ou ao desempenho, mas esses não estão relacionados às ações esperadas e padronizadas que constituem eventos. Um gatilho é uma declaração de que uma determinada função deve ser executada quando um evento ocorre. Uma entrada de registro está relacionada a aplicativos que registram dados sobre eventos significativos. As entradas de log são úteis para monitoramento e conformidade, mas não são, por si só, uma ação relacionada a eventos.
+Questão 174 
+tb.564416.10.004
+Todos os eventos gerados a seguir podem ser acionados usando o Cloud Functions, exceto qual deles?
+
+
+A. Cloud Storage
+
+
+B. Cloud Pub / Sub
+
+
+C. SSL
+
+
+D. Firebase
+ .
+A resposta correta é a opção C porque o SSL é um protocolo seguro para acessar remotamente os servidores. Ele é usado, por exemplo, para acessar instâncias no Compute Engine. Não tem eventos que podem ser acionados usando o Cloud Functions. Os três produtos do Google Cloud Platform listados geram eventos que podem ter gatilhos associados a eles.
+Questão 175 
+tb.564416.10.005
+Quais tempos de execução são suportados no Cloud Functions?
+
+
+A. Node.js 5, Node.js 6 e Node.js 8
+
+
+B. Node.js 8, Python e Go
+
+
+C. Node.js 6, Node.js 8 e Python
+
+
+D. Node.js 8, Python e Go
+ .
+O Cloud Functions suporta três tempos de execução: Node.js 6, Node.js 8 e Python. Go e Node.js 5 não são suportados por tempos de execução.
+Pergunta 176 
+tb.564416.10.006
+Um gatilho HTTP pode ser chamado fazendo uma solicitação usando qual das seguintes opções?
+
+
+A. GET somente
+
+
+B. POST e GET apenas
+
+
+C. DELETE, POST e GET
+
+
+D. DELETE, POST, REVISE e GET
+
+As solicitações HTTP que usam GET, POST, DELETE, PUT e OPTIONS podem chamar um gatilho de HTTP no Cloud Functions, portanto, a opção C é a resposta correta.
+Pergunta 177 
+tb.564416.10.007
+Quais tipos de eventos estão disponíveis para o Cloud Functions que funcionam com o Cloud Storage?
+
+
+A. Faça upload ou finalize e exclua somente
+
+
+B. Upload ou finalizar, excluir e listar apenas
+
+
+C. Fazer upload ou finalizar, excluir e atualizar apenas os metadados
+
+
+D. Faça upload ou finalize, exclua, atualize metadados e arquive
+
+A resposta correta, opção D, mostra os quatro eventos suportados no Cloud Storage.
+google.storage.object.finalize
+google.storage.object.delete
+google.storage.object.archive
+google.storage.object.metadataUpdate
+Não há eventos relacionados à listagem do conteúdo de um intervalo.
+Pergunta 178 
+tb.564416.10.008
+Você é encarregado de projetar uma função para executar em Cloud Functions. A função precisará de mais do que a quantidade padrão de memória e deverá ser aplicada somente quando um evento finalizar ocorrer após o upload de um arquivo para o Cloud Storage. A função só deve aplicar sua lógica aos arquivos com um tipo de arquivo de imagem padrão. Quais dos seguintes recursos obrigatórios não podem ser especificados em um parâmetro e devem ser implementados no código de função?
+
+
+A. Nome da função de nuvem
+
+
+B. Memória alocada para a função
+
+
+C. Tipo de arquivo para aplicar a função a
+
+
+D. tipo de evento
+ .
+Não há nenhuma opção para especificar o tipo de arquivo para aplicar a função, portanto, a opção C está correta. Você pode, no entanto, especificar o bucket ao qual a função é aplicada. Você só pode salvar arquivos ou os tipos que deseja processar nesse intervalo, ou pode ter o tipo de arquivo de verificação de função e, em seguida, executar o restante da função ou não com base no tipo. Todas as outras opções listadas são parâmetros para uma função do Cloud Storage.
+Questão 179 
+tb.564416.10.009
+Quanta memória pode ser alocada para uma função de nuvem?
+
+
+A. 128MB a 256MB
+
+
+B. 128MB a 512MB
+
+
+C. 128 MB a 1 GB
+
+
+D. 128MB a 2GB
+
+Cloud Functions pode ter entre 128MB e 2GB de memória alocada, o que torna a opção D a resposta correta. O padrão é 256MB.
+Questão 180 
+tb.564416.10.010
+Por quanto tempo uma função de nuvem pode ser executada por padrão antes do tempo limite?
+
+
+A. 30 segundos
+
+
+B. 1 minuto
+
+
+C. 9 minutos
+
+
+D. 20 minutos
+ .
+Por padrão, as funções da nuvem podem ser executadas por até um minuto antes do tempo limite, portanto, a opção B está correta. Você pode, no entanto, definir o parâmetro de tempo limite para uma função de nuvem por períodos de até nove minutos antes do tempo limite.
+Pergunta 181 
+tb.564416.10.011
+Você deseja usar a linha de comando para gerenciar as funções da nuvem que serão escritas em Python. Além de executar o comando gcloud components update, qual comando você deve executar para garantir que possa trabalhar com funções Python?
+
+
+A. instalação do componente gcloud
+
+
+B. componentes gcloud instalam beta
+
+
+Os componentes do C. gcloud instalam o python
+
+
+D. gcloud funciona instalar beta
+ .
+O Python Cloud Functions está atualmente em versão beta. O conjunto padrão de comandos gcloud não inclui comandos para recursos de versão alfa ou beta por padrão. Você precisará instalar explicitamente os recursos beta usando o comando gcloud components install beta, por isso, a opção B é a resposta correta. A opção A instalará os comandos padrão do gcloud. As opções C e D não são comandos gcloud válidos.
+Questão 182 
+tb.564416.10.012
+Você deseja criar uma função de nuvem para transformar arquivos de áudio em diferentes formatos. Os arquivos de áudio serão carregados no Cloud Storage. Você deseja iniciar as transformações assim que os arquivos terminarem de carregar. Qual gatilho você especificaria na função de nuvem para fazer com que ela seja executada após o upload do arquivo?
+
+
+A. google.storage.object.finalize
+
+
+B. google.storage.object.upload
+
+
+C. google.storage.object.archive
+
+
+D. google.storage.object.metadataUpdate
+
+O gatilho correto na opção A é google.storage.object.finalize, que ocorre após o upload de um arquivo. A opção B não é um nome de disparo válido. A opção C é acionada quando um arquivo é arquivado e não é carregado. A opção D é acionada quando algum atributo de metadados é alterado, mas não necessariamente somente após o upload de um arquivo.
+Pergunta 183 
+tb.564416.10.013
+Você está definindo uma função de nuvem para gravar um registro em um banco de dados quando um arquivo no Cloud Storage é arquivado. Quais parâmetros você precisará definir ao criar essa função?
+
+
+A. tempo de execução apenas
+
+
+B. apenas recurso de disparo
+
+
+C. tempo de execução, recurso de disparo, somente evento de disparo
+
+
+D. tempo de execução, gatilho-recurso, gatilho-evento, tipo de arquivo
+ .
+Os três parâmetros são runtime, trigger-resource e trigger-event, conforme listado na opção C. Tudo deve ser definido, portanto, as opções A e B estão incorretas. O tipo de arquivo não é um parâmetro para criar uma função de nuvem no Cloud Storage, portanto, a opção D está incorreta.
+Questão 184 
+tb.564416.10.014
+Você gostaria de parar de usar uma função de nuvem e excluí-la do seu projeto. Qual comando você usaria da linha de comando para excluir uma função de nuvem?
+
+
+A. gcloud funções delete
+
+
+B. gcloud components function delete
+
+
+C. gcloud components delete
+
+
+D. gcloud excluir funções
+
+A resposta correta é a opção A, gcloud exclui as funções. A opção B faz referência a componentes, o que é incorreto. Você precisa fazer referência a componentes ao instalar ou atualizar comandos do gcloud, mas não ao excluir uma função de nuvem, portanto, as opções B e C estão incorretas. A opção D está incorreta porque o tipo de entidade do GCP, neste caso, funciona antes do nome da operação, neste caso, excluir, em um comando gcloud.
+Pergunta 185 
+tb.564416.10.015
+Você foi solicitado a implantar uma função de nuvem para trabalhar com o Cloud Pub / Sub. Ao revisar o código Python, você percebe uma referência a uma função Python chamada base64.b64decode. Por que uma função de decodificação seria necessária em uma função de nuvem Pub / Sub?
+
+
+A. Não é obrigatório e não deveria estar lá.
+
+
+B. As mensagens nos tópicos Pub / Sub são codificadas para permitir que dados binários sejam usados ​​em locais onde os dados de texto são esperados. As mensagens precisam ser decodificadas para acessar os dados na mensagem.
+
+
+C. É necessário adicionar caracteres de preenchimento ao final da mensagem para tornar todas as mensagens do mesmo tamanho.
+
+
+D. A função de decodificação mapeia dados de uma estrutura de dados de dicionário para uma estrutura de dados de lista.
+ .
+As mensagens são armazenadas em um formato de texto, base64, para que os dados binários possam ser armazenados na mensagem em formato de texto, portanto, a opção B está correta. Opção A está incorreta; é necessário mapear de uma codificação binária para uma codificação de texto padrão. A opção C está incorreta porque a função não é preenchida com caracteres extras para torná-los do mesmo tamanho. Opção D está incorreta; Ele não altera os tipos de dados do dicionário em tipos de dados de lista.
+Questão 186 
+tb.564416.10.016
+Qual desses comandos implantará uma função de nuvem do Python chamada pub_sub_function_test?
+
+
+As funções de gcloud são implantadas pub_sub_function_test
+
+
+B. funções gcloud implementam pub_sub_function_test –runtime python37
+
+
+C. funções gcloud implantar pub_sub_function_test –runtime python37 –trigger-topic gcp-ace-exame-teste-tópico
+
+
+D. funções gcloud implantar pub_sub_function_test –runtime python –trigger-topic gcp-ace-exame-teste-tópico
+ .
+A opção C está correta porque inclui o nome da função, o ambiente de tempo de execução e o nome do tópico Pub / Sub. A opção A está incorreta porque falta o tempo de execução e o tópico. A opção B está incorreta porque está faltando o tópico. A opção D está incorreta porque a especificação de tempo de execução está incorreta; você tem que especificar python37 e não python como o tempo de execução.
+Questão 187 
+tb.564416.10.017
+Ao especificar uma função de nuvem do Cloud Storage, você deve especificar um tipo de evento, como finalizar, excluir ou arquivar. Ao especificar uma função de nuvem do Cloud Pub / Sub, você não precisa especificar um tipo de evento. Por que isso acontece?
+
+
+R. O Cloud Pub / Sub não possui acionadores para tipos de eventos.
+
+
+B. Cloud Pub / Sub tem gatilhos em apenas um tipo de evento, quando uma mensagem é publicada.
+
+
+C. Cloud Pub / Sub determina o tipo de evento correto, analisando o código de função.
+
+
+D. A afirmação na pergunta é incorreta; você precisa especificar um tipo de evento com as funções do Cloud Pub / Sub.
+ .
+Existe apenas um tipo de evento que é acionado no Cloud Pub / Sub, e é quando uma mensagem é publicada, que é a opção B. A opção A está incorreta; O Cloud Pub / Sub tem um tipo de evento que pode ter um acionador. A opção C está incorreta; O Cloud Pub / Sub não analisa o código para determinar quando deve ser executado. Opção D está incorreta; você não precisa especificar um tipo de evento com as funções do Cloud Pub / Sub.
+Questão 188 
+tb.564416.10.018
+Sua empresa tem um aplicativo da web que permite que os candidatos a emprego façam upload de arquivos de currículo. Alguns arquivos estão no Microsoft Word, alguns são PDFs e outros são arquivos de texto. Você gostaria de armazenar todos os currículos como PDFs. Como você pode fazer isso de uma maneira que minimize o tempo entre o upload e a conversão e com quantidades mínimas de codificação?
+
+
+A. Escreva um aplicativo do App Engine com vários serviços para converter todos os documentos em PDF.
+
+
+B. Implemente uma função de nuvem no Cloud Storage para executar em um evento finalizado. A função verifica o tipo de arquivo e, se não for PDF, a função chama uma função de conversão de PDF e grava a versão em PDF no bloco que possui o original.
+
+
+C. Adicione os nomes de todos os arquivos a um tópico do Cloud Pub / Sub e execute um trabalho em lotes em intervalos regulares para converter os arquivos originais em PDF.
+
+
+D. Implemente uma função de nuvem no Cloud Pub / Sub para executar em um evento finalizado. A função verifica o tipo de arquivo e, se não for PDF, a função chama uma função de conversão de PDF e grava a versão em PDF no bloco que possui o original.
+ .
+A resposta correta é a opção B porque usa um evento finalizado do Cloud Storage para acionar a conversão, se necessário. Há um atraso mínimo entre o momento em que o arquivo é carregado e é convertido. A opção A é uma possibilidade, mas exigiria mais codificação do que a opção B. A opção C não é uma boa opção porque os arquivos não são convertidos até que o trabalho em lote seja executado. A opção D está incorreta porque você não pode criar uma função de nuvem para o Cloud Pub / Sub usando um evento finalizado. Esse evento é para o Cloud Storage, não para o Cloud Pub / Sub.
+Questão 189 
+tb.564416.10.019
+Quais são as opções para fazer upload de código para uma função de nuvem?
+
+
+A. editor inline
+
+
+B. upload zip
+
+
+C. Repositório de origem da nuvem
+
+
+D. Todos os itens acima
+ .
+Todas as opções estão disponíveis junto com o zip do Cloud Storage.
+Questão 190 
+tb.564416.10.020
+Que tipo de gatilho permite que os desenvolvedores usem chamadas HTTP POST, GET e PUT para invocar uma função de nuvem?
+
+
+A. HTTP
+
+
+B. Webhook
+
+
+C. Cloud HTTP
+
+
+D. Nenhuma das opções acima
+
+O gatilho HTTP permite o uso de chamadas POST, GET e PUT, portanto, a opção A é a resposta correta. O Webhook e o Cloud HTTP não são tipos de acionador válidos. A opção D está incorreta porque a opção A é a resposta correta.
+Questão 191 
+tb.564416.11.001
+Você tem a tarefa de definir configurações de ciclo de vida em intervalos no Cloud Storage. Você precisa considerar todas as opções possíveis para a transição de uma classe de armazenamento para outra. Todas as transições a seguir são permitidas, exceto uma. Qual deles é esse?
+
+
+A. Nearline para coldline
+
+
+B. Regional para nearline
+
+
+C. Multirregional para linha fria
+
+
+D. Regional para multirregional
+ .
+Depois que um bloco é criado como regional ou multirregional, ele não pode ser alterado para o outro, portanto, a opção D está correta. Nearline para coldline e regional para nearline são ambas permitidas, como é multirregional para coldline.
+Questão 192 
+tb.564416.11.002
+Seu gerente pediu sua ajuda para reduzir as cobranças do Cloud Storage. Você sabe que alguns dos arquivos armazenados no Cloud Storage raramente são acessados. Que tipo de armazenamento você recomendaria para esses arquivos?
+
+
+A. Nearline
+
+
+B. Regional
+
+
+C. Coldline
+
+
+D. Multirregional
+ .
+O objetivo é reduzir o custo para que você deseje usar a opção de armazenamento menos dispendiosa. O Coldline tem a taxa mais baixa por gigabyte a US $ 0,07 / GB / mês, então a opção C está correta. Nearline é o próximo mais baixo seguido por regional. Multirregional tem a maior taxa por gigabyte. Tanto o nearline quanto o coldline possuem taxas de acesso, mas esses não são considerados nesta questão.
+Questão 193 
+tb.564416.11.003
+Você está trabalhando com uma startup desenvolvendo software de análise para dados da IoT. Você precisa ser capaz de ingerir grandes volumes de dados de forma consistente e armazená-los por vários meses. A inicialização tem vários aplicativos que precisarão consultar esses dados. Espera-se que os volumes cresçam para volumes de petabytes. Qual banco de dados você deve usar?
+
+
+A. Chave Inglesa
+
+
+B. Bigtable
+
+
+C. BigQuery
+
+
+D. Datastore
+ .
+O Bigtable é um banco de dados de coluna ampla que pode ingerir grandes volumes de dados de forma consistente, portanto, a opção B está correta. Ele também suporta latência de baixo milissegundo, tornando-o uma boa opção para suportar a consulta. O Cloud Spanner é um banco de dados relacional global que não é adequado para ingestar grandes volumes de dados em alta velocidade. O armazenamento de dados é um modelo de dados de objeto e não é um bom ajuste para IoT ou outros dados de séries temporais. O BigQuery é um banco de dados de análise e não foi projetado para a ingestão de grandes volumes de dados em curtos períodos de tempo.
+Questão 194 
+tb.564416.11.004
+Um desenvolvedor de software em sua equipe está pedindo sua ajuda para melhorar o desempenho da consulta de um aplicativo de banco de dados. O desenvolvedor está usando uma instância do Cloud SQL MySQL, Second-Generation. Quais opções você recomendaria?
+
+
+A. Discos permanentes de armazenamento de memória e SSD
+
+
+B. Discos persistentes de armazenamento de memória e disco rígido
+
+
+C. Datastore e discos persistentes de SSD
+
+
+D. Datastore e HDD discos persistentes
+
+A opção A está correta porque o Memorystore é um cache Redis gerenciado. O cache pode ser usado para armazenar os resultados das consultas. Consultas subseqüentes que fazem referência aos dados armazenados no cache podem lê-las no cache, o que é muito mais rápido do que a leitura de discos permanentes. Os SSDs têm latência significativamente menor do que os discos rígidos e devem ser usados ​​para aplicativos sensíveis ao desempenho, como bancos de dados. As opções B e D estão incorretas porque os discos permanentes do HDD oferecem o melhor desempenho em relação à IOPS. As opções C e D estão incorretas porque o Datastore é um banco de dados NoSQL gerenciado e não teria nenhum impacto no desempenho da consulta SQL.
+Pergunta 195 
+tb.564416.11.005
+Você está criando um conjunto de discos permanentes para armazenar dados para análise exploratória de dados. Os discos serão montados em uma máquina virtual na zona us-west-2a. Os dados são dados históricos recuperados do Cloud Storage. Os analistas de dados não precisam de desempenho de pico e estão mais preocupados com o custo do que com o desempenho. Os dados serão armazenados em um banco de dados relacional local. Que tipo de armazenamento você recomendaria?
+
+
+A. SSDs
+
+
+B. HDDs
+
+
+C. Datastore
+
+
+D. Bigtable
+ .
+Os HDDs são a melhor opção para o disco permanente de um banco de dados local quando o desempenho não é a principal preocupação e você está tentando manter os custos baixos, portanto a opção B está correta. A opção A está errada porque os SSDs são mais caros e os usuários não precisam da menor latência disponível. As opções C e D estão erradas; ambos são outros bancos de dados que não seriam usados ​​para armazenar dados em um banco de dados relacional local.
+Questão 196 
+tb.564416.11.006
+Todas as seguintes declarações sobre o Cloud Storage são verdadeiras, exceto por uma. Qual?
+
+
+R. Os intervalos do Cloud Storage podem ter períodos de retenção.
+
+
+B. As configurações do ciclo de vida podem ser usadas para alterar a classe de armazenamento de regional para multirregional.
+
+
+C. O Cloud Storage não fornece acesso em nível de bloco aos dados em arquivos armazenados em intervalos.
+
+
+D. Cloud Storage é projetado para alta durabilidade.
+
+As configurações do ciclo de vida podem alterar a classe de armazenamento de regional em nearline e coldline. Depois que um bloco é criado como regional ou multirregional, ele não pode ser alterado para o outro, portanto, a opção B é a resposta correta. Opção A é verdadeira; você pode definir períodos de retenção ao criar um intervalo. A opção C é verdadeira; O Cloud Storage não fornece sistema de arquivos como o acesso a blocos de dados internos. A opção D é verdadeira porque o Cloud Storage é altamente durável.
+Pergunta 197 
+tb.564416.11.007
+Ao usar o controle de versão em um intervalo, qual é a versão mais recente do objeto chamado?
+
+
+A. versão ao vivo
+
+
+B. versão superior
+
+
+C. versão ativa
+
+
+D. Versão segura
+ .
+A versão mais recente de um objeto é chamada de versão ao vivo, portanto, a opção A está correta. As opções B e C estão incorretas; top e active não são termos usados ​​para se referir a versões. A opção D está incorreta porque a opção A está correta.
+Pergunta 198 
+tb.564416.11.008
+Um gerente de produto solicitou seu conselho sobre quais serviços de banco de dados podem ser opções para um novo aplicativo. Transações e suporte para dados tabulares são importantes. Idealmente, o banco de dados suportaria ferramentas de consulta comuns. Quais bancos de dados você recomendaria ao gerente de produtos considerar?
+
+
+A. BigQuery and Spanner
+
+
+B. Cloud SQL e chave de boca
+
+
+C. Cloud SQL e Bigtable
+
+
+D. Bigtable e chave de boca
+ .
+O Cloud SQL e o Spanner são bancos de dados relacionais e são adequados para aplicativos de processamento de transações, portanto, a opção B está correta. A opção A está incorreta porque o BigQuery é relacional, mas foi projetado para armazenamento e análise de dados, não para processamento de transações. As opções C e D estão incorretas porque o Bigtable é um banco de dados NoSQL de coluna ampla, não um banco de dados relacional.
+Pergunta 199 
+tb.564416.11.009
+O serviço Cloud SQL fornece bancos de dados relacionais totalmente gerenciados. Quais são os dois tipos de bancos de dados disponíveis no Cloud SQL?
+
+
+A. SQL Server e MySQL
+
+
+B. SQL Server e PostgreSQL
+
+
+C. PostgreSQL e MySQL
+
+
+D. MySQL e Oracle
+ .
+Tanto o MySQL quanto o PostgreSQL são opções do Cloud SQL, então a opção C está correta. As opções A e B estão incorretas; O SQL Server não é uma opção do Cloud SQL. A opção D está incorreta porque o Oracle não é uma opção do Cloud SQL. Você poderia optar por executar o SQL Server ou o Oracle em suas instâncias, mas teria de gerenciá-las, diferentemente dos bancos de dados gerenciados do Cloud SQL.
+Questão 200 
+tb.564416.11.010
+Qual das seguintes configurações do Cloud Spanner teria o maior custo por hora?
+
+
+A. Localizado em us-central1
+
+
+B. localizado em nam3
+
+
+C. Localizado em us-west-1a
+
+
+D. Localizado em nam-eur-asia1
+ .
+A localização multirregional e multi-super-regional do nam-eur-aisa1 é a mais cara, o que faz da opção D a resposta certa. A opção A é uma região que custa menos que o multi-super-regional nam-eur-asia1. A opção C está incorreta; isso é uma zona e a Spanner é configurada para regiões ou super-regiões. A opção B está incorreta; é apenas uma única super-região, que custa menos do que a implantação em várias super-regiões.
+Questão 201 
+tb.564416.11.011
+Quais dos seguintes são serviços de banco de dados que não exigem que você especifique informações de configuração para VMs?
+
+
+A. Apenas no BigQuery
+
+
+B. Somente armazenamento de dados
+
+
+C. Firebase e Datastore
+
+
+D. BigQuery, Datastore e Firebase
+ .
+O BigQuery, o Datastore e o Firebase são todos serviços totalmente gerenciados que não exigem que você especifique informações de configuração para máquinas virtuais, o que torna a opção D correta. O Cloud SQL e o Bigtable exigem que você especifique algumas informações de configuração para máquinas virtuais.
+Questão 202 
+tb.564416.11.012
+Que tipo de modelo de dados é usado pelo Datastore?
+
+
+A. Relacional
+
+
+B. Documento
+
+
+C. Coluna larga
+
+
+D. Gráfico
+ .
+O armazenamento de dados é um banco de dados de documentos, o que torna a opção B correta. Cloud SQL e Spanner são bancos de dados relacionais. O Bigtable é um banco de dados de coluna ampla. O Google não oferece um banco de dados gráfico gerenciado.
+Questão 203 
+tb.564416.11.013
+Você foi encarregado de criar um data warehouse para sua empresa. Ele deve suportar dezenas de petabytes de dados e usar o SQL para uma linguagem de consulta. Qual serviço de banco de dados gerenciado você escolheria?
+
+
+A. BigQuery
+
+
+B. Bigtable
+
+
+C. Cloud SQL
+
+
+D. SQL Server
+
+O BigQuery é um serviço gerenciado projetado para data warehouses e analytics. Ele usa SQL padrão para consulta, o que torna a opção A a resposta correta. O Bigtable pode suportar o volume de dados descrito, mas não usa o SQL como uma linguagem de consulta. O Cloud SQL não é a melhor opção para dimensionar dezenas de petabytes devido a dificuldades de dimensionamento horizontal de bancos de dados relacionais. Cloud Spanners aborda essas dificuldades. O SQL Server é um banco de dados relacional da Microsoft; não é um serviço de banco de dados gerenciado do Google Cloud Platform.
+Questão 204 
+tb.564416.11.014
+Uma equipe de desenvolvedores móveis está desenvolvendo um novo aplicativo. Isso exigirá a sincronização de dados entre dispositivos móveis e um banco de dados de back-end. Qual serviço de banco de dados você recomendaria?
+
+
+A. BigQuery
+
+
+B. Firestore
+
+
+C. Chave Inglesa
+
+
+D. Bigtable
+ .
+O Firestore é um banco de dados de documentos que possui recursos de suporte para dispositivos móveis, como sincronização de dados, e a opção B é a resposta correta. O BigQuery é para análises, não aplicativos móveis ou transacionais. O Spanner é um banco de dados relacional global, mas não possui recursos específicos para dispositivos móveis. O Bigtable pode ser usado com dispositivos móveis, mas não possui recursos específicos para dispositivos móveis, como sincronização.
+Questão 205 
+tb.564416.11.015
+Um gerente de produto está considerando um novo conjunto de recursos para um aplicativo que exigirá armazenamento adicional. Quais recursos de armazenamento você sugeriria ao gerente de produtos considerar?
+
+
+A. Leia e escreva somente padrões
+
+
+B. Custo apenas
+
+
+C. Consistência e custo apenas
+
+
+D. Leia e escreva padrões, custos e consistência
+ .
+Além de ler e escrever padrões, custos e consistência, você deve considerar o suporte a transações e a latência, o que torna a opção D correta.
+Questão 206 
+tb.564416.11.016
+Qual é o tamanho máximo de um cache de armazenamento de memória?
+
+
+A. 100 GB
+
+
+B. 300 GB
+
+
+C. 400 GB
+
+
+D. 50 GB
+ .
+A opção B está correta porque o Memorystore pode ser configurado para usar entre 1 GB e 300 GB de memória.
+Questão 207 
+tb.564416.11.017
+Depois que um bucket tiver sua classe de armazenamento configurada como coldline, quais são as outras classes de armazenamento para as quais ele pode fazer a transição?
+
+
+A. somente regional
+
+
+B. Apenas nearline
+
+
+C. Multirregional ou regional
+
+
+O armazenamento do D. Coldline não pode fazer a transição para nenhuma outra classe de armazenamento.
+ .
+Depois que um bloco for definido como coldline, ele não poderá ser alterado para outra classe de armazenamento; assim, a opção D está correta. Regional e multirregional pode mudar para nearline e coldline. Os baldes de nearline podem mudar para coldline.
+Questão 208 
+tb.564416.11.018
+Antes de começar a armazenar dados no BigQuery, você deve criar uma estrutura lógica para os dados. Como é essa estrutura?
+
+
+A. conjunto de dados
+
+
+B. Um balde
+
+
+C. Um disco permanente
+
+
+D. Uma entidade
+
+Para usar o BigQuery para armazenar dados, você deve ter um conjunto de dados para armazená-los, o que torna a opção A a resposta correta. As caçambas são usadas pelo Cloud Storage, não pelo BigQuery. Você não gerencia discos permanentes ao usar o BigQuery. Uma entidade é uma estrutura de dados no Datastore, não no BigQuery.
+Questão 209 
+tb.564416.11.019
+Quais recursos você pode configurar ao executar um banco de dados MySQL de segunda geração no Cloud SQL?
+
+
+A. Somente tipo de máquina
+
+
+B. Apenas janelas de manutenção e tipo de máquina
+
+
+C. Apenas réplicas de failover
+
+
+D. Tipo de máquina, janelas de manutenção e réplicas de failover
+ .
+Com uma instância de segunda geração, você pode configurar a versão do MySQL, conectividade, tipo de máquina, backups automáticos, réplicas de failover, sinalizadores de banco de dados, janelas de manutenção e rótulos, para que a opção D esteja correta.
+Questão 210 
+tb.564416.11.020
+Um colega está se perguntando por que algumas taxas de armazenamento são tão altas. Eles explicam que mudaram todo o armazenamento para nearline e coldline storage. Eles rotineiramente acessam a maior parte do objeto em um determinado dia. Qual é o possível motivo pelo qual os custos de armazenamento são maiores que o esperado?
+
+
+A. Nearline e coldline incorrem em taxas de acesso
+
+
+B. Taxas de transferência
+
+
+C. Linha fria multirregional é mais cara
+
+
+D. Linha fria regional é mais cara
+
+As taxas de acesso são usadas com armazenamento nearline e coldline, o que torna a opção A correta. Não há cobrança de transferência envolvida. As opções C e D não se referem às classes de armazenamento reais.
+Questão 211 
+tb.564416.12.001
+O Cloud SQL é um serviço de banco de dados relacional totalmente gerenciado, mas os administradores de banco de dados ainda precisam executar algumas tarefas. Quais das seguintes tarefas os usuários do Cloud SQL precisam realizar?
+
+
+A. Aplicando Patches de Segurança
+
+
+B. Realizando backups agendados regularmente
+
+
+C. Criando bancos de dados
+
+
+D. Ajustando o sistema operacional para otimizar o desempenho do Cloud SQL
+ .
+A criação de bancos de dados é responsabilidade dos administradores de banco de dados ou de outros usuários do Cloud SQL, portanto, a opção C está correta. O Google aplica patches de segurança e realiza outras manutenções, por isso, a opção A está incorreta. O GCP executa regularmente backups agendados, portanto, a opção B está incorreta. Os administradores de banco de dados precisam agendar backups, mas o GCP garante que eles sejam executados no prazo. Os usuários do Cloud SQL não podem acessar o SSH em um servidor do Cloud SQL, portanto, não podem ajustar o sistema operacional. Isso não é um problema; O Google cuida disso.
+Questão 212 
+tb.564416.12.002
+Qual dos seguintes comandos é usado para criar um backup de um banco de dados do Cloud SQL?
+
+
+Os backups de gcloud sql criam
+
+
+B. backups gsutil sql criam
+
+
+C. gcloud sql cria backups
+
+
+D. gcloud sql backups export
+
+O Cloud SQL é controlado usando o comando gcloud; a sequência de termos em gcloudcommands é gcloud, seguida pelo serviço, neste caso, SQL; seguido por um recurso, neste caso, backups; e um comando ou verbo, neste caso, criar. Opção A é a resposta correta. A opção B está incorreta porque a gsutil é usada para trabalhar com o Cloud Storage, não com o Cloud SQL. A opção C está errada porque a ordem dos termos está incorreta; backups vem antes de criar. A opção D está incorreta porque o comando ou verbo deve ser criado.
+Questão 213 
+tb.564416.12.003
+Qual dos seguintes comandos executará um backup automático às 3:00 da manhã em uma instância chamada ace-exam-mysql?
+
+
+A. gcloud sql instancias patch ace-exam-mysql --backup-start-time 03:00
+
+
+B. banco de dados gcloud sql patch ace-exam-mysql --backup-start-time 03:00
+
+
+C. instâncias de sql sql patch ace-exam-mysql --backup-start-time 03:00
+
+
+D. bq gcloud sql instancias remendo ace-exam-mysql --backup-start-time 03:00
+
+Opção A é a resposta correta. O comando base é gcloud sql instances patch, que é seguido pelo nome da instância e uma hora de início passada para o parâmetro --backup-start-time. A opção B está incorreta porque os bancos de dados não são o recurso correto para referência; instâncias é. A opção C usa o comando cbt, que é para uso com o Bigtable, então está incorreto. Da mesma forma, a Opção D está incorreta porque usa o comando bq, que é usado para gerenciar recursos do BigQuery.
+Questão 214 
+tb.564416.12.004
+Qual é a linguagem de consulta usada pelo Datastore?
+
+
+A. SQL
+
+
+B. MDX
+
+
+C. GQL
+
+
+D. Dataframes
+ .
+O Datastore usa uma linguagem de consulta semelhante a SQL chamada GQL, portanto, a opção C está correta. Opção A está incorreta; SQL não é usado com este banco de dados. A opção B está incorreta; MDX é uma linguagem de consulta para sistemas de processamento analítico online (OLAP). A opção D está incorreta porque os Dataframes são uma estrutura de dados usada no Spark.
+Questão 215 
+tb.564416.12.005
+Qual é a estrutura de linha de comando correta para exportar dados do Datastore?
+
+
+A. gcloud exportar datastore '[NAMESPACE]' gs: // [BUCKET_NAME}
+
+
+B. gcloud datastore export gs: // [BUCKET_NAME}
+
+
+C. gcloud datastore export –namespaces = '[NAMESPACE]' gs: // [BUCKET_NAME}
+
+
+D. gcloud datastore dump –namespaces = '[NAMESPACE]' gs: // [BUCKET_NAME}
+ .
+A opção C é o comando correto. Ele tem o comando base correto, gcloud datastore export, seguido pelos parâmetros –namespaces e o nome de um intervalo do Cloud Storage para armazenar o arquivo de exportação. A opção A está incorreta porque o nome do parâmetro –namespaces está ausente. Opção B está incorreta porque está faltando um espaço para nome. A opção D está incorreta porque usa o comando ou despejo de verbos em vez de exportar.
+Questão 216 
+019
+Quantas organizações são criadas em uma conta?
+
+
+A. 10
+
+
+B. 25
+
+
+C. Não há limite.
+
+
+D. Cada conta tem um limite determinado pelo Google.
+
+O número máximo de organizações é determinado por conta no Google. Por isso, a opção D é a resposta correta. Se você precisar de outras organizações, entre em contato com o Google e solicite um aumento no seu limite.
+Questão 217 
+011
+Um cliente seu processa informações pessoais e de saúde para hospitais. Todas as informações de saúde precisam ser protegidas de acordo com as regulamentações governamentais. Seu cliente deseja mover o aplicativo para o Google Cloud, mas deseja usar a biblioteca de criptografia que usou no passado. Você sugere que todas as máquinas virtuais que executam o aplicativo tenham a biblioteca de criptografia instalada. Que tipo de imagem você usaria para isso?
+
+
+A. Imagem personalizada
+
+
+B. Imagem pública
+
+
+C. CentOS 6 ou 7
+
+
+D. Qualquer versão do Ubuntu
+
+Você criaria uma imagem personalizada depois de instalar o código personalizado, neste caso a biblioteca de criptografia. Uma imagem pública não contém código personalizado, mas pode ser usada como a base na qual você adiciona código personalizado. Tanto o CentOS quanto o Ubuntu são distribuições Linux. Você pode usar a imagem base à qual adiciona o código personalizado, mas por conta própria, eles não têm código personalizado.
+Questão 218 
+020
+Um cliente trouxe você para ajudar a reduzir a sobrecarga de DevOps. Engenheiros estão gastando muito tempo corrigindo servidores e otimizando a utilização do servidor. Eles querem se mover para plataformas sem servidor o máximo possível. Seu cliente já ouviu falar do Cloud Functions e quer usá-lo o máximo possível. Você recomenda todos os tipos de aplicativos a seguir, exceto qual deles?
+
+
+A. Procedimentos de carregamento de dados de data warehouse de longa execução
+
+
+B. Processamento de backend da IoT
+
+
+C. Processamento de evento de aplicativo móvel
+
+
+D. Fluxos de trabalho assíncronos
+
+O Cloud Functions é mais adequado para o processamento orientado a eventos, como um arquivo sendo enviado para o Cloud Storage ou um evento sendo gravado em uma fila de Pub / Sub. Tarefas de longa duração, como o carregamento de dados em um data warehouse, são mais adequadas para o Compute Engine ou o App Engine.
+Questão 219 
+002
+O que é uma tarefa única que você precisará concluir antes de usar o console?
+
+
+A. Configurar o faturamento
+
+
+B. Crie um projeto
+
+
+C. Criar um depósito
+
+
+D. Especifique uma zona padrão
+
+Você precisará configurar o faturamento se ele ainda não estiver ativado quando você começar a usar o console, portanto, a opção A é a resposta correta. Você pode criar um projeto, mas será capaz de fazer isso apenas se o faturamento estiver ativado. Você não precisa criar um depósito para trabalhar com o console. A especificação de uma zona padrão não é uma tarefa única; você pode mudar de zona ao longo da vida do seu projeto.
+Questão 220 
+010
+Ao usar a interface de linha de comando do Cloud SDK, qual das seguintes opções faz parte dos comandos para administrar recursos no Compute Engine?
+
+
+A. gcloud compute instances
+
+
+B. instâncias do gcloud
+
+
+C. gcloud instances compute
+
+
+D. Nenhuma das opções acima
+
+gcloud compute instances é o início dos comandos para administrar os recursos do Compute Engine, tornando a opção A a resposta correta. A opção B, gcloud instances, não possui a palavra-chave compute que indica que estamos trabalhando com o Compute Engine. A opção C mudou a ordem de computação e instâncias. A opção D é falsa porque a opção A é a resposta correta.
+Pergunta 221 
+016
+Você deseja criar uma máquina virtual usando o comando gcloud. Qual parâmetro você incluiria para especificar o tipo de disco de inicialização?
+
+
+A. boot-disk-type
+
+
+B. disco de inicialização
+
+
+C. tipo de disco
+
+
+D. tipo-boot-disk
+
+A opção correta é o tipo de disco de inicialização, que é a opção A. As outras três opções não são parâmetros para o comando gcloud compute instances.
+Questão 222 
+017
+Qual dos seguintes comandos criará uma máquina virtual com quatro CPUs denominada web-server-1?
+
+
+A. gcloud compute instances cria --machine-type = n1-standard-4 web-server-1
+
+
+B. instâncias de computação gcloud create --cpus = 4 web-server-1
+
+
+C. instâncias de computação gcloud create --machine-type = n1-padrão-4 –instance-name web-server-1
+
+
+D. gcloud compute instances cria --machine-type = n1-4-cpu web-server-1
+
+Opção A é o comando correto. É a única opção que inclui um tipo de máquina correto e especifica corretamente o nome da instância. A opção B usa o parâmetro --cpus, que não existe. A opção C usa o parâmetro instance-name, que não existe. O nome da instância é passado como um argumento e não precisa de um nome de parâmetro. A opção D está incorreta porque o tipo de máquina n1-4-cpu não é um tipo de máquina válido.
+Questão 223 
+020
+Sua equipe de gerenciamento está considerando três provedores de nuvem diferentes. Você foi solicitado a resumir as informações de faturamento e custos para ajudar a equipe de gerenciamento a comparar as estruturas de custos entre nuvens. Qual das seguintes opções você mencionaria sobre o custo de máquinas virtuais no GCP?
+
+
+A. As VMs são faturadas em incrementos de um segundo, o custo varia com o número de CPUs e a quantidade de memória em um tipo de máquina, você pode criar tipos de máquina personalizados, VMs preemptivas custam até 80% menos que VMs padrão e o Google oferece descontos para uso sustentado.
+
+
+B. As VMs são cobradas em incrementos de um segundo e as VMs podem ser executadas até 24 horas antes de serem encerradas.
+
+
+C. O Google oferece descontos para uso sustentado em apenas algumas regiões, o custo varia de acordo com o número de CPUs e a quantidade de memória em um tipo de máquina, você pode criar tipos de máquina personalizados e VMs preemptíveis custam até 80% menos que VMs padrão.
+
+
+D. As VMs são cobradas por um mínimo de uma hora de uso e o custo varia de acordo com o número de CPUs e memória em um tipo de máquina.
+
+Todas as declarações da Opção A são verdadeiras e relevantes para faturamento e custos. A opção B está correta de que as VMs são cobradas em incrementos de um segundo, mas as únicas VMs preemptivas são encerradas em até 24 horas após o início. A opção C está incorreta porque os descontos não estão limitados a algumas regiões. A opção D está incorreta porque as VMs não são cobradas por um mínimo de uma hora.
+Questão 224 
+tb.564416.06.001
+Qual página do Google Cloud Console você usaria para criar uma única instância de uma VM?
+
+
+A. Compute Engine
+
+
+B. App Engine
+
+
+C. Kubernetes Engine
+
+
+D. Cloud Functions
+
+A página do Compute Engine é onde você tem a opção de criar uma única instância de VM, então a opção A é a resposta correta. O App Engine é usado para contêineres e aplicativos em execução em ambientes de tempo de execução específicos do idioma. O Kubernetes Engine é usado para criar e gerenciar clusters do Kubernetes. Cloud Functions é onde você cria uma função para ser executada no ambiente de função de nuvem sem servidor do Google.
+Questão 225 
+tb.564416.06.005
+Você estará construindo vários modelos de aprendizado de máquina em uma instância e anexando a GPU à instância. Quando você executa seus modelos de aprendizado de máquina, eles levam muito tempo para serem executados. Parece que a GPU não está sendo usada. Qual poderia ser a causa disso?
+
+
+A. As bibliotecas da GPU não estão instaladas.
+
+
+B. O sistema operacional é baseado no Ubuntu.
+
+
+C. Você não tem pelo menos oito CPUs na instância.
+
+
+D. Não há espaço em disco persistente suficiente disponível.
+
+Para funcionar corretamente, o sistema operacional deve ter bibliotecas de GPU instaladas, portanto, a opção A está correta. O sistema operacional não precisa ser baseado no Ubuntu, e não há necessidade de ter pelo menos oito CPUs em uma instância antes que você possa anexar e usar uma GPU. O espaço em disco disponível não determina se uma GPU é usada ou não.
+Pergunta 226 
+tb.564416.06.006
+Quando você adiciona uma GPU a uma instância, você deve garantir que:
+
+
+A. A instância está definida para terminar durante a manutenção
+
+
+B. A instância é preemptiva
+
+
+C. A instância não tem discos não-inicialização conectados
+
+
+D. A instância está executando o Ubuntu 14.02 ou posterior
+
+Se você adicionar uma GPU a uma máquina virtual, deverá definir a instância para ser finalizada durante a manutenção, o que torna a opção A a resposta correta. Isso é definido na seção Políticas de disponibilidade do formulário de configuração da VM. A instância não precisa ser preemptiva e pode ter discos não-inicialização conectados. A instância não é necessária para executar o Ubuntu 14.02 ou posterior.
+Questão 227 
+tb.564416.06.014
+Você está prestes a excluir uma instância chamada ch06-instance-1, mas deseja manter seu disco de inicialização. Você não quer manter outros discos conectados. Qual comando do gcloud você usaria?
+
+
+A. gcloud compute instances exclui ch06-instance-1 –keep-disks = boot
+
+
+B. gcloud compute instances exclui ch06-instance-1 –save-disks = boot
+
+
+C. gcloud compute instances exclui ch06-instance-1 –keep-disks = sistema de arquivos
+
+
+D. gcloud compute exclui ch06-instance-1 –keep-disks = sistema de arquivos
+
+gcloud compute instances é o comando base seguido por delete, o nome da instância e –keep-disks = boot, portanto, a opção A está correta. Não há parâmetro –save-disk. A opção C está errada porque o sistema de arquivos não é um valor válido para o parâmetro keep-disk. Opção D está faltando opção de instâncias que é necessária no comando.
+Questão 228 
+tb.564416.07.002
+Quais tipos de instâncias são necessárias para ter um cluster do Kubernetes?
+
+
+A. Um mestre de cluster e nós para executar cargas de trabalho
+
+
+B. Um mestre de cluster, nós para executar cargas de trabalho e nós do Stackdriver para monitorar a integridade do nó
+
+
+C. Nós do Kubernetes; todas as instâncias são as mesmas
+
+
+D. Instâncias com pelo menos quatro vCPUs
+
+Um cluster do Kubernetes possui um único cluster mestre e um ou mais nós para executar cargas de trabalho, portanto, a opção A é a resposta correta. O Stackdriver não faz parte do cluster do Kubernetes; é um serviço separado do GCP. O Kubernetes não requer instâncias com pelo menos vCPUs; Na verdade, a configuração do nó padrão usa uma vCPU.
+Questão 229 
+tb.564416.02.012
+Você é o principal desenvolvedor em um aplicativo médico que usa smartphones de pacientes para capturar dados biométricos. O aplicativo é necessário para coletar dados e armazená-los no smartphone quando os dados não puderem ser transmitidos com segurança para o aplicativo de back-end. Você deseja minimizar a quantidade de desenvolvimento necessário para manter os dados sincronizados entre smartphones e armazenamentos de dados de back-end. Qual opção de armazenamento de dados você deve recomendar?
+
+
+A. Cloud Firestore
+
+
+B. Chave Inglesa
+
+
+C. Datastore
+
+
+D. Cloud SQL
+
+O Cloud Firestore é um serviço de banco de dados móvel que pode sincronizar dados entre dispositivos móveis e armazenamento centralizado. O Spanner é um banco de dados relacional global para aplicativos de grande escala que exigem suporte a transações em bancos de dados altamente dimensionados. O Datastore e o Cloud SQL podem ser usados, mas exigiriam mais desenvolvimento personalizado para sincronizar dados entre dispositivos móveis e o armazenamento de dados centralizado.
+Questão 230 
+tb.564416.02.018
+Qual serviço especializado suporta fluxos de trabalho de processamento em lote e fluxo?
+
+
+A. Dataproc
+
+
+B. Bigquery
+
+
+C. Datastore
+
+
+D. AutoML
+
+O Dataproc foi projetado para executar fluxos de trabalho nos modos de lote e fluxo, o que torna a opção A correta. Bigquery é um serviço de data warehouse. O armazenamento de dados é um banco de dados de documentos. AutoML é um serviço de aprendizado de máquina.
+Questão 231 
+001
+Você está projetando aplicativos em nuvem para um provedor de serviços de saúde. O aplicativo de gerenciamento de registros gerenciará informações médicas para os pacientes. O acesso a esses dados é limitado a um pequeno número de funcionários. O aplicativo do departamento de faturamento terá informações de seguro e pagamento. Outro grupo de funcionários terá acesso às informações de faturamento. Além disso, o sistema de faturamento terá dois componentes: um sistema de faturamento de seguro privado e um sistema de faturamento do governo. As regulamentações governamentais exigem que o software usado para faturar o governo seja isolado de outros sistemas de software. Qual das seguintes hierarquias de recursos atenderia a esses requisitos e forneceria a maior flexibilidade para se adaptar às mudanças de requisitos?
+
+
+A. Uma organização, com pastas para gerenciamento de registros e faturamento. A pasta de cobrança teria pastas de seguradoras privadas e pagadoras do governo dentro dela. Restrições comuns seriam especificadas em políticas no nível da organização. Outras políticas seriam definidas na pasta apropriada.
+
+
+B. Uma pasta para gerenciamento de registros, uma para faturamento e nenhuma organização. Políticas seriam definidas no nível da pasta.
+
+
+C. Uma organização, com pastas para gerenciamento de registros, seguradora privada e pagador do governo abaixo da organização. Todas as restrições seriam especificadas em políticas no nível da organização. Todas as pastas teriam as mesmas restrições de política.
+
+
+D. Nenhuma das opções acima.
+
+A opção A, a resposta correta, separa os dois principais aplicativos em suas próprias pastas e ainda permite separar o seguro privado do pagador do governo, mas usando pastas para cada um. Isso satisfaz a necessidade regulatória de manter o software de pagamento do governo isolado de outro software. A opção B não inclui uma organização, que é a raiz da hierarquia de recursos. A opção C não é flexível no que diz respeito às diferenças nas restrições em diferentes aplicações. A opção D é falsa porque a opção A atende aos requisitos.
+Questão 232 
+014
+Um administrador de aplicativos é responsável por gerenciar todos os recursos em um projeto. Ela deseja delegar responsabilidade para várias contas de serviço para outro administrador. Se contas de serviço adicionais forem criadas, o outro administrador também deverá gerenciá-las. Qual é a melhor maneira de delegar privilégios necessários para gerenciar as contas de serviço?
+
+
+A. Conceda iam.serviceAccountUser ao administrador no nível do projeto.
+
+
+B. Conceda iam.serviceAccountUser ao administrador no nível da conta de serviço.
+
+
+C. Conceda iam.serviceProjectAccountUser ao administrador no nível do projeto.
+
+
+D. Conceda iam.serviceProjectAccountUser ao administrador no nível da conta de serviço.
+
+Quando um usuário é concedido iam.serviceAccountUser no nível do projeto, esse usuário pode gerenciar todas as contas de serviço no projeto, portanto, a opção A está correta. Se uma nova conta de serviço for criada, eles automaticamente terão privilégios para gerenciar essa conta de serviço. Você pode conceder iam.serviceAccountUser ao administrador no nível da conta de serviço, mas isso exigiria a configuração da função para todas as contas de serviço. Se uma nova conta de serviço for criada, o administrador do aplicativo terá que conceder iam.serviceAccountUser ao outro administrador na nova conta de serviço. iam.serviceProjectAccountUser é uma função fictícia.
+Questão 233 
+002
+Seu gerente está preocupado com a taxa em que o departamento está gastando em serviços na nuvem. Você sugere que sua equipe use máquinas virtuais preemptivas para todas as seguintes, exceto qual delas?
+
+
+A. servidor de banco de dados
+
+
+B. Processamento em lote sem necessidade de tempo fixo para concluir
+
+
+C. Cluster de computação de alto desempenho
+
+
+D. Nenhuma das opções acima
+
+Servidores de banco de dados exigem alta disponibilidade para responder a consultas de usuários ou aplicativos. As máquinas preemptivas têm garantia de desligar em no máximo 24 horas. Um trabalho de processamento em lote sem requisitos de tempo fixo pode usar máquinas preemptivas, desde que a máquina virtual seja reiniciada. Os clusters de computação de alto desempenho podem usar máquinas preemptivas porque o trabalho em uma máquina preemptiva pode ser reprogramado automaticamente para outro nó no cluster quando um servidor é preterido. D está incorreto porque há uma Resposta correta no conjunto de opções.
+Questão 234 
+003
+Quais parâmetros precisam ser especificados ao criar uma máquina virtual no Compute Engine?
+
+
+A. Projeto e zona
+
+
+B. Nome de usuário e função administrativa
+
+
+C. Conta de faturamento
+
+
+D. Balde do Cloud Storage
+
+Máquinas virtuais são criadas em projetos, que fazem parte da hierarquia de recursos. Eles também estão localizados em regiões geográficas e centros de dados, portanto, uma zona também é especificada. Nomes de usuário e funções administrativas não são especificados durante a criação. A conta de faturamento está vinculada a um projeto e, portanto, não precisa ser especificada quando a máquina virtual é criada. Os intervalos de armazenamento em nuvem são criados independentemente das máquinas virtuais. Nem todas as máquinas virtuais farão uso de intervalos de armazenamento.
+Questão 235 
+005
+Você pode especificar pacotes para instalar em um contêiner do Docker incluindo comandos em qual arquivo?
+
+
+A. Docker.cfg
+
+
+B. Dockerfile
+
+
+C. Config.dck
+
+
+D. install.cfg
+
+O nome do arquivo usado para criar e configurar um contêiner do Docker é Dockerfile.
+Questão 236 
+006
+Quanta memória de um nó o Kubernetes requer como sobrecarga?
+
+
+A. 10 GB a 20 GB
+
+
+B. 1 GB a 2 GB
+
+
+C. 1,5 GB
+
+
+D. Uma quantidade escalonada começando com 25% da memória e diminuindo para 2% da memória marginal à medida que a quantidade total de memória aumenta.
+
+O Kubernetes usa 25% de memória de até 4 GB e, em seguida, um pouco menos para os próximos 4 GB, e continua a reduzir a porcentagem de memória adicional para 2% da memória acima de 128 GB.
+Questão 237 
+tb.564416.02.004
+Você está implantando uma API na Internet pública e está preocupado com o fato de seu serviço estar sujeito a ataques DDoS. Qual serviço do GCP você deve considerar para proteger sua API?
+
+
+A. Cloud Armor
+
+
+B. Cloud CDN
+
+
+C. Cloud IAM
+
+
+D. VPCs
+
+O Cloud Armor baseia-se nos serviços de balanceamento de carga do GCP para permitir ou restringir o acesso com base no endereço IP, implantar regras para combater ataques de script entre sites e fornecer medidas de controle para ataques de injeção de SQL. O Cloud CDN é um serviço de distribuição de conteúdo, não um serviço de segurança. O IAM é um serviço de segurança, mas é para autenticação e autorização, não para mitigação de negação de serviço. As VPCs são usadas para restringir o acesso à rede aos recursos de uma organização, mas não possuem recursos para atenuar os ataques de negação de serviço. Além disso, o Cloud CDN atua como uma primeira linha de defesa no caso de ataques DDoS.
+Questão 238 
+tb.564416.02.005
+Você tem um aplicativo que usa uma fila de mensagens Pub / Sub para manter uma lista de tarefas que devem ser processadas por outro aplicativo. O aplicativo que consome mensagens da fila Pub / Sub remove a mensagem somente depois de concluir a tarefa. Leva aproximadamente 10 segundos para concluir uma tarefa. Não é um problema se duas ou mais VMs executarem a mesma tarefa. O que é uma configuração econômica para processar esta carga de trabalho?
+
+
+A. Use máquinas virtuais preemptivas
+
+
+B. Use máquinas virtuais padrão
+
+
+C. Use DataProc
+
+
+D. Use a chave
+
+Esse é um bom caso de uso para VMs preemptivas, pois elas poderiam reduzir o custo de execução do segundo aplicativo sem o risco de perder o trabalho. Como as tarefas são excluídas da fila somente depois de concluídas, se uma VM preemptiva for desligada antes de concluir a tarefa, outra VM poderá executar a tarefa. Além disso, não há nenhum problema em executar uma tarefa mais de uma vez, portanto, se duas VMs realizarem a mesma tarefa, isso não afetará negativamente a saída do aplicativo. DataProc e Spanner não são produtos apropriados para esta tarefa.
+Questão 239 
+025
+Código para funções de nuvem pode ser escrito em:
+
+
+A. Node.js e Python
+
+
+B. Node.js, Python e Go
+
+
+C. Python e Go
+
+
+D. Python e C
+
+Node.js 6, Node.js 8 e Python são os idiomas suportados pelo Cloud Functions.
+Questão 240 
+013
+O Cloud Filestore é baseado em qual tecnologia de sistema de arquivos?
+
+
+A. Sistema de Arquivo de Rede (NFS)
+
+
+B. XFS
+
+
+C. EXT4
+
+
+D. ReiserFS
+
+Opção A está correta; O Cloud Filestore é baseado no Network Filesystem (NSF), que é um sistema de gerenciamento de arquivos distribuído. As outras opções são sistemas de arquivos suportados pelo Linux, mas não são a base do Cloud Filestore.
+Questão 241 
+014
+Ao configurar uma rede no GCP, sua rede e os recursos nela são tratados como o quê?
+
+
+A. nuvem privada virtual
+
+
+B. subdomínio
+
+
+C. Cluster
+
+
+D. Nenhuma das opções acima
+
+Quando você cria uma rede, ela é tratada como uma nuvem privada virtual, o que torna a opção A correta. Os recursos são adicionados ao VPC e não podem ser acessados ​​fora do VPC, a menos que você os configure explicitamente. Um subdomínio está relacionado a domínios da web e não está relacionado à configuração de rede do GPC. Os clusters, como os clusters do Kubernetes, podem estar em sua rede, mas não são uma característica da rede.
+Questão 242 
+001
+Modelos de instância são usados ​​para criar um grupo de máquinas virtuais idênticas. Os modelos de instância incluem:
+
+
+A. Tipo de máquina, imagem de disco de inicialização ou imagem, zona e rótulos do contêiner
+
+
+B. Definições do intervalo do Cloud Storage
+
+
+C. Uma descrição do balanceador de carga
+
+
+D. arquivo de configuração do App Engine
+
+Tipo de máquina, imagem de disco de inicialização ou imagem de contêiner, zona e rótulos são todos parâmetros de configuração ou atributos de uma máquina virtual e, portanto, seriam incluídos em uma configuração de grupo de instâncias que cria essas máquinas virtuais.
+Questão 243 
+003
+Sua empresa possui uma política de gerenciamento de objetos que exige que os objetos armazenados no Cloud Storage sejam migrados do armazenamento regional para o nearline de armazenamento 90 dias após a criação do objeto. A maneira mais eficiente de fazer isso é:
+
+
+A. Crie uma função de nuvem para copiar objetos do armazenamento regional para o armazenamento nearline
+
+
+B. Defina a propriedade MigrateObjectAfter no objeto armazenado para 90 dias
+
+
+C. Copie o objeto para o armazenamento persistente anexado a uma máquina virtual e, em seguida, copie o objeto para um bloco criado no armazenamento nearline
+
+
+D. Crie uma política de configuração de gerenciamento de ciclo de vida especificando uma idade de 90 dias e SetStorageClass como nearline.
+
+A política de configuração do ciclo de vida permite que os administradores especifiquem critérios para migrar dados para outro sistema de armazenamento sem precisar se preocupar com a execução de tarefas para realmente executar as etapas necessárias. As outras opções são ineficientes ou não existem.
+Questão 244 
+004
+Um cliente de educação mantém um site onde os usuários podem enviar vídeos, e seu cliente precisa garantir a redundância dos arquivos; Portanto, você criou dois intervalos para o Cloud Storage. Qual comando você usa para sincronizar o conteúdo dos dois blocos?
+
+
+A. gsutil rsync
+
+
+B. gcloud cp sync
+
+
+C. gcloud rsync
+
+
+D. gsutil cp sync
+
+A gsutil é a ferramenta de linha de comando para trabalhar com o Cloud Storage. O rsync é o comando específico da gsutil para sincronizar os intervalos.
+Questão 245 
+005
+Nuvens privadas virtuais (VPCs) são ________ recursos.
+
+
+A. Regional
+
+
+B. Zonal
+
+
+C. Global
+
+
+D. Sub-redes
+
+O Google opera uma rede global e as nuvens virtuais privadas (VPCs) são recursos que podem abranger essa rede global.
+Questão 246 
+009
+O departamento financeiro da sua empresa está desenvolvendo um novo aplicativo de gerenciamento de contas que requer transações e a capacidade de executar operações de banco de dados relacional usando SQL totalmente compatível. As opções de armazenamento de dados no GCP incluem:
+
+
+A. Chave e Cloud SQL
+
+
+B. Datastore e Bigtable
+
+
+C. Spanner e Cloud Storage
+
+
+D. Datastore e Cloud SQL
+
+Apenas os bancos de dados Spanner e Cloud SQL suportam transações e possuem uma interface SQL. O armazenamento de dados tem transações, mas não suporta SQL totalmente compatível; tem uma linguagem de consulta semelhante a SQL. O Cloud Storage não suporta transações ou SQL.
+Questão 247 
+014
+Você recebeu a tarefa de criar uma hierarquia organizacional para gerenciar departamentos e seus recursos de nuvem. Quais componentes de organização estão disponíveis no GCP?
+
+
+A. Organização, pastas, projetos
+
+
+B. Baldes, diretórios, subdiretórios
+
+
+C. Organizações, baldes, projetos
+
+
+D. Pastas, baldes, projetos
+
+Organização, pastas e projetos são os componentes usados ​​para gerenciar uma hierarquia organizacional. Baldes, diretórios e subdiretórios são usados ​​para organizar o armazenamento.
+Questão 248 
+016
+A disponibilidade de plataformas de CPU pode variar entre as zonas. Para obter uma lista de todos os tipos de CPU disponíveis em uma determinada zona, você deve usar:
+
+
+As zonas de computação de A. gcloud descrevem
+
+
+B. gcloud iam zones descrevem
+
+
+C. as zonas de gutil descrevem
+
+
+D. gcloud compute regions list
+
+O gcloud é a ferramenta de linha de comando para manipular recursos de computação, e as zonas descritas são o comando correto.
+Questão 249 
+019
+Uma equipe de cientistas de dados pediu sua ajuda para configurar um cluster do Apache Spark. Você sugere que eles usem um serviço de GCP gerenciado em vez de gerenciar um cluster no Compute Engine. O serviço que eles usariam é:
+
+
+A. Cloud DataProc
+
+
+B. Cloud Dataflow
+
+
+C. Cloud Hadoop
+
+
+D. BigQuery
+
+O Cloud DataProc é o serviço Spark gerido. O Cloud DataFlow é para fluxo e processamento em lote de dados, o BigQuery é para análise e o Cloud Hadoop não é um serviço GCP.
+Questão 250 
+022
+Você deseja que o Google Cloud Platform gerencie chaves criptográficas, por isso decidiu usar o Cloud Key Management Services. Antes de começar a criar criptografia, você deve:
+
+
+A. Ative a API do Serviço de gerenciamento de chave da nuvem do Google (KMS) e configure o faturamento
+
+
+B. Ative a API do Serviço de gerenciamento de chave da nuvem do Google (KMS) e crie pastas
+
+
+C. Crie pastas e configure o faturamento
+
+
+D. Dar as funções atribuíveis a todos os usuários para criar chaves
+
+A ativação da API do Serviço de gerenciamento de chave da nuvem do Google (KMS) e a configuração do faturamento são etapas comuns ao uso dos serviços do GCP.
