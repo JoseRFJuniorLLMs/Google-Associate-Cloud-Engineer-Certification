@@ -1,0 +1,1951 @@
+Google Cloud Platform in Action
+Jose R F Junior - web2ajax@gmail.com
+Resumo
+Capítulo 10. Kubernetes Engine: clusters gerenciados do Kubernetes
+10.1. O que são contêineres?
+10.1.1. Configuração
+10.1.2. estandardização
+10.1.3. Isolamento
+10,2. O que é o Docker?
+10.3. O que é o Kubernetes?
+10.3.1. Clusters
+10.3.2. Nós
+10.3.3. Vagens
+10.3.4. Serviços
+10.4. O que é o Kubernetes Engine?
+10.5. Interagindo com o Kubernetes Engine
+10.5.1. Definindo sua aplicação10.5.2. Executando seu contêiner localmente
+10.5.3. Implantando no seu registro de contêiner
+10.5.4. Configurando seu cluster do Kubernetes Engine
+10.5.5. Implantando seu aplicativo
+10.5.6. Replicando seu aplicativo
+10.5.7. Usando a interface do usuário do Kubernetes
+10.6. Mantendo seu cluster
+10.6.1. Atualizando o nó mestre do Kubernetes
+10.6.2. Atualizando Nós do Cluster
+10.6.3. Redimensionando seu cluster
+10.7. Entendendo o preço
+10.8. Quando devo usar o Kubernetes Engine?
+10.8.1. Flexibilidade
+10.8.2. Complexidade
+10.8.3. atuação
+10.8.4. Custo
+10.8.5. No geral
+10.8.6. Lista de afazeres
+10.8.7. E * Exchange
+10.8.8. InstaSnap
+
+10. Kubernetes Engine: managed
+Kubernetes clusters
+This chapter covers
+What containers, Docker, and Kubernetes do
+How Kubernetes Engine works and when it’s a good fit
+Setting up a managed Kubernetes cluster using Kubernetes Engine
+Upgrading cluster nodes and resizing a cluster
+A common problem in software development is the final packaging of
+all your hard work into something that’s easy to work with in a
+production setting. This problem is often neglected until the last
+minute because we tend to keep our focus on building and designing
+the software itself. But the final packaging and deployment are often
+as difficult and complex as the original development. Luckily many
+tools are available to address this problem, one of which relies on the
+concept of a container for your software.
+10.1. WHAT ARE CONTAINERS?
+A container is an infrastructural tool aimed at solving the software
+deployment problem by making it easy to package your application,
+its configuration, and any dependencies into a standard format. By
+relying on containers, it becomes easy to share and replicate a
+computing environment across many different platforms. Containers
+also act as a unit of isolation, so you don’t have to worry about
+competing for limited computing resources—each container is
+isolated from the others.If all of this sounds intimidating, don’t worry: containers are pretty
+confusing when you’re starting to learn about them. Let’s walk
+through each piece, one step at a time, starting with configuration.
+10.1.1. Configuration
+If you’ve ever tried to deploy your application and realized you had a
+lot more dependencies than you thought, you’re not alone. This issue
+can make one of the benefits of cloud computing (easily created fresh-
+slate virtual machines) a bit of a pain! Being engineers, we’ve
+invented lots of ways of dealing with this over the years (for example,
+using a shell script that runs when a machine boots), but configuration
+remains a frustrating problem. Containers solve this problem by
+making it easy to set up a clean system, describe how you want it to
+look, and keep a snapshot of it once it looks exactly right. Later, you
+can boot a container and have it look exactly as you described.
+You may be thinking about the Persistent Disk snapshots you learned
+about in chapter 9 and wondering why you shouldn’t use those to
+manage your configuration. Although that’s totally reasonable, it
+suffers from one big problem: those snapshots only work on Google!
+This problem brings us to the next issue: standardization.
+10.1.2. Standardization
+A long time ago (pre-1900s) (figure 10.1), if you wanted to send a
+table and some chairs across the ocean from England to the United
+States, you had to take everything to a ship and figure out how to fit it
+inside, sort of like playing a real-life game of Tetris. It was like
+packing your stuff into a moving van—just bigger — and you shared
+the experience with everyone else who was putting their stuff in theretoo.
+Figure 10.1. Shipping before containers
+Eventually, the shipping industry decided that this way of packing
+things was silly and started exploring the idea of containerization.
+Instead of packing things like puzzle pieces, people solve the puzzle
+themselves using big metal boxes (containers) before they even get to
+a boat. That way, the boat crew only ever deals with these standard-
+sized containers and never has to play Tetris again. In addition to
+reducing the time it took to load boats, standardizing on a specific
+type of box with specific dimensions meant the shipping industry
+could build boats that were good at holding containers (figure 10.2),
+devise tools that were good at loading and unloading containers, and
+charge prices based on the number of containers. All of this madeshipping things easier, more efficient, and cheaper.
+Figure 10.2. Shipping using containers
+Software containers do for your code what big metal boxes did for
+shipping. They act as a standard format representing your software
+and its environment and offer tools to run and manage that
+environment so it works on every platform. If a system understands
+containers, you can be sure that when you deploy your code there, it’ll
+work. More concretely, you can focus specifically on getting your
+code into a container, playing Tetris up front instead of when you’re
+trying to deploy to production. One last piece here needs mentioning,
+and it comes as a by-product of using containers: isolation.
+10.1.3. Isolation
+One thing you might notice in the first shipping picture (figure 10.1) is
+that transporting stuff before containers looked a bit risky, because
+your things might get crushed by other, heavier things. Luckily, inside
+a container for shipping or for your code, you only worry about yourown stuff. For example, you might want to take a large machine and
+chop it into two pieces: one for a web server and another for a
+database. Without a container, if the database were to get tons of SQL
+queries, the web server would have far fewer CPU cycles to handle
+web requests. But using two separate containers makes this problem
+go away. Physical containers have walls to prevent a piano from
+crushing your stuff, and software containers run in a virtual
+environment with similar walls that allow you to decide exactly how
+to allocate the underlying resources.
+Furthermore, although applications running on the same virtual
+machine may share the same libraries and operating system, they
+might not always do so. When applications running on the same
+system require different versions of shared libraries, reconciling these
+demands can become quite complicated. By containerizing the
+application, shared libraries aren’t shared anymore, meaning your
+dependencies are isolated to a single application (figure 10.3).
+Figure 10.3. Applications without containers vs. with containersNow you understand the benefits of configuration, standardization,
+and isolation. With those benefits in mind, let’s jump up a layer in the
+stack and think about the ship that will hold all of these containers,
+and the captain who will be steering the ship.
+10.2. WHAT IS DOCKER?
+Many systems are capable of running virtualized environments, but
+one has taken the lead over the past few years: Docker. Docker is a
+tool for running containers and acts a bit like a modern container ship
+that carries all of the containers from one place to another. At a
+fundamental level, Docker handles the lower-level virtualization; it
+takes the definitions of container images and executes the
+environment and code that the containers define.
+In addition to being the most common base system for running
+containers, Docker also has become the standard for how you definecontainer images, using a format called a Dockerfile. Dockerfiles let
+you define a container using a bunch of commands that do anything
+from running a simple shell command (for example, RUN echo
+"Hello World!") all the way to more complex things like
+exposing a single port outside the container (EXPOSE 8080) or
+inheriting from another predefined container (FROM node:8). I’ll
+refer back to the Dockerfile format throughout this chapter, and
+although you should understand what this type of file is trying to
+accomplish, don’t worry if you don’t feel comfortable writing one
+from scratch. If you get deeper into containers, entire books on
+Docker are available that can help you learn how to write a Dockerfile
+of your own.
+Note
+If you want to follow along with the code and deployment in this
+chapter, you should install the Docker runtime on your local machine,
+which is available at http://docker.com/community-edition for most
+platforms.
+10.3. WHAT IS KUBERNETES?
+If you start using containers, it becomes natural to split things up
+based on what they’re responsible for (figure 10.4). For example, if
+you were creating a traditional web application, you might have a
+container that handles web requests (for example, a web app server
+that handles browser-based requests), another container that handles
+caching frequently accessed data (for example, running a service like
+Memcached), and another container that handles more complex work,like generating fancy reports, shrinking pictures down to thumbnail
+size, or sending e-mails to your users.
+Figure 10.4. Overview of a web application as containers
+Managing where all of these containers run and how they talk to one
+another turns out to be tricky. For example, you might want all of the
+web app servers to have Memcached running on the same physical (or
+virtual) machine so that you can talk to Memcached over
+localhost rather than a public IP. As a result, there a bunch of
+systems that try to fix this problem, one of which is Kubernetes.
+Kubernetes is a system that manages your containers and allows you
+to break things into chunks that make sense for your application,
+regardless of the underlying hardware that runs the code. It also allowsyou to express more complex relationships, like the fact that you want
+any VMs that handle web requests to have Memcached on the same
+machine. Also, because it’s open source, using it doesn’t tie you to a
+single hosting provider. You can run it on any cloud provider, or you
+can skip out on the cloud entirely by using your own hardware. To do
+all of this, Kubernetes builds on the concept of a container as a
+fundamental unit and introduces several new concepts that you can
+use to represent your application and the underlying infrastructure.
+We’ll explore them in the next several subsections.
+Note
+Kubernetes is an enormous platform that has been evolving for several
+years and becoming more and more complex as time goes on,
+meaning it’s too large to fit everything into a single chapter. As a
+result, I’m going to focus on demonstrating how you can use
+Kubernetes. If you want to learn more about Kubernetes, you might
+want to check out Marko Luksa’s book, Kubernetes in Action
+(Manning, 2017).
+Because there’s so much to cover about Kubernetes, let’s start by
+looking at a big, scary diagram showing most of the core concepts in
+Kubernetes (figure 10.5). We’ll then zoom in on the four key
+concepts: clusters, nodes, pods, and services.
+Figure 10.5. An overview of the core concepts of Kubernetes10.3.1. Clusters
+At the top of the diagram, you’ll see the concept of a cluster, which is
+the thing that everything else I’m going to talk about lives inside of.
+Clusters tend to line up with a single application, so when you’re
+talking about the deployment for all of the pieces of an application,
+you’d say that they all run as part of its Kubernetes cluster. For
+example, you’d refer to the production deployment of your To-Do List
+app as your To-Do List Kubernetes cluster.
+10.3.2. Nodes
+Nodes live inside a cluster and correspond to a single machine (for
+example, a VM in GCE) capable of running your code. In this
+example cluster, two different nodes (called Node 1 and Node 2) are
+running some aspects of the To-Do List app. Each cluster usually willcontain several nodes, which are collectively responsible for handling
+the overall work needed to run your application.
+It’s important to stress the collective aspect of nodes, because a single
+node isn’t necessarily tied to a single purpose. It’s totally possible that
+a given node will be responsible for many different tasks at once, and
+that those tasks might change over time. For example, in the diagram,
+you have both Node 1 and Node 2 handling a mix of responsibilities,
+but this might not be the case later on when work shuffles around
+across the available nodes.
+10.3.3. Pods
+Pods are groups of containers that act as discrete units of functionality
+that any given node will run. The containers that make up a pod will
+all be kept together on one node and will share the same IP address
+and port space. As a result, containers on the same pod can
+communicate via localhost, but they can’t both bind to the same
+port; for example, if Apache is running on port 80, Memcached can’t
+also bind to that same port. The concept of a pod can be a bit
+confusing, so to clarify, let’s look at a more concrete example and
+compare the traditional version with the Kubernetes-style version.
+A LAMP stack is a common deployment style that consists of running
+Linux (as the operating system), Apache (to serve web requests),
+MySQL (to store data), and PHP (to do the work of your application).
+If you were running such a system in a traditional environment (figure
+10.6), you might have a server running MySQL to store data, another
+running Apache with mod_php (to process PHP code), and maybe
+one more running Memcached to cache values (on either the same
+machine as the Apache server or a separate one).Figure 10.6. Noncontainerized version of a LAMP stack
+If you were to think of this stack in terms of containers and pods, you
+might rearrange things a bit, but the important idea to note is leaving
+VMs (and nodes) out of the picture entirely. You might have one pod
+responsible for serving the web app (which would be running Apache
+and Memcached, each in its own container), and another pod
+responsible for storing data (with a container running MySQL) (figure
+10.7).
+Figure 10.7. Containerized version of a LAMP stackThese pods might be running on a single VM (or node) or be split
+across two different VMs (or nodes), but you don’t need to care about
+where a pod is running. As long as each pod has enough computing
+resources and memory, it should be irrelevant. The idea of using pods
+is that you can focus on what should be grouped together, rather than
+how it should be laid out on specific hardware (whether that’s virtual
+or physical).
+Looking at this from the perspective of the To-Do List app, you had
+two different pods: the To-Do List web app pod and the report-
+generation pod. An example of the To-Do List pod is shown in figure
+10.8, which is similar to the LAMP stack I described, with two
+containers: one for web requests and another for caching data.
+Figure 10.8. The To-Do List podAlthough the ability to arrange different functionality across lots of
+different physical machines is neat, you may be worried about things
+getting lost. For example, how do you know where to send web
+requests for your To-Do List app if it might live on a bunch of
+different nodes?
+10.3.4. Services
+A service is the abstract concept you use to keep track of where the
+various pods are running. For example, because the To-Do List web
+app service could be running on either (or both) of the two nodes, you
+need a way to find out where to go if you want to make a request to
+the web app. This makes a service a bit like an entry in a phone book,
+providing a layer of abstraction between someone’s name and the
+specific place where you can contact them. Because things can jump
+around from one node to another, this phone book needs to be updated
+quite often. By relying on a service to keep track of the various pieces
+of your application (for example, in the To-Do List, you have the pod
+that handles web requests), you never worry about where the podhappens to be running. The service can always help route you to the
+right place.
+At this point, you should understand some of the core concepts of
+Kubernetes, but only in an abstract sense. You should understand that
+a service is a way to help route you to the right pod and that a pod is a
+group of containers with a particular purpose, but I’ve said nothing at
+all about how to create a cluster or a pod or a service. That’s OK! I’ll
+take care of some of that later on. In the meantime, I’ve reached the
+point where I can explain what exactly Kubernetes Engine is. All this
+talk about containers and Kubernetes and pods has finally paid off!
+10.4. WHAT IS KUBERNETES ENGINE?
+Kubernetes is an open source system, so if you want to create clusters
+and pods and have requests routed to the right nodes, you have to
+install, run, and manage the Kubernetes system yourself. To minimize
+this burden, you can use Kubernetes Engine, which is a hosted and
+managed deployment of Kubernetes that runs on Google Cloud
+Platform (using Compute Engine instances under the hood).
+You still use all of the same tools that you would if you were running
+Kubernetes yourself, but you can take care of the administrative
+operations (such as creating a cluster and the nodes inside it) using the
+Kubernetes Engine API.
+10.5. INTERACTING WITH KUBERNETES ENGINE
+To see how this all works, you can define a simple Kubernetes
+application and then see how you can deploy it to Kubernetes Engine.10.5.1. Defining your application
+You’ll start by defining a simple Hello World Node.js application
+using Express.js. You should be familiar with Express, but if you’re
+not, it’s nothing more than a Node.js web framework. A simple
+application might look something like the following listing, saved as
+index.js.
+Listing 10.1. Simple Hello World Express application
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => {
+res.send('Hello world!');
+});
+app.listen(8080, '0.0.0.0', () => {
+console.log('Hello world app is listening on port 8080.');
+});
+This web application will listen for requests on port 8080 and always
+reply with the text “Hello world!” You also need to make sure you
+have your Node.js dependencies configured properly, which you can
+do with a package.json file like the one shown in the following listing.
+Listing 10.2. package.json for your application
+{
+"name": "hellonode",
+"main": "index.js",
+"dependencies": {
+"express": "~4"
+}
+}
+How would you go about containerizing this application? To do so,
+you’d create a Dockerfile, as shown in the next listing, which will
+look like a start-up script for a VM, but a bit strange. Don’t worry,though—you’re not supposed to be able to write this from scratch.
+Listing 10.3. An example Dockerfile
+FROM node:8
+WORKDIR /usr/src/app
+COPY package.json .
+RUN npm install
+COPY . .
+EXPOSE 8080
+CMD ["node", "index.js"]
+Let’s look at each line of the listing and see what it does:
+1. This is the base image (node:8), which Node.js itself
+provides. It gives you a base operating system that comes with
+Node v8 preinstalled and ready to go.
+2. This is the equivalent of cd to move into a current working
+directory, but it also makes sure the directory exists before
+moving into it.
+3. The first COPY command does exactly as you’d expect,
+placing a copy of something from the current directory on your
+machine in the specified directory on the Docker image.
+4. The RUN command tells Docker to execute a given command
+on the Docker image. In this case, it installs all of your
+dependencies (for example, express) so they’ll be present when
+you want to run your application.
+5. You use COPY again to bring the rest of the files over to the
+image.
+6. EXPOSE is the same as opening up a port for the rest of theworld to have access. In this case, your application will use port
+8080, so you want to be sure that it’s available.
+7. The CMD statement is the default command that will run. In
+this case, you want to start a Node.js process running your service
+(which is in index.js).
+Now that you’ve written a Dockerfile, it might make sense to test it
+locally before trying to deploy it to the cloud. Let’s take a look at how
+to do that.
+10.5.2. Running your container locally
+Before you can run a container on your own machine, you’ll need to
+install the Docker runtime. Docker Community Edition is free, and
+you can install it for almost every platform out there. For example,
+there’s a .deb package file for Ubuntu available on
+http://docker.com/community-edition.
+As you learned earlier, Docker is a tool that understands how to run
+containers that you define using the Dockerfile format. Once you have
+Docker running on your machine, you can tell it to run your
+Dockerfile, and you should see your little web app running. To test
+whether you have Docker set up correctly, run docker run
+hello-world, which tells Docker to go find a container image
+called “hello-world.” Docker knows how to go find publicly available
+images, so it’ll download the hello-world image automatically
+and then run it. The output from running this image should look
+something like this:
+$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+1latest: Pulling from library/hello-world
+2
+b04784fba78d: Pull complete
+Digest:
+sha256:f3b3b28a45160805bb16542c9531888519430e9e6d6ffc09d72261b0d26ff74f
+Status: Downloaded newer image for hello-world:latest
+Hello from Docker!
+# ... More information here ...
+1 Docker realizes that this image isn’t available locally.
+2 Docker goes looking for the image from Dockerhub (a place that
+hosts images).
+To run your image, you have to take your Dockerfile that describes a
+container and build it into a container image. This is a bit like
+compiling source code into a runnable binary when you’re writing
+code in a compile language like C++ or Java. Make sure the contents
+of your Dockerfile are in a file called Dockerfile; then you’ll use
+docker build to create your image and tag it as hello-node:
+$ docker build --tag hello-node .
+Sending build context to Docker daemon
+Step 1/7 : FROM node:8
+1.345MB
+Step 2/7 : WORKDIR /usr/src/app
+Step 3/7 : COPY package.json .
+Step 4/7 : RUN npm install
+Step 5/7 : COPY . .
+Step 6/7 : EXPOSE 8080
+Step 7/7 : CMD node index.js
+Successfully built 358ca555bbf4
+Successfully tagged hello-node:latest
+You’ll see a lot happening under the hood, and it’ll line up one-to-one
+with the commands you defined in the Dockerfile. First, it’ll go
+looking for the publicly available base container that has Node v8
+installed, and then it’ll set up your work directory, all the way through
+to running the index.js file that defines your web application. Notethat this is only building the container, not running it, so the container
+itself is in a state that’s ready to run but isn’t running at the moment.
+If you want to test out that things worked as expected, you can use the
+docker run command with some special flags:
+$ docker run -d -p 8080:8080 hello-node
+Here, the -d flag tells Docker to run this container image in the
+background, and the -p 8080:8080 tells Docker to take anything
+on your machine that tries to talk to port 8080 and forward it onto
+your container’s port 8080.
+The following line shows the result of running your container image:
+485c84d0f25f882107257896c2d97172e1d8e0e3cb32cf38a36aee6b5b86a469
+This is a unique ID that you can use to address that particular image
+(after all, you might have lots of the same image running at the same
+time).
+To check that your image is running, you can use the docker ps
+command, and you should see the hello-node image in the list:
+$ docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"
+CONTAINER ID
+IMAGE
+STATUS
+485c84d0f25f
+hello-node
+Up About a minute
+As you can see, the container is using the hello-node image and
+has only been running for about a minute. Also note that the container
+ID has been shortened to the first few letters of the unique ID fromrunning the docker run command. You can shorten this even
+further, as long as the ID doesn’t match more than one container, so
+for this exercise, I’ll refer to this container as 485c. You told Node to
+print to the console when it started listening for requests.
+You can check the output of your container so far by entering this line:
+$ docker logs 485c
+The output here is exactly what you’d expect:
+Hello world app is listening on port 8080.
+Now try connecting to the container’s Node.js server using curl:
+$ curl localhost:8080
+You should see this:
+Hello world!
+Like magic, you have a Node.js process running and serving HTTP
+requests from inside a container being run by the Docker service on
+your machine. If you wanted to stop this container, you could use the
+docker stop command:
+$ docker stop 485c
+485c
+$ docker ps --format "table {{.ID}}"
+CONTAINER IDHere, once you stop the docker container, it no longer appears in the
+list of running containers shown using docker ps.
+Now that you have an idea of what it feels like to run your simple
+application as a container using Docker, let’s look at how you could
+switch from using your local Docker instance to a full-fledged
+Kubernetes cluster (which itself uses Docker under the hood). I’ll start
+with how you package up your containerized application and deploy it
+to your private container registry.
+10.5.3. Deploying to your container registry
+At this point, you’ve built and run a container locally, but if you want
+to deploy it, you’ll need it to exist on Google Cloud. You need to
+upload your container to run it on Kubernetes Engine. To allow you to
+do this, Google offers a private per-project container registry that acts
+as storage for all of your various containers.
+To get started, you first need to tag your image in a special format. In
+the case of Google’s container registry, the tag format is
+gcr.io/your-project-id/your-app (which can come with
+different versions on the end, like :v1 or :v2). In this case, you need
+to tag your container image as gcr.io/your-project-
+id/hello-node:v1. To do this, you’ll use the docker tag
+command. As you’ll recall, you called the image you created hello-
+node, and you can always double-check the list of images using the
+docker images command:
+$ docker images --format "table {{.Repository}}\t{{.ID}}"
+REPOSITORY
+hello-node
+IMAGE ID
+96001025c6a9Re-tag your hello-node Docker image:
+$ docker tag hello-node gcr.io/project-id/hello-node:v1
+Once you’ve retagged the image, you should see an extra image show
+up in the list of available Docker images. Also notice that the :v1
+part of your naming shows up under the special TAG heading in the
+following snippet, making it easy to see when you have multiple
+versions of the same container:
+$ docker images --format "table {{.Repository}}\t{{.Tag}}"
+REPOSITORY
+TAG
+gcr.io/project-id/hello-node
+hello-node
+v1
+latest
+You could always build your container with this name from the start,
+but you’d already built this container beforehand.
+Now all that’s left is to upload the container image to your container
+registry, which you can do with the gcloud command-line tool:
+$ gcloud docker -- push gcr.io/project-id/hello-node:v1
+The push refers to a repository [gcr.io/project-id/hello-node]
+b3c1e166568b: Pushed
+7da58ae04482: Pushed
+2398c5e9fe90: Pushed
+e677efb47ea8: Pushed
+aaccb8d23649: Pushed
+348e32b251ef: Pushed
+e6695624484e: Pushed
+da59b99bbd3b: Pushed
+5616a6292c16: Pushed
+f3ed6cb59ab0: Pushed
+654f45ecb7e3: Pushed
+2c40c66f7667: Pushed
+v1: digest:
+sha256:65237913e562b938051b007b8cbc20799987d9d6c7af56461884217ea047665a
+size:2840
+You can verify that this worked by going into the Cloud Console and
+choosing Container Registry from the left-side navigation. Once there,
+you should see your hello-node container in the listing, and
+clicking on it should show the beginning of the hash and the v1 tag
+that you applied (figure 10.9).
+Figure 10.9. Container Registry listing of your hello-node container
+You’ve uploaded your container to Google Cloud. Now you can get
+your Kubernetes Engine cluster ready.
+10.5.4. Setting up your Kubernetes Engine cluster
+Similar to how you needed to install Docker on a local machine to run
+a container, you’ll need to set up a Kubernetes cluster if you want to
+deploy your containers to Kubernetes Engine. Luckily, this is a lot
+easier than it might sound, and you can do it from the Cloud Console,
+like you’d turn on a Compute Engine VM. To start, choose Kubernetes
+Engine from the left-side navigation of the Cloud Console. Once
+there, you’ll see a prompt to create a new Kubernetes cluster. When
+you click on that, you’ll see a page that should look similar to the one
+for creating a new Compute Engine VM (figure 10.10).
+Figure 10.10. Prompt to create a new Kubernetes Engine clusterBecause you’re only trying to kick the tires of Kubernetes Engine, you
+can leave everything set to the defaults. You’ll use the us-
+central1-a zone, a single vCPU per machine, and a size of three
+VMs for the whole cluster. (Remember, you can always change these
+things later.) The only thing you should do is pick a name for your
+cluster in this example, like first-cluster. Once you’ve verified
+that the form shows what you expect, click the Create button, and then
+wait a few seconds while Google Kubernetes Engine (GKE) actually
+creates the VMs and configures Kubernetes on the new cluster of
+machines.
+Once you have your cluster created and marked as running, you can
+verify that it’s working properly by listing your VMs. Remember that
+a GKE cluster relies on Compute Engine VMs under the hood, so you
+can look at them like any other VM running:
+$ gcloud compute instances list --filter "zone:us-central1-a name:gke-
+*" |
+awk '{print $1}'
+NAME
+gke-first-cluster-default-pool-e1076aa6-c773
+gke-first-cluster-default-pool-e1076aa6-mdcd
+gke-first-cluster-default-pool-e1076aa6-xhxpYou have a cluster running and can see that three VMs that make up
+the cluster are running. Now let’s dig into how to interact with the
+cluster.
+10.5.5. Deploying your application
+Once you’ve deployed your container and created your cluster, the
+next thing you need to do is find a way to communicate with and
+deploy things to your cluster. After all, you have a bunch of machines
+running doing nothing! Because this cluster is made up of machines
+running Kubernetes under the hood, you can use the existing tools for
+talking to Kubernetes to talk to your Kubernetes Engine cluster. In this
+case, the tool you’ll use to talk to your cluster is called kubectl.
+Note
+Keep in mind that some of the operations you’ll run using kubectl
+will always return quickly, but they’re likely doing some background
+work under the hood. As a result, you may have to wait a little bit
+before moving on to the next step.
+In case you’re not super-familiar with Kubernetes (which is expected),
+to make this process easy, Google Cloud offers a fast installation of
+kubectl using the gcloud command-line tool. All you have to do
+to install kubectl is run a simple gcloud command:
+$ gcloud components install kubectl
+NoteIf you’ve installed gcloud using a package manager (like apt-get
+for Ubuntu), you might see a recommendation from gcloud saying
+to use the same package manager to install kubectl (for example,
+apt-get install kubectl).
+Once you have kubectl installed, you need to be sure that it’s
+properly authenticated to talk to your cluster. You can do this using
+another gcloud command that fetches the right credentials and
+ensures that kubectl has them available:
+$ gcloud container clusters get-credentials --zone us-central1-a first-
+cluster
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for first-cluster.
+Once you’ve set up kubectl, you can use it to deploy a new
+application using your container image under the hood. You can do
+this by running kubectl run and using kubectl get pods to
+verify that the tool deployed your application to a pod:
+$ kubectl run hello-node --image=gcr.io/your-project-id-here/hello-
+node:v1 --
+port 8080
+deployment "hello-node" created
+$ kubectl get pods
+NAME
+READY
+hello-node-1884625109-sjq76
+1/1
+STATUS
+Running
+RESTARTS
+0
+AGE
+55s
+You’re now almost done, with one final step before you can check
+whether things are working as expected. Remember that EXPOSE
+8080 command in your Dockerfile? You have to do something
+similar with your cluster to make sure the ports you need to handlerequests are properly exposed. To do this, you can use the kubectl
+expose command:
+$ kubectl expose deployment hello-node --type=LoadBalancer --port 8080
+service "hello-node" exposed
+Under the hood, Kubernetes Engine will configure a load balancer like
+you learned about in chapter 9. Once this is done, you should see a
+load balancer appear in the Cloud Console that points to your three
+VM instances that make up the cluster (figure 10.11).
+Figure 10.11. Automatically created load balancer in the Cloud Console
+At this point, you may be thinking that pods are the way you keep
+containers together to serve a common purpose, and not something
+that you’d talk to individually. And you’re right! If you want to talk to
+your application, you have to use the proper abstraction for this, which
+is known as a service.
+You can look at the available services (in this case, your application)
+using kubectl get services:
+$ kubectl get serviceNAME CLUSTER-IP EXTERNAL-IP PORT(S) AGE
+hello-node 10.23.245.188 104.154.231.30 8080:31201/TCP 1m
+kubernetes 10.23.240.1 <none> 443/TCP 10m
+Notice at this point that you have a generalized Kubernetes service
+(which handles administration), as well as the service for your
+application. Additionally, your application has an external IP address
+that you can use to see if everything worked by making a simple
+request to the service:
+$ curl 104.154.231.30:8080
+Hello world!
+And sure enough, everything worked exactly as expected. You now
+have a containerized application running using one pod and one
+service inside Kubernetes, managed by Kubernetes Engine. This alone
+is pretty cool, but the real magic happens when you need to handle
+more traffic, which you can do by replicating the application.
+10.5.6. Replicating your application
+Recall that using Compute Engine, you could easily turn on new VMs
+by changing the size of the cluster, but to get your application running
+on those machines, you needed to set them to run automatically when
+the VM turned on, or you had to manually connect to the machine and
+start the application. What about doing this with Kubernetes? At this
+point in your deployment, you have a three-node Kubernetes cluster,
+with two services (one for Kubernetes itself, and one for your
+application), and your application is running in a single pod. Let’s
+look at how you might change that, but first, let’s benchmark how well
+your cluster can handle requests in the current configuration.You can use any benchmarking tool you want, but for this illustration,
+try using Apache Bench (ab). If you don’t have this tool installed, you
+can install it on Ubuntu by running sudo apt-get install
+apache2-utils. To test this, you’ll send 50,000 requests, 1,000 at
+a time, to your application, and see how well the cluster does with
+handling the requests:
+$ ab -c 1000 -n 50000 -qSd http://104.154.231.30:8080/
+This is ApacheBench, Version 2.3 <$Revision: 1604373 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd,
+http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking 104.154.231.30 (be patient).....done
+# ...
+Concurrency Level:
+Requests per second:
+Time per request:
+1000
+2980.93 [#/sec] (mean)
+335.465 [ms] (mean)
+1
+2
+# ...
+1 The cluster handled about 3,000 requests per second.
+2 It completed most requests in around 300 milliseconds.
+What if you could scale your application up to take advantage of more
+of your cluster? It turns out that you can do so with one command:
+kubectl scale. Here’s how you scale your application to run on
+10 pods at the same time:
+$ kubectl scale deployment hello-node --replicas=10
+deployment "hello-node" scaled
+Immediately after you run this command, looking at the pods
+available will show that you’re going from 1 available up to 10different pods:
+$ kubectl get pods
+NAME
+AGE
+READY STATUS RESTARTS
+hello-node-1884625109-8ltzb
+3m
+hello-node-1884625109-czn7q
+3m 1/1 ContainerCreating 0
+1/1 ContainerCreating 0
+hello-node-1884625109-dzs1d
+3m
+hello-node-1884625109-gw6rz
+3m 1/1 ContainerCreating 0
+1/1 ContainerCreating 0
+hello-node-1884625109-kvh9v
+3m
+hello-node-1884625109-ng2bh
+3m 1/1 ContainerCreating 0
+1/1 ContainerCreating 0
+hello-node-1884625109-q4wm2
+3m
+hello-node-1884625109-r5msp
+3m 1/1 ContainerCreating 0
+1/1 ContainerCreating 0
+hello-node-1884625109-sjq76
+1h
+hello-node-1884625109-tc2lr
+3m 1/1 Running 0
+1/1 ContainerCreating 0
+After a few minutes, these pods should come up and be available as
+well:
+$ kubectl get pods
+NAME
+hello-node-1884625109-8ltzb READY
+1/1 STATUS
+Running RESTARTS
+0 AGE
+3m
+hello-node-1884625109-czn7q
+hello-node-1884625109-dzs1d
+hello-node-1884625109-gw6rz
+hello-node-1884625109-kvh9v 1/1
+1/1
+1/1
+1/1 Running
+Running
+Running
+Running 0
+0
+0
+0 3m
+3m
+3m
+3m
+hello-node-1884625109-ng2bh
+hello-node-1884625109-q4wm2
+hello-node-1884625109-r5msp
+hello-node-1884625109-sjq76 1/1
+1/1
+1/1
+1/1 Running
+Running
+Running
+Running 0
+0
+0
+0 3m
+3m
+3m
+1h
+hello-node-1884625109-tc2lr 1/1 Running 0 3m
+At this point, you have 10 pods running across your three nodes, so tryyour benchmark a second time and see if the performance is any
+better:
+$ ab -c 1000 -n 50000 -qSd http://104.154.231.30:8080/
+This is ApacheBench, Version 2.3 <$Revision: 1604373 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd,
+http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking 104.154.231.30 (be patient).....done
+# ...
+Concurrency Level:
+Requests per second: 1000
+5131.86 [#/sec] (mean) 1
+Time per request: 194.861 [ms] (mean) 2
+# ...
+1 Your newly scaled-up cluster handled about 5,000 requests per
+second.
+2 It completed most requests in around 200 milliseconds.
+At this point, you may be wondering if a UI exists for interacting with
+all of this information. Specifically, is there a UI for looking at pods in
+the same way that there’s one for looking at GCE instances? There is,
+but it’s part of Kubernetes itself, not Kubernetes Engine.
+10.5.7. Using the Kubernetes UI
+Kubernetes comes with a built-in UI, and because Kubernetes Engine
+is just a managed Kubernetes cluster, you can view the Kubernetes UI
+for your Kubernetes Engine cluster the same way you would any other
+Kubernetes deployment. To do so, you can use the kubectl
+command-line tool to open up a tunnel between your local machine
+and the Kubernetes master (figure 10.12). That will allow you to talkto, say, http://localhost:8001, and a local proxy will securely route
+your request to the Kubernetes master (rather than a server on your
+local machine):
+$ kubectl proxy
+Starting to serve on 127.0.0.1:8001
+Figure 10.12. Proxying local requests to the Kubernetes master
+Once the proxy is running, connecting to http://localhost:8001/ui/ will
+show the full Kubernetes UI, which provides lots of helpful
+management features for your cluster (figure 10.13).
+Figure 10.13. Kubernetes UI using kubectl proxyYou’ve now seen how Kubernetes works at a simplified level. The
+part that’s important to remember is that you didn’t have to configure
+or install Kubernetes at all on your cluster because Kubernetes Engine
+did it all for you. As I mentioned before, Kubernetes is a huge system,
+so this chapter isn’t about teaching you everything there is to know
+about it. For example, you can see how to access the Kubernetes UI,
+but I’m not going into any detail about what you can do using the UI.
+Instead, the goal of this chapter is to show you how Kubernetes works
+when you rely on Kubernetes Engine to handle all of the
+administrative work.
+If you’re interested in doing more advanced things with Kubernetes,
+such as deploying a more advanced cluster made up of lots of pods
+and databases, now’s the time to pick up a book about it, because
+Kubernetes Engine is nothing more than a managed Kubernetes
+deployment under the hood. That said, quite a few things are specific
+to Kubernetes Engine and not general across Kubernetes itself, so let’slook briefly at how you can manage the underlying Kubernetes cluster
+using Kubernetes Engine and the Google Cloud tool chain.
+10.6. MAINTAINING YOUR CLUSTER
+New versions of software come out, and sometimes it makes sense to
+upgrade. For example, if Apache releases new bug fixes or security
+patches, it makes quite a bit of sense to upgrade to the latest version.
+The same goes for Kubernetes, but remember, because you’re using
+Kubernetes Engine, instead of deploying and managing your own
+Kubernetes cluster, you need a way of managing that Kubernetes
+cluster via Kubernetes Engine. As you might guess, this is pretty easy.
+Let’s start with upgrading the Kubernetes version.
+Your Kubernetes cluster has two distinct pieces that Kubernetes
+Engine manages: the master node, which is entirely hidden (not listed
+in the list of nodes), and your cluster nodes. The cluster nodes are the
+ones you see when listing the active nodes in the cluster. If Kubernetes
+has a new version available, you’ll have the ability to upgrade the
+master node, all the cluster nodes, or both. Although the upgrade
+process is similar for both types of nodes, you’ll have different things
+to worry about for each type, so we’ll look at them separately, starting
+with the Kubernetes master node.
+10.6.1. Upgrading the Kubernetes master node
+By default, as part of Google managing them, master nodes are
+automatically upgraded to the latest supported Kubernetes version
+after it’s released, but if you want to jump to the latest supported
+version of Kubernetes, you can choose to manually upgrade your
+cluster’s master node ahead of schedule. When an update is availablefor Kubernetes, your Kubernetes Engine cluster will show a link next
+to the version number that you can click to change the version. For
+example, figure 10.14 shows the link that displays when an upgrade is
+available for your master node.
+Figure 10.14. When an upgrade for Kubernetes is available on Kubernetes Engine
+When you click the Upgrade link, you’ll see a prompt that allows you
+to choose a new version of Kubernetes. As the prompt notes, you need
+to keep a few things in mind when changing the version of Kubernetes
+(figure 10.15).
+Figure 10.15. Prompt and warning for upgrading your Kubernetes master nodeFirst, upgrading from an older version to a new version on the
+Kubernetes Engine cluster’s master node is a one-way operation. If
+you decide later that you don’t like the new version of Kubernetes
+(maybe there’s a bug no one noticed or an assumption that doesn’t
+hold anymore), you can’t use this same process to go back to the
+previous version. Instead, you’d have to create a new cluster with the
+old Kubernetes version and redeploy your containers to that other
+cluster. To protect yourself against upgrade problems and avoid
+downtime, it’s usually a good idea to try out a separate cluster with the
+new version to see if everything works as you’d expect. After you’ve
+tested out the newer version and found that it works as you expected,
+it should be safe to upgrade your existing cluster.
+Next, changing the Kubernetes version requires that you stop,
+upgrade, and restart the Kubernetes control plane (the service that
+kubectl talks to when it needs to scale or deploy new pods). While
+the upgrade operation is running, you’ll be unable to edit your cluster,and all kubectl calls that try to talk to your cluster won’t work. If
+you suddenly receive a spike of traffic in the middle of the upgrade,
+you won’t be able to run kubectl scale, which could result in
+downtime for some of your customers.
+Finally, don’t forget that manually upgrading is an optional step. If
+you wait around for a bit, your Kubernetes master node will
+automatically upgrade to the latest version without you noticing. But
+that isn’t the case for your cluster nodes, so let’s look at those in more
+detail.
+10.6.2. Upgrading cluster nodes
+Unlike the master node, cluster nodes aren’t hidden away in the
+shadows. Instead, they’re visible to you as regular Compute Engine
+VMs similar to managed instance groups. Also, unlike with the master
+node, the version of Kubernetes that’s running on these managed VMs
+isn’t automatically upgraded every so often. It’s up to you to decide
+when to make this change. You can change the version of Kubernetes
+on your cluster’s nodes by looking in the Cloud Console next to the
+Node Version section of your cluster and clicking the Change link
+(figure 10.16).
+Figure 10.16. Cloud Console area for changing the version of cluster nodesYou may be wondering why I’m talking about changing the node
+version rather than upgrading. The reason is primarily because unlike
+with the master node version, this operation is sometimes reversible
+(though not always). You can downgrade to 1.5.7 and then decide to
+upgrade back to 1.6.4. When you click the Change link, you’ll see a
+prompt that allows you to choose the target version and explains quite
+a bit about what’s happening under the hood (figure 10.17).
+Figure 10.17. Prompt to change the version of cluster nodesFirst, because there’s always at least one cluster node (unlike the
+master node, which is always a single instance), you change the
+Kubernetes version on the cluster nodes by applying a rolling update
+to your cluster, meaning the machines are modified one at a time until
+all of them are ready. To do this, Kubernetes Engine will first make
+the node unscheduleable. (No new pods will be scheduled on the
+node.) It’ll then drain any pods on the node (terminate them and, if
+needed, put them on another node). The fewer nodes you have, the
+more likely it is you’ll experience some form of downtime. For
+example, if you have a single-node cluster, your service will be
+unavailable for the duration of the downtime—100% of your nodes
+will be down at some point. On the other hand, if you have a 10-node
+cluster, you’ll be down by 10% capacity at most (1 of the 10 nodes at
+a single instance).Second, notice that the choices available in this prompt (figure 10.17)
+aren’t the same as those in the prompt for upgrading the master node
+(figure 10.15). The list is limited in this way because the cluster nodes
+must be compatible with the master node, which means not too far
+behind it (and never ahead of it). If you have a master node at version
+1.6.7, you can use version 1.6.4 on your cluster nodes, but if your
+master node uses a later version, this same cluster node version might
+be too far behind. As a result, it’s a good idea to upgrade your cluster
+nodes every three months or so.
+Third, unlike with the master node, which is hidden from your view,
+you may have come to expect any data stored on the cluster nodes to
+be there forever. In truth, unless you explicitly set up persistent
+storage for your Kubernetes instance, the data you’ve stored will be
+lost when you perform an upgrade. The boot disks for each cluster
+node are deleted and new ones created for the new nodes. Any other
+nonboot disks (and nonlocal disks) will be persisted. You can read
+more about connecting Google Cloud persistent storage in the
+Kubernetes documentation (or one of the many books on Kubernetes
+that are available). Look for a section on storage volumes and the
+gcePersistentDisk volume type.
+Fourth, and finally, similarly to upgrading the master node, while the
+version change on cluster nodes is in progress, you won’t be able to
+edit the cluster itself. In addition to the downtime you might
+experience because of nodes being drained of their pods, the control
+plane operations will be unavailable for the duration of the version
+change.
+10.6.3. Resizing your clusterAs with scaling up the number of pods using kubectl scale,
+changing the number of nodes in your cluster is easy. In the Cloud
+Console, if you click Edit on your cluster, you’ll see a field called
+Size, which you originally set to three when you created the cluster.
+Changing this number will scale the number of nodes available in
+your cluster, and you can set the size either to a larger number, which
+will add more nodes to provide more capacity, or to a smaller number,
+which will shrink the size of your cluster. If you shrink the cluster,
+similarly to a version change on the cluster nodes, Kubernetes Engine
+will first mark a node as unscheduleable, then drain it of all pods, then
+shut it down. As an example, figure 10.18 shows what it’s like to
+change your cluster from three nodes to six.
+Figure 10.18. Resizing your cluster to six nodes
+You also can do this using the gcloud command-line tool. For
+example, the following snippet resizes the cluster from six nodes back
+to three:
+$ gcloud container clusters resize first-cluster --zone us-central1-a -
+-size=3
+Pool [default-pool] for [first-cluster] will be resized to 3.
+Do you want to continue (Y/n)?
+YResizing first-cluster...done.
+Updated [https://container.googleapis.com/v1/projects/your-project-id-
+here/
+zones/us-central1-a/clusters/first-cluster].
+Because we’re about to move on from maintenance, you may want to
+spin down your Kubernetes cluster. You can do so by deleting the
+cluster, either in the Cloud Console or using the command-line tool.
+Make sure you move any data you might need to a safe place before
+deleting the cluster. With that, it’s time to move on to looking at how
+pricing works.
+10.7. UNDERSTANDING PRICING
+As with some of the other services on Google Cloud Platform,
+Kubernetes Engine relies on Compute Engine to provide the
+infrastructure for the Kubernetes cluster. As a result, the cost of the
+cluster itself is based primarily on the cluster nodes. Because these are
+simply Compute Engine VMs, you can refer back to chapter 9 for
+information on how much each node costs. In addition to the cost of
+the nodes themselves, remember the Kubernetes master node, which is
+entirely hidden from you by Kubernetes Engine. Because you don’t
+have control over this node explicitly, there’s no charge for overhead
+on it.
+10.8. WHEN SHOULD I USE KUBERNETES ENGINE?
+You may be wondering specifically how Kubernetes Engine stacks up
+against other computing environments, primarily Compute Engine.
+Let’s use the standard scorecard for computing to see how Kubernetes
+Engine compares to the others (figure 10.19).Figure 10.19. Kubernetes Engine scorecard
+10.8.1. Flexibility
+Similar to Compute Engine, Kubernetes Engine is quite flexible, but
+it’s not the same as having a general-purpose set of VMs that run
+whatever you want. For example, you’re required to specify your
+environment using container images (with Dockerfiles), rather than
+custom start-up scripts or GCE disk images. Although this is
+technically a limitation that reduces flexibility, it isn’t a bad thing to
+formalize how you define your application in terms of a container.
+Although Kubernetes Engine is slightly more restrictive, that might be
+a good thing.
+Kubernetes Engine has other limitations as well, such as the
+requirement that your cluster nodes’ Kubernetes version be compatible
+with the version of your master node, or the fact that you lose yourboot disk data when you upgrade your nodes. Again, although these
+things are technically restrictions, you shouldn’t consider them deal
+breakers. For most scenarios, Kubernetes Engine isn’t any less flexible
+than Compute Engine, and it provides quite a few benefits, such as the
+ability to scale both nodes and pods up and down. As a result, if you
+look past the requirement that you define your application using
+containers, Kubernetes Engine is pretty free of major restrictions when
+you compare it with Compute Engine. The big difference comes is
+when you start talking about complexity.
+10.8.2. Complexity
+As you’ve seen, computing environments can be complicated, and
+Kubernetes Engine (which relies on Kubernetes under the hood) is no
+different. It has a great capacity for complexity, but benefiting from
+that complexity involves high initial learning costs. Similarly,
+although a car is a lot more complex than a bicycle, once you learn
+how to drive the car, the benefits become clear.
+Because I’ve only scratched the surface of what Kubernetes is capable
+of, you may not have a full understanding of how complex the system
+as a whole can be—it’s far more complicated than “turn on a VM.”
+Putting this into realistic context, if you wanted to deploy a simple
+application with a single node that would never need to grow beyond
+that node, Kubernetes Engine is likely overkill. If, on the other hand,
+you wanted to deploy a large cluster of API servers to handle huge
+spikes of traffic, it’d probably be worth the effort to understand
+Kubernetes and maybe rely on Kubernetes Engine to manage your
+Kubernetes cluster.
+10.8.3. PerformanceUnlike using raw VMs like Compute Engine, Kubernetes has a few
+layers of abstraction between the application code and the actual
+hardware executing that code. As a result, the overall performance
+can’t be as good as a plain old VM, and certainly not as good as a
+nonvirtualized system. Kubernetes Engine’s performance won’t be as
+efficient as something like Compute Engine, but efficiency isn’t
+everything. Scalability is another aspect of performance that can have
+a real effect.
+Although you might need more nodes in your cluster to get the same
+performance as using nonvirtualized hardware, you can more easily
+change the overall performance capacity of your system with
+Kubernetes Engine than you can with Compute Engine or
+nonvirtualized machines. As a result, if you know your performance
+requirements exactly, and you’re sure they’ll stay exactly the same
+over time, using Kubernetes Engine would be providing you with
+scalability that you don’t need. On the other hand, if you’re unsure of
+how much power you need and want the ability to change your mind
+whenever you want, Kubernetes Engine makes that easy, with a slight
+reduction in overall efficiency.
+Because this efficiency difference is so slight, it should only be an
+issue when you have an enormous deployment of hundreds of
+machines (where the slight differences add up to become meaningful
+differences). If your system is relatively small, you shouldn’t even
+notice the efficiency differences.
+10.8.4. Cost
+Kubernetes Engine is no more costly than the raw Compute Engine
+VMs that power the underlying Kubernetes cluster. Additionally, itdoesn’t charge for cluster management using a master node. As a
+result, using it is actually likely to be cheaper than running your own
+Kubernetes Cluster using Compute Engine VMs under the hood.
+10.8.5. Overall
+How do you choose between Computer Engine and Kubernetes
+Engine, given that they’re both flexible, perform similarly, and are
+priced similarly, but using Kubernetes Engine requires you to learn
+and understand Kubernetes, which is pretty complex? Although this is
+all true, the distinguishing factor tends to be how large your overall
+system will be and how much you want your deployment
+configuration to be represented as code. The benefits of using
+Kubernetes Engine over other computing platforms aren’t about the
+cost or the infrastructure but about the benefits of Kubernetes as a way
+of keeping your deployment procedure clear and well documented.
+As a result, the general rule is to use Kubernetes Engine when you
+have a large system that you (and your team) will need to maintain
+over a long period of time. On the other hand, if you need a few VMs
+to do some computation and plan to turn them off after a little while,
+relying on Compute Engine might be easier. To make this more
+concrete, let’s walk through the three example applications that I’ve
+discussed and see which makes more sense to deploy using
+Kubernetes Engine.
+10.8.6. To-Do List
+The sample To-Do-List app is a simple tool for tracking To-Do-Lists
+and whether they’re done or not. As a result, it’s unlikely to need to
+scale up because of extreme amounts of load. As a result, KubernetesEngine is probably a bit overkill for its needs (table 10.1).
+Table 10.1. To-Do-List application computing needs
+Aspect
+Flexibility
+Complexity
+Performance
+Cost
+Needs
+Not all that much
+Simpler is better.
+Low to moderate
+Lower is better.
+Good fit?
+Overkill
+Not so good
+Slightly overkill during nonpeak time
+Not ideal, but not awful either
+Overall, the To-Do-List app, although it can run on Kubernetes, is
+probably not going to make use of all the features and will require a
+bit more learning than is desirable for such an application. As a result,
+something simpler, like a single Compute Engine VM, might be a
+better choice.
+10.8.7. E*Exchange
+E*Exchange, the online stock trading platform (table 10.2), has many
+more complex features, and you can divide each of them into many
+different categories. For example, you may have an API server that
+handles requests to the main storage layer, a separate service to handle
+sending emails to customers, another that handles a web-based user
+interface, and still another that handles caching the latest stock market
+data. That’s quite a few distinct pieces, which might get you thinking
+about each piece as a set of containers, with some that might be
+grouped together into a pod.
+Table 10.2. E*Exchange computing needs
+Aspect
+Needs
+Good fit?Flexibility
+Complexity
+Performance
+Cost
+Quite a bit
+Fine to invest in learning
+Moderate
+Nothing extravagant
+Definitely
+Definitely, if it makes things easy
+Definitely
+Definitely
+Because E*Exchange was a reasonable fit for Compute Engine, it’s
+likely to be a good fit for Kubernetes Engine. It also turns out that the
+benefits of investing in learning Kubernetes and deploying the
+services using Kubernetes Engine might save quite a bit of time and
+simplify the overall deployment process for the application. Unlike the
+To-Do List, this application has quite a few distinct pieces, each with
+its own unique requirements. Using multiple different pods for the
+pieces allows you to keep them all in a single cluster and scale them
+up or down as needed. Overall, Kubernetes Engine is probably a great
+fit for the E*Exchange application.
+10.8.8. InstaSnap
+InstaSnap, the social media photo sharing application (table 10.3), lies
+somewhere in the middle of the two previous examples in terms of
+overall system complexity. It probably doesn’t have as many distinct
+systems as E*Exchange, but it definitely has more than the simple To-
+Do List. For example, it might use an API server that handles requests
+from the mobile app, a service for the web-based UI, and perhaps a
+background service that handles processing videos and photos into
+different sizes and formats.
+That said, the biggest concern for InstaSnap is performance and
+scalability. You may need the ability to increase the resources
+available to any of the various services if a spike in demand (which
+happens often) occurs. This requirement makes InstaSnap a great fit
+for Kubernetes Engine, because you can easily resize the cluster as awhole as well as the number of pod replicas running in the cluster.
+Table 10.3. InstaSnap computing needs
+Aspect
+Flexibility
+Complexity
+Performance
+Cost
+Needs
+A lot
+Eager to use advanced features
+High
+No real budget
+Good fit?
+Definitely
+Definitely
+Mostly
+Definitely
+As you can see in table 10.3, even though you don’t have as many
+distinct services as E*Exchange, Kubernetes Engine is still a great fit
+for InstaSnap, particularly when it comes to using the advanced
+scalability features. Although the performance itself is slightly lower,
+based on more abstraction happening under the hood, this requirement
+has little effect on the choice of a computing platform. You can always
+add more machines if you need more capacity (which is OK due to the
+“No real budget” need for cost).
+SUMMARY
+A container is an infrastructural tool that makes it easy to package up code
+along with all dependencies down to the operating system.
+Docker is the most common way of defining a container, using a format
+called a Dockerfile.
+Kubernetes is an open source system for orchestrating containers, helping
+them act as a cohesive application.
+Kubernetes Engine is a hosted and fully managed deployment of
+Kubernetes, minimizing the overhead of running your own Kubernetes
+cluster.
+You can manage your Kubernetes Engine cluster like any otherKubernetes cluster, using kubectl.Chapter 11. App Engine: fully managed
+applications
+This chapter covers
+What is App Engine, and when is it a good fit?
+Building an application using the Standard and Flex versions
+Managing how your applications scale up and down
+Using App Engine Standard’s managed services
+As you’ve learned, there are many available computing platforms,
+representing a large variety in terms of complexity, flexibility, and
+performance. Whereas Compute Engine was an example of low-level
+infrastructure (a VM), App Engine is a fully managed cloud
+computing environment that aims to consolidate all of the work
+needed when deploying and running your applications. In addition to
+being able to run code as you would on a VM, App Engine offers
+several services that come in handy when building applications.
+For example, if you had a to-do list application that required storing
+lists of work you needed to finish, it wouldn’t be unusual for you to
+need to store some data, send emails, or schedule a background job
+every day (like recomputing your to-do list completion rate).
+Typically, you’d need to do all of this yourself by turning on a
+database, signing up for an email sending service, running a queuing
+system like RabbitMQ, and relying on Linux’s cron service to
+coordinate it all. App Engine offers a suite of hosted services to do
+this so you don’t have to manage it yourself.App Engine is made up of two separate environments that have some
+important differences. One environment is built using open source
+tools like Docker containers. The other is built using more proprietary
+technology that allows Google to do interesting things when
+automatically scaling your app, although it imposes quite a few
+limitations on what you can do with your code. Both environments are
+under the App Engine umbrella, but they’re pushing against the
+boundaries of what you could consider a single product. As a result,
+we’ll look at them together in one chapter, but in a few places, we’ll
+hit a fork in the road. At that point, it’ll make sense to split the two
+environments apart.
+The App Engine Standard Environment, released in early 2008, offers
+a fully managed computing environment complete with storage,
+caching, computing, scheduling, and more. But it’s limited to a few
+programming languages. In this type of environment, your application
+tends to be tailored to App Engine, but it benefits from living in an
+environment that’s always autoscaling. App Engine handles sudden
+spikes of traffic sent to your application gracefully, and periods when
+your application is inactive don’t cost you any money.
+App Engine Flexible Environment (often called App Engine Flex)
+provides a fully managed environment with fewer restrictions and
+somewhat more portability, trading some scalability in exchange. App
+Engine Flex is based on Docker containers, you’re not limited to any
+specific versions of programming languages, and you can still take
+advantage of many of the other benefits of App Engine, such as the
+hosted cron service.
+If you’re confused about which environment is right for you, this
+chapter will help clarify things. We’ll first explore some of theorganizational concepts, then go further into the details, and finally
+look at how to choose whether App Engine is right for you. If it turns
+out that App Engine is a great fit, we’ll explore how to choose which
+of the two environments is best to meet your needs.
+11.1. CONCEPTS
+Because App Engine is a hosted environment, the API layer has a few
+more organizational concepts that you’ll need to understand to use
+App Engine as a computing platform. App Engine uses four
+organizational concepts to understand more about your application:
+applications, services, versions, and instances (figure 11.1).
+Figure 11.1. An overview of App Engine concepts
+Note
+Keep in mind that although App Engine offers two environments, the
+concepts across both environments are the same (or very similar). You
+won’t have to relearn these concepts to switch between environments.
+In addition to looking at your application in terms of its components,App Engine keeps track of the versions of those components. For
+example, in your to-do list application, you might break the system
+into separate components: one component representing the web
+application itself and another responsible for recomputing statistics
+every day at midnight (figure 11.2). After that, revising a component
+from time to time (for example, fixing a bug in the web application)
+might bring about a new version of that component.
+Figure 11.2. An overview of a to-do list application’s components and versions
+App Engine uses and understands all of these things (figure 11.1), and
+we’ll explore them in more detail in this section.
+Let’s start at the top by looking at the idea of an App Engine
+application.
+11.1.1. ApplicationsThe basic starting place for using App Engine to host your work is the
+top-level application. Each of your projects is limited to one
+application, with the idea that each project should have one purpose.
+Like a project acts as a container for your Compute Engine VMs, the
+application acts as a container for your code, which may be spread
+across multiple services. (I’ll discuss that in the next section.)
+The application also has lots of settings. You can configure and
+change some of them easily, whereas others are permanent and locked
+to the application once set. For example, you can always reconfigure
+an SSL certificate for your application, but once you’ve chosen the
+region for your application, you can’t change that.
+Note
+The location of your application also impacts how much it costs to
+run, which we’ll explore toward the end of the chapter.
+To see how this works, click the App Engine section in the left-side
+navigation of the Cloud Console. If you haven’t configured App
+Engine before, you’ll be asked to choose a language (for example,
+Python); then you’ll land on a page where you choose the location of
+your application (figure 11.3). This particular setting controls where
+the physical resources for your application will live and is an example
+of a setting that, once you choose it, you can’t change.
+Figure 11.3. Choosing a location for an App Engine applicationOutside of that, the more interesting parts, such as services, are those
+that an App Engine application contains. Let’s move on to looking at
+App Engine services.
+11.1.2. Services
+Services on App Engine provide a way to split your application into
+smaller, more manageable pieces. Similar to microservices, App
+Engine services act as independent components of computing,although they typically share access to the various shared App Engine
+APIs. For example, you can access the same shared cron API from
+any of the various services you might have as part of your application.
+For example, imagine you’re building a web application that tracks
+your to-do list. At first it might involve only simple text, but as you
+grow, you may want to add a feature that sends email reminders to
+finish something on your list. In that case, rather than trying to add the
+email reminder feature to the main application, you might define it as
+a separate service inside your application. Because its job is
+completely isolated from the main job of storing to-do items, it can
+live as a separate service and avoid cluttering the main application
+(figure 11.4).
+Figure 11.4. A to-do list application with two servicesThe service itself consists of your source code files and extra
+configuration, such as which runtime to use (for App Engine
+Standard). Unlike with applications (which have a one-to-one
+relationship with your project), you can create (deploy) as well as
+delete services. The first set of source code that you deploy on App
+Engine will create a new service, which App Engine will register as
+the default service for your application. When you make a request for
+your application without specifying the service, App Engine will route
+the request to this new default service.
+Services also act as another container for revisions of your
+application. In the to-do list example, you could deploy new versions
+of your reminder service to your application without having to touchthe web application service. As you might guess, being able to isolate
+changes between related systems can be useful, particularly with large
+applications built by large teams, where each team owns a distinct
+piece of the application. Let’s continue and look at how versions
+work.
+11.1.3. Versions
+Versions themselves are a lot like point-in-time snapshots of a service.
+If your service is a bunch of code inside a single directory, a version
+of your service corresponds to the code in that directory at the exact
+time that you decided to deploy it to App Engine. A neat side effect of
+this setup is that you can have multiple versions of the same service
+running at the same time.
+Similar to how the first App Engine service you deploy becomes the
+default service for your entire application, the code that you deploy in
+that first service becomes the default version of that service. You can
+address an individual version of any given service, like you can
+address an individual service of your application. For example, you
+can see your web application by navigating to webapp.my-
+list.appspot.com (or explicitly, default.webapp.my-list.appspot.com),
+or you can view a newly deployed version (perhaps called version v2,
+as in figure 11.5) by navigating to v2.webapp.my-list.appspot.com.
+Figure 11.5. Deploying a new version of the web application serviceI’ve covered the organizational concepts of applications, services, and
+versions. Now let’s take a moment to look at an infrastructural one:
+instances.
+11.1.4. Instances
+Although we’ve looked at the organizational concepts in App Engine,
+you haven’t seen how App Engine goes about running your code.
+Given what you’ve learned so far, it should come as no surprise that
+App Engine uses the concept of an instance to mean a chunk of
+computing capacity for your application. Unlike the concepts I’ve
+covered in this chapter so far, you’ll find a couple of slight differences
+in the instances depending on whether you’re using the Standard or
+Flexible environment, and they’re worth exploring in a bit more detail
+(figure 11.6).
+Figure 11.6. App Engine instances for Standard vs. Flexible environmentsIn App Engine Standard, these instances represent an abstract chunk
+of CPU and memory available to run your application inside a special
+sandbox. They scale up and down automatically based on how many
+requests are being sent to your application. Because they’re
+lightweight sandbox environments, your application can scale from
+zero to thousands of instances quickly. You can choose the type of
+App Engine instance to use for your application from a list of
+available types that have varying costs and amounts of CPU and
+memory.
+Because App Engine Flex is built on top of Compute Engine and
+Docker containers, it uses Compute Engine instances to run your code,
+which comes with a couple important caveats. First, because Compute
+Engine VMs take some time to turn on, Flex applications must always
+have at least a single VM instance running. As a result, Flex
+applications end up costing money around the clock. Because of the
+additional startup time, if you see a huge spike of traffic to your
+application, it might take a while to scale up to handle the traffic.
+During this time, existing instances could become overloaded, which
+would lead to timeouts for incoming requests.It’s also important to remember that App Engine instances are specific
+to a single version of your service, so a single instance only handles
+requests for the specific version of the service that received them. As a
+result, if you host lots of versions concurrently, those versions will
+spawn instances as necessary to service the traffic. If they’re running
+inside App Engine Flex, each version will have at least one VM
+running at all times.
+That finishes the summary of the concepts involved in App Engine.
+Now let’s get down to business and look at how to use it.
+11.2. INTERACTING WITH APP ENGINE
+At this point, you should have a decent understanding of the
+underlying organizational concepts that App Engine uses (such as
+services or versions), but that’s not all that helpful until you do
+something with them. To that end, you’ll create a simple “Hello,
+world!” application for App Engine, deploy it, and verify that it
+works. You can build the application for App Engine Standard first.
+11.2.1. Building an application in App Engine Standard
+As I discussed previously, App Engine Standard is a fully managed
+environment where your code runs inside a special sandbox rather
+than a full virtual machine, like it would on Compute Engine. As a
+result, you have to build your “Hello, world!” application using one of
+the approved languages. Of the languages available (PHP, Java,
+Python, and Go), Python seems a good choice (it’s powerful and easy
+to read), so for this section, you’re going to switch to using Python to
+build your application.Note
+Don’t worry if you aren’t familiar with Python. I’ll annotate any
+Python code that isn’t super obvious to explain what it does.
+One thing to keep in mind is that white space (for example, spaces and
+tabs) is important in Python. If you find yourself with syntax errors in
+your Python code, it could be that you used a tab when you meant to
+use four spaces, so be careful!
+Before you get into building your application code, you first need to
+make sure you have the right tools installed. You’ll need them to
+deploy your code to App Engine.
+Installing Python extensions
+To develop locally using App Engine (and specifically using App
+Engine Standard’s Python runtime), you’ll need to install the Python
+extensions for App Engine, which you can do using the gcloud
+components subcommand. This package contains the local
+development server, various emulators, and other resources and
+libraries you need to build a Python App Engine application:
+$ gcloud components install app-engine-python
+Tip
+If you installed the Cloud SDK using a system-level package manager
+(like apt-get), you’ll get an error message saying to use that same
+package manager and to run the command to install the Python
+extensions.Creating an application
+With everything installed, you can get to the real work of building
+your application. Because you’re only testing out App Engine, you
+can start by focusing on nothing more than a “Hello, world!”
+application that sends a static response back whenever it receives a
+request. You’ll start your Python app by using the webapp2
+framework, which is compatible with App Engine.
+Note
+You can use other libraries and frameworks as well (such as Django or
+Flask), but webapp2 is the easiest to use with App Engine.
+The next listing shows a simple webapp2 application that defines a
+single request handler and connects it to the root URL (/). In this
+case, whenever you send a GET HTTP request to this handler, it sends
+back “Hello from App Engine!”
+Listing 11.1. Defining your simple web application
+import webapp2
+classHelloWorld(webapp2.RequestHandler):
+defget(self):
+self.response.write('Hello from App Engine!');
+app = webapp2.WSGIApplication([
+('/', HelloWorld),
+])
+You can put this code into a file called main.py; then you’ll move overto defining the configuration of your App Engine application. The
+way you tell App Engine how to configure an application is with an
+app.yaml file. YAML (Yet Another Markup Language) has an easily
+readable syntax for some structured data that looks a lot like
+Markdown, and the app.yaml name is a special file that App Engine
+looks for when you deploy your application. It contains settings about
+the runtime involved, handlers for URL mappings, and more. You can
+see the app.yaml file that you’ll use in the following listing.
+Listing 11.2. Defining app.yaml
+runtime: python27 1
+api_version: 1
+threadsafe: true 2
+3
+handlers: 4
+- url: /.*
+script: main.app
+5
+6
+1 Tells App Engine to run your code inside the Python 2.7 sandbox
+2 Tells App Engine which version of the API you’re using. (Currently,
+there’s only one version for Python 2.7, so this should be set to 1.)
+3 Tells App Engine you’ve written your code to be threadsafe and
+App Engine can safely spawn multiple copies of your application
+without worrying about those threads tangling with each other
+4 Section that holds the handlers that map URL patterns to a given
+script
+5 A regular expression that’s matched against requests—if a request
+URL matches, the script will be used to handle the request.
+6 Points to the main.py file, but the “app” suffix tells App Engine to
+treat main.py as a web server gateway interface (WSGI) application
+(which says to look at the app variable in main.py)
+At this point, you have everything you need to test out yourapplication. It’s time to try running it locally and making sure it works
+as you want.
+Testing the application locally
+To run your application, you’ll use the App Engine development
+server, which was installed as dev_appserver.py when you installed
+the Python App Engine extensions. Navigate to the directory that
+contains your app.yaml file (and the main.py file) and run
+dev_appserver.py pointing to the current directory (.). You should see
+some debug output that says where the application itself is available
+(usually on localhost on port 8080). Once the development
+server is running with your application, you can test that it did the
+right thing by connecting to http://localhost:8080/:
+$ curl http://localhost:8080/
+Hello from App Engine!
+So far so good! Now that you’ve built and tested your application, it’s
+time to see whether you can deploy it to App Engine. After all,
+running the application locally isn’t going to work when you have lots
+of incoming traffic.
+Deploying to App Engine Standard
+Deploying the application to App Engine is easy because you have all
+the right tools installed. To do so, you can use the gcloud app
+deploy subcommand, confirm the place you’re deploying to, and
+wait for the deployment to complete:
+$ gcloud app deploy
+Initializing App Engine resources...done.
+Services to deploy:
+1descriptor: [/home/jjg/projects/appenginehello/app.yaml] source:
+target project: [/home/jjg/projects/appenginehello]
+[your-project-id-here] 2
+target service:
+target version: [default]
+[20171001t160741] 3
+4
+target url: [https://your-project-id-here.appspot.com] 5
+Do you want to continue (Y/n)?
+Y
+6
+Beginning deployment of service [default]...
+Some files were skipped. Pass `--verbosity=info` to see which ones.
+You may also view the gcloud log file, found at
+[/home/jjg/.config/gcloud/logs/2017.10.01/16.07.33.825864.log].
+File upload done.
+Updating service [default]...done.
+Waiting for operation [apps/your-project-id-here/operations/1fad9f55-
+35bb
+-45e2-8b17-3cc8cc5b1228] to complete...done.
+Updating service [default]...done.
+Deployed service [default] to [https://your-project-id-
+here.appspot.com]
+You can stream logs from the command line by running:
+$ gcloud app logs tail -s default
+To view your application in the web browser run:
+$ gcloud app browse
+1 Verifies the configuration of what you’re planning to deploy
+2 The project ID and the application ID are the same (because they
+have a one-to-one relationship).
+3 If no service name is set (which is the case here), App Engine uses
+the default service.
+4 If no version name is specified, App Engine generates a default
+version number based on the date.
+5 After deploying your application, it’ll be available at a URL in the
+appspot.com domain.
+6 Asks you to confirm the deployment parameters to avoidaccidentally deploying the wrong code or to the wrong service
+Once this is completed, you can verify that everything worked either
+by using the curl command or through your browser by sending a
+GET request to the target URL from the deployment information. The
+curl command yields the following:
+$ curl http://your-project-id-here.appspot.com
+Hello from App Engine!
+You also can verify that SSL works with your application by
+connecting using https:// as the scheme instead of plain
+http://:
+$ curl https://your-project-id-here.appspot.com
+Hello from App Engine!
+Lastly, because the service name is officially “default,” you can
+address it directly at default.your-project-id-here.appspot.com:
+$ curl http://default.your-project-id-here.appspot.com
+Hello from App Engine!
+You can check inside the App Engine section of the Cloud Console
+and see how many requests have been sent, how many instances you
+currently have turned on, and more. An example of what this might
+look like is shown in figure 11.7.
+Figure 11.7. The App Engine overview dashboard in the Cloud ConsoleHow do you create new services? Let’s take a moment and explore
+how to deploy code to a service other than the default.
+Deploying another service
+In some ways, you can think of a new service as a new chunk of code,
+and you need to make sure you have a safe place to put this code.
+Commonly, the easiest way to set this up is to separate code chunks by
+directory, where the directory name matches up with the service name.
+To see how this works, make two new directories called default and
+service2, and copy the app.yaml and main.py files into each directory.
+This effectively rearranges your code so you have two copies of both
+the code and the configuration in each directory.
+To see this more clearly, here’s how it should look when you’re done:$ tree
+.
+default
+app.yaml
+main.py
+service2
+app.yaml
+main.py
+2 directories, 4 files
+Now you can do a few things to define a second service (and clarify
+that the current service happens to be the default):
+1. Update both app.yaml files to explicitly pick a service name, so
+default will be called default.
+2. Update service2/main.py to print something else.
+3. Redeploy both services.
+After you update both app.yaml files, they should look like the
+following two listings.
+Listing 11.3. Updated default/app.yaml
+runtime: python27
+api_version: 1
+threadsafe: true
+service: default
+1
+handlers:
+- url: /.*
+script: main.app
+1 Explicitly states that the service involved is the default one—this has
+no real effect in this case, but it clarifies what this app.yaml file
+controls.Listing 11.4. Updated service2/app.yaml
+runtime: python27
+api_version: 1
+threadsafe: true
+service: service2
+1
+handlers:
+- url: /.*
+script: main.app
+1 Chooses a new service name, which can be any ID-style string that
+you want
+As you can see, you’ve made it explicit that each app.yaml file
+controls a different service. You’ve also made sure the service name
+matches the directory name, meaning it’s easy to keep track of all of
+the different source code and configuration files.
+Next, you can update service2/main.py, changing the output so you
+know it came from this other service. Doing this might make your
+application look like the following listing.
+Listing 11.5. The service2 “Hello, world!” application in Python
+import webapp2
+classHelloWorld(webapp2.RequestHandler):
+defget(self):
+self.response.write('Hello from service 2!');
+1
+app = webapp2.WSGIApplication([
+('/', HelloWorld),
+])
+1 Makes it clear that service2 is responding.
+Finally, you can deploy your new service by running gcloud app
+deploy and pointing at the service2 directory instead of the defaultdirectory:
+$ gcloud app deploy service2
+1
+Services to deploy:
+descriptor: [/home/jjg/projects/appenginehello/service2/app.yaml]
+2
+source: [/home/jjg/projects/appenginehello/service2]
+target project:
+target service: [your-project-id-here]
+[service2]
+3
+target version: [20171002t053446]
+target url: [https://service2-dot-your-project-id
+-here.appspot.com]
+4
+# ... More information here ...
+1 Points the gcloud deployment tool to your service2 directory
+2 As a result, the deployment tool looks for the copied app.yaml file,
+which states a different service name.
+3 Figures out the service name should be service2 as you defined it
+4 Because the service name isn’t “default,” you get a separate URL
+where you can access your code.
+Like before, your new application service should be live. And at this
+point, your system conceptually looks a bit like figure 11.8.
+Figure 11.8. Organizational layout of your application so farYou can verify that the deployment worked by navigating to the URL
+again in a browser, or you can use the command line:
+$ curl https://service2-dot-your-project-id-here.appspot.com
+Hello from service 2!
+If this URL looks strange to you, that’s not unusual. The syntax of
+<service>-dot-<application> is definitely new. This exists because of
+how SSL certificates work. App Engine ensures that *.appspot.com is
+secured but doesn’t allow additional dots nested deeper in the DNS
+hierarchy. When accessing your app over HTTP (not HTTPS), you
+technically can make a call to <service>.<application>.appspot.com,
+but if you were to try that with HTTPS, you’d run into trouble:
+$ curl http://service2.your-project-id-here.appspot.com
+Hello from service 2!
+$ curl https://service2.your-project-id-here.appspot.com
+# Error
+1
+1 The result is an error code due to the SSL certificate not covering
+the domain specified.
+You’ve seen how to deploy a new service. Now let’s look at a slightly
+less adventurous change by deploying a new version of an existing
+service.Deploying a new version
+Although you may only create new services once in a while, any
+update to your application will probably result in a new version, and
+updates happen far more often. So how do you update versions?
+Where does App Engine store the versions?
+To start, confirm how your application is laid out. You can inspect
+your current application either in the Cloud Console or from the
+command line:
+$ gcloud app services list
+SERVICE
+default NUM_VERSIONS
+1
+service2 1
+$ gcloud app versions list
+SERVICE
+VERSION
+SERVING_STATUS
+default
+service2
+20171001t160741
+20171002t053446
+SERVING
+SERVING
+As you can see, you currently have two services, each with a single
+default version specified. Now imagine that you want to update the
+default service, but this update should create a new version and not
+overwrite the currently deployed version of the service.
+To update the service in this way, you have two options. The first is to
+rely on App Engine’s default version naming scheme, which is based
+on the date and time when the deployment happened. When you
+deploy your code, App Engine creates a new version automatically for
+you and never overwrites the currently deployed version, which is
+helpful when you accidentally deploy the wrong code! The other is to
+use a special flag (-v) when deploying your code, and the result will
+be a new version named as you specified.If you want to update your default version, you can make your code
+changes and deploy it like you did before. In this example, you’ll
+update the code to say, “Hello from version 2!” Once the deployment
+completes, you can verify that everything worked as expected by
+trying to access the URL as before:
+$ curl https://your-project-id-here.appspot.com
+Hello from version 2!
+This might look like you’ve accidentally blasted out the previous
+version, but if you inspect the list of versions again, you’ll see that the
+previous version is still there and serving traffic:
+$ gcloud app versions list --service=default
+SERVICE VERSION
+TRAFFIC_SPLIT SERVING_STATUS
+default
+default
+20171001t160741
+20171002t072939
+0.00
+1.00
+SERVING
+SERVING
+Notice that the traffic split between the two versions has shifted, and
+all traffic is pointing to the later version, with zero traffic being routed
+to the previous version. I’ll discuss this in more detail later on. If the
+version is still there, how can you talk to it? It turns out that just as
+you can access a specific service directly, you can access the previous
+version by addressing it directly in the format of <version>.
+<service>.your-project-id-here.appspot.com (or using -dot- separators
+for HTTPS):
+$ curl http://20171001t160741.default.your-project-id-here.appspot.com
+Hello from App Engine!
+$ curl https://20171001t160741-dot-default-dot-your-project-id
+-here.appspot.com
+Hello from App Engine!It’s completely reasonable if you’re worried about a new version
+going live right away. You do have a way to tell App Engine that you
+want the new version deployed but don’t want to immediately route all
+traffic to the new version. You can update the code again to change the
+message and deploy another version, without it becoming the live
+version immediately. To do so, you’ll set the
+promote_by_default flag to false:
+$ gcloud config set app/promote_by_default false
+Updated property [app/promote_by_default].
+$ gcloud app deploy default
+Services to deploy:
+descriptor: [/home/jjg/projects/appenginehello/default/app.yaml]
+source:
+target project:
+target service:
+target version:
+target url: [/home/jjg/projects/appenginehello/default]
+[your-project-id-here]
+[default]
+[20171002t074125]
+[https://20171002t074125-dot-your-project-id
+-here.appspot.com]
+(add --promote if you also want to make this service available
+from
+[https://your-project-id-here.appspot.com])
+# ... More information here ...
+At this point, the new service version should be deployed but not live
+and serving requests. You can look at the list of services to verify that,
+as follows, or check by making a request to the target URL as you did
+before:
+$ gcloud app versions list --service=default
+SERVICE VERSION
+TRAFFIC_SPLIT SERVING_STATUS
+default
+default
+default
+20171001t160741
+20171002t072939
+20171002t074125
+0.00
+1.00
+0.00
+SERVING
+SERVING
+SERVING$ curl http://your-app-id-here.appspot.com/
+Hello from version 2!
+You also can verify that the new version was deployed correctly by
+accessing it the same way you did before:
+$ curl http://20171002t074125.default.your-project-id-here.appspot.com
+Hello from version 3, which is not live yet!
+Once you see that the new version works the way you expect, you can
+safely promote it by migrating all traffic to it using the Cloud Console.
+To do this, you browse to the list of versions, check the version you
+want to migrate traffic to, and click Migrate Traffic at the top of the
+page (figure 11.9).
+Figure 11.9. Checking the box for the version and clicking Migrate Traffic
+When you click the button, you’ll see a pop up where you can confirm
+that you want to route all new traffic to the selected version (figure
+11.10).
+Figure 11.10. Pop up to confirm you want to migrate traffic to the new versionWhen this is complete, you’ll see that 100% of traffic is being sent to
+your new version:
+$ gcloud app versions list --service=default
+SERVICE
+default
+default
+default
+VERSION
+20171001t160741
+20171002t072939
+20171002t074125
+TRAFFIC_SPLIT
+0.00
+0.00
+1.00
+SERVING_STATUS
+SERVING
+SERVING
+SERVING
+$ curl https://your-project-id-here.appspot.com
+Hello from version 3, which is not live yet!
+1
+1 Obviously, it’s live now!
+You’ve seen how deployment works on App Engine Standard
+Environment. Now let’s take a detour and look at how things work in
+the Flexible Environment.
+11.2.2. On App Engine Flex
+As I discussed previously, whereas App Engine Standard is limited to
+some of the popular programming languages and runs inside a
+sandbox environment, App Engine Flex is based on Dockercontainers, so you can use any programming language you want. You
+get to switch back to Node.js when building your “Hello, world!”
+application. Let’s get started!
+Creating an application
+Similarly to the example I used when building an application for App
+Engine Standard, you’ll start by building a “Hello, world!” application
+using Express (a popular web development framework for Node.js).
+Note
+You can use any web framework you want. Express happens to be
+popular and well documented, so I’ll use that for the example.
+First, create a new directory called default-flex to hold the code for
+this new application, alongside the other directories you have already.
+After that, you should initialize the application using npm (or yarn)
+and add express as a dependency:
+$ mkdir default-flex
+$ cd default-flex
+$ npminit
+# ...
+Wrote to /home/jjg/projects/appenginehello/default-flex/package.json:
+{
+"name": "appengineflexhello",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1"
+},
+"keywords": [],
+"author": "","license": "ISC"
+}
+$ npm install express
+# ...
+Now that you’ve defined your package and set the dependencies you
+need, you can write a simple script that uses Express to handle HTTP
+requests. This script, shown in the following listing, which you’ll put
+inside app.js, will take any request sent to / and send “Hello,
+world!” as a response.
+Listing 11.6. Defining a simple “Hello, world!” application in Node.js
+'use strict';
+const express = require('express');
+const app = express();
+1
+app.get('/', (req, res) => {
+res.status(200).send('Hello from App Engine Flex!').end();
+}); 2
+const PORT = process.env.PORT || 8080; 3
+app.listen(PORT, () => {
+console.log(`App listening on port ${PORT}`);
+console.log('Press Ctrl+C to quit.');
+});
+1 Uses the Express framework for Node.js
+2 Sets the response code to 200 OK and returns a short “Hello,
+world!” type message
+3 Tries to read a port number from the environment, but defaults to
+8080 if it’s not set
+Once you’ve written this script, you can test that your code works by
+running it and then trying to connect to it using curl, as shown here,
+or your browser:$ node app.js
+App listening on port 8080
+Press Ctrl+C to quit.
+$ curl http://localhost:8080
+Hello from App Engine Flex!
+1
+1 This is executed from a separate terminal on the same machine.
+Now that you’re sure the code works, you can get back to work on
+deploying it to App Engine. Like before, you’ll need to also define a
+bit of configuration that explains to App Engine how to run your code.
+Like with App Engine standard, you’ll put the configuration options in
+a file called app.yaml. The main difference here is that because a Flex-
+based application is based on Docker, the configuration you put in
+app.yaml is far less involved:
+runtime: nodejs
+env: flex
+service: default
+1
+2
+1 A new parameter called env explains to App Engine that you intend
+to run your application outside of the standard environment.
+2 For this example, you’ll deploy the Flex service on top of the
+Standard service.
+As you can see, this configuration file is far simpler than the one you
+used when building an application to App Engine Standard. App
+Engine Flex only needs to know how to take your code and put it into
+a container. Next, instead of setting up routing information, you need
+to tell App Engine how to start your server. App Engine Flex’s
+nodejs runtime will always try to run npm start as the
+initialization command, so you can set up a hook for this in your
+package.json file that executes node app.js, as shown in thefollowing listing.
+Note
+This format I’m demonstrating is a feature of npm rather than App
+Engine. All App Engine does is call npm start when it turns on the
+container.
+Listing 11.7. Adding a start script to package.json
+{
+"name": "appengineflexhello",
+"version": "1.0.0",
+"main": "index.js",
+"license": "MIT",
+"dependencies": {
+"express": "^4.16.1"
+},
+"scripts": {
+"start": "node app.js"
+}
+}
+That should be all you need. The next step here is to deploy this
+application to App Engine.
+Deploying to App Engine Flex
+As you might guess, deploying an application to App Engine Flex is
+similar to deploying one to App Engine Standard. The main difference
+you’ll notice at first is that it takes a bit longer to complete the
+deployment. It takes more time primarily because App Engine Flex
+builds a Docker container from your application code, uploads it to
+Google Cloud, provisions a Compute Engine VM instance, and starts
+the container on that instance. This is quite a bit more to do than if
+you’re using App Engine Standard, but the process itself from yourperspective is the same, and you can do it with the gcloud
+command-line tool:
+$ gcloud app deploy default-flex
+Services to deploy:
+descriptor:
+flex/app.yaml] [/home/jjg/projects/appenginehello/default-
+source:
+target project:
+target service:
+target version: [/home/jjg/projects/appenginehello/default-flex]
+[your-project-id-here]
+[default]
+[20171002t104910]
+target url: [https://your-project-id-here.appspot.com]
+(add --promote if you also want to make this service available
+from
+[https://your-project-id-here.appspot.com])
+# ... More information here ...
+Tip
+If you followed along with all of the code examples in the previous
+section, you might want to undo the change you made to the
+promote_by_default configuration setting by running gcloud
+config set app/promote_by_default true. Otherwise,
+when you attempt to visit your newly deployed application, it’ll still
+be served by the previous version you deployed.
+Now that App Engine Flex has deployed your application, you can test
+that it works the same way you tested your application on App Engine
+Standard:
+$ curl https://your-project-id-here.appspot.com/
+Hello from App Engine Flex!What might surprise you at this point is that you actually deployed a
+new version of the default service, which uses a completely different
+runtime. You have two versions running right now, one using the
+Standard environment and the other using the Flexible environment.
+You can see this by listing the versions of the default service again:
+$ gcloud
+SERVICE
+default
+default app versions list --service=default
+VERSION
+TRAFFIC_SPLIT SERVING_STATUS
+20171001t160741 0.00
+SERVING
+20171002t072939 0.00
+SERVING
+default
+default 20171002t074125
+20171002t104910
+0.00
+1.00
+SERVING
+SERVING
+1
+2
+1 The previously live default version on App Engine Standard

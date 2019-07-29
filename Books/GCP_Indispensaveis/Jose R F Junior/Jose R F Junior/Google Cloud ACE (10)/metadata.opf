@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">10</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1688f9ac-3c92-469a-8bcd-abc999a0f812</dc:identifier>
+        <dc:title>Google Cloud ACE</dc:title>
+        <dc:creator opf:file-as="Jose R F Junior" opf:role="aut">Jose R F Junior</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (3.45.2) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2019-07-20T04:00:00+00:00</dc:date>
+        <dc:language>por</dc:language>
+        <meta content="{&quot;Jose R F Junior&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="10" name="calibre:rating"/>
+        <meta content="2019-07-20T15:07:38.686868+00:00" name="calibre:timestamp"/>
+        <meta content="Google Cloud ACE" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="cover.jpg" title="Cover" type="cover"/>
+    </guide>
+</package>

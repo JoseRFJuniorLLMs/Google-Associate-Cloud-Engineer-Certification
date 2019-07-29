@@ -1931,7 +1931,9 @@ a versão mais recente dos contêineres.
  ■ Falha, que indica que o processo de implantação encontrou um problema 
 recuperar de 
  Existem considerações adicionais ao executar aplicativos com estado versus 
-aplicativos sem estado . Esses problemas serão abordados no Capítulo 7. 
+aplicativos sem estado . Esses problemas serão abordados no 
+
+Capítulo 7. 
 84 Capítulo 4 ■ Introdução à computação no Google Cloud
 Kubernetes Engine Use Cases O 
 Kubernetes Engine é uma boa opção para aplicações de grande escala que exigem alta disponibilidade e alta confiabilidade. O Kubernetes Engine suporta o conceito de pods e 
@@ -2964,6 +2966,7 @@ Para usar o Kubernetes Engine, você precisará ativar a API do Kubernetes Engin
 ativar a API, você pode navegar para a página do Kubernetes Engine no Cloud Console. 
 A Figura 7.1 mostra um exemplo da página Visão geral. 
 Figura 7.1 A página Visão geral da seção Mecanismo do Kubernetes do Cloud Console 
+
 150 Capítulo 7 ■ Computação com o Kubernetes 
 Na primeira vez que você usa o Kubernetes Engine, pode ser necessário criar credenciais. Você pode 
 fazer isso clicando no botão Criar Credenciais, na parte superior da página Visão Geral. Um formulário

@@ -1,0 +1,1333 @@
+Blocos de Construção do GCP
+
+UMA
+Acesso Contexto Gerente
+AirFlow Apache
+Andrômeda
+Anycast
+API do Google Analytics
+Apira API Plataforma
+Sem sentido,
+APIs CLOUD APIS
+App Engine
+App Engine flexível Ambiente
+Armor, Nuvem Armadura
+AS Sistemas Autônomos Sistemas Autônomos ASN Número
+Autoscaler
+AutoML
+Disponibilidade Políticas
+Euro
+B
+Balde de back-end
+Baking, Imagem
+Faturamento
+Billing para BigQuery
+BigQuery, Nuvem BigQuery
+BigQuery Transferência de dados Serviço
+Bigtable, Cloud Bigtable
+implantaçãoazul verde
+CLIBq Big inquiry
+web-BillingAPI
+Balde
+C
+atualizaçãoCanary
+portador Peering
+Estudos de Caso Arquiteto da Nuvem
+Mountkirk jogos → jogos, NoSQL, backend + analytics
+baseado na Dress4win →empresa, guarda-roupa, publicidade, e-commerce, referências, e um aplicativo freemium
+JencoMart → varejista (Amazon.com)
+TerramEarth → SMART equipamentos pesados ​​para as indústrias de mineração e agrícola (20M operative)
+CBT
+CDN, CDN da
+Cloudline
+CompositorCloud, Cloud
+Compute Engine
+Conexão doDrenagem do
+Console de
+Construtor de Contêiner / Cloud Build
+Registro de Contêiner
+D
+Data Lake
+Daemo n
+DAG gráfico acíclico direcionado
+Dados
+Pipeline de
+Dados Data Studio
+Fluxo de dados, Cloud Dataflow
+Datalab, Cloud DataLife
+Dataprep, Cloud Dataprep
+Dataproc, Cloud Dataproc
+Datastore, Cloud Datastore
+Gerente de Implantação
+Dialogflow Enterprise Edition
+Docker de contêineres
+DNS, Cloud DNS
+E
+ECMP
+Criptografiaem Repouso
+Criptografia doem trânsito
+chaves de criptografia
+Endpoints Cloud Endpoints
+tráfegoEgress
+F
+FileStore
+firestore
+Regra de Firewall
+deencaminhamento Regra
+FunçõesNuvem
+G
+gcloud Referência
+Google Transferir Appliance
+Plugin do App Engine do Gradle
+gsutil
+H
+de Segurança de Hardware Module
+HBase - Apache HBase
+Hadoop
+Saúde-cheques
+Leme
+Colmeia
+Eu
+EU SOU
+Proxy Identificável
+Internet das coisas Core
+Imagens
+Impala Apache
+Tráfego de ingresso
+Grupos de instâncias
+Internet Key Exchange (IKE)
+IPsec de VPN
+mesmo
+J
+Caderno Jupyter
+Jenkins no GCP
+K
+Kafka
+Serviço de gerenciamento de chaves
+Governadores
+Kubernetes Mecanismo
+eu
+Elevação e deslocamento
+Migração ao vivo
+Balanceamento de
+carga Balanceamento de carga Http (s)
+Balanceamento de carga Balanceamento interno de
+load
+Balancin deproxy de balanceamento de carga deSSL
+Carga deg TCP Proxy
+M
+Mecanismo de Aprendizado de Máquina
+Maglev
+Maven App Engine Plug-
+ins Memorystore
+Aplicativo móvel
+N
+Linguagem natural
+Perto da linha
+Serviço de Rede Tiers
+O
+OLAP (Banco de Dados)
+OLTP (Banco de Dados)
+Oozie
+Organização
+P
+Paxos
+Disco permanente
+Máquina virtual preemptiva
+Projetos, Host eCompartilhado
+Servidor Proxy
+Pub / Sub Nuvem Pub / Sub
+Q
+protocoloQUIC
+R
+RDP
+recursos globaisregionaiszonal
+Gerente de Recursos
+Papéis
+Discos de RAM
+Roteador Google Cloud Router
+RPO: objetivo do ponto de recuperação
+RTO: objetivo do tempo de recuperação
+S
+esquema Auto-Detecção Big consulta
+SDK
+gestão Segredocom Nuvem KMS
+chave de Segurança Enforcement
+SegurançaScanner
+Console Serial do
+Contas do Serviço do
+Escopos de Acesso
+VCP Compartilhado
+Concha
+Scripts de desligamento
+Coletores (Stackdriver Logs Groups)
+Instantâneos
+MEIAS
+Repositórios de Fonte
+Chave inglesa, Cloud Spanner
+Diferenças entre Cloud Spanner e CloudSQL
+Spark - Apache Spark
+Discurso
+SPINNAKER
+SQL Cloud SQL
+Proxy SQL
+Sqoop
+Stackdriver
+Stackdriver Debugger
+Stackdriver Error Relatórios
+Stackdriver Logging
+Stackdriver Monitoring
+Stackdriver Trace
+Stackdriver Workspaces
+Scriptsde
+inicialização, Cloud Storage
+ArmazenamentoTransferênciaServiço
+
+PiscinasT-alvo
+Terraform
+teste de laboratório
+FerramentasparaAndroid Studio
+Ferramentaspara Eclipse
+Ferramentas paraIntelliJ
+FerramentasparaPowerShell
+Ferramentaspara o VisualEstúdio
+Migration Tráfego/ Splitting
+de tradução
+U
+url Mapas
+V
+Vídeo inteligência
+da máquina virtual / Instâncias
+Nuvem privada virtual
+VPCcompartilhada
+VPN, VPNCloud
+VPNgateway
+Vídeo Intelligence
+Visão
+E
+Fios - Outro negociador de recursos
+W
+Windows no Compute Engine
+
+
+
+Um
+Acesse o Gerenciador de Contexto O
+Access Context Manager permite que os administradores da organização do GCP definam controle de acesso baseado em atributos e granularidade para projetos e recursos no GCP.
+Os administradores primeiro definem uma política de acesso, que é um contêiner de toda a organização para níveis de acesso e Access Zones.
+Os níveis de acesso descrevem os requisitos necessários para que as solicitações sejam honradas. Os exemplos incluem:
+Tipo de sistema operacional do dispositivo.
+endereço IP do
+Identidade do usuário As
+zonas de acesso definem caixas de proteção de recursos que podem trocar dados livremente dentro da zona, mas não podem exportar dados para fora dela. O uso de zonas de acesso é atualmente apenas por convite. Se o seu aplicativo não estiver na lista de permissões, qualquer tentativa de chamar APIs da zona de acesso resultará em um erro.
+AirFlow Apache
+Programe e monitore fluxos de trabalho como gráficos acíclicos direcionados (DAGs) de tarefas. O planejador de fluxo de ar executa suas tarefas em uma matriz de trabalhadores enquanto segue as dependências especificadas.
+A interface do usuário permite visualizar pipelines em execução na produção, monitorar o progresso e solucionar problemas.
+Andrômeda 
+Pilha de virtualização de rede definida por software do Google Cloud
+
+Anycast
+Anycast é umarede endereçamento e roteamento de metodologia dena qual um único endereço de destino tem vários caminhos de roteamento para dois ou mais destinos de ponto de extremidade. Os roteadores selecionarão o caminho desejado com base no número de saltos, distância, menor custo, medições de latência ou com base na rota menos congestionada. As redes Anycast são amplamente usadas para produtos de rede de entrega de conteúdo(CDN) para aproximar seu conteúdo do usuário final.
+
+O Internet Protocol e outros sistemas de endereçamento de rede reconhecem cinco métodos de endereçamento principais: O
+Unicast endereçamentousa uma associação um-para-um entre um remetente e um destino: cada endereço de destino identifica exclusivamente um único terminal do receptor.
+Broadcast usa uma associação de um para todos; um único datagrama de um remetente é roteado para todos os possíveis vários pontos de extremidade associados ao endereço de broadcast. A rede replica automaticamente os datagramas conforme necessário para alcançar todos os destinatários dentro do escopo da transmissão, que geralmente é uma sub-rede inteira da rede.
+Omulticast endereçamentousa uma associação um-para-muitos-de-muitos ou muitos-para-muitos-de-muitos; os datagramas são roteados simultaneamente em uma única transmissão para muitos destinatários. Difere do broadcast em que o endereço de destino designa um subconjunto, não necessariamente todos, dos nós acessíveis.
+O endereçamento Anycast é uma associação de um para muitos, em que os datagramas são roteados para qualquer membro único de um grupo de receptores potenciais, todos identificados pelo mesmo endereço de destino. O algoritmo de roteamento seleciona o único receptor do grupo com base na métrica de roteamento mais barata. Na prática, isso significa que os pacotes são roteados para o membro topologicamente mais próximo de um grupo anycast.
+Geocast refere-se à entrega de informações a um grupo de destinos em uma rede identificada por suas localizações geográficas. É uma forma especializada de endereçamento multicast usada por alguns protocolos de roteamento para redes móveis ad hoc.
+
+API Analytics 
+Obtenha visibilidade de ponta a ponta em todos os programas de APIs com as métricas operacionais, de envolvimento do desenvolvedor e de negócios necessárias para monitorar, avaliar e gerenciar programas de API. Obtenha informações em tempo real sobre todo o ecossistema digital, incluindo aplicativos, consumo, desempenho da API e métricas de uso, como tendências de tráfego e picos, latência, tempos de resposta e outros critérios personalizados.
+Plataforma de API Apigee OAPI 
+Apigee é uma plataforma de gerenciamento de API de ciclo de vida completo que permite que provedores deprojetem, protejam, implantem, monitorem e dimensionem APIs. O Apigee está alinhado com o tráfego da API do tempo de execução e impõe um conjunto de políticas de API prontas para uso, incluindo validação de chaves, gerenciamento de cotas, transformação, autorização e controle de acesso. Os provedores de API usam o portal do desenvolvedor personalizável para permitir que os desenvolvedores consumam APIs de forma fácil e segura e para medir o desempenho e o uso da API O
+Apigee Sense 
+Apigee Sense trabalha em conjunto com a Apigee Edge API Management Platform para fornecer às equipes de API uma arma poderosa para proteger as APIs contra ataques . O Sense fornece uma camada de segurança da API, identificando e alertando os administradores sobre comportamentos suspeitos da API. Os administradores determinam a resposta e aplicam ações corretivas para manter a experiência do usuário e proteger os sistemas de back-end. O Apigee Sense dá o próximo passo crítico de automatizar a correção para futuros ataques.
+APIs, CLOUD APIS
+Acesse os produtos do Google Cloud Platform a partir do seu código. As Cloud APIs fornecem funcionalidade semelhante ao Cloud SDK e ao Cloud Console e permitem que você automatize seus fluxos de trabalho usando seu idioma favorito. Use essas Cloud APIs com chamadas REST ou bibliotecas de clientes em linguagens de programação populares.
+App Engine O 
+GoogleGoogle App Engine permite que você crie e hospede aplicativos nos mesmos sistemas que geram os aplicativos do Google. PaaS. Serviço Gerenciado. Usar o ambiente padrão do App Engine significa que as instâncias do seu aplicativo são executadas em uma sandbox, usando o ambiente de tempo de execução de um idioma suportado listado abaixo.
+Para alguns idiomas, a criação de um aplicativo para execução no ambiente padrão é mais restrita e envolvida, mas seus aplicativos terão tempos de aumento de escala mais rápidos, eles serão otimizados e a taxa será mais barata (pode até escalar o App para 0). O padrão do Google App Engine leva alguns segundos para ser dimensionado.
+O App Engine de ambiente flexível do
+App Engine permite que os desenvolvedores se concentrem em fazer o que fazem melhor, escrevendo código. Com base no Google Compute Engine, o ambiente flexível do App Engine dimensiona automaticamente seu aplicativo para cima e para baixo enquanto equilibra a carga. Microservices, autorização, bancos de dados SQL e NoSQL, divisão de tráfego, criação de log, controle de versão, verificação de segurança e redes de distribuição de conteúdo são todos suportados nativamente. Além disso, o ambiente flexível do App Engine permite que você personalize o tempo de execução e até mesmo o sistema operacional de sua máquina virtual usando Dockerfiles. O App Engine Flexible leva alguns minutos para ser dimensionado.
+Use-o quando precisar de recursos do GCP Compute Engine, quando precisar de seus próprios contêineres do Docker ou se seu idioma for um deles: Python, Java, Node.js, Go, Ruby, PHP, .NET.
+Aprenda sobre as diferenças entre o ambiente padrão e o ambiente flexível.
+Armadura, armadura de nuvem Armadura de 
+nuvem: o Google Cloud Armor oferece uma estrutura de política e linguagem de regras para personalizar o acesso a aplicativos voltados para a Internet e implantar defesas contra ataques de negação de serviço. 
+AS Sistemas Autônomos ASN Número de Sistemas Autônomos
+Na Internet, um sistema autônomo (AS) é um conjunto de prefixos de roteamento Internet Protocol (IP) conectados sob o controle de um ou mais operadores de rede em nome de uma única entidade administrativa ou domínio que apresenta um política de roteamento comum e claramente definida para a Internet.
+
+
+Originalmente, a definição exigia o controle por uma única entidade, normalmente um provedor de serviços da Internet ou uma organização muito grande com conexões independentes para várias redes, que aderem a uma política de roteamento única e claramente definida, como originalmente definido na RFC 1771. [2] A nova definição no RFC 1930 entrou em uso porque várias organizações podem executar o Border Gateway Protocol (BGP) usando números privados de AS para um ISP que conecta todas essas organizações à Internet. Embora possa haver vários sistemas autônomos suportados pelo ISP, a Internet só vê a política de roteamento do ISP. Esse ISP deve ter umoficialmente registrado número de sistema autônomo(ASN).
+Os
+grupos de instâncias gerenciadas do autoescalador oferecem recursos de escalonamento automático que permitem adicionar ou excluir automaticamente instâncias de um grupo de instâncias gerenciadas com base em aumentos ou diminuições na carga. O escalonamento automático ajuda seus aplicativos a lidar com o aumento do tráfego e reduz o custo quando a necessidade de recursos é menor. Você apenas define a política de escalonamento automático e o autoescalador executa a escala automática com base na carga medida.
+O escalonamento automático funciona aumentando ou diminuindo seu grupo de instâncias. Ou seja, ele adiciona mais instâncias ao seu grupo de instâncias quando há mais carga (upscaling) e exclui instâncias quando a necessidade de instâncias é reduzida (downscaling).
+O AutoML 
+Cloud AutoML é um conjunto de produtos de aprendizado de máquina que permite que desenvolvedores com experiência em aprendizado de máquina limitada forneçam seus conjuntos de dados e obtenham acesso a modelos treinados de qualidade produzidos pelo aprendizado de transferência e Pesquisa de Arquitetura Neural do Google (tecnologia do Google para encontrar, gerar, avaliar e treinar várias arquiteturas neurais para selecionar automaticamente uma solução para o aplicativo do cliente: O
+Cloud AutoML Visiontenham é um serviço de aprendizado de máquina simples e flexível que permite que empresas e desenvolvedoresconhecimento limitado de treinamento de máquina para treinar modelos de visão escaláveis ​​e personalizados para seus próprios casos de uso.
+O Cloud AutoML Natural Language permite que os clientes categorizem o texto de entrada em seus próprios rótulos definidos personalizados (classificação supervisionada). Os usuários podem personalizar modelos para seu próprio domínio ou caso de uso.
+O Cloud AutoML Translation é uma solução de tradução simples e escalonável que permite que empresas e desenvolvedores com conhecimentos limitados de aprendizado de máquina personalizem o modelo Google Translation (GNMT) do Neural Machine para seu próprio domínio ou caso de uso.
+Políticas de disponibilidade As
+opções de disponibilidade determinam como as instâncias de VM se comportam quando ocorrem eventos de manutenção. Como definir uma instância para migrar ao vivo quando ocorre um evento de manutenção.
+Quando há eventos de manutenção, como atualizações de hardware ou software, que exigem que o Google mova sua VM para uma máquina host diferente, o Google Compute Engine gerencia automaticamente o comportamento de agendamento de suas instâncias. O Compute Engine Live migra suas instâncias de VMs se você tiver configurado a política de disponibilidade da instância para usar a migração ao vivo. Isso impede que seus aplicativos sofram interrupções durante esses eventos. Como alternativa, você também pode optar por encerrar suas instâncias durante esses eventos, em vez de migrá-las ao vivo.
+Euro
+Apache Avro ™ é um sistema de serialização de dados.
+
+Avro fornece:
+
+estruturas de dados ricas.
+Um formato de dados binários compacto e rápido.
+Um arquivo contêiner, para armazenar dados persistentes.
+Chamada de procedimento remoto (RPC).
+Integração simples com linguagens dinâmicas. A geração de código não é necessária para ler ou gravar arquivos de dados, nem para usar ou implementar protocolos RPC. Geração de código como uma otimização opcional, só vale a pena implementar para linguagens com tipagem estática.
+B Os
+depósitos de Backend Bucket
+Backend permitem que você use os intervalos do Google Cloud Storage com o balanceamento de carga HTTP (S).
+Um balanceador de carga HTTP (S) pode direcionar o tráfego de URLs especificados para um intervalo de back-end ou um- serviço de backend. Por exemplo, o balanceador de carga pode enviar solicitações de conteúdo estático para um intervalo do Cloud Storage e solicitações de conteúdo dinâmico para uma VM.
+Por exemplo, você pode fazer com que o balanceador de carga envie tráfego com um caminho de / static para um intervalo de armazenamento e todas as outras solicitações para suas instâncias.
+Cozimento,Imagens
+Manual de: Você pode criar uma imagem personalizada simples criando uma nova instância de VM a partir de uma imagem pública, configurando a instância com os aplicativos e configurações desejados e criando uma imagem personalizada a partir dessa instância. Use este método se você puder configurar suas imagens a partir do zero manualmente, em vez de usar cozimento automático ou importar imagens existentes.
+Você pode criar uma imagem personalizada simples usando as seguintes etapas:
+Crie uma instância a partir de uma imagem pública.
+Conecte-se à instância.
+Personalize a instância para suas necessidades.
+Pare a instância.
+Crie uma imagem personalizada a partir do disco de inicialização dessa instância. Esse processo requer que você exclua a instância, mas mantenha o disco de inicialização.
+Automatizado: A cozedura manual é uma maneira fácil de começar se você tiver um pequeno número de imagens, mas um grande número de imagens torna-se difícil de auditar e gerenciar. O Packer é uma ferramenta de código aberto para tornar a criação de imagens mais reproduzível, auditável, configurável e confiável. Para obter mais informações sobre como criar um pipeline automatizado de criação de imagem, consulte a solução Automated Image Builds com Jenkins, Packer e Kubernetes. Você também pode usar o Packer como parte de um pipeline do Spinnaker para produzir imagens que são implantadas em clusters de instâncias.
+Faturamento
+Uma conta de faturamento é usada para definir quem paga por um determinado conjunto de recursos. Uma conta de faturamento inclui um instrumento de pagamento, ao qual são cobrados os custos, e o controle de acesso que é estabelecido pelas funções de Gerenciamento de identidade e acesso (IAM) do Cloud Platform.
+
+Uma conta de faturamento pode ser vinculada a um ou mais projetos. O uso do projeto é cobrado na conta de faturamento vinculada. Projetos que não estão vinculados a uma conta de faturamento não podem usar serviços do GCP que não são gratuitos.
+O faturamento para o BigQuery
+Tools para monitoramento, análise e otimização de custos tornou-se uma parte importante do gerenciamento do desenvolvimento. A exportação de faturamento para o BigQuery permite que você exporte suas estimativas diárias de uso e custo automaticamente ao longo do dia para um conjunto de dados do BigQuery que você especificar. Você pode acessar seus dados de faturamento no BigQuery. Você também pode usar esse método de exportação para exportar dados para um arquivo JSON.
+A exportação regular de arquivos para CSV e JSON também está disponível. No entanto, se você usar a exportação regular de arquivos, deve estar ciente de que a exportação regular de arquivos captura um conjunto de dados menor do que a exportação para o BigQuery. Para obter mais informações sobre a exportação regular de arquivos e os dados capturados, consulte Exportar dados de faturamento para um arquivo.
+BigQuery, Cloud BigQuery O 
+BigQuery é o data warehouse corporativo, altamente escalonável e sem servidor do Google, projetado para tornar todos os analistas de dados produtivos com um desempenho de preço inigualável. Como não há infraestrutura para gerenciar, você pode se concentrar na análise de dados para encontrar insights significativos usando SQL familiar sem a necessidade de um administrador de banco de dados.
+BigQuery Data Transfer Service 
+O BigQuery Data Transfer Service automatiza a movimentação de dados de aplicativos SaaS para o Google BigQuery em uma base gerenciada e programada. Sua equipe de análise pode estabelecer as bases para um data warehouse sem escrever uma única linha de código. Inicialmente, o BigQuery Data Transfer Service oferece suporte a origens de aplicativos do Google, como o Google AdWords, o DoubleClick for Publishers, o DoubleClick for Publishers e o YouTube.
+Bigtable, Cloud Bigtable O 
+Cloud Bigtable é uma tabela pouco povoada que pode ser dimensionada para bilhões de linhas e milhares de colunas, permitindo que você armazene terabytes ou até petabytes de dados. Um único valor em cada linha é indexado; esse valor é conhecido como a chave da linha. O Cloud Bigtable é ideal para armazenar grandes quantidades de dados de chave única com latência muito baixa. Suporta alta taxa de leitura e gravação em baixa latência, e é uma fonte de dados ideal para operações MapReduce.
+
+O Cloud Bigtable é exposto a aplicativos por meio de várias bibliotecas de clientes, incluindo uma extensão suportada na biblioteca Apache HBase para Java. Como resultado, ele se integra ao ecossistema Apache existente do software Big Data de software livre.
+
+
+https://cloud.google.com/bigtable/docs/performance 
+
+Implantação Blue Green A implantação
+Blue-green é uma técnica que reduz o tempo de inatividade e o risco executando dois ambientes de produção idênticos chamados Blue e Green.
+A qualquer momento, apenas um dos ambientes está ativo, com o ambiente ao vivo atendendo todo o tráfego de produção. Para este exemplo, o Blue está atualmente ativo e o Green está ocioso.
+Bq Big Query cli
+Linha de comando para Big Query (carga, exportação, consulta ...). Referência de Comandos
+Para examinar o esquema de uma tabela específica, execute
+bq show projectId: datasetId.tableId
+
+Utilize bq help para obter informações detalhadas sobre a ferramenta de linha de comando
+consulta de ajuda bq bq
+
+Para executar uma consulta, execute o comando bq query "sql_statement"
+consulta "SELECT palavra, SUM (palavra_conta) como contar FROM publicdata: samples.shakespeare ONDE palavra CONTAINS 'raisin' GROUP BY palavra"
+
+Lista
+bq ls
+
+Use o comando bq mk para criar um novo dataset chamado babynames
+bq mk babynames
+
+O bq load comandocria ou atualiza uma tabela e carrega dados em uma única etapa
+bq load babynames.names2010 yob2010.txt nome: string, gênero: string, contagem: integer
+
+Executa bq show para ver o esquema:
+mostrar bq
+
+Executa o bq rm comandopara remover o babynames conjunto de dados
+bq rm -r babynames
+
+
+Formatos de dados:
+Armazenamento emnuvem:
+CSV
+JSON (nova linha única delimitado)
+Euro
+Parquet
+ORC
+Exportação do Cloud Datastore
+Nuvem firestore exporta
+fonte de dados legível (como sua máquina local):
+CSV
+JSON (nova linha única delimitado)
+Euro
+Parquet
+ORC
+API de faturamento 
+Você pode configurar o Billin g no Google Cloud Platform (GCP) de diversas maneiras para atender a diferentes necessidades. 
+Os recursos do GCP são os componentes fundamentais que compõem todos os serviços do GCP, como máquinas virtuais do Google Compute Engine (VMs), tópicos do Google Cloud Pub / Sub, intervalos do Google Cloud Storage e assim por diante. Para fins de faturamento e controle de acesso, os recursos existem no nível mais baixo de uma hierarquia que também inclui projetos e uma organização.
+Projetos: Todos os recursos de nível inferior são criados por projetos, que são a camada intermediária na hierarquia de recursos. Você pode usar projetos para representar projetos lógicos, equipes, ambientes ou outras coleções que mapeiem para uma função ou estrutura de negócios. Qualquer recurso fornecido pode existir apenas em um projeto.
+Uma organização é o topo da hierarquia de recursos. Todos os recursos pertencentes a uma organização são agrupados no nó da organização, para fornecer informações e controle de acesso sobre todos os recursos da organização.
+
+Para mais informações sobre projetos e organizações, consulte ado  documentaçãoCloud Resource Manager.
+Uma conta de faturamento pode ser vinculada a um ou mais projetos. O uso do projeto é cobrado na conta de faturamento vinculada. Projetos que não estão vinculados a uma conta de faturamento não podem usar serviços do GCP que não são gratuitos.
+Balde
+Buckets são os contêineres básicos que armazenam seus dados. Tudo o que você armazena no Cloud Storage deve estar contido em um intervalo. Você pode usar intervalos para organizar seus dados e controlar o acesso aos dados, mas, ao contrário dos diretórios e pastas, não é possível aninhar os intervalos. Como há limites para a criação e a exclusão de buckets, você deve projetar seus aplicativos de armazenamento para favorecer operações intensivas de objetos e relativamente poucas operações de buckets.
+Parte do Cloud Storage.
+C
+Atualização canário
+O recurso Instance Group Updater permite executar atualizações canárias, para que você possa testar suas atualizações em um subconjunto aleatório de instâncias antes de confirmar totalmente a atualização.
+Uma atualização canary é uma atualização aplicada a um número parcial de instâncias no grupo de instâncias. As atualizações das Canárias permitem que você teste novos recursos ou atualizações em um subconjunto de instâncias, em vez de implantar uma atualização potencialmente destrutiva em todas as suas instâncias. Se uma atualização não estiver indo bem, você só precisará reverter um pequeno número de instâncias, minimizando a interrupção dos usuários. Da perspectiva do servidor, uma atualização de canary é a mesma que uma atualização de rolagem padrão, exceto que o número de instâncias que devem ser atualizadas é menor que o tamanho total do grupo de instâncias. Como uma atualização padrão, uma atualização canária é prejudicial para as instâncias afetadas; ou seja, as instâncias afetadas são excluídas e substituídas por novas instâncias de VM durante a atualização.
+O Peering Transportadora 
+Cloud Interconnect estende sua rede local para a rede do Google por meio de uma conexão altamente disponível e de baixa latência. Você pode usar o Google Cloud Interconnect - Dedicado (interconexão dedicada) para se conectar diretamente ao Google ou usar o Google Cloud Interconnect - parceiro (Partner Interconnect) para se conectar ao Google por meio de um provedor de serviços compatível.
+Peering direto: o Google permite que você estabeleça uma conexão de peering direta entre sua rede comercial e a do Google. Com essa conexão, você poderá trocar tráfego de Internet entre sua rede e a do Google em um dos nossos locais de rede de grande alcance. O peering direto com o Google é feito através da troca de rotas BGP entre o Google e a entidade de peering. Depois que uma conexão de peering direta estiver em vigor, você poderá usá-la para alcançar todos os serviços do Google, incluindo o pacote completo de produtos do Google Cloud Platform. O peering de transportadora permite obter serviços de rede de nível empresarial que conectam sua infraestrutura ao Google usando um provedor de serviços.
+Google Cloud Interconnect: o Cloud Interconnect oferece conexões de nível corporativo ao Google Cloud Platform usando os Serviços do Google para Interconexão Dedicada, Interconexão de Parceiros e VPN na Nuvem. Essa solução permite que você conecte diretamente sua rede local a sua nuvem privada virtual.
+Peering de operadora: ao se conectar ao Google por meio de um provedor de serviços, você pode obter conexões com maior disponibilidade e menor latência, usando um ou mais links. Trabalhe com seu provedor de serviços para obter a conexão de que você precisa. 
+O CDN Interconnect permite que provedores de CDN selecionados estabeleçam links diretos de interconexão com a rede de borda do Google em vários locais.
+Estudos de caso Cloud Architect
+Jogos de Mountkirk → jogos, noSQL, backend + analytics
+Backend:
+perfis de usuários de bancos de dados transacionais e estado do jogo (MySQL atual)
+Serviço de banco de dados de séries temporais para análise futura
+aprimorado Linux distro (aprimorado para segurança)
+Analytics:
+Processar dados em tempo real atrasado devido a lentidão de redes móveis (Dataflow)
+consultas para acessar pelo menos 10 TB de dados históricos (BigQuery)
+Dress4win → empresa baseada na web, guarda-roupa, publicidade, e-commerce, referências e um aplicativo freemium
+Atual: MySQL, Redis, Web Servidores de aplicativos, Apache Hadoop / Spark, RabbitMQ, Jenkins
+Necessidades:
+Escalabilidade, segurança, otimizar
+ambientes de não produção
+a estrutura de automação depara provisionarrecursos 
+failover dedo ambiente de produção parao ambiente de nuvem da 
+CI / CD
+conexões múltiplas entre o centro de dados de produção e
+
+
+JencoMart → varejista (Amazon.com) 
+Atual: LAMP (Linux, Apache, MySQL e PHP), perfis de usuários da Oracle, banco de dados PostgreSQL, SAN 
+Necessidades:
+Otimizar para capac durante os períodos de pico
+Migração → Modificar aplicativos para a nuvem
+Diminuir a latência na Ásia + verde 
+
+
+TerramEarth → SMART equipamentos pesados ​​para as indústrias de mineração e agrícola (20M operativa)  
+Corrente: cada equipa recebe 120 campos / seg armazenados localmente (acessado para análise quando um veículo é atendido via porta de manutenção)
+200.000 redes celulares, coleta direta de dados → 9 TB / dia Sistemas
+Single Datacenter Linux e Windows → arquivos CSV gzip → DWH 3 semanas de idade
+Python 
+
+
+Necessidades da:
+estoque de peças de reposição e reduzir o tempo de inatividade não planejado Suporte à rede de revendedores
+diminuir a segurança do aumento da latência
+Usar dados de clientes e equipamentos para antecipar a necessidade do cliente
+
+
+
+
+ CBT
+A cbt ferramentaé uma interface de linha de comando para executar várias operações diferentes no Cloud Bigtable. Está escrito em Go usando a biblioteca cliente Go do Cloud Bigtable. O código-fonte da cbt ferramentaestá disponível no repositório do GitHub GoogleCloudPlatform / google-cloud-go. A cbt ferramentaestá disponível como um componente do Cloud SDK.
+CDN, Cloud CDN O 
+Google Cloud CDN aproveita os pontos de presença distribuídos globalmente do Google para acelerar a entrega de conteúdo para websites e aplicativos fornecidos pelo Google Compute Engine e Google Cloud Storage. A CDN do Cloud reduz a latência de rede, libera as origens e reduz os custos de veiculação. Depois de configurar o balanceamento de carga HTTP (S), basta ativar o Cloud CDN com uma única caixa de seleção.
+O Coldline Nearline
+e o Coldline oferecemaltíssimo custo, armazenamento de arquivamento dealtamente durável e altamente disponível. O Coldline é ideal para armazenamento a frio - dados que sua empresa espera tocar menos de uma vez por ano. Para um armazenamento mais quente, escolha Nearline: dados que você espera acessar menos de uma vez por mês, mas possivelmente várias vezes ao longo do ano. Ambas as opções estão disponíveis em todas as regiões do GCP e fornecem velocidades de acesso de sub-segundo incomparáveis ​​com uma API consistente.
+Compositor, Cloud
+serviço de orquestração doWorkflow que permite criar, programar e monitorar pipelines que abrangem nuvens e data centers no local. Construído no projeto de código aberto Apache Airflow e operado usando a linguagem de programação Python. Integração integrada com o BigQuery, o Dataflow, o Dataproc, o Datastore, o Cloud Storage, o Pub / Sube o Cloud ML Engine.
+Compute Engine O
+Google Compute Engine fornece máquinas virtuais em execução nos datacenters inovadores e na rede de fibra mundial do Google.Compute OEngine ferramental e o suporte ao fluxo de trabalho dopermitem o dimensionamento de instâncias únicas para computação em nuvem global com balanceamento de carga.Compute AsdoEngine são VMsinicializadas rapidamente, vêm com opções de disco local e persistente de alto desempenho e oferecem desempenho consistente. Nossos servidores virtuais estão disponíveis em várias configurações, incluindo tamanhos predefinidos e opções para criar tipos de máquinas personalizados otimizados para suas necessidades específicas. Preços flexíveis e descontos automáticos de uso sustentado tornam o Compute Engine o líder em preço / desempenho.
+Drenagem de conexãodrenagem de 
+Quando a conexão está ativada, o Auto Scaling aguardará que solicitações pendentes sejam concluídas antes de encerrar instâncias.
+Console
+Use o Cloud Platform Console para executar seu aplicativo na infraestrutura do Google. Você pode provisionar, configurar e gerenciar produtos do Google Cloud Platform e APIs do desenvolvedor.
+Container Builder / Cloud Build O
+Cloud Build é um serviço que executa suas construções na infraestrutura do Google Cloud Platform.
+O Cloud Build pode importar código-fonte de uma variedade de repositórios ou espaços de armazenamento em nuvem, executar uma compilação de acordo com suas especificações e produzir artefatos como contêineres do Docker ou arquivos Java.
+Você pode escrever uma configuração de compilação para fornecer instruções ao Cloud Build sobre quais tarefas executar. Você pode configurar compilações para buscar dependências, executar testes de unidade, análises estáticas e testes de integração e criar artefatos com ferramentas de compilação, como docker, gradle, maven, bazel e gulp.
+O Cloud Build executa sua compilação como uma série de etapas de compilação, em que cada etapa de compilação é executada em um contêiner Docker. A execução de etapas de construção é análoga à execução de comandos em um script.
+Prepare seu código de aplicativo e todos os ativos necessários.
+Crie um arquivo de configuração de compilação no formato YAML ou JSON, que contém instruções para o Cloud Build.
+Envie a construção para o Cloud Build.
+O Cloud Build executa sua compilação com base na configuração de compilação que você forneceu.
+Se aplicável, qualquer imagem incorporada será enviada ao Container Registry.
+https://cloud.google.com/cloud-build/docs/quickstart-docker 
+O Container Registry
+Container Registry é um registro de imagem de contêiner particular executado no Google Cloud Platform. O Container Registry oferece suporte aos formatos de imagem do Docker Image Manifest V2 e OCI.
+Muitas pessoas usam o Dockerhub como um registro central para armazenar imagens públicas do Docker, mas para controlar o acesso às suas imagens, é necessário usar um registro privado, como o Container Registry.
+Você pode acessar o Container Registry por meio de endpoints HTTPS seguros, que permitem enviar, extrair e gerenciar imagens de qualquer sistema, instância de VM ou de seu próprio hardware. Além disso, você pode usar a Auxiliar de credencial Docker ferramenta de linha de comandopara configurar o Docker para autenticar diretamente com o Container Registry.
+D
+Data Lake
+Um data lake é um repositório de armazenamento que contém uma grande quantidade de dados brutos em seu formato nativo até que seja necessário. Enquanto um data warehouse hierárquico armazena dados em arquivos ou pastas, um lago de dados usa uma arquitetura plana para armazenar dados.
+Daemon
+Em sistemasmultitarefa computadores operacionais de, um daemon é um programa de computador que é executado como um processo em segundo plano, em vez de estar sob o controle direto de um usuário interativo. Por exemplo, syslogd é o daemon que implementa o recurso de registro do sistema, e sshd é um daemon que atendeentrada SSH de conexões.
+DAG Gráfico acíclico direcionado
+A DAG O gráfico acíclico dirigido é um gráfico ilustrado sem ciclos direcionados. Isto é, consiste em finitos vértices e arestas, com cada aresta direcionada de um vértice para outro, de tal forma que não há maneira de começar em qualquer vértice v e seguir uma seqüência de arestas consistentemente direcionada que eventualmente volta a v novamente . Equivalentemente, um DAG é um grafo direcionado que tem uma ordenação topológica, uma seqüência dos vértices de tal forma que cada borda é direcionada de mais cedo para mais tarde na seqüência.
+
+
+
+API de prevenção contra perda de dados
+A API do Google Data Loss Prevention ajuda você a entender e gerenciar dados confidenciais. Ele fornece classificação rápida e escalonável e edição opcional para elementos de dados confidenciais, como números de cartão de crédito, nomes, números de seguro social, números de passaporte, números de carteira de motorista internacional, números de telefone e muito mais.
+Pipeline de Dados
+Na computação, um pipeline, também conhecido como pipeline de dados, é um conjunto de elementos de processamento de dados conectados em série, em que a saída de um elemento é a entrada do próximo. Os elementos de um pipeline são frequentemente executados em paralelo ou no tempo fatiado.
+Data Studio
+Ferramentas de Business Intelligence.
+Fluxo de dados, Cloud Dataflow
+O Google Cloud Dataflow é um serviço totalmente gerenciado para pipelines paralelos de processamento de dados altamente consistentes. Ele fornece um SDK para Java com primitivos compostos para construir pipelines de processamento de dados para processamento em lote ou contínuo. Este serviço gerencia o ciclo de vida dos recursos do Google Compute Engine do pipeline de processamento. Ele também fornece uma interface de usuário de monitoramento para entender a integridade do pipeline.
+Datalab, Cloud Datalab
+O Google Cloud Datalab é uma ferramenta interativa para exploração, transformação, análise e visualização de seus dados no Google Cloud Platform. Ele é executado em seu projeto de nuvem e permite que você escreva códigos para usar outros Big Data e serviços de armazenamento usando um conjunto avançado de bibliotecas de terceiros e de propriedade do Google.
+demonstração
+Dataprep, Cloud Dataprep
+O Cloud Dataprep by Trifacta é um serviço de dados inteligente para explorar visualmente, limpar e preparar dados estruturados e não estruturados para análise. O Cloud Dataprep não tem servidor e funciona em qualquer escala. Não há infraestrutura para implantar ou gerenciar. Fácil preparação de dados com cliques e sem código.
+demonstração
+Dataproc, Cloud Dataproc
+O Google Cloud Dataproc é um serviço rápido e fácil de usar, gerenciado pelo Spark e pelo Hadoop para processamento de dados distribuídos. Ele fornece ferramentas de gerenciamento, integração e desenvolvimento para liberar o poder das ferramentas ricas de processamento de dados de código aberto. Com o Cloud Dataproc, você pode criar clusters Spark / Hadoop dimensionados para suas cargas de trabalho precisamente quando precisar deles.
+Datastore, Cloud Datastore
+O Google Cloud Datastore é um armazenamento de dados totalmente gerenciado, sem esquema e não relacional [Mongo, como o DynamoDB]. Ele fornece um conjunto avançado de recursos de consulta, oferece suporte a transações atômicas e é escalado automaticamente para cima e para baixo em resposta ao carregamento. Ele pode ser dimensionado para suportar um aplicativo com 1.000 usuários ou 10 milhões de usuários sem alterações no código.
+
+
+Transações
+Grupos de entidades
+
+Um grupo de entidades consiste em uma entidade raiz e todos os seus descendentes. Os aplicativos geralmente usam grupos de entidades para organizar dados altamente relacionados. Por exemplo, um aplicativo pode usar um grupo de entidades para armazenar dados sobre um produto ou um perfil de usuário. Para obter informações sobre níveis de consistência e considerações de desempenho ao usar grupos de entidades, consulte Transações e grupos de entidades
+
+Consistência Forte na Leitura de Valores e Índices de Entidade
+No Cloud Datastore, existem apenas duas APIs que fornecem uma visualização fortemente consistente para a leitura de valores e índices de entidade: (1) a pesquisa pelo método key e (2) a consulta ancestral. Se a lógica do aplicativo exigir consistência forte, o desenvolvedor deve usar um desses métodos para ler entidades do Cloud Datastore.
+Gerente de Implantação
+O Gerenciador de Implantação do Google Cloud permite que você especifique todos os recursos necessários para seu aplicativo em um formato declarativo usando yaml. Você também pode usar modelos Python ou Jinja2 para parametrizar a configuração e permitir a reutilização de paradigmas comuns de implantação, como um grupo de instâncias com dimensionamento automático e carga balanceada. Trate sua configuração como código e execute implantações repetíveis.
+Uma configuração descreve todos os recursos que você deseja para uma única implantação. Uma configuração é um arquivo escrito na sintaxe YAML que lista cada um dos recursos que você deseja criar e suas respectivas propriedades de recurso. Uma configuração deve conter uma seção resources :, seguida pela lista de recursos a serem criados.
+Dialogflow Enterprise Edition
+O Dialogflow Enterprise Edition é um conjunto de desenvolvimento para aplicativos conversacionais de voz e texto, incluindo chatbots. Dialogflow é multi-plataforma e pode se conectar a seus próprios aplicativos (na web, Android, iOS e IoT) ou plataformas existentes (por exemplo, Ações no Google, Facebook Messenger, Slack). O Dialogflow Enterprise Edition é a camada de empresa paga do Dialogflow fornecida nos Termos de Serviço do Google Cloud Platform. A camada gratuita do Dialogflow (Dialogflow Standard Edition) não é oferecida pelos Termos de Serviço do Google Cloud Platform e é fornecida de acordo com os Termos de Serviço do Dialogflow Standard Edition.
+Recipientes Docker
+Os contêineres de software são uma maneira conveniente de executar seus aplicativos em várias instâncias de espaço de usuário isoladas. Você pode executar contêineres em imagens públicas de VM do Linux ou do Windows Server 2016. Os contêineres permitem que seus aplicativos sejam executados com menos dependências na máquina virtual do host e sejam executados independentemente de outros aplicativos de contêiner que você implanta na mesma instância de máquina virtual. Essas características tornam os aplicativos em contêiner mais portáteis, mais fáceis de implantar e mais fáceis de manter em escala.
+O Docker e o rkt são duas tecnologias populares de contêiner que permitem executar facilmente aplicativos em contêiner.
+DNS, Cloud DNS
+O Google Cloud DNS é um serviço de DNS (Sistema de Nomes de Domínio) global, resiliente e de alto desempenho que publica seus nomes de domínio no DNS global de maneira econômica.
+
+
+O DNS é um banco de dados hierárquico distribuído que permite armazenar endereços IP e outros dados e pesquisá-los pelo nome. O Google Cloud DNS permite publicar suas zonas e registros no DNS sem o ônus de gerenciar seus próprios servidores DNS e software. API RESTful para publicar e gerenciar registros DNS para seus aplicativos e serviços.
+E
+ECMP
+O ECMP (Equal-Cost Multi-Path Routing) é uma estratégia de roteamento na qual o encaminhamento de pacotes de próximo salto para um único destino pode ocorrer em vários "melhores caminhos", que são os principais locais nos cálculos de métrica de roteamento. O roteamento de caminhos múltiplos pode ser usado em conjunto com a maioria dos protocolos de roteamento, porque é uma decisão por salto limitada a um único roteador. Ele pode aumentar substancialmente a largura de banda pelo tráfego de balanceamento de carga em vários caminhos; no entanto, pode haver problemas significativos em implantá-lo na prática
+Criptografia em Repouso
+O Google Cloud Platform criptografa o conteúdo do cliente armazenado em repouso, sem nenhuma ação necessária do cliente, usando um ou mais mecanismos de criptografia. Existem algumas pequenas exceções, observadas mais adiante neste documento.
+Os dados para armazenamento são divididos em partes e cada parte é criptografada com uma chave de criptografia de dados exclusiva. Essas chaves de criptografia de dados são armazenadas com os dados, criptografados com chaves de criptografia de chave ("envolvidas" por) que são exclusivamente armazenadas e usadas dentro do serviço central de gerenciamento de chaves do Google. O serviço de gerenciamento de chaves do Google é redundante e globalmente distribuído.
+Os dados armazenados no Google Cloud Platform são criptografados no nível de armazenamento usando AES256 ou AES128.
+O Google usa uma biblioteca criptográfica comum, a Tink, para implementar a criptografia de forma consistente em quase todos os produtos do Google Cloud Platform. Como essa biblioteca comum é amplamente acessível, apenas uma pequena equipe de criptógrafos precisa implementar e manter adequadamente esse código rigorosamente controlado e revisado.
+Criptografia em Trânsito
+O Google criptografa e autentica todos os dados em trânsito em uma ou mais camadas da rede quando os dados se movem fora dos limites físicos não controlados pelo Google ou em nome do Google. Os dados em trânsito dentro de um limite físico controlado por ou em nome do Google geralmente são autenticados, mas não necessariamente criptografados.
+Dependendo da conexão que está sendo feita, o Google aplica proteções padrão aos dados em trânsito. Por exemplo, protegemos as comunicações entre o usuário e o Google Front End (GFE) usando o TLS.
+Os clientes do Google Cloud com requisitos adicionais para a criptografia de dados pela WAN podem optar por implementar proteções adicionais para dados à medida que eles se movem de um usuário para um aplicativo ou de uma máquina virtual para uma máquina virtual. Essas proteções incluem túneis IPsec, Gmail S / MIME, certificados SSL gerenciados e Istio.
+Chaves de Criptografia
+O Cloud Storage sempre criptografa seus dados no servidor, antes de serem gravados no disco, sem custo adicional. Além desse comportamento padrão, há outras maneiras de criptografar seus dados ao usar o Cloud Storage:
+Chaves de criptografia fornecidas pelo cliente: você pode criar e gerenciar suas próprias chaves de criptografia para criptografia do lado do servidor, que atuam como uma camada adicional de criptografia sobre a criptografia padrão do Cloud Storage.
+Chaves de criptografia gerenciadas pelo cliente: você pode gerar e gerenciar suas chaves de criptografia usando o Cloud Key Management Service, que atua como uma camada adicional de criptografia sobre a criptografia padrão do Cloud Storage. Suas chaves de criptografia são armazenadas no Cloud KMS. O projeto que contém suas chaves de criptografia pode, então, ser independente do projeto que contém seus blocos, permitindo assim uma melhor separação de tarefas.
+Quando você aplica uma chave de criptografia gerenciada pelo cliente a um objeto, o Cloud Storage usa a chave ao criptografar:
+
+Os dados do objeto.
+A soma de verificação CRC32C do objeto.
+O hash do MD5 do objeto.
+O Cloud Storage usa chaves padrão do servidor para criptografar os metadados restantes do objeto, incluindo o nome do objeto. Isso permite que você leia e atualize metadados gerais, além de listar e excluir objetos, sem precisar da chave de criptografia gerenciada pelo cliente. No entanto, para executar qualquer uma dessas ações, você deve ter permissão suficiente para isso.
+Criptografia do lado do cliente: criptografia que ocorre antes de os dados serem enviados para o Cloud Storage. Esses dados chegam ao Cloud Storage já criptografados, mas também sofrem criptografia no servidor.
+Endpoints Cloud Endpoints
+O Google Cloud Endpoints é uma ferramenta que ajuda você a desenvolver, implantar, proteger e monitorar suas APIs em execução no Google Cloud Platform.
+Tráfego de saída
+O tráfego de saída é o tráfego de rede que começa dentro de uma rede e prossegue através de seus roteadores para um destino em algum lugar fora da rede. Por exemplo, uma mensagem de e-mail considerada tráfego de saída viajará da estação de trabalho de um usuário e passará pelos roteadores LAN da empresa antes de ser entregue à Internet para viajar até o destino final.
+F
+Filestore
+O Cloud Filestore é um serviço de arquivos compartilhados altamente escalável e disponível totalmente gerenciado pelo Google (disco múltiplo VMS como o AWS EFS). O Cloud Filestore fornece armazenamento persistente ideal para cargas de trabalho compartilhadas. É mais adequado para aplicativos empresariais que exigem armazenamento compartilhado persistente e durável, que é acessado pelo NFS ou requer um sistema de arquivos compatível com POSIX.
+Firestore
+O Cloud Firestore é um banco de dados de documentos NoSQL para armazenar, sincronizar e consultar dados para aplicativos móveis e da web. Suas bibliotecas cliente oferecem sincronização ao vivo e suporte off-line, enquanto seus recursos de segurança e integrações com o Firebase e o Google Cloud Platform aceleram o desenvolvimento de aplicativos sem servidor.
+
+O Cloud Firestore é a próxima versão principal do Cloud Datastore e uma reformulação do produto. Aproveitando o melhor do Cloud Datastore e do Firebase Realtime Database, o Cloud Firestore é um banco de dados de documentos NoSQL criado para escalonamento automático, alto desempenho e facilidade de desenvolvimento de aplicativos.
+Regra de firewall
+As regras de firewall do Google Cloud Platform (GCP) permitem que você permita ou negue o tráfego de e para suas instâncias de máquina virtual (VM) com base em uma configuração especificada por você. As regras de firewall do GCP são aplicadas no nível de rede virtual, de modo que fornecem proteção eficaz e controle de tráfego, independentemente do sistema operacional usado por suas instâncias.
+Toda rede VPC funciona como um firewall distribuído. Embora as regras de firewall sejam definidas no nível da rede, as conexões são permitidas ou negadas por instância. Você pode pensar nas regras de firewall do GCP como existentes não apenas entre suas instâncias e outras redes, mas entre instâncias individuais na mesma rede.
+Prioridade
+Direção
+Açao
+Execução
+Alvo
+Fonte
+Destino
+Protocolos, Portas
+Inteiro de 0 a 65535, inclusive; padrão 1000.
+entrada
+Ou allowor negar.
+Ativado (padrão) ou desativado.
+Instâncias que recebem tráfego da origem.
+Um dos seguintes:
+• Todas as instâncias no
+   Rede VPC
+• Instâncias por
+  conta de serviço
+• Instâncias por tag de rede
+Um dos seguintes:
+• Faixa de endereços IPv4;
+  o padrão é qualquer (0.0.0.0/0)
+• Instâncias por
+  conta de serviço
+• Instâncias por tag de rede
+O destino não é especificado separadamente para as regras de entrada. O alvo define o destino.
+Especifique um protocolo ou protocolo e uma porta.
+Se não definido, a regra se aplica a todos os protocolos.
+Inteiro de 0 a 65535, inclusive; padrão 1000.
+saída
+Ou allowor negar.
+Ativado (padrão) ou desativado.
+Instâncias enviando tráfego para o destino.
+Um dos seguintes:
+• Todas as instâncias no
+   Rede VPC
+• Instâncias por
+  conta de serviço
+• Instâncias por tag de rede
+A origem não é especificada separadamente para regras de saída. O alvo define a fonte.
+Qualquer rede ou um intervalo específico de endereços IPv4; o padrão é qualquer (0.0.0.0/0).
+Especifique um protocolo ou protocolo e uma porta.
+Se não definido, a regra se aplica a todos os protocolos.
+
+https://cloud.google.com/vpc/docs/firewalls#ingress_cases 
+https://cloud.google.com/vpc/docs/firewalls#egress_cases 
+Regra de Encaminhamento
+[Load Balancers] As regras de encaminhamento mapeiam o endereço IP do seu balanceador de carga para o Target Proxy que manipulará as solicitações. Primeiro, precisamos criar nosso endereço IP. Vamos precisar de um endereço IP global, em vez de regional, para nosso balanceador de carga HTTP.
+os endereços de computação gcloud criam meu endereço --global 
+gcloud compute forwarding-rules cria regra de encaminhamento my-https --global
+--endereço 123.123.123.123 --ip-protocol TCP --port-range 443
+--target-https-proxy my-https-proxy
+Funções de nuvem
+O Google Cloud Functions é um ambiente de execução sem servidor para criar e conectar serviços em nuvem. Com o Cloud Functions, você escreve funções simples e de propósito único anexadas a eventos emitidos a partir de sua infraestrutura e serviços em nuvem. Sua função é acionada quando um evento sendo assistido é disparado. Seu código é executado em um ambiente totalmente gerenciado. Não há necessidade de provisionar qualquer infraestrutura ou se preocupar em gerenciar qualquer servidor.
+
+
+O Cloud Functions fornece uma camada conectiva de lógica que permite escrever código para conectar e estender os serviços em nuvem. Ouça e responda a um upload de arquivo para o Cloud Storage, uma alteração de registro ou uma mensagem recebida em um tópico do Cloud Pub / Sub. O Cloud Functions aumenta os serviços de nuvem existentes e permite que você aborde um número crescente de casos de uso com lógica de programação arbitrária. As Cloud Functions têm acesso à credencial da Conta de Serviço do Google e, assim, são autenticadas perfeitamente com a maioria dos serviços do Google Cloud Platform, incluindo o Cloud Vision API, além de muitos outros. Além disso, o Cloud Functions é suportado por inúmeras bibliotecas cliente do Google Cloud, que simplificam ainda mais essas integrações.
+Para mais informações sobre como criar gatilhos e associá-los a suas funções, consulte Eventos e gatilhos
+G
+gcloud Reference
+O Cloud SDK é um conjunto de ferramentas para o Cloud Platform. Ele contém gcloud, gsutil e bq, que você pode usar para acessar o Google Compute Engine, o Google Cloud Storage, o Google BigQuery e outros produtos e serviços a partir da linha de comando. Você pode executar essas ferramentas de forma interativa ou em seus scripts automatizados.
+Além de executar comandos gcloud a partir da linha de comando, você também pode executá-los a partir de scripts ou outras automações, por exemplo, ao usar o Jenkins para orientar a automação das tarefas do Google Cloud Platform.
+
+gcloud logging read
+
+gcloud appengine
+
+gcloud auth - gerencie as credenciais do oauth2 para o Google Cloud SDK
+
+gcloud bigtable - gerencie seu armazenamento do Cloud Bigtable
+
+gcloud builds - crie e gerencie construções para o Google Cloud Build
+
+Componentes do gcloud - liste, instale, atualize ou remova componentes do Google Cloud SDK
+
+gcloud composer - crie e gerencie ambientes do Cloud Composer
+O Cloud Composer é um serviço gerenciado do Apache Airflow que ajuda a criar, agendar, monitorar e gerenciar fluxos de trabalho
+
+gcloud compute - crie e manipule recursos do Google Compute Engine
+
+gcloud config - visualize e edite as propriedades do Cloud SDK
+
+gcloud container - implemente e gerencie clusters de máquinas para a execução de contêineres
+
+O gcloud dataflow gerencia trabalhos do Google Cloud Dataflow
+
+gcloud dataproc - crie e gerencie clusters e jobs do Google Cloud Dataproc
+
+datastore do gcloud - gerencie seus índices do Cloud Datastore
+
+gcloud debug - comandos para interagir com o Cloud Debugger
+
+gcloud deployment-manager - gerencie implantações de recursos em nuvem
+
+gcloud dns - gerencie suas zonas gerenciadas e conjuntos de registros do Cloud DNS
+
+gcloud docker - ative o acesso do Docker CLI ao Google Container Registry
+
+Domínios gcloud - gerencie domínios para seus projetos do Google Cloud (domínios personalizados)
+
+Pontos de extremidade do gcloud - criar, ativar e gerenciar serviços de API
+
+gcloud firebase - trabalhe com o Google Firebase
+
+funções gcloud - gerenciar funções do Google Cloud
+
+gcloud iam - gerencia contas e chaves de serviço do IAM
+
+gcloud iot - gerencie recursos do Cloud IoT
+
+gcloud kms - gerencia chaves criptográficas na nuvem
+
+gcloud logging read
+
+gcloud ml - use os recursos de aprendizado de máquina do Google Cloud (discurso de visão.)
+
+gcloud ml-engine - gerencie os jobs e modelos do Cloud ML Engine
+
+Organizações do gcloud - criar e gerenciar organizações do Google Cloud Platform
+
+gcloud projects - crie e gerencie políticas de acesso a projetos
+
+gcloud pubsub - gerencia os tópicos e assinaturas do Cloud Pub / Sub
+
+gcloud redis - gerencia os recursos do Cloud Memorystore Redis
+
+gcloud services - liste, ative e desative APIs e serviços
+
+Comandos gcloud source - cloud git repository
+
+gcloud spanner - grupos de comandos para o Cloud Spanner
+
+gcloud sql - crie e gerencie bancos de dados do Google Cloud SQL
+
+gcloud topic - gcloud supplementary help
+
+gcloud version - imprima informações sobre a versão dos componentes do Cloud SDK
+
+Google Front Ends (GFEs) 
+Sistemas distribuídos, definidos por software, localizados nos POPs do Google e que realizam balanceamento de carga global em conjunto com outros sistemas e planos de controle
+
+Google Transfer Appliance
+O Transfer Appliance é um servidor de armazenamento de alta capacidade que pode ser instalado em seu datacenter. Você preenche os dados e os envia para um local onde os dados são enviados para o Google Cloud Storage. Escolha entre 100 TB ou 480 TB de capacidade bruta por appliance para mover seus dados para o Google Cloud rapidamente.
+Plugin do App Engine do Gradle
+Este plug-in Gradle fornece tarefas para criar e implantar aplicativos do Google App Engine
+Usando o Gradle e o plug-in do App Engine (ambiente padrão)
+Usando o Gradle e o plug-in do App Engine (ambiente flexível)
+gsutil
+A gsutil é um aplicativo Python que permite acessar o Cloud Storage a partir da linha de comando. Você pode usar a gsutil para executar uma ampla variedade de tarefas de gerenciamento de objetos e buckets, incluindo:
+Criando e excluindo buckets.
+Upload, download e exclusão de objetos.
+Listagem de buckets e objetos.
+Movendo, copiando e renomeando objetos.
+Edição de objetos e balanceamento de ACLs.
+Para obter uma lista completa de guias para concluir tarefas com a gsutil, consulte Guias de procedimentos do Cloud Storage.
+O gsutil Quickstart mostra como configurar um projeto do Google Cloud Platform, ativar o faturamento, instalar o gsutil e executar comandos básicos com a ferramenta.
+gsutil acl set obter ch
+
+gsutil cat -h gs: //bucket/meeting_notes/2012_Feb/*.txt 
+
+// Concatena uma seqüência de objetos em um novo objeto composto
+gsutil disque obj1 obj2 
+
+// config - Obtém credenciais e cria um arquivo de configuração
+gsutil config -f --Crie um token com acesso de controle total para recursos de armazenamento:
+
+// cors - Obtém ou define um documento JSON CORS para um ou mais buckets
+
+cp - Copia arquivos e objetos
+
+defacl - Obter, definir ou alterar a ACL padrão em intervalos
+
+defstorageclass - Obtém ou define a classe de armazenamento padrão em buckets
+
+du - Exibir o tamanho do objeto
+
+hash - Calcular os hashes de arquivos
+
+iam - Obter, definir ou alterar permissões de IAM do bucket e / ou do objeto
+
+kms - Configurar a criptografia do Cloud KMS
+
+label - Obter, definir ou alterar a configuração de etiqueta de um intervalo
+
+ciclo de vida - Obter ou definir a configuração do ciclo de vida de um bucket
+
+logging - Configure ou recupere o log em buckets
+
+ls - Listar fornecedores, depósitos ou objetos
+gsutil ls -l gs: //bucket/*.txt
+
+mb - Faça baldes
+
+rsync - Sincroniza o conteúdo de dois buckets / diretórios
+
+setmeta - Definir metadados em objetos já enviados
+
+signurl - Cria uma URL assinada carregando um arquivo de texto simples via HTTP PUT
+gsutil signurl -m PUT -d 1h -c texto / simples <arquivo-chave-privado> gs: // <bucket> / <obj>
+
+stat - Exibe o status do objeto
+
+teste - Executar testes de unidade / integração da gsutil (para desenvolvedores)
+
+update - atualize para a versão mais recente da gsutil
+
+version - Imprimir informações sobre a versão da gsutil
+
+controle de versão - Ativar ou suspender o controle de versão para um ou mais intervalos
+
+web - Defina uma página principal e / ou uma página de erro para um ou mais buckets
+H
+Módulo de Segurança de Hardware
+O Módulo de Segurança de Hardware do Google Cloud é um serviço de gerenciamento de chaves hospedado na nuvem que permite proteger chaves de criptografia e executar operações criptográficas em um serviço HSM gerenciado. Você pode gerar, usar, girar e destruir várias chaves simétricas e assimétricas.
+HBase - Apache HBase
+O Apache HBase é um banco de dados não relacional de código aberto, distribuído e com versão modelada segundo o Bigtable: um sistema de armazenamento distribuído para dados estruturados do Google por Chang et al. Assim como o Bigtable aproveita o armazenamento distribuído de dados fornecido pelo Google File System, o Apache HBase fornece recursos semelhantes ao Bigtable, além do Hadoop e do HDFS.
+
+
+https://www.tutorialspoint.com/hbase/hbase_quick_guide.htm 
+Hadoop
+O Apache Hadoop é uma coleção de utilitários de software de código aberto que facilitam o uso de uma rede de muitos computadores para resolver problemas envolvendo grandes quantidades de dados e cálculos.
+Verificações de saúde
+Um verificador de integridade pesquisa instâncias em intervalos especificados. Instâncias que não respondem com êxito a um número especificado de testes consecutivos são marcadas como UNHEALTHY. Nenhuma nova conexão é enviada para tais instâncias, embora as conexões existentes possam continuar. O verificador de integridade continua a pesquisar instâncias não íntegras. Se uma instância responder mais tarde com êxito a um número especificado de testes consecutivos, ela será marcada como HEALTHY novamente e poderá receber novas conexões.
+Verificações de integridade HTTP
+Verificações de integridade de HTTPS
+Verificações de integridade HTTP / 2
+Verificações de integridade TCP
+Verificações de integridade SSL (TLS)
+Leme
+O Helm é uma ferramenta para gerenciar pacotes de recursos do Kubernetes pré-configurados. Aqui GCP Exemplo com Spinnaker: plataforma de entrega contínua de código aberto e várias nuvens que ajuda você a liberar alterações de software com alta velocidade e confiança.
+Use o Helm para:
+
+Localize e use softwares populares empacotados como gráficos de Helm para serem executados no Kubernetes
+Compartilhe seus próprios aplicativos como gráficos Helm
+Crie compilações reproduzíveis de seus aplicativos do Kubernetes
+Gerencie inteligentemente seus arquivos de manifesto do Kubernetes
+Gerenciar versões de pacotes do Helm
+
+
+Colmeia
+O software de data warehouse Apache Hive ™ facilita a leitura, a gravação e o gerenciamento de grandes conjuntos de dados residentes em armazenamento distribuído e consultados usando a sintaxe SQL. 
+Construído sobre o Apache Hadoop ™, o Hive fornece os seguintes recursos:
+Ferramentas para permitir acesso fácil aos dados via SQL, permitindo assim tarefas de data warehousing, como extração / transformação / carga (ETL), relatórios e análise de dados.
+Um mecanismo para impor estrutura em uma variedade de formatos de dados
+Acesso a arquivos armazenados diretamente no Apache HDFS ™ ou em outros sistemas de armazenamento de dados, como o Apache HBase ™ 
+Execução de consulta via Apache Tez ™, Apache Spark ™ ou MapReduce
+Linguagem procedural com HPL-SQL
+Recuperação de consulta sub-segundo via Hive LLAP, Apache YARN e Apache Slider.
+O Hive fornece funcionalidade SQL padrão, incluindo muitos dos recursos SQL: 2003 e SQL: 2011 posteriores para análise. 
+O SQL do Hive também pode ser estendido com o código do usuário por meio de funções definidas pelo usuário (UDFs), agregados definidos pelo usuário (UDAFs) e funções de tabela definidas pelo usuário (UDTFs).
+Eu
+EU SOU
+O Cloud Identity & Access Management (Cloud IAM) fornece aos administradores a capacidade de gerenciar os recursos da nuvem de maneira centralizada, controlando quem pode executar as ações em recursos específicos.
+No Cloud IAM, você concede acesso aos membros. Os membros podem ser dos seguintes tipos:
+conta do Google
+Conta de serviço
+Grupo do Google
+Domínio do G Suite
+Domínio do Cloud Identity
+Você não pode atribuir uma permissão ao usuário diretamente; em vez disso, você concede a eles um papel. Quando você concede uma função a um usuário, concede a eles todas as permissões que a função contém.
+Proxy Identificável
+O Google Cloud Identity-Proxy Proxy é uma ferramenta que ajuda a controlar o acesso, com base na identidade de um usuário e nos membros do grupo, a aplicativos em execução no Google Cloud Platform
+IoT Core
+O Google Cloud IoT Core é um serviço totalmente gerenciado que permite conectar, gerenciar e receber dados de forma fácil e segura de dispositivos conectados à Internet. Ele permite a utilização de outros serviços do Google Cloud para coletar, processar, analisar e visualizar dados da IoT em tempo real.
+Imagens
+Use imagens do sistema operacional para criar discos de inicialização para suas instâncias. Você pode usar um dos seguintes tipos de imagem:
+Imagens públicas são fornecidas e mantidas pelo Google, comunidades de código aberto e fornecedores terceirizados. Por padrão, todos os projetos têm acesso a essas imagens e podem usá-las para criar instâncias.
+Imagens personalizadas estão disponíveis apenas para o seu projeto. Você pode criar uma imagem personalizada a partir do ambiente local, importar discos de inicialização de discos virtuais e outras imagens. Em seguida, use a imagem personalizada para criar uma instância. Copie uma imagem para outra imagem usando a ferramenta gcloud
+Você pode usar a maioria das imagens públicas sem custo adicional, mas há algumas imagens premium que adicionam custos adicionais às suas instâncias. As imagens personalizadas que você importa para o Compute Engine não acrescentam custos às suas instâncias, mas incorrem em uma taxa de armazenamento de imagens enquanto você mantém sua imagem personalizada em seu projeto.
+Impala Apache
+O Apache Impala é o banco de dados analítico nativo e de código aberto do Apache Hadoop. O Impala é enviado pela Cloudera, MapR, Oracle e Amazon.
+
+
+O Impala eleva o nível de desempenho das consultas SQL no Apache Hadoop, mantendo a experiência familiar do usuário. Com o Impala, você pode consultar dados, armazenados no HDFS ou no Apache HBase - incluindo SELECT, JOIN e funções agregadas - em tempo real. Além disso, o Impala usa os mesmos metadados, sintaxe SQL (Hive SQL), driver ODBC e interface do usuário (Hue Beeswax) como Apache Hive, fornecendo uma plataforma familiar e unificada para consultas em tempo real ou orientadas por lote. (Por esse motivo, os usuários do Hive podem utilizar o Impala com pouca sobrecarga de configuração.)
+Tráfego de entrada
+O tráfego de ingresso é o tráfego de rede originado de fora dos roteadores da rede e segue para um destino dentro da rede. Por exemplo, uma mensagem de e-mail considerada como tráfego de ingresso terá origem em algum lugar fora da LAN de uma empresa, passará pela Internet e entrará na LAN da empresa antes de ser entregue ao destinatário.
+
+Grupos de instâncias
+Você pode criar e gerenciar grupos de instâncias de máquina virtual (VM) para que você não precise controlar individualmente cada instância em seu projeto. O Compute Engine oferece dois tipos diferentes de grupos de instâncias: grupos de instâncias gerenciados e não gerenciados.
+Um grupo de instâncias gerenciadas usa um modelo de instância para criar um grupo de instâncias idênticas. Você controla um grupo de instâncias gerenciadas como uma única entidade.
+Um grupo de instâncias gerenciadas por zona, que contém instâncias da mesma zona.
+Um grupo de instâncias gerenciadas regionais, que contém instâncias de várias zonas na mesma região.
+Grupos de instâncias não gerenciadas são grupos de instâncias diferentes que você pode adicionar e remover arbitrariamente do grupo. Grupos de instâncias não gerenciadas não oferecem escalonamento automático, suporte a atualizações contínuas ou o uso de modelos de instâncias, de modo que o Google recomenda a criação de grupos de instâncias gerenciados sempre que possível. Use grupos de instâncias não gerenciadas somente se você precisar aplicar o balanceamento de carga às configurações pré-existentes ou a grupos de instâncias diferentes.
+Se você precisar criar um grupo de instâncias diferentes que não seguem um modelo de instância, consulte Grupos de instâncias não gerenciadas.
+
+Internet Key Exchange (IKE)
+O Internet Key Exchange (IKE, às vezes, IKEv1 ou IKEv2, dependendo da versão) é o protocolo usado para configurar uma associação de segurança (SA) no conjunto IPsecprotocol. O IKE baseia-se no protocolo da Oakley e o ISAKMP.IKE usa certificados X.509 para autenticação - pré-compartilhados ou distribuídos usando DNS (preferencialmente com DNSSEC) - e uma troca de chaves Diffie-Hellman para configurar um segredo de sessão compartilhado a partir do qual chaves criptográficas são derivados.
+
+Em outras palavras, as técnicas para troca de Chaves no IPSEC ... lembre-se apenas que elas precisam de um segredo de sessão compartilhada 
+VPN IPsec
+Na computação, o IPsec (Internet Protocol Security) é um conjunto de protocolos de rede seguro que autentica e criptografa os pacotes de dados enviados por uma rede IPv4. O pacote IPv4 inicial foi desenvolvido com tão poucas provisões de segurança que a versão IP estava incompleta, aberta ou deixada para desenvolvimento de pesquisa adicional. O IPsec inclui protocolos para estabelecer autenticação mútua entre agentes no início de uma sessão e negociação de chaves criptográficas para uso durante a sessão. O IPsec pode proteger os fluxos de dados entre um par de hosts (host para host), entre um par de gateways de segurança (de rede para rede) ou entre um gateway de segurança e um host (de rede para host).
+Um túnel VPN conecta dois gateways VPN e serve como um meio virtual através do qual o tráfego criptografado é passado. Dois túneis VPN devem ser estabelecidos para criar uma conexão entre dois gateways VPN: Cada túnel define a conexão a partir da perspectiva de seu gateway, e o tráfego só pode passar quando o par de túneis é estabelecido. Um túnel de VPN na nuvem está sempre associado a um recurso de gateway da VPN de nuvem específico.
+
+mesmo
+O Istio facilita a criação de uma rede de serviços implementados com balanceamento de carga, autenticação de serviço a serviço, monitoramento e muito mais, com poucas ou nenhuma alteração de código no código de serviço. Você adiciona suporte Istio aos serviços, implantando um proxy sidecar especial em todo o ambiente que intercepta toda a comunicação de rede entre microsserviços e, em seguida, configura e gerencia o Istio usando sua funcionalidade de plano de controle, que inclui:
+Balanceamento automático de carga para tráfego HTTP, gRPC, WebSocket e TCP.
+Controle refinado do comportamento do tráfego com regras avançadas de roteamento, novas tentativas, failovers e injeção de falhas.
+Uma camada de política conectável e API de configuração que suporta controles de acesso, limites de taxa e cotas.
+Métricas, logs e rastreamentos automáticos para todo o tráfego dentro de um cluster, incluindo entrada e saída do cluster.
+Comunicação segura de serviço a serviço em um cluster com autenticação e autorização baseadas em identidade.
+
+J
+Caderno Jupyter
+O Jupyter Notebook é um aplicativo da Web de código aberto que permite criar e compartilhar documentos que contêm código ativo, equações, visualizações e texto narrativo. Os usos incluem: limpeza e transformação de dados, simulação numérica, modelagem estatística, visualização de dados, aprendizado de máquina e muito mais.
+Jenkins no GCP
+O Jenkins é um servidor de automação independente e de código aberto que pode ser usado para automatizar todos os tipos de tarefas relacionadas à criação, teste e distribuição ou implementação de software.
+
+O Jenkins pode ser instalado por meio de pacotes nativos do sistema, Docker ou até mesmo executado de forma independente por qualquer máquina com um Java Runtime Environment (JRE) instalado.
+
+https://jenkins.io/ 
+K
+Kafka
+O Apache Kafka é uma plataforma de streaming distribuída. Uma plataforma de streaming tem três recursos principais:
+Publique e inscreva-se em fluxos de registros, semelhantes a uma fila de mensagens ou sistema de mensagens corporativo.
+Armazene fluxos de registros de uma maneira durável e tolerante a falhas.
+Processe fluxos de registros conforme eles ocorrem.
+O Kafka é geralmente usado para duas grandes classes de aplicações:
+Construindo pipelines de dados de fluxo em tempo real que confiantemente obtêm dados entre sistemas ou aplicativos
+Construindo aplicativos de streaming em tempo real que transformam ou reagem aos fluxos de dados
+
+O mesmo que Pub / Sub e o GCP tem Nuvem confluente no GCP. O Confluent Cloud é um serviço de streaming totalmente gerenciado baseado no Apache Kafka. Liderada pelos criadores de Kafka - Jay Kreps, Neha Narkhede e Jun Rao - a Confluent fornece às empresas uma plataforma de streaming em tempo real baseada em um ecossistema confiável e escalável de produtos que colocam o Kafka em seu núcleo
+Serviço de gerenciamento de chaves
+O Cloud KMS é um serviço de gerenciamento de chaves hospedado na nuvem que permite gerenciar chaves criptográficas para seus serviços na nuvem da mesma maneira que você faz no local. Você pode gerar, usar, girar e destruir as chaves criptográficas AES256, RSA 2048, RSA 3072, RSA 4096, EC P256 e EC P384. O Cloud KMS é integrado ao Cloud IAM e ao Cloud Audit Logging para que você possa gerenciar permissões em chaves individuais e monitorar como elas são usadas. Use o Cloud KMS para proteger segredos e outros dados confidenciais que você precisa armazenar no Google Cloud Platform.
+Governadores
+O Kubernetes tornou-se a solução mais popular para gerenciar cargas de trabalho em contêiner em qualquer lugar. Fornecendo orquestração automatizada de contêineres e gerenciamento eficiente de máquinas, o Kubernetes melhora sua confiabilidade e reduz o tempo e os recursos atribuídos ao DevOps.
+O Kubernetes Engine suporta o formato comum do contêiner Docker.
+Com o GKE On-Prem, o Google oferecerá uma experiência consistente do Kubernetes para seus aplicativos no local e na nuvem. Usando o GKE On-Prem, você obtém uma maneira confiável, eficiente e segura de executar clusters do Kubernetes, em qualquer lugar
+Kubernetes Engine
+O Kubernetes Engine é um ambiente gerenciado e pronto para produção para a implantação de aplicativos em contêiner. Lançado em 2015, o Kubernetes Engine baseia-se na experiência do Google de executar serviços como o Gmail e o YouTube em contêineres há mais de 12 anos. O Kubernetes Engine permite que você trabalhe com o Kubernetes rapidamente, eliminando completamente a necessidade de instalar, gerenciar e operar seus próprios clusters do Kubernetes.
+O Google Kubernetes Engine é um poderoso gerenciador de clusters e sistema de orquestração para executar seus contêineres do Docker. O Kubernetes Engine agenda seus contêineres no cluster, os mantém saudáveis ​​e os gerencia automaticamente com base nos requisitos que você define (como CPU e memória). É baseado no Kubernetes, o sistema líder de orquestração de contêineres de código aberto que oferece flexibilidade para aproveitar a infraestrutura de nuvem local, híbrida ou pública.
+Serviço regional: https://cloud.google.com/kubernetes-engine/docs/concepts/regional-clusters 
+eu
+Levante e desloque
+Lift and shift é uma estratégia para mover um aplicativo ou operação de um ambiente para outro - sem recriar o aplicativo. Na abordagem de elevação e deslocamento, determinadas cargas de trabalho e tarefas podem ser movidas do armazenamento local para a nuvem, ou as operações de dados podem ser transferidas de um data center para outro.
+Migração ao vivo
+O Compute Engine oferece migração ao vivo para manter as instâncias da máquina virtual em execução mesmo quando ocorre um evento do sistema host, como uma atualização de software ou hardware. O Compute Engine Live migra suas instâncias em execução para outro host na mesma zona, em vez de exigir que suas VMs sejam reinicializadas. Isso permite que o Google realize a manutenção que é essencial para manter a infraestrutura protegida e confiável sem interromper nenhuma de suas VMs.
+A migração ao vivo mantém suas instâncias em execução durante:
+Manutenção de infra-estrutura regular e upgrades.
+Manutenção de redes e redes elétricas nos centros de dados.
+Hardware com falha, como memória, CPU, placas de interface de rede, discos, energia e assim por diante. Isso é feito com base no melhor esforço; se um hardware falhar completamente ou impedir a migração ao vivo, a VM trava e reinicia automaticamente e um erro de host é registrado.
+Atualizações do sistema operacional e do BIOS do host.
+Atualizações relacionadas à segurança, com a necessidade de responder rapidamente.
+Alterações na configuração do sistema, incluindo a alteração do tamanho da partição raiz do host, para armazenamento da imagem do host e dos pacotes.
+A migração ao vivo não altera nenhum atributo ou propriedade da própria VM. O processo de migração ao vivo apenas transfere uma VM em execução de uma máquina host para outra máquina host na mesma zona. Todas as propriedades e atributos da VM permanecem inalterados, incluindo endereços IP internos e externos, metadados de instância, dados e volumes de armazenamento em block, estado do SO e do aplicativo, configurações de rede, conexões de rede e assim por diante.
+Balanceamento de carga 
+O balanceamento de carga do Google Cloud Platform permite distribuir recursos de computação com balanceamento de carga em uma ou várias regiões, atender aos seus requisitos de alta disponibilidade, colocar seus recursos em um único IP anycast e aumentar ou diminuir seus recursos com o escalonamento automático inteligente. O Cloud Load Balancing é totalmente integrado ao Cloud CDN para uma entrega otimizada de conteúdo.
+Usando o Cloud Load Balancing, você pode veicular o conteúdo o mais próximo possível de seus usuários, em um sistema que possa responder a mais de 1 milhão de consultas por segundo. O Cloud Load Balancing é um serviço gerenciado totalmente distribuído, definido por software. Não é baseado em instância ou dispositivo, portanto, você não precisa gerenciar uma infraestrutura de balanceamento de carga física.
+O balanceamento de carga global do Google é implementado totalmente em software, feito pelo Google Front Ends (GFEs). Os GFEs são distribuídos globalmente e o tráfego de balanceamento de carga é sincronizado entre si, trabalhando com outros sistemas definidos pelo software e com o plano de controle global do Google.
+O balanceamento de carga regional do Google é implementado totalmente em software. Suas instâncias estão em uma única região do GCP e o tráfego é distribuído para instâncias em uma única região.
+https://www.ianlewis.org/en/google-cloud-platform-http-load-balancers-explaine 
+http://www.google.com/intl/pt 
+
+Tipos de balanceadores de carga:	
+
+Balanceador de carga
+Tipo de tráfego
+Global / Regional
+Externo interno
+Portas externas para balanceamento de carga
+HTTP (S)
+HTTP ou HTTPS
+Global
+Externo
+HTTP em 80 ou 8080; HTTPS em 443
+Proxy SSL
+TCP com descarregamento de SSL
+Global
+Externo
+25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1883 e 5222
+Proxy TCP
+TCP sem descarregamento de SSL. Não preserva os endereços IP do cliente
+Global
+Externo
+25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1883, 5222
+Rede TCP / UDP
+TCP / UDP sem descarregamento de SSL. Preserva os endereços IP do cliente.
+Regional
+Externo
+Qualquer
+TCP / UDP Interno
+TCP ou UDP
+Regional
+interno
+Qualquer
+
+
+
+Http (s) de balanceamento de carga
+ 
+Um balanceador de carga HTTP completo é estruturado da seguinte maneira:
+Uma regra de encaminhamento global direciona solicitações recebidas para um proxy HTTP de destino.
+O proxy HTTP de destino verifica cada solicitação em um mapa de URL para determinar o serviço de back-end apropriado para a solicitação.
+O serviço de back-end direciona cada solicitação para um back-end apropriado com base na capacidade de serviço, na zona e na integridade da instância de seus back-ends conectados. A integridade de cada instância de back-end é verificada usando uma verificação de integridade de HTTP, uma verificação de integridade de HTTPS ou uma verificação de integridade de HTTP / 2. Se o serviço de back-end estiver configurado para usar uma verificação de integridade HTTPS ou HTTP / 2, a solicitação será criptografada a caminho da instância de back-end.
+Sessões entre o balanceador de carga e a instância podem usar o protocolo HTTP, HTTPS ou HTTP / 2. Se você usar HTTPS ou HTTP / 2, cada instância nos serviços de back-end deverá ter um certificado SSL.
+HTTPS
+Um balanceador de carga HTTPS usa um proxy HTTPS de destino em vez de um proxy HTTP de destino.
+Um balanceador de carga HTTPS requer pelo menos um certificado SSL assinado instalado no proxy HTTPS de destino para o balanceador de carga.
+A sessão SSL do cliente é finalizada no balanceador de carga.
+Os balanceadores de carga HTTPS suportam o protocolo da camada de transporte QUIC.
+Balanceamento de carga interno
+O Balanceamento de Carga Interno permite que você execute e dimensione seus serviços atrás de um endereço IP de balanceamento de carga privado que seja acessível somente a instâncias internas à sua Virtual Private Cloud (VPC).
+Rede de balanceamento de carga
+Use o balanceamento de carga de rede para equilibrar a carga em seus sistemas com base nos dados do protocolo IP de entrada, como endereço, porta e tipo de protocolo.
+O balanceamento de carga de rede usa regras de encaminhamento que apontam para pools de destino, que listam as instâncias disponíveis para balanceamento de carga e definem qual tipo de verificação de integridade deve ser executada nessas instâncias. Consulte Configurando o balanceamento de carga de rede para mais informações.
+O balanceamento de carga de rede é um balanceador de carga regional sem proxy. Você pode usá-lo para balancear a carga do tráfego UDP e o tráfego TCP e SSL em portas que não são suportadas pelos balanceadores de carga do proxy SSL e do proxy TCP.
+Um balanceador de carga de rede é um balanceador de carga de passagem direta (retorno direto do servidor (DSR), roteamento direto). Não faz conexões proxy de clientes, ou seja, (link):
+Os pacotes IP são encaminhados sem modificação para a VM, não há conversão de endereço ou porta
+A VM acha que o IP do balanceador de carga é um dos seus próprios IPs
+É rápido
+Carregar balanceamento de proxy SSL
+O balanceamento de carga proxy do Google Cloud SSL encerra as conexões SSL (TLS) do usuário na camada de balanceamento de carga e, em seguida, equilibra as conexões entre suas instâncias usando os protocolos SSL ou TCP. O proxy SSL na nuvem destina-se ao tráfego não HTTP (S). Para o tráfego HTTP (S), recomenda-se o balanceamento de carga HTTP (S).
+O balanceamento de carga proxy SSL oferece suporte a endereços IPv4 e IPv6 para o tráfego do cliente. As solicitações IPv6 do cliente são finalizadas na camada de balanceamento de carga e, em seguida, intermediadas por proxy no IPv4 para seus back-ends. Serviço de balanceamento de carga que pode ser implantado globalmente. Você pode implantar suas instâncias em várias regiões, e o balanceador de carga direciona automaticamente o tráfego para a região mais próxima que tem capacidade.
+Carregar balanceamento de proxy TCP
+O balanceamento de carga proxy de TCP do Google Cloud Platform (GCP) permite que você use um único endereço IP para todos os usuários em todo o mundo. O balanceamento de carga do proxy TCP do GCP direciona automaticamente o tráfego para as instâncias mais próximas do usuário.
+Observe que o balanceamento de carga global requer o uso do nível Premium de níveis de serviço de rede, que é o nível padrão. Caso contrário, o balanceamento de carga será tratado regionalmente.
+O balanceamento de carga proxy de nuvem TCP destina-se ao tráfego não HTTP. Para o tráfego HTTP, o Balanceamento de Carga HTTP é recomendado. Para o tráfego SSL com proxy, use o balanceamento de carga proxy SSL.
+O balanceamento de carga de proxy TCP oferece suporte a endereços IPv4 e IPv6 para o tráfego do cliente. As solicitações IPv6 do cliente são finalizadas na camada de balanceamento de carga e, em seguida, intermediadas por proxy no IPv4 para seus back-ends.
+M
+Mecanismo de aprendizado de máquina
+O Cloud Machine Learning Engine é um serviço gerenciado que permite criar facilmente modelos de aprendizado de máquina com a poderosa estrutura do TensorFlow. Ele fornece serviços escalonáveis ​​de treinamento e previsão que funcionam em conjuntos de dados de grande escala.
+O Cloud ML Engine oferece serviços de treinamento e previsão, que podem ser usados ​​juntos ou individualmente. O Cloud ML Engine é um serviço comprovado usado pelas empresas para resolver problemas que vão desde identificar nuvens em imagens de satélite, garantir segurança alimentar e responder quatro vezes mais rápido a emails de clientes.
+O TensorFlow, o scikit-learn e o XGBoost hospedam seus modelos treinados no Cloud ML Engine para que você possa enviar solicitações de previsão e gerenciar seus modelos e trabalhos usando os serviços do GCP.
+Maglev 
+Sistemas distribuídos para balanceamento de carga de rede
+Plugin Maven App Engine
+Armazenamento de memória 
+O Cloud Memorystore fornece um serviço de armazenamento de dados na memória totalmente gerenciado para criar caches de aplicativos ou fornecer acesso a dados com menos de milissegundos. O Cloud Memorystore é um serviço Redis escalável e altamente disponível, totalmente gerenciado pelo Google.
+Aplicativo móvel
+O aplicativo para dispositivos móveis do Google Cloud Console oferece uma maneira conveniente de descobrir, entender e responder a problemas de produção. Monitore e faça alterações nos recursos do Cloud Platform a partir do seu dispositivo iOS e Android. Gerencie recursos do Cloud Platform, como projetos, faturamento, aplicativos do Google App Engine e VMs do Google Compute Engine. Receba e responda a alertas para ajudar você a resolver rapidamente os problemas que afetam a produção.
+N
+Linguagem Natural
+O Google Cloud Natural Language oferece um poderoso entendimento da linguagem natural como uma API fácil de usar. Essa API permite que os desenvolvedores de aplicativos respondam às seguintes perguntas:
+1) Quais são as entidades referidas no bloco de texto ?; 
+2) Qual é o sentimento (positivo ou negativo) para este bloco de texto ?; 
+3) Qual é a linguagem deste bloco de texto ?; e
+4) Qual é a sintaxe deste bloco de texto (incluindo partes das árvores de fala e dependência)? Os usuários podem chamar essa API transmitindo um bloco de texto ou fazendo referência a um documento no Google Cloud Storage.
+Perto da linha
+O Nearline e o Coldline oferecem armazenamento de arquivamento de altíssimo custo, altamente durável e altamente disponível. O Coldline é ideal para armazenamento a frio - dados que sua empresa espera tocar menos de uma vez por ano. Para um armazenamento mais quente, escolha Nearline: dados que você espera acessar menos de uma vez por mês, mas possivelmente várias vezes ao longo do ano. Ambas as opções estão disponíveis em todas as regiões do GCP e fornecem velocidades de acesso de sub-segundo incomparáveis ​​com uma API consistente.
+Níveis de serviço de rede
+Níveis de Serviço de Rede: os Níveis de Serviço de Rede permitem selecionar diferentes redes de qualidade (níveis) para o tráfego de saída para a Internet: o Nível Padrão utiliza principalmente provedores de trânsito de terceiros enquanto o Nível Premium aproveita o backbone privado e a superfície de peering do Google para saída.
+O
+OLAP (banco de dados)
+O processamento analítico on-line, ou OLAP, é uma abordagem para responder a consultas analíticas multidimensionais (MDA) rapidamente na computação. [1] O OLAP faz parte da categoria mais ampla de business intelligence, que também engloba bancos de dados relacionais, redação de relatórios e data mining. [2] As aplicações típicas do OLAP incluem relatórios de negócios para vendas, marketing, relatórios gerenciais, gerenciamento de processos de negócios (BPM), orçamentação e previsão, relatórios financeiros e áreas similares, com novas aplicações surgindo, como a agricultura [4]. O termo OLAP foi criado como uma pequena modificação do tradicional OLTP (online transaction processing).
+OLTP (banco de dados)
+Sistemas (DBMS) que gerenciam aplicativos orientados a transações, geralmente para entrada de dados e processamento de transações de recuperação.
+Oozie
+Oozie é um sistema de agendamento de fluxo de trabalho para gerenciar trabalhos do Apache Hadoop.
+Os jobs do Oozie Workflow são Directed Acyclical Graphs (DAGs) de ações.
+As tarefas do Oozie Coordinator são tarefas recorrentes do Oozie Workflow acionadas por tempo (frequência) e disponibilidade de dados.
+O Oozie é integrado com o restante da pilha do Hadoop suportando vários tipos de tarefas do Hadoop prontas para uso (como redução de mapa Java, redução de mapa de fluxo, Pig, Hive, Sqoop e Distcp), bem como tarefas específicas do sistema Programas Java e scripts de shell).
+Oozie é um sistema escalonável, confiável e extensível.
+
+Organização
+O recurso Organização representa uma organização (por exemplo, uma empresa) e é o nó raiz na hierarquia de recursos do GCP. O recurso Organização é o ancestral hierárquico dos recursos e pastas do projeto. As políticas de controle de acesso do IAM aplicadas ao recurso Organização aplicam-se a toda a hierarquia em todos os recursos da organização.
+P
+Paxos
+Paxos é uma família de protocolos para resolver consenso em uma rede de processadores não confiáveis. Consenso é o processo de concordar com um resultado entre um grupo de participantes. Esse problema se torna difícil quando os participantes ou seu meio de comunicação podem experimentar falhas.
+A família de protocolos Paxos inclui um espectro de compensações entre o número de processadores, o número de atrasos de mensagens antes de aprender o valor acordado, o nível de atividade de participantes individuais, o número de mensagens enviadas e os tipos de falhas.
+Disco permanente
+Os discos permanentes estão disponíveis como unidades de disco rígido padrão (HDD) ou unidades de estado sólido (SSD). Para obter informações mais gerais sobre discos permanentes e os tipos de discos permanentes disponíveis, leia a visão geral dos discos permanentes.
+soluções de armazenamento diferentes disponíveis para suas instâncias do Compute Engine.
+Disco persistente padrão zonal e disco persistente Zonal SSD: Armazenamento em bloco eficiente e confiável.
+Disco permanente regional e disco permanente SSD regional: Armazenamento de bloco regional replicado em duas zonas.
+SSD local: Armazenamento de bloco local transitório de alto desempenho.
+Cubos de armazenamento em nuvem: armazenamento de objetos acessível.
+Se você não tiver certeza de qual opção usar, a solução mais comum é adicionar um disco permanente à sua instância.
+Você pode anexar até 16 (128 em beta) discos permanentes independentes à maioria das instâncias, mas instâncias com tipos de máquinas com núcleo compartilhado ou tipos de máquina personalizados com menos de 3,75 GB de memória são limitadas a um máximo de 4 discos permanentes.
+Se você anexar um disco permanente a várias instâncias, todas essas instâncias deverão anexar o disco permanente no modo somente leitura. Não é possível anexar o disco permanente a várias instâncias no modo de leitura / gravação. Se você precisar compartilhar espaço de armazenamento dinâmico entre várias instâncias, conecte suas instâncias ao Cloud Storage ou crie um servidor de arquivos de rede.
+Os discos persistentes regionais têm qualidades de armazenamento semelhantes aos discos permanentes padrão e SSD. No entanto, os discos regionais persistentes fornecem armazenamento durável e replicação de dados entre duas zonas na mesma região; você pode fazer o failover de sua carga de trabalho em execução em discos persistentes regionais para outra zona usando o comando force-attach. O comando force-attach permite que você conecte o disco permanente regional a uma instância da VM em espera, mesmo que o disco não possa ser desanexado da VM original devido à sua indisponibilidade.
+Os SSDs locais são fisicamente conectados ao servidor que hospeda sua instância de máquina virtual. Os SSDs locais têm maior taxa de transferência e menor latência do que os discos permanentes padrão ou os discos permanentes SSD. Os dados que você armazena em um SSD local persistem apenas até que a instância seja interrompida ou excluída. Cada SSD local tem 375 GB de tamanho, mas você pode anexar até oito dispositivos SSD locais para 3 TB de espaço total de armazenamento SSD local por instância.
+Máquina virtual preemptiva 
+VMs preemptivas são instâncias de computação altamente acessíveis e de curta duração, adequadas para tarefas em lote e cargas de trabalho tolerantes a falhas. As VMs preemptivas oferecem os mesmos tipos e opções de máquina que as instâncias de computação regulares e duram até 24 horas. Se seus aplicativos forem tolerantes a falhas e puderem suportar possíveis preempções de instância, as instâncias preemptivas poderão reduzir significativamente os custos do Google Compute Engine.
+Projetos, Host e Compartilhado
+Em um cenário de VPC compartilhado, o projeto do host contém uma rede compartilhada comum de VPC utilizável por VMs em projetos de serviço. Com o Shared VPC, os anexos da VLAN e os Cloud Routers para uma interconexão precisam ser criados apenas no projeto de host do Shared VPC. Como as VMs nos projetos de serviço usam a rede VPC Compartilhada, os Administradores de Projetos de Serviços não precisam criar outros anexos de VLAN ou Cloud Routers nos próprios projetos de serviço.
+Veja também VCP compartilhada
+Servidor proxy
+Em redes de computadores, um servidor proxy é um servidor (um sistema de computador ou um aplicativo) que atua como um intermediário para solicitações de clientes que buscam recursos de outros servidores.Um cliente se conecta ao servidor proxy, solicitando algum serviço, como um arquivo, conexão, página da web ou outro recurso disponível em um servidor diferente e o servidor proxy avalia a solicitação como uma maneira de simplificar e controlar sua complexidade. Proxies foram inventados para adicionar estrutura e encapsulamento aos sistemas distribuídos. [2] Atualmente, a maioria dos proxies são proxies da web, facilitando o acesso ao conteúdo na World Wide Web, fornecendo anonimato e podendo ser usados ​​para contornar o bloqueio de endereços IP.
+Um servidor proxy que transmite solicitações e respostas não modificadas é geralmente chamado de gateway ou, às vezes, de proxy de encapsulamento.
+
+Pub / Sub, Cloud Pub / Sub
+O Google Cloud Pub / Sub foi projetado para fornecer mensagens assíncronas confiáveis ​​entre muitos e muitos entre aplicativos. Os aplicativos do Publisher podem enviar mensagens para um "tópico" e outros aplicativos podem se inscrever nesse tópico para receber as mensagens. Ao separar remetentes e destinatários, o Google Cloud Pub / Sub permite que os desenvolvedores se comuniquem entre aplicativos escritos de forma independente.
+Q
+Protocolo QUIC
+O balanceamento de carga HTTPS oferece suporte ao protocolo QUIC em conexões entre o balanceador de carga e os clientes. O QUIC é um protocolo de camada de transporte que fornece controle de congestionamento semelhante ao TCP e segurança equivalente a SSL / TLS para HTTP / 2, com desempenho aprimorado. O QUIC permite uma inicialização mais rápida da conexão do cliente, elimina o bloqueio da linha de frente em fluxos multiplexados e suporta a migração de conexão quando o endereço IP do cliente é alterado.
+R
+RDP
+O protocolo RDP (Remote Desktop Protocol) é um protocolo proprietário desenvolvido pela Microsoft, que fornece ao usuário uma interface gráfica para se conectar a outro computador por meio de uma conexão de rede. O usuário emprega o software cliente RDP para essa finalidade, enquanto o outro computador deve executar o software do servidor RDP.
+
+Existem clientes para a maioria das versões do Microsoft Windows (incluindo o Windows Mobile), Linux, Unix, macOS, iOS, Android e outros sistemas operacionais. Servidores RDP são construídos em sistemas operacionais Windows; um servidor RDP para Unix e OS X também existe. Por padrão, o servidor escuta na porta TCP 3389 e na porta UDP 3389.
+Recursos zonais regionais globais
+Os recursos do Google Cloud Platform (GCP) estão hospedados em vários locais em todo o mundo. Esses locais são compostos de regiões e zonas dentro dessas regiões. Colocar recursos em diferentes zonas em uma região fornece isolamento de muitos tipos de falhas de infraestrutura, hardware e software. Colocar recursos em diferentes regiões fornece um grau ainda maior de independência de falha. Isso permite que você projete sistemas robustos com recursos espalhados por diferentes domínios de falha.
+Gerente de Recursos
+O Google Cloud Platform fornece contêineres de recursos, como Organizações, Pastas e Projetos, que permitem agrupar e organizar hierarquicamente outros recursos do Cloud Platform. Essa organização hierárquica permite gerenciar facilmente aspectos comuns de seus recursos, como controle de acesso e configurações. O serviço Gerenciador de recursos permite gerenciar programaticamente esses recipientes de recursos.
+Papéis
+Você pode conceder permissões concedendo funções a um usuário, grupo ou conta de serviço.
+Papéis primitivos, que incluem os papéis de proprietário, editor e visualizador que existiam antes da introdução do Cloud IAM
+Funções predefinidas, que fornecem acesso granular para um serviço específico e são gerenciadas pelo GCP
+Funções personalizadas, que fornecem acesso granular de acordo com uma lista de permissões especificadas pelo usuário
+https://cloud.google.com/iam/docs/granting-changing-revoking-access 
+Discos RAM
+As instâncias do Google Compute Engine têm memória de classe empresarial de alto desempenho que você pode usar para executar seus aplicativos. Você pode alocar parte dessa memória para criar um disco RAM com latência excepcionalmente baixa e alta taxa de transferência. Os discos RAM funcionam bem quando o aplicativo espera uma estrutura de sistema de arquivos e não pode simplesmente armazenar seus dados na memória do sistema. Discos RAM sozinhos não fornecem nenhuma redundância ou flexibilidade de armazenamento, por isso é melhor usar discos RAM em combinação com outras opções de armazenamento de instância.
+Discos RAM compartilham memória de instância com seus aplicativos. Se suas instâncias não tiverem memória suficiente para conter discos RAM e seus aplicativos, crie instâncias com tipos de máquinas de alta memória ou atualize suas instâncias existentes para adicionar mais memória.
+Roteador Google Cloud Router 
+O Google Cloud Router permite atualizações de rota do protocolo BGP (Border Gateway Protocol) dinâmica entre sua rede VPC e sua rede que não é do Google.
+
+RPO: objetivo do ponto de recuperação 
+O RPO (Recovery Point Objective, objetivo de ponto de recuperação) descreve o intervalo de tempo que pode passar durante uma interrupção antes que a quantidade de dados perdidos durante esse período exceda o limite máximo permitido ou “tolerância”.
+RTO: objetivo do tempo de recuperação 
+O RTO é a resposta para a pergunta: "Quanto tempo demorou para recuperar após a notificação da interrupção do processo de negócios?"
+RTO designa a quantidade de “tempo real” que MAIO pode passar sem grandes danos entre a interrupção e a restauração de operações comerciais normais.
+
+S
+Consulta Grande de Detecção Automática de Esquema
+A detecção automática do esquema está disponível quando você carrega dados no BigQuery e quando você consulta uma fonte de dados externa.
+Quando a detecção automática está ativada, o BigQuery inicia o processo de inferência selecionando um arquivo aleatório na fonte de dados e examinando até 100 linhas de dados para usar como amostra representativa. O BigQuery examina cada campo e tenta atribuir um tipo de dados a esse campo com base nos valores da amostra.
+SDK
+O Google Cloud SDK é um conjunto de ferramentas que você pode usar para gerenciar recursos e aplicativos hospedados no Google Cloud Platform. Estes incluem as ferramentas de linha de comando gcloud, gsutil e bq. A ferramenta de linha de comando gcloud é baixada junto com o Cloud SDK. Um guia completo sobre o gcloud pode ser encontrado em Visão geral do gcloud.
+
+
+Além disso, a referência do gcloud documenta toda a funcionalidade da CLI do gcloud.
+Você pode baixar as Bibliotecas do Cloud Client para os idiomas suportados.
+Gerenciamento secreto com o Cloud KMS
+Os aplicativos geralmente exigem acesso a pequenos fragmentos de dados confidenciais no momento da criação ou da execução. Esses dados são freqüentemente chamados de segredos. Os segredos são semelhantes em conceito aos arquivos de configuração, mas geralmente são mais sensíveis, pois podem conceder acesso a dados adicionais, como dados do usuário.
+Os aplicativos geralmente exigem acesso a pequenos fragmentos de dados confidenciais no momento da criação ou da execução. Esses dados são freqüentemente chamados de segredos. Os segredos são semelhantes em conceito aos arquivos de configuração, mas geralmente são mais sensíveis, pois podem conceder acesso a dados adicionais, como dados do usuário.
+Este tópico descreve alguns dos principais conceitos de gerenciamento secreto. Ele também fornece orientações sobre como você pode usar o serviço de gerenciamento de chaves do Google Cloud para gerenciamento secreto.
+Nota: o Cloud KMS não armazena segredos diretamente. Ele pode criptografar segredos que você armazena em outro lugar.
+Existem várias opções para gerenciar segredos. Algumas formas comuns de armazenar segredos incluem o uso de:
+Código ou binários
+Um gerenciador de implementação
+Um volume secreto em um contêiner
+Metadados de uma VM
+Um sistema de armazenamento
+Aplicação de chave de segurança
+A verificação em duas etapas com uma chave de segurança usa criptografia para fornecer uma verificação bidirecional: certifica-se de que você está efetuando login no serviço com o qual registrou originalmente a chave de segurança, e o serviço verifica se essa é a chave de segurança correta também. Isso fornece proteção superior à verificação de mensagens de texto.
+Os administradores do G Suite, do Google Cloud Platform e do Cloud Identity e os usuários inscritos no Advanced Protection Program têm acesso a dados e sistemas confidenciais. Embora as chaves de segurança sejam recomendadas para todos os usuários para uma proteção mais forte contra phishing, a imposição de chaves de segurança para administradores e outros usuários de alto valor deve ser a primeira etapa.
+
+
+As chaves de segurança do Titan são construídas com um elemento seguro que inclui o firmware criado pelo Google para verificar a integridade da chave e implementar o FIDO Um gateway de VPN virtual em execução no GCP gerenciado pelo Google, usando uma configuração especificada em seu projeto. Cada gateway do Cloud VPN é um recurso regional que usa um endereço IP externo regional. Um gateway do Cloud VPN pode se conectar a um gateway de VPN local ou outro gateway do Cloud VPN. Os recursos funcionam com muitos dispositivos, navegadores e serviços populares. As chaves de segurança do Titan estão disponíveis na Google Store
+Scanner de segurança
+O Google Cloud Security Scanner é um verificador de segurança de aplicativos da Web que permite que os desenvolvedores verifiquem facilmente um subconjunto de vulnerabilidades comuns de aplicativos da web em sites criados no App Engine e no Compute Engine.
+Console Serial
+Ative o acesso interativo ao console serial de uma instância para depurar problemas de inicialização e de rede, solucionar problemas de instâncias com problemas, interagir com o GRUB Unified Bootloader (GRUB) e executar outras tarefas de solução de problemas.
+Uma instância de máquina virtual possui quatro portas seriais virtuais. Interagir com uma porta serial é semelhante ao uso de uma janela de terminal, em que a entrada e saída é inteiramente em modo de texto e não há interface gráfica ou suporte ao mouse. O sistema operacional da instância, o BIOS e outras entidades no nível do sistema geralmente gravam a saída nas portas seriais e podem aceitar entradas como comandos ou respostas a prompts. Normalmente, essas entidades no nível do sistema usam a primeira porta serial (porta 1) e a porta serial 1 é geralmente chamada de console serial.
+Por padrão, você pode chamar o método getSerialPortOutput para ler as informações que sua instância gravou em suas portas seriais, mas não pode gravar informações para sua instância ler. No entanto, se você tiver problemas ao acessar sua instância por SSH ou precisar solucionar problemas de uma instância que não esteja totalmente inicializada, poderá ativar o acesso interativo ao console serial, que permite conectar e interagir com qualquer uma das portas seriais da sua instância. Por exemplo, você pode executar comandos diretamente e responder a prompts na porta serial.
+Contas de serviço
+Uma conta de serviço é uma identidade que uma instância ou um aplicativo pode usar para executar solicitações de API em seu nome. Essa identidade é usada para identificar aplicativos em execução nas suas instâncias de máquina virtual para outros serviços do Google Cloud Platform. Por exemplo, se você escrever um aplicativo que leia e grave arquivos no Google Cloud Storage, ele deve primeiro se autenticar na API do Google Cloud Storage. Você pode criar uma conta de serviço e conceder acesso à conta de serviço à Cloud Storage API. Em seguida, você atualizaria o código do seu aplicativo para passar as credenciais da conta de serviço para a Cloud Storage API. Seu aplicativo autentica sem problemas na API sem incorporar nenhuma chave secreta ou credencial de usuário em sua instância, imagem ou código do aplicativo.
+Você pode usar contas de serviço para criar instâncias e outros recursos. Se você criar um recurso usando uma conta de serviço, esse recurso será propriedade da conta de serviço de criação. Você também pode alterar a conta de serviço de uma instância existente.
+
+Acessar Escopos
+Os escopos de acesso são o método legado de especificar permissões para sua instância. Antes da existência de funções do IAM, os escopos de acesso eram o único mecanismo para conceder permissões a contas de serviço. Embora eles não sejam a principal forma de conceder permissões agora, você ainda deve configurar os escopos de acesso ao configurar uma instância para ser executada como uma conta de serviço.
+Além de definir escopos de acesso, você deve conceder as funções corretas do IAM a uma conta de serviço para determinar o nível de acesso que a conta possui.
+Padrão: https://www.googleapis.com/auth/cloud-platform 
+Chaves da conta de serviço
+Para permitir que um usuário gerencie chaves de conta de serviço, conceda a função Administrador de Chave de Conta de Serviço (roles / iam.serviceAccountKeyAdmin)
+Para usar uma conta de serviço fora do Google Cloud Platform (em outras plataformas ou no local), você deve estabelecer a identidade da conta de serviço. Pares de chaves públicas / privadas permitirão que você faça isso.
+Você pode criar uma chave de conta de serviço usando o Console do GCP, a ferramenta gcloud, o método serviceAccounts.keys.create () ou uma das bibliotecas do cliente.
+Quando você cria uma chave, seu novo par de chaves pública / privada é gerado e baixado para sua máquina; serve como a única cópia da chave privada. Você é responsável por armazenar a chave privada com segurança. Tome nota de sua localização e certifique-se de que a chave esteja acessível ao seu aplicativo; ele precisa da chave para fazer chamadas de API autenticadas.
+Você pode listar as chaves da conta de serviço para uma conta de serviço usando o Console do GCP, a ferramenta gcloud, o método serviceAccount.keys.list () ou uma das bibliotecas do cliente. 
+
+
+VCP compartilhada
+A VPC compartilhada permite que uma organização conecte recursos de vários projetos a uma rede VPC comum, para que eles possam se comunicar de maneira segura e eficiente usando IPs internos dessa rede. Quando você usa o Shared VPC, designa um projeto como um projeto de host e anexa um ou mais outros projetos de serviço a ele. As redes VPC no projeto host são chamadas de redes compartilhadas VPC. Recursos elegíveis de projetos de serviço podem usar sub-redes na rede VPC compartilhada.
+A VPC compartilhada permite que os administradores da organização deleguem responsabilidades administrativas, como a criação e o gerenciamento de instâncias, para os Administradores de Projetos de Serviços, enquanto mantêm o controle centralizado dos recursos de rede, como sub-redes, rotas e firewalls. 
+Concha
+O Google Cloud Shell fornece acesso via linha de comando aos recursos da nuvem diretamente do seu navegador. Você pode gerenciar facilmente seus projetos e recursos sem ter que instalar o Google Cloud SDK ou outras ferramentas no seu sistema. Com o Cloud Shell, a ferramenta de linha de comando gcloud do Cloud SDK e outros utilitários de que você precisa estão sempre disponíveis, atualizados e totalmente autenticados quando você precisa deles.
+Scripts de desligamento
+Crie e execute scripts de desligamento que executam comandos imediatamente antes de uma instância ser encerrada ou reiniciada. Isso é útil quando você usa scripts automatizados para iniciar e encerrar instâncias, permitindo que as instâncias limpem ou executem tarefas, como a exportação de registros ou a sincronização com outros sistemas.
+Os scripts de desligamento são especialmente úteis para instâncias em um grupo de instâncias gerenciadas com um autoescalador. Se o autoescalador encerrar uma instância no grupo, o script de desligamento será executado antes que a instância pare e o script de desligamento execute as ações definidas por você. O script é executado durante o período de desligamento limitado antes que a instância seja interrompida. Por exemplo, seu script de desligamento pode copiar dados processados ​​para o Cloud Storage ou fazer backup de qualquer registro.
+Os scripts de desligamento funcionam de maneira muito semelhante aos scripts de inicialização. Grande parte da documentação para scripts de inicialização também se aplica a scripts de desligamento.
+Pias (Grupos de registros do Stackdriver)
+Para criar um coletor de exportação, clique no botão Criar Exportação na parte superior da página Exportações de Logs. Você também pode acessar esse botão na parte superior da página Visualizador de registros.
+Instantâneos
+Os instantâneos são diferentes das imagens públicas e das imagens personalizadas, que são usadas principalmente para criar instâncias ou configurar modelos de instância. Os instantâneos são úteis para backup periódico dos dados em seus discos permanentes e você pode usar instantâneos para criar uma imagem personalizada quando necessário. Você pode criar instantâneos de discos permanentes, mesmo quando estiverem conectados a instâncias em execução.
+Os instantâneos são incrementais e compactados automaticamente, para que você possa criar instantâneos regulares em um disco permanente com mais rapidez e a um custo muito menor do que se você criasse regularmente uma imagem completa do disco.
+
+https://cloud.google.com/compute/docs/disks/restore-and-delete-snapshots  
+MEIAS
+Um servidor SOCKS é um servidor proxy de finalidade geral que estabelece uma conexão TCP com outro servidor em nome de um cliente e, em seguida, roteia todo o tráfego entre o cliente e o servidor. Ele funciona para qualquer tipo de protocolo de rede em qualquer porta. O SOCKS Versão 5 adiciona suporte adicional para segurança e UDP.
+Repositórios de origem
+O Cloud Source Repositories fornece controle de versão do Git para dar suporte ao desenvolvimento colaborativo de qualquer aplicativo ou serviço, incluindo aqueles que são executados no App Engine e no Compute Engine.
+Chave inglesa, Cloud Spanner
+O Cloud Spanner é um serviço de banco de dados relacional totalmente gerenciado e de missão crítica. Ele é projetado para fornecer um banco de dados de processamento de transações on-line escalável (OLTP) com alta disponibilidade e consistência forte em escala global.
+
+Diferenças entre o Cloud Spanner e o CloudSQL
+A principal diferença é que o Spanner é escalonável horizontalmente, enquanto o Cloud SQL não é.
+para o Cloud SQL, você pode selecionar o tipo de máquina, o tipo de disco rígido e o tamanho, a região e a zona. A taxa de transferência máxima de dados através da rede é de 2000 MB / s. Você está limitado a ter tudo em um servidor, então é basicamente o seu limite.
+A eficiência da chave inglesa depende da outra mão no número de nós que são usados. com cada nó a taxa de transferência aumenta para que você possa escalonar horizontalmente apenas adicionando nós (basta alterar um dígito nas configurações, isso é tudo. Cada nó tem 2 TB de armazenamento e possibilidade de 10000 QPS de leituras ou 2000 QPS de gravações.
+A velocidade também depende do esquema e da modelagem do banco de dados.
+Quanto ao preço, o Spanner é mais caro. Com o CloudSQL, depende do tipo de instância, portanto, é possível ajustar com base nas necessidades.
+Detalhes DBA CAP
+Spark - Apache Spark
+O Apache Spark é um sistema de computação em cluster rápido e de uso geral. Ele fornece APIs de alto nível em Java, Scala, Python e R e um mecanismo otimizado que suporta gráficos gerais de execução. Ele também suporta um conjunto avançado de ferramentas de nível superior, incluindo o Spark SQL para SQL e o processamento de dados estruturados, MLlib para aprendizado de máquina, GraphX ​​para processamento de gráficos e Spark Streaming.
+Discurso
+O Speech-to-Text do Google Cloud permite que os desenvolvedores convertam áudio em texto aplicando poderosos modelos de rede neural em uma API fácil de usar.
+SPINNAKER
+Spinnaker: plataforma de entrega contínua de código aberto e várias nuvens que ajuda você a liberar alterações de software com alta velocidade e confiança.
+SQL Cloud SQL
+O Google Cloud SQL é um serviço da web que permite criar, configurar e usar bancos de dados relacionais que residem na nuvem do Google. É um serviço totalmente gerenciado que mantém, gerencia e administra seus bancos de dados, permitindo que você se concentre em seus aplicativos e serviços.
+Proxy SQL
+O Cloud SQL Proxy funciona com um cliente local, chamado proxy, em execução no ambiente local. Seu aplicativo se comunica com o proxy com o protocolo de banco de dados padrão usado pelo banco de dados. O proxy usa um túnel seguro para se comunicar com seu processo associado em execução no servidor.
+Sqoop
+O Apache Sqoop (TM) é uma ferramenta projetada para transferir com eficiência dados em massa entre o Apache Hadoop e os armazenamentos de dados estruturados, como bancos de dados relacionais.
+Stackdriver
+O Google Stackdriver é uma solução hospedada integrada de monitoramento, registro e diagnóstico que ajuda você a obter informações sobre aplicativos executados no Google Cloud Platform e em outras plataformas de nuvem pública. O Stackdriver ajuda você a manter seus aplicativos baseados em nuvem rápidos e disponíveis. O Stackdriver inclui os componentes Monitoramento, Registro em log, Relatório de erros, Depurador, Perfilador e Rastreamento.
+Stackdriver Debugger
+O Stackdriver Debugger é um recurso do Google Cloud Platform que permite inspecionar o estado de um aplicativo, em qualquer local do código, sem interromper ou retardar o aplicativo em execução. O Stackdriver Debugger facilita a visualização do estado do aplicativo sem adicionar instruções de registro.
+
+Você pode usar o Stackdriver Debugger com qualquer implantação de seu aplicativo, incluindo teste, desenvolvimento e produção. O depurador adiciona menos de 10 ms à latência da solicitação apenas quando o estado do aplicativo é capturado. Na maioria dos casos, isso não é perceptível pelos usuários.
+
+Para Java, Phyton, Go, Nodejs, Ruby, PHP
+Relatório de erros do Stackdriver
+O Stackdriver Error Reporting agrega e exibe erros produzidos em seus serviços de nuvem em execução.
+Os idiomas suportados são Go, Java, .NET, Node.js, PHP, Python e Ruby. Para denunciar erros de aplicativos clientes para Android e iOS, recomendamos configurar o Firebase Crash Reporting.
+O Stackdriver Error Reporting geralmente está disponível para o ambiente padrão do Google Cloud Functions e Google App Engine e é um recurso Beta para o ambiente flexível do Google App Engine, o Google Compute Engine e o AWS EC2.
+
+Os erros de relatório do seu aplicativo podem ser obtidos registrando os erros do aplicativo no Google Stackdriver Logging ou chamando um endpoint da API. O processo de configuração depende da sua plataforma; por favor, consulte os guias de instalação.
+
+As informações no Stackdriver Error Reporting são retidas por 30 dias.
+Relatório de erros exibe erros para o projeto do Console do GCP selecionado no momento. Não suporta os Stackdriver Workspaces.
+Stackdriver Logging
+O Stackdriver Logging faz parte do conjunto de produtos do Stackdriver no Google Cloud Platform (GCP). Ele inclui armazenamento para logs, uma interface de usuário chamada Visualizador de logs e uma API para gerenciar logs programaticamente. O registro em log permite ler e gravar entradas de registro, pesquisar e filtrar seus registros, exportar seus registros e criar métricas baseadas em registros.
+
+As entradas de log são mantidas no Stackdriver Logging por um tempo limitado conhecido como período de retenção. Depois disso, as entradas são apagadas. Se você quiser manter suas entradas de log por mais tempo, exporte-as para fora do Stackdriver Logging.
+Os períodos de retenção para diferentes tipos de logs são listados na Política de Cota de Registro.
+Um filtro de registros avançados é uma expressão no idioma do filtro de registro. Ele é usado no Visualizador de registros e na Stackdriver Logging API para selecionar entradas de registro, como aquelas de uma determinada instância de VM ou aquelas que chegam em um período de tempo específico com um determinado nível de gravidade.
+Recursos monitorados: os exemplos são instâncias individuais da VM do Compute Engine, instâncias individuais da VM do Amazon EC2, instâncias de bancos de dados e assim por diante. Para obter uma listagem completa dos tipos de recursos monitorados, consulte Recursos e Serviços Monitorados.
+
+
+https://cloud.google.com/logging/docs/logs-based-metrics/ 
+Stackdriver Monitoring
+O Stackdriver Monitoring fornece visibilidade do desempenho, tempo de atividade e integridade geral dos aplicativos baseados em nuvem. O Stackdriver coleta métricas, eventos e metadados do Google Cloud Platform, do Amazon Web Services, testes de tempo de atividade hospedados, instrumentação de aplicativos e uma variedade de componentes de aplicativos comuns, incluindo Cassandra, Nginx, Apache Web Server, Elasticsearch e muitos outros. O Stackdriver ingere esses dados e gera insights por meio de painéis, gráficos e alertas. Os alertas do Stackdriver ajudam você a colaborar, integrando com o Slack, o PagerDuty, o HipChat, o Campfire e muito mais.
+Stackdriver Trace
+O Stackdriver Trace é um sistema de rastreamento distribuído que coleta dados de latência de seus aplicativos e os exibe no console do Google Cloud Platform. Você pode acompanhar como as solicitações se propagam por meio de seu aplicativo e recebem insights detalhados de desempenho em tempo quase real. O Stackdriver Trace analisa automaticamente todos os rastreamentos de seu aplicativo para gerar relatórios de latência detalhados para destacar a degradação do desempenho e capturar traços de todas as suas VMs, contêineres ou projetos do Google App Engine. Um coletor Zipkin também está disponível, o que permite que os rastreadores Zipkin enviem dados para o Stackdriver Trace. Projetos em execução no Google App Engine são capturados automaticamente.
+Stackdriver Workspaces
+Um espaço de trabalho é uma ferramenta para monitorar recursos contidos em um ou mais projetos do GCP ou contas da AWS. Cada espaço de trabalho pode ter entre 1 e 100 projetos monitorados, incluindo um ou mais projetos do GCP e qualquer número de contas da AWS. Você pode ter tantos espaços de trabalho quanto desejar, mas os projetos do GCP e as contas da AWS não podem ser monitorados por mais de um espaço de trabalho.
+Uma área de trabalho contém os painéis personalizados, políticas de alerta, verificações de tempo de atividade, canais de notificação e definições de grupo que você usa com seus projetos monitorados. Um espaço de trabalho pode acessar dados de métrica de seus projetos monitorados, mas os dados de métrica e as entradas de log permanecem nos projetos individuais.
+Scripts de inicialização
+Crie e execute seus próprios scripts de inicialização em suas máquinas virtuais para executar tarefas automatizadas toda vez que sua instância for inicializada. Os scripts de inicialização podem executar várias ações, como instalar software, executar atualizações, ativar serviços e quaisquer outras tarefas definidas no script. Você pode usar scripts de inicialização para personalizar de forma fácil e programática suas instâncias de máquina virtual, inclusive em novas instâncias no momento da criação.
+Armazenamento, Cloud Storage
+O Google Cloud Storage é um serviço RESTful para armazenar e acessar seus dados na infraestrutura do Google. O serviço combina o desempenho e a escalabilidade da nuvem do Google com recursos avançados de segurança e compartilhamento.
+No Cloud Storage, você cria um intervalo para armazenar seus dados. Um bucket tem três propriedades que você especifica ao criá-lo: um nome exclusivo globalmente, um local onde o bucket e seu conteúdo são armazenados e uma classe de armazenamento padrão para objetos adicionados ao bucket.
+Integre o armazenamento em seus aplicativos com uma única API unificada
+Otimizar preço / desempenho em quatro classes de armazenamento com o Object Lifecycle Management
+Acesse dados instantaneamente de qualquer classe de armazenamento
+Projetado para armazenamento seguro e durável
+
+
+Armazenamento Multi-regional
+> 99,99% de disponibilidade mensal típica
+Disponibilidade de 99,95% de SLA *
+Geo-redundante
+
+Armazenar dados que são freqüentemente acessados ​​(objetos "quentes") em todo o mundo, como veiculação de conteúdo de sites, streaming de vídeos ou jogos e aplicativos para dispositivos móveis.
+US $ 0,026
+Armazenamento Regional
+99,99% de disponibilidade mensal típica
+Disponibilidade de 99,9% de SLA *
+Menor custo por GB armazenado
+Dados armazenados em uma região geográfica restrita
+Redundante em zonas de disponibilidade
+
+O armazenamento é acessado com frequência na mesma região das instâncias do Google Cloud DataProc ou do Google Compute Engine que o usam, como para análise de dados.
+US $ 0,02
+Armazenamento Nearline
+99,9% de disponibilidade mensal típica
+Disponibilidade de 99,0% de SLA *
+Custo muito baixo por GB armazenado
+Custos de recuperação de dados
+Custos mais altos por operação
+Duração mínima de armazenamento de 30 dias
+
+Dados que você não espera acessar com frequência (ou seja, não mais do que uma vez por mês). Ideal para backup e exibição de conteúdo multimídia de cauda longa.
+US $ 0,010
+Armazenamento Coldline
+99,9% de disponibilidade mensal típica
+Disponibilidade de 99,0% de SLA *
+O menor custo por GB armazenado
+Custos de recuperação de dados
+Custos mais altos por operação
+Duração mínima de armazenamento de 90 dias
+
+Dados que você espera acessar com pouca frequência (ou seja, não mais de uma vez por ano). Geralmente, isso é para recuperação de desastre ou dados que são arquivados e podem ou não ser necessários em algum momento futuro.
+US $ 0,007
+Serviço de transferência de armazenamento
+O Serviço de Transferência de Armazenamento transfere dados de uma fonte de dados on-line para um coletor de dados. Sua fonte de dados pode ser um bucket do Amazon Simple Storage Service (Amazon S3), um local HTTP / HTTPS ou um intervalo do Cloud Storage. Seu data sink (o destino) é sempre um intervalo do Cloud Storage.
+Você pode usar o Serviço de Transferência de Armazenamento para:
+Faça backup dos dados em um intervalo do Cloud Storage de outros provedores de armazenamento.
+Mover dados de um intervalo de armazenamento multi-regional para um intervalo de armazenamento nearline para reduzir seus custos de armazenamento.
+O Serviço de Transferência de Armazenamento realiza uma transferência de dados com uma operação de transferência. As operações de transferência são agendadas e configuradas por meio de um trabalho de transferência. O Serviço de Transferência de Armazenamento possui opções que facilitam as transferências de dados e a sincronização entre fontes de dados e depósitos de dados. Por exemplo, você pode:
+Programar operações de transferência única ou operações de transferência recorrentes.
+Exclua objetos existentes no intervalo de destino se eles não tiverem um objeto correspondente na origem.
+Excluir objetos de origem depois de transferi-los.
+Agende a sincronização periódica da fonte de dados para o coletor de dados com filtros avançados com base nas datas de criação do arquivo, nos filtros de nome de arquivo e nas horas do dia em que você prefere importar dados.
+Por padrão, o Serviço de Transferência de Armazenamento copia um arquivo da fonte de dados se o arquivo não existir no coletor de dados ou se for diferente entre a versão na origem e o coletor. O padrão também é reter arquivos na origem após a operação de transferência.
+T
+Alvo de Piscinas
+Um recurso de pool de destino define um grupo de instâncias que recebem tráfego de entrada das regras de encaminhamento. Quando uma regra de encaminhamento direciona o tráfego para um pool de segmentação, o Balanceamento de carga do Google Cloud seleciona uma instância desses pools de destino com base em um hash do IP e da porta de origem e no IP e na porta de destino. Consulte o algoritmo de distribuição de carga para obter mais informações sobre como o tráfego é distribuído para instâncias.
+Terraform
+Terraform é uma ferramenta (devops) para construir, mudar e infra-estrutura de versionamento com código. 
+Arquivos de configuração descrevem para Terraform os componentes necessários para executar um único aplicativo ou seu datacenter inteiro.
+O comando terraform plan é usado para criar um plano de execução. Terraform determina quais ações são necessárias para atingir o estado desejado especificado nos arquivos de configuração.
+Laboratório de Testes 
+O Google Cloud Test Lab permite que você teste aplicativos móveis usando dispositivos físicos e virtuais na nuvem. Ele executa testes de instrumentação e testes robóticos sem script em uma matriz de configurações de dispositivos e gera relatórios detalhados para ajudar a melhorar a qualidade do seu aplicativo móvel.
+Ferramentas para o Android Studio
+O Cloud Tools para Android Studio é um conjunto de ferramentas para o Android Studio IDE que ajuda você a desenvolver seus aplicativos Android e implantá-los no Google Cloud Platform. Firebase
+Ferramentas para o Eclipse
+O Cloud Tools for Eclipse é um plug-in de código aberto patrocinado pelo Google que oferece suporte ao desenvolvimento do Google Cloud Platform dentro do Eclipse IDE.
+Ferramentas para IntelliJ
+Usando o Cloud Tools for IntelliJ, você pode implantar facilmente back-ends de Java para seus aplicativos na nuvem nos ambientes padrão e flexível do Google App Engine. Você pode executar e testar o backend localmente e, quando terminar o desenvolvimento, poderá implantar seu projeto em tempo real a partir do IntelliJ IDEA. Se houver problemas na produção, você poderá depurar o back-end da nuvem ao vivo usando o Stackdriver Debugger sem parar ou desacelerar o aplicativo.
+Ferramentas para o PowerShell
+O Cloud Tools for PowerShell permite criar scripts, automatizar e gerenciar suas cargas de trabalho do Windows em execução no Cloud Platform. Usando o poderoso ambiente de script do PowerShell, personalize seus fluxos de trabalho na nuvem usando as ferramentas do Windows com as quais você já está familiarizado.
+Ferramentas para o Visual Studio
+Migração de Tráfego / Divisão
+Gerencie quanto tráfego é recebido por uma versão de seu aplicativo migrando ou dividindo o tráfego.
+A migração de tráfego alterna suavemente o roteamento de solicitação, movendo gradualmente o tráfego das versões que atualmente recebem tráfego para uma ou mais versões especificadas.
+A divisão de tráfego distribui uma porcentagem do tráfego para versões de seu aplicativo. Você pode dividir o tráfego para mover 100% do tráfego para uma única versão ou para rotear porcentagens de tráfego para várias versões. A divisão do tráfego para duas ou mais versões permite que você conduza testes A / B entre suas versões e fornece controle sobre o ritmo ao liberar recursos.
+Lembre-se: a divisão de tráfego é aplicada a URLs que não segmentam explicitamente uma versão. Por exemplo, as URLs a seguir dividem o tráfego porque segmentam todas as versões disponíveis no serviço especificado:
+[MY_PROJECT_ID] .appspot.com - Distribui o tráfego para versões do serviço padrão.
+[MY_SERVICE]. [MY_PROJECT_ID] .appspot.com - distribui o tráfego para versões do serviço MY_SERVICE.
+Para mais informações, consulte Como as solicitações são roteadas.
+Para realizar manualmente a migração de tráfego e a divisão do console do GCP, consulte Migração de tráfego e divisão de tráfego.
+Tradução
+O Google Cloud Translation (e o Google Cloud Translation v2 ou qualquer versão / versão posterior de disponibilidade geral) é uma API RESTful que traduz automaticamente o texto de um idioma para outro (por exemplo, francês para inglês). Você pode usar a API para traduzir textos em suas páginas da Web ou aplicativos programaticamente.
+U
+url Maps
+O balanceamento de carga HTTP (S) permite direcionar o tráfego para instâncias diferentes com base no URL recebido. Por exemplo, você pode enviar solicitações para http://www.example.com/audio para um serviço de back-end, que contém instâncias configuradas para fornecer arquivos de áudio, e solicitações para http://www.example.com/video para outro back-end serviço, que contém instâncias configuradas para entregar arquivos de vídeo.
+Crie um recurso de UrlMaps:
+"hostRules": [
+    {
+      "descrição": string,
+      "hosts": [
+        corda
+      ]
+      "pathMatcher": string
+    }
+V
+Inteligência de Vídeo
+O Google Cloud Video Intelligence torna os vídeos pesquisáveis ​​e detectáveis ​​extraindo metadados com uma API REST fácil de usar. Agora você pode pesquisar todos os momentos de todos os arquivos de vídeo em seu catálogo. Ele anota rapidamente os vídeos armazenados no Google Cloud Storage e ajuda você a identificar entidades-chave (substantivos) no seu vídeo. e quando eles ocorrem dentro do vídeo. Separe o sinal do ruído, recuperando informações relevantes em todo o vídeo, tiro a quadro, ou por quadro.
+Máquina Virtual / Instâncias
+Uma instância é uma máquina virtual (VM) hospedada na infraestrutura do Google. Você pode criar uma instância usando o Console do Google Cloud Platform ou a ferramenta de linha de comando gcloud.
+As instâncias do Compute Engine podem executar as imagens públicas para Linux e Windows Server fornecidas pelo Google, bem como imagens personalizadas personalizadas que você pode criar ou importar de seus sistemas existentes. Você também pode implantar contêineres do Docker, que são iniciados automaticamente em instâncias que executam a imagem pública do OS do Container-Optimized.
+
+
+Você pode usar um conjunto de tipos de máquinas predefinidos ou criar seus próprios tipos de máquina personalizados.
+Nuvem privada virtual
+Uma rede VPC, às vezes chamada apenas de "rede", é uma versão virtual de uma rede física, como uma rede de data center. Ele fornece conectividade para suas instâncias de máquina virtual (VM) do Compute Engine, clusters do Kubernetes Engine, instâncias do App Engine Flex e outros recursos em seu projeto.
+Fornece uma topologia de rede privada com políticas de alocação de IP, roteamento e firewall de rede para criar um ambiente seguro para suas implantações.
+VPC compartilhado 
+A VPC compartilhada permite que uma organização conecte recursos de vários projetos a uma rede VPC comum, para que eles possam se comunicar de forma segura e eficiente usando IPs internos dessa rede.
+A VPC compartilhada permite que os administradores da organização deleguem responsabilidades administrativas, como a criação e o gerenciamento de instâncias, para os Administradores de Projetos de Serviços, enquanto mantêm o controle centralizado dos recursos de rede, como sub-redes, rotas e firewalls. 
+VPN, Cloud VPN
+O Cloud VPN conecta sua rede local com segurança à sua rede virtual privada (VPC) do Google Cloud Platform (GCP) por meio de uma conexão VPN IPsec. O tráfego viajando entre as duas redes é criptografado por um gateway de VPN e, em seguida, descriptografado pelo outro gateway de VPN. Isso protege seus dados enquanto eles viajam pela Internet.
+
+
+Para criar uma rede privada virtual (VPN), consulte Escolhendo uma opção de roteamento VPN.
+Gateway de VPN
+Cloud VPN gateway
+Um gateway de VPN virtual em execução no GCP gerenciado pelo Google, usando uma configuração especificada em seu projeto. Cada gateway do Cloud VPN é um recurso regional que usa um endereço IP externo regional. Um gateway do Cloud VPN pode se conectar a um gateway de VPN local ou outro gateway do Cloud VPN.
+
+Gateway de VPN no local
+O gateway VPN que não está no GCP, conectado a um gateway do Cloud VPN, pode ser um dispositivo físico em seu data center ou uma oferta de VPN física ou baseada em software na rede de outro provedor de nuvem. As instruções do Cloud VPN são escritas do ponto de vista da sua rede VPC, portanto, o "gateway local" é o gateway que se conecta ao Cloud VPN.
+
+Túnel VPN
+Um túnel VPN conecta dois gateways VPN e serve como um meio virtual através do qual o tráfego criptografado é passado. Dois túneis VPN devem ser estabelecidos para criar uma conexão entre dois gateways VPN: Cada túnel define a conexão a partir da perspectiva de seu gateway, e o tráfego só pode passar quando o par de túneis é estabelecido.
+Inteligência de Vídeo
+O Google Cloud Video Intelligence torna os vídeos pesquisáveis ​​e detectáveis ​​extraindo metadados com uma API REST fácil de usar. Anota rapidamente os vídeos armazenados no Google Cloud Storage e ajuda a identificar as entidades do substantivo principal do seu vídeo e quando ocorrem no vídeo.
+Visão
+O Google Cloud Vision permite que os desenvolvedores entendam o conteúdo de uma imagem encapsulando modelos poderosos de aprendizado de máquina em uma API fácil de usar. Ele rapidamente classifica as imagens em milhares de categorias (por exemplo, "veleiro", "leão", "Torre Eiffel"), detecta objetos individuais e faces dentro de imagens, e encontra e lê palavras impressas contidas nas imagens. Você pode criar metadados em seu catálogo de imagens, moderar conteúdo ofensivo ou ativar novos cenários de marketing por meio da análise de sentimento de imagem. Você também pode analisar as imagens enviadas na solicitação e integrá-las ao seu armazenamento de imagens no Google Cloud Storage.
+E
+Fio - ainda outro negociador de recursos
+A idéia fundamental do YARN é dividir as funcionalidades de gerenciamento de recursos e agendamento / monitoramento de tarefas em daemons separados. A idéia é ter um ResourceManager global (RM) e ApplicationMaster (AM) por aplicativo. Um aplicativo é um único trabalho ou um DAG de jobs.
+
+O ResourceManager e o NodeManager formam a estrutura de computação de dados. O ResourceManager é a autoridade final que arbitra recursos entre todos os aplicativos no sistema. O NodeManager é o agente de estrutura por máquina responsável pelos contêineres, monitorando seu uso de recursos (cpu, memória, disco, rede) e relatando o mesmo para o ResourceManager / Scheduler.
+W
+Wireshark 
+O Wireshark é o principal analisador de protocolos de rede do mundo. Ele permite que você veja o que está acontecendo em sua rede em um nível microscópico. É o padrão de fato (e frequentemente de jure) em muitos setores e instituições educacionais.
+
+O Wireshark é um analisador de pacotes gratuito e de código aberto. Ele é usado para solução de problemas, análise, desenvolvimento de protocolos de software e comunicações e educação. Originalmente chamado Ethereal, o projeto foi renomeado Wireshark em maio de 2006 devido a problemas de marca registrada.
+
+O Wireshark on Cloud é executado no Amazon Web Services (AWS) e o Google Cloud Platform (GCP) é usado para solução de problemas de rede, análise, desenvolvimento e educação de protocolos de software e comunicações.
+
+O Wireshark é de propriedade da Wireshark (https://www.wireshark.org/) e possui todas as marcas registradas e direitos de PI relacionados a este software.
+
+Windows no Compute Engine
+Você pode executar seus aplicativos do Windows no Google Compute Engine e aproveitar os muitos benefícios disponíveis para instâncias de máquinas virtuais, como opções de armazenamento confiáveis, a velocidade da rede do Google e o escalonamento automático.
+O Compute Engine fornece várias ferramentas para ajudar a trazer seus aplicativos e serviços do Windows para a nuvem:
+Use as imagens do Windows Server para criar instâncias com um ambiente básico do Windows, sobre o qual você pode criar seus aplicativos. Para imagens do Windows Server 2016 e 2012 R2, você pode selecionar as configurações do Windows Server com Desktop Experience ou do Windows Server Core.
+Use imagens do SQL Server para iniciar instâncias com o Windows Server com o SQL Server pré-instalado. Pague pelas licenças do Windows Server e do SQL Server somente quando você as usar. As imagens do Windows Server recebem faturamento por segundo e as imagens do SQL Server recebem faturamento por minuto.
+Execute aplicativos .NET em suas instâncias do Compute Engine.
+Implemente o Active Directory em suas instâncias e leve seus serviços de domínio para a nuvem.
+Execute servidores da Web IIS para hospedar seu conteúdo da Web em instâncias do Windows.
+Se você tiver licenças existentes para o SQL Server ou outros aplicativos executados em um ambiente Windows, use as licenças de aplicativos Microsoft existentes por meio do programa Microsoft License Mobility.
+Para começar, experimente o início rápido do Windows, crie uma instância do Windows Server ou crie uma instância com o SQL Server pré-instalado. Conectando-se a uma instância do Windows
+http-load-balancing-iis
